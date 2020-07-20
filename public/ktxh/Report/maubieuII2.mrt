@@ -1,0 +1,1000 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "18455861dfbf71b6cd792a65a3422e36",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "maubieuII2.mrt",
+  "ReportCreated": "/Date(1589604289000+0700)/",
+  "ReportChanged": "/Date(1589604289000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases_data",
+        "Alias": "databases_data",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "noidung",
+            "Index": -1,
+            "NameInSource": "noidung",
+            "Alias": "noidung",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "thoigian",
+            "Index": -1,
+            "NameInSource": "thoigian",
+            "Alias": "thoigian",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "nguoichiutrachnhiem",
+            "Index": -1,
+            "NameInSource": "nguoichiutrachnhiem",
+            "Alias": "nguoichiutrachnhiem",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "nguoiphoihop",
+            "Index": -1,
+            "NameInSource": "nguoiphoihop",
+            "Alias": "nguoiphoihop",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "ketqua",
+            "Index": -1,
+            "NameInSource": "ketqua",
+            "Alias": "ketqua",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "maubieuii2",
+            "Index": -1,
+            "NameInSource": "maubieuii2",
+            "Alias": "maubieuii2",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "thutu",
+            "Index": -1,
+            "NameInSource": "thutu",
+            "Alias": "thutu",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "isDelete",
+            "Index": -1,
+            "NameInSource": "isDelete",
+            "Alias": "isDelete",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases_data"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases",
+        "Alias": "databases",
+        "Columns": {
+          "0": {
+            "Name": "data",
+            "Index": -1,
+            "NameInSource": "data",
+            "Alias": "data",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "databases",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "data"
+        },
+        "NameInSource": "databases_data",
+        "Alias": "databases",
+        "IsCloud": null,
+        "ParentSource": "databases",
+        "ChildSource": "databases_data"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page5",
+      "Guid": "4f3764aeff442f141726c90755d8ee8c",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand5",
+          "ClientRectangle": "0,0.4,19,11.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text58",
+              "Guid": "eb869bc0cc8a536eb66363521779b417",
+              "ClientRectangle": "0,0,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "UỶ BAN NHÂN DÂN"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text59",
+              "Guid": "298da58da58006854f63a3d93c8a8bda",
+              "ClientRectangle": "9,0,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "Guid": "f66386fd7c8f1c94b18d29ef6881a11e",
+              "ClientRectangle": "0,0.6,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "XÃ ............................."
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "Guid": "3148d1e19b3f555ed91612190f361969",
+              "ClientRectangle": "9,0.6,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Độc lập – Tự do – Hạnh phúc"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "Guid": "dbd5443225c55e16ae8ef0227e62c1e8",
+              "ClientRectangle": "0,1.6,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Số:........./QĐ-UBND"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "Guid": "0cdf71b09b779e30b2f36713bf5ca310",
+              "ClientRectangle": "9,1.6,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "….,ngày…..tháng…..năm 20…......."
+              },
+              "HorAlignment": "Right",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text64",
+              "Guid": "5346cbec9a57a781ebb2f1520fb5bdae",
+              "ClientRectangle": "0,2.2,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "V/v triển khai công tác\r\n\tlập kế hoạch phát triển \r\n\tKT-XH năm……….….\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "163465f0836acfe8c6524c2e3ef8daf4",
+              "ClientRectangle": "3.6,3.6,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Kính gửi:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "15b36ff257380d7e8d8cb8019340208d",
+              "ClientRectangle": "6,4.2,8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-\tCác Ban, Ngành, Đoàn thể xã;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "580da16f94fbeedf617b75cfe6b43b10",
+              "ClientRectangle": "6,4.8,8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-\tCác Cơ quan, Đơn vị đóng trên địa bàn;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "9290befe906b58a4c146267e6237af50",
+              "ClientRectangle": "6,5.4,8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-\tCác Trưởng thôn;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "727a2ac8c1887b1c97ad9582eae73576",
+              "ClientRectangle": "1.2,6.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Để chuẩn bị cho công tác xây dựng kế hoạch phát triển kinh tế - xã hội năm ……........... của xã\t\t; UBND xã yêu cầu các Ban, Ngành, Đoàn thể xã, đơn vị sự nghiệp đóng trên địa bàn và các Trưởng thôn triển khai công tác thu thập thông tin, xây dựng mục tiêu, đề xuất giải pháp và dự tính nguồn lực thực hiện kế hoạch năm…….. thuộc lĩnh vực do đơn vị phụ trách."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "2bb09877df0666165c49b9bf41ad77a2",
+              "ClientRectangle": "1.2,7.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Lịch công tác lập kế hoạch phát triển kinh tế - xã hội cấp xã nêu trong bảng kèm theo."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "bcbe0177669121522bc233038ccaf426",
+              "ClientRectangle": "1.2,8.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Các phiếu cung cấp thông tin đề xuất kế hoạch và tài liệu kèm theo gửi về UBND xã trước ngày ….................. để tổng hợp."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "08bd2e7dd0c0884afb43743caea21aa6",
+              "ClientRectangle": "1.2,9.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Đề nghị các Cơ quan, Đơn vị trên địa bàn phối hợp cung cấp thông tin để xây dựng kế hoạch phát triển kinh tế - xã hội xã đạt kết quả tốt."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "b4884e751cb29a8e4321685765e860bc",
+              "ClientRectangle": "1.2,10.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Yêu cầu các đơn vị triển khai thực hiện./."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive6",
+              "Guid": "22a0ef8ccaf7f8200519f2c485ad9d9d",
+              "ClientRectangle": "0.4,1.4,4.2,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,12.8,19,0",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,13.6,19,0",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent"
+        },
+        "3": {
+          "Ident": "StiFooterBand",
+          "Name": "FooterBand1",
+          "ClientRectangle": "0,14.4,19,4.6",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "be7c687945cf29a5ca1d27c14bb75f60",
+              "ClientRectangle": "1.2,0,3,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nơi nhận: "
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "1e344d7370ecbe48ec5b429f1de09b98",
+              "ClientRectangle": "2,0.6,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "- Như trên; "
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "fd090beec95eaceea4a47709adf9c26b",
+              "ClientRectangle": "2,1.2,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "- Đảng uỷ xã;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "bab074962accecef0e1c9aa0ec2a7fc5",
+              "ClientRectangle": "2,1.8,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "- CT, PCT UBND xã;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "004bd39097661b5c9c760aab25a62d2f",
+              "ClientRectangle": "2,2.4,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "- Các TV Tổ công tác LKH xã"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "f1261754d00666b8c9c9b6030d285191",
+              "ClientRectangle": "2,3,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "- Lưu: VT. "
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "50a53f8ea1fac2938788b0c907272f36",
+              "ClientRectangle": "9,0,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "TM. ỦY BAN NHÂN DÂN XÃ"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "af7e3188a4a5cf6fc98ec6be6ec288f4",
+              "ClientRectangle": "9,0.6,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CHỦ TỊCH"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    },
+    "1": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "4aaa46c81b6b39f59f914a4ab810797c",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "20d820942923912916125ebedfaf4d25",
+              "ClientRectangle": "0,0,19,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Lịch công tác triển khai lập kế hoạch phát triển kinh tế - xã hội cấp xã"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,2.2,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "9bef3dd70466be306896b1415ba5543a",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "STT"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "643774eb5377c6d5a88ea3657e60fe94",
+              "ClientRectangle": "15,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Kết quả cần đạt được"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "2c97694c4f348a0907150a8f14e190a7",
+              "ClientRectangle": "12.4,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Người phối hợp"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "f4c0b133c2902a27a7824884a5014bac",
+              "ClientRectangle": "9.8,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Người chịu trách nhiệm"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "4810608ee6dd374b07ca305b1fb4f330",
+              "ClientRectangle": "7.2,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Thời gian thực hiện"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "203efde4f560c299be7db799bf50a144",
+              "ClientRectangle": "1,0,6.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nội dung hoạt động"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "ClientRectangle": "0,4,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "Guid": "288fd27508e3ce17a220bac895917939",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Line}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "Guid": "89cee8e4e43959711cb4d681cc3c8356",
+              "ClientRectangle": "15,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data.ketqua}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "Guid": "39cc3e09fdc594d0bba2cde4de2b832a",
+              "ClientRectangle": "12.4,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data.nguoiphoihop}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "Guid": "026b70d2b1185b8d930f99f6fc11954e",
+              "ClientRectangle": "9.8,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data.nguoichiutrachnhiem}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "Guid": "dcdf35b9814aa3d2c7bb0088b92fbbc0",
+              "ClientRectangle": "7.2,0,2.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data.thoigian}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "Guid": "3b883b9b63e4639aad5159c95a53f0fe",
+              "ClientRectangle": "1,0,6.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data.noidung}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            }
+          },
+          "DataSourceName": "databases_data"
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+No Content: http://envato.rathemes.com/infinity/libs/bower/bootstrap-tagsinput/src/bootstrap-tagsinput.js

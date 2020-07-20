@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+
+	<title>Stimulsoft Reports.JS - Standalone Demo</title>
+	<meta charset="utf-8" />
+	<link href="css/demo.css" rel="stylesheet">
+
+	<!-- Report Viewer Office2013 style -->
+	<link href="css/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet">
+
+	<!-- Report Designer Office2013 style -->
+	<link href="css/stimulsoft.designer.office2013.whiteblue.css" rel="stylesheet">
+
+	<!-- Stimusloft Reports.JS -->
+	<script src="scripts/stimulsoft.reports.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.viewer.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.designer.js" type="text/javascript"></script>
+
+	<!-- Reports -->
+	<script src="reports/BarCodes.js" type="text/javascript"></script>
+	<script src="reports/HighlightCondition.js" type="text/javascript"></script>
+	<script src="reports/Images.js" type="text/javascript"></script>
+	<script src="reports/MasterDetail.js" type="text/javascript"></script>
+	<script src="reports/ParametersDetailedCategories.js" type="text/javascript"></script>
+	<script src="reports/ParametersDetailedOrders.js" type="text/javascript"></script>
+	<script src="reports/ParametersHighlightCondition.js" type="text/javascript"></script>
+	<script src="reports/ParametersInvoice.js" type="text/javascript"></script>
+	<script src="reports/ParametersSelectingCountry.js" type="text/javascript"></script>
+	<script src="reports/Shapes.js" type="text/javascript"></script>
+	<script src="reports/SimpleList.js" type="text/javascript"></script>
+	<script src="reports/TwoSimpleLists.js" type="text/javascript"></script>
+
+	<!-- Application scripts -->
+	<script>
+		var viewer = null;
+		var designer = null;
+		Stimulsoft.Base.StiLicense.key = "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";
+		
+		function createViewer() {
+			// Specify necessary options for the viewer
+			var options = new Stimulsoft.Viewer.StiViewerOptions();
+			options.height = "100%";
+			options.appearance.scrollbarsMode = true;
+			options.toolbar.showDesignButton = true;
+			options.toolbar.printDestination = Stimulsoft.Viewer.StiPrintDestination.Direct;
+			options.appearance.htmlRenderMode = Stimulsoft.Report.Export.StiHtmlExportMode.Table;
+
+			// Create an instance of the viewer
+			viewer = new Stimulsoft.Viewer.StiViewer(options, "StiViewer", false);
+
+			// Add the design button event
+			viewer.onDesignReport = function (e) {
+				this.visible = false;
+				if (designer == null) createDesigner();
+				designer.visible = true;
+				designer.report = e.report;
+			};
+
+			viewer.renderHtml("viewerContent");
+		}
+
+		function createDesigner() {
+			var options = new Stimulsoft.Designer.StiDesignerOptions();
+			options.appearance.fullScreenMode = true;
+			options.appearance.htmlRenderMode = Stimulsoft.Report.Export.StiHtmlExportMode.Table;
+
+			// Create an instance of the designer
+			designer = new Stimulsoft.Designer.StiDesigner(options, "StiDesigner", false);
+
+			// Add the exit menu item event
+			designer.onExit = function (e) {
+				this.visible = false;
+				viewer.visible = true;
+			}
+
+			designer.renderHtml("designerContent");
+		}
+
+		function setReport(reportObject) {
+			// Forcibly show process indicator
+			viewer.showProcessIndicator();
+
+			// Timeout need for immediate display loading report indicator
+			setTimeout(function () {
+				// Create a new report instance
+				var report = new Stimulsoft.Report.StiReport();
+				// Load reports from JSON object
+				report.load(reportObject);
+
+				// Assign the report to the viewer
+				viewer.report = report;
+			}, 50);
+		}
+
+		// Set report button style
+		function setReportButton(button) {
+			for (var reportName in reportsCollection) {
+				var reportButton = document.getElementById(reportName);
+				reportButton.isSelected = reportButton == button;
+				reportButton.className = reportButton.isSelected ? "ReportButton Selected" : "ReportButton";
+			}
+		}
+
+		// Load first report after the page is loaded
+		function onBodyLoad() {
+			createViewer();
+			selectedButton = document.getElementById("SimpleList");
+			onButtonClick(selectedButton, SimpleList);
+		}
+
+		// Demo Report button events
+		// ---
+
+		function onButtonClick(button, reportObject) {
+			selectedButton.className = "ReportButton";
+			button.className = "ReportButton Selected";
+			selectedButton = button;
+			setReport(reportObject);
+		}
+
+		function onButtonMouseOver(button) {
+			if (button != selectedButton) button.className = "ReportButton Over";
+		}
+
+		function onButtonMouseOut(button) {
+			if (button != selectedButton) button.className = "ReportButton";
+		}
+	</script>
+</head>
+
+<body onload="onBodyLoad();">
+	<div id="designerContent"></div>
+	<table class="Main" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="150px">
+				<table class="LeftPanel" cellpadding="0" cellspacing="0">
+					<tr>
+						<td height="60px">
+							<img style="position: absolute; width: 150px; left: 0px; top: 0px;"
+								src="images/StimulsoftReports.png" />
+							<img style="position: absolute; width: 30px; height: 30px; left: 105px; top: 25px;"
+								src="images/Js.png" />
+						</td>
+					</tr>
+					<tr>
+						<td height="90%">
+							<div class="Buttons">
+								<script type="text/javascript">
+									// Report id and names for this Demo
+									var reportsCollection = {
+										"SimpleList": "Simple List",
+										"BarCodes": "Bar Codes",
+										"HighlightCondition": "Highlight Condition",
+										"TwoSimpleLists": "Two Simple Lists",
+										"MasterDetail": "Master Detail",
+										"ParametersInvoice": "Parameters Invoice",
+										"ParametersDetailedCategories": "Parameters Detailed Categories",
+										"ParametersHighlightCondition": "Parameters Highlight Condition",
+										"ParametersSelectingCountry": "Parameters Selecting Country",
+										"ParametersDetailedOrders": "Parameters Detailed Orders",
+										"Shapes": "Shapes",
+										"Images": "Images"
+									};
+
+									// Render all report buttons
+									for (var reportName in reportsCollection) {
+										document.write(
+											"<a class=\"ReportButton\" id=\"" + reportName + "\"" +
+											"onmouseover=\"onButtonMouseOver(this)\"" +
+											"onmouseout=\"onButtonMouseOut(this)\"" +
+											"onclick=\"onButtonClick(this, " + reportName + ")\">" +
+											"<table cellpadding=\"0\" cellspacing=\"0\">" +
+											"<tr><td style=\"text-align: center; width: 100%;\"><img src=\"images/" + reportName + ".png\" /></td></tr>" +
+											"<tr><td class=\"Caption\">" + reportsCollection[reportName] + "</td></tr>" +
+											"</table>" +
+											"</a>");
+									}
+								</script>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td height="100%" style="padding: 4px;" id="viewerContent"></td>
+		</tr>
+	</table>
+</body>
+
+</html>

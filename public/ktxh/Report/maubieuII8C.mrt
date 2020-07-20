@@ -1,0 +1,3977 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "2acc50a7954944b5506373b2cf5a6026",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "maubieuII8C.mrt",
+  "ReportCreated": "/Date(1585715767000+0700)/",
+  "ReportChanged": "/Date(1585715767000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu_hkI",
+        "Alias": "Dulieu_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "kinhphicapbu",
+            "Index": -1,
+            "NameInSource": "kinhphicapbu",
+            "Alias": "kinhphicapbu",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu_hkI"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu_hkII",
+        "Alias": "Dulieu_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "kinhphicapbu",
+            "Index": -1,
+            "NameInSource": "kinhphicapbu",
+            "Alias": "kinhphicapbu",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu_hkII"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu",
+        "Alias": "Dulieu",
+        "Columns": {
+          "0": {
+            "Name": "tenlop",
+            "Index": -1,
+            "NameInSource": "tenlop",
+            "Alias": "tenlop",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "Tieude",
+        "Alias": "Tieude",
+        "Columns": {
+          "0": {
+            "Name": "truong",
+            "Index": -1,
+            "NameInSource": "truong",
+            "Alias": "truong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hk2",
+            "Index": -1,
+            "NameInSource": "hk2",
+            "Alias": "hk2",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hk1",
+            "Index": -1,
+            "NameInSource": "hk1",
+            "Alias": "hk1",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "nam",
+            "Index": -1,
+            "NameInSource": "nam",
+            "Alias": "nam",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "ngay",
+            "Index": -1,
+            "NameInSource": "ngay",
+            "Alias": "ngay",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "sodt",
+            "Index": -1,
+            "NameInSource": "sodt",
+            "Alias": "sodt",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "dt",
+            "Index": -1,
+            "NameInSource": "dt",
+            "Alias": "dt",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "huyen",
+            "Index": -1,
+            "NameInSource": "huyen",
+            "Alias": "huyen",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Tieude"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "root",
+        "Alias": "root",
+        "Columns": {
+          "0": {
+            "Name": "truong",
+            "Index": -1,
+            "NameInSource": "truong",
+            "Alias": "truong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hk2",
+            "Index": -1,
+            "NameInSource": "hk2",
+            "Alias": "hk2",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hk1",
+            "Index": -1,
+            "NameInSource": "hk1",
+            "Alias": "hk1",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "nam",
+            "Index": -1,
+            "NameInSource": "nam",
+            "Alias": "nam",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "ngay",
+            "Index": -1,
+            "NameInSource": "ngay",
+            "Alias": "ngay",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "sodt",
+            "Index": -1,
+            "NameInSource": "sodt",
+            "Alias": "sodt",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "dt",
+            "Index": -1,
+            "NameInSource": "dt",
+            "Alias": "dt",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "ngoaiconglap",
+            "Index": -1,
+            "NameInSource": "ngoaiconglap",
+            "Alias": "ngoaiconglap",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi_hkI",
+        "Alias": "root_conglap_mamnonthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi_hkI"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi_hkII",
+        "Alias": "root_conglap_mamnonthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi_hkII"
+      },
+      "8": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi",
+        "Alias": "root_conglap_thcsthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi_hkI",
+        "Alias": "root_conglap_thcsthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi_hkI"
+      },
+      "10": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi_hkII",
+        "Alias": "root_conglap_thcsthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi_hkII"
+      },
+      "11": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon",
+        "Alias": "root_conglap_mamnonnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon"
+      },
+      "12": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon_hkI",
+        "Alias": "root_conglap_mamnonnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon_hkI"
+      },
+      "13": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon_hkII",
+        "Alias": "root_conglap_mamnonnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon_hkII"
+      },
+      "14": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon",
+        "Alias": "root_conglap_thcsnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon"
+      },
+      "15": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon_hkI",
+        "Alias": "root_conglap_thcsnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon_hkI"
+      },
+      "16": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon_hkII",
+        "Alias": "root_conglap_thcsnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon_hkII"
+      },
+      "17": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui",
+        "Alias": "root_conglap_mamnonmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui"
+      },
+      "18": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui_hkI",
+        "Alias": "root_conglap_mamnonmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui_hkI"
+      },
+      "19": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui_hkII",
+        "Alias": "root_conglap_mamnonmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui_hkII"
+      },
+      "20": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui",
+        "Alias": "root_conglap_thcsmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui"
+      },
+      "21": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui_hkI",
+        "Alias": "root_conglap_thcsmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui_hkI"
+      },
+      "22": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui_hkII",
+        "Alias": "root_conglap_thcsmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui_hkII"
+      },
+      "23": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap",
+        "Alias": "root_conglap",
+        "Columns": {
+          "0": {
+            "Name": "mamnonthanhthi",
+            "Index": -1,
+            "NameInSource": "mamnonthanhthi",
+            "Alias": "mamnonthanhthi",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "thcsthanhthi",
+            "Index": -1,
+            "NameInSource": "thcsthanhthi",
+            "Alias": "thcsthanhthi",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "mamnonnongthon",
+            "Index": -1,
+            "NameInSource": "mamnonnongthon",
+            "Alias": "mamnonnongthon",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "thcsnongthon",
+            "Index": -1,
+            "NameInSource": "thcsnongthon",
+            "Alias": "thcsnongthon",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "mamnonmiennui",
+            "Index": -1,
+            "NameInSource": "mamnonmiennui",
+            "Alias": "mamnonmiennui",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "thcsmiennui",
+            "Index": -1,
+            "NameInSource": "thcsmiennui",
+            "Alias": "thcsmiennui",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap"
+      },
+      "24": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi"
+      },
+      "25": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi_hkI"
+      },
+      "26": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi_hkII"
+      },
+      "27": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi"
+      },
+      "28": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi_hkI"
+      },
+      "29": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi_hkII"
+      },
+      "30": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon"
+      },
+      "31": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Alias": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon_hkI"
+      },
+      "32": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Alias": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon_hkII"
+      },
+      "33": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon"
+      },
+      "34": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Alias": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon_hkI"
+      },
+      "35": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Alias": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon_hkII"
+      },
+      "36": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui"
+      },
+      "37": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Alias": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui_hkI"
+      },
+      "38": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Alias": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui_hkII"
+      },
+      "39": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui"
+      },
+      "40": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Alias": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui_hkI"
+      },
+      "41": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Alias": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui_hkII"
+      },
+      "42": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap",
+        "Alias": "root_ngoaiconglap",
+        "Columns": {
+          "0": {
+            "Name": "mamnonthanhthi",
+            "Index": -1,
+            "NameInSource": "mamnonthanhthi",
+            "Alias": "mamnonthanhthi",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "thcsthanhthi",
+            "Index": -1,
+            "NameInSource": "thcsthanhthi",
+            "Alias": "thcsthanhthi",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "mamnonnongthon",
+            "Index": -1,
+            "NameInSource": "mamnonnongthon",
+            "Alias": "mamnonnongthon",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "thcsnongthon",
+            "Index": -1,
+            "NameInSource": "thcsnongthon",
+            "Alias": "thcsnongthon",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "mamnonmiennui",
+            "Index": -1,
+            "NameInSource": "mamnonmiennui",
+            "Alias": "mamnonmiennui",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "thcsmiennui",
+            "Index": -1,
+            "NameInSource": "thcsmiennui",
+            "Alias": "thcsmiennui",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap"
+      },
+      "43": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases_cha",
+        "Alias": "databases_cha",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases_cha"
+      },
+      "44": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases",
+        "Alias": "databases",
+        "Columns": {
+          "0": {
+            "Name": "cha",
+            "Index": -1,
+            "NameInSource": "cha",
+            "Alias": "cha",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "data",
+            "Index": -1,
+            "NameInSource": "data",
+            "Alias": "data",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases"
+      },
+      "45": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases_data_children_all",
+        "Alias": "databases_data_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases_data_children_all"
+      },
+      "46": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases_data",
+        "Alias": "databases_data",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases_data"
+      },
+      "47": {
+        "Ident": "StiDataTableSource",
+        "Name": "databases_data_children_all_children_all",
+        "Alias": "databases_data_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "chitieu.databases_data_children_all_children_all"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "Dulieu",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "Dulieu_hkI",
+        "Alias": "Dulieu",
+        "IsCloud": null,
+        "ParentSource": "Dulieu",
+        "ChildSource": "Dulieu_hkI"
+      },
+      "1": {
+        "Name": "Dulieu",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "Dulieu_hkII",
+        "Alias": "Dulieu",
+        "IsCloud": null,
+        "ParentSource": "Dulieu",
+        "ChildSource": "Dulieu_hkII"
+      },
+      "2": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkI",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "3": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "Dulieu_hkII",
+        "ChildSource": "Dulieu"
+      },
+      "4": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonthanhthi"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "5": {
+        "Name": "root_conglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi_hkI",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi",
+        "ChildSource": "root_conglap_mamnonthanhthi_hkI"
+      },
+      "6": {
+        "Name": "root_conglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi_hkII",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi",
+        "ChildSource": "root_conglap_mamnonthanhthi_hkII"
+      },
+      "7": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsthanhthi"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "8": {
+        "Name": "root_conglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi_hkI",
+        "Alias": "root_conglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi",
+        "ChildSource": "root_conglap_thcsthanhthi_hkI"
+      },
+      "9": {
+        "Name": "root_conglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi_hkII",
+        "Alias": "root_conglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi",
+        "ChildSource": "root_conglap_thcsthanhthi_hkII"
+      },
+      "10": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonnongthon"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonnongthon"
+      },
+      "11": {
+        "Name": "root_conglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon_hkI",
+        "Alias": "root_conglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonnongthon",
+        "ChildSource": "root_conglap_mamnonnongthon_hkI"
+      },
+      "12": {
+        "Name": "root_conglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon_hkII",
+        "Alias": "root_conglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonnongthon",
+        "ChildSource": "root_conglap_mamnonnongthon_hkII"
+      },
+      "13": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsnongthon"
+        },
+        "NameInSource": "root_conglap_thcsnongthon",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsnongthon"
+      },
+      "14": {
+        "Name": "root_conglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsnongthon_hkI",
+        "Alias": "root_conglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsnongthon",
+        "ChildSource": "root_conglap_thcsnongthon_hkI"
+      },
+      "15": {
+        "Name": "root_conglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsnongthon_hkII",
+        "Alias": "root_conglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsnongthon",
+        "ChildSource": "root_conglap_thcsnongthon_hkII"
+      },
+      "16": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonmiennui"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonmiennui"
+      },
+      "17": {
+        "Name": "root_conglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui_hkI",
+        "Alias": "root_conglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonmiennui",
+        "ChildSource": "root_conglap_mamnonmiennui_hkI"
+      },
+      "18": {
+        "Name": "root_conglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui_hkII",
+        "Alias": "root_conglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonmiennui",
+        "ChildSource": "root_conglap_mamnonmiennui_hkII"
+      },
+      "19": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsmiennui"
+        },
+        "NameInSource": "root_conglap_thcsmiennui",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsmiennui"
+      },
+      "20": {
+        "Name": "root_conglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsmiennui_hkI",
+        "Alias": "root_conglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsmiennui",
+        "ChildSource": "root_conglap_thcsmiennui_hkI"
+      },
+      "21": {
+        "Name": "root_conglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsmiennui_hkII",
+        "Alias": "root_conglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsmiennui",
+        "ChildSource": "root_conglap_thcsmiennui_hkII"
+      },
+      "22": {
+        "Name": "root",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "conglap"
+        },
+        "NameInSource": "root_conglap",
+        "Alias": "root",
+        "IsCloud": null,
+        "ParentSource": "root",
+        "ChildSource": "root_conglap"
+      },
+      "23": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonthanhthi"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi"
+      },
+      "24": {
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi_hkI"
+      },
+      "25": {
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi_hkII"
+      },
+      "26": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsthanhthi"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi"
+      },
+      "27": {
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsthanhthi",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi_hkI"
+      },
+      "28": {
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsthanhthi",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi_hkII"
+      },
+      "29": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonnongthon"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon"
+      },
+      "30": {
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonnongthon",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon_hkI"
+      },
+      "31": {
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonnongthon",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon_hkII"
+      },
+      "32": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsnongthon"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon"
+      },
+      "33": {
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsnongthon",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon_hkI"
+      },
+      "34": {
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsnongthon",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon_hkII"
+      },
+      "35": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonmiennui"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui"
+      },
+      "36": {
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonmiennui",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui_hkI"
+      },
+      "37": {
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonmiennui",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui_hkII"
+      },
+      "38": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsmiennui"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui"
+      },
+      "39": {
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsmiennui",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui_hkI"
+      },
+      "40": {
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsmiennui",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui_hkII"
+      },
+      "41": {
+        "Name": "root",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "ngoaiconglap"
+        },
+        "NameInSource": "root_ngoaiconglap",
+        "Alias": "root",
+        "IsCloud": null,
+        "ParentSource": "root",
+        "ChildSource": "root_ngoaiconglap"
+      },
+      "42": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi_hkI",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "43": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi_hkII",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "44": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkI",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "45": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkII",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "46": {
+        "Name": "databases",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "cha"
+        },
+        "NameInSource": "databases_cha",
+        "Alias": "databases",
+        "IsCloud": null,
+        "ParentSource": "databases",
+        "ChildSource": "databases_cha"
+      },
+      "47": {
+        "Name": "databases_data",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "databases_data_children_all",
+        "Alias": "databases_data",
+        "IsCloud": null,
+        "ParentSource": "databases_data",
+        "ChildSource": "databases_data_children_all"
+      },
+      "48": {
+        "Name": "databases",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "data"
+        },
+        "NameInSource": "databases_data",
+        "Alias": "databases",
+        "IsCloud": null,
+        "ParentSource": "databases",
+        "ChildSource": "databases_data"
+      },
+      "49": {
+        "Name": "databases_data_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "databases_data_children_all_children_all",
+        "Alias": "databases_data_children_all",
+        "IsCloud": null,
+        "ParentSource": "databases_data_children_all",
+        "ChildSource": "databases_data_children_all_children_all"
+      },
+      "50": {
+        "Name": "Quanhệ",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ",
+        "Alias": "Quanhệ",
+        "IsCloud": null,
+        "ParentSource": "databases_cha",
+        "ChildSource": "databases_data_children_all"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page2",
+      "Guid": "287e37e3739a6ce7238aef25db7e13cb",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "055ff569887ad8c5d2694e604f981bfc",
+              "ClientRectangle": "0.8,0,7.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Xã: ……………………"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "74b265eded509e163f03b17e0ecac7fc",
+              "ClientRectangle": "11,0,8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Năm hiện trạng: ……………."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,2.2,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "5cb7f46a75e5b0ffb3adf7df3dbf8d18",
+              "ClientRectangle": "0,0,1.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "STT"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "3d6f92b2bdc2554ce285aa2cd3f3364c",
+              "ClientRectangle": "1.4,0,8.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CHỈ TIÊU"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "8a0f3b0a9de2f7b03e6c2e2d2222912c",
+              "ClientRectangle": "14,0,5,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Số liệu"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "96fa3dffd4b3f70d43483cb21ca1cd16",
+              "ClientRectangle": "10,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Đơn vị tính"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,4,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "164e0d0c16271c7f95abdf3381b6160c",
+              "ClientRectangle": "0,0,1.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineABC}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "1c39a91c85b1d8752822fd1b04a81c4d",
+              "ClientRectangle": "1.4,0,8.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_cha.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "0d3ae683e4d5b47e5b96dad32896c1fc",
+              "ClientRectangle": "14,0,5,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "244460d1bd2548b27e26371a0b58b886",
+              "ClientRectangle": "10,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "databases_cha"
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "Guid": "e9082507c564d69db9aa949f57f1ba64",
+          "ClientRectangle": "0,5.8,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "f4a53b8edb6a68a05835b163584fc834",
+              "ClientRectangle": "0,0,1.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineRoman}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "9b3e05a44069ada15ec3f6d0636e0b14",
+              "ClientRectangle": "1.4,0,8.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data_children_all.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "a42c9060d579dfbc41dfebba053998c7",
+              "ClientRectangle": "14,0,5,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "3283f27e83ae4b5a34596b746e7efb28",
+              "ClientRectangle": "10,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "databases_data_children_all",
+          "DataRelationName": "Quanhệ",
+          "MasterComponent": "DataBand1"
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "Guid": "5655a90de28bbd7ba1ad33d145e63efd",
+          "ClientRectangle": "0,7.6,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "d95aa41b2057c88cb8134ac16a003f8c",
+              "ClientRectangle": "0,0,1.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Line}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "478609c53e84ddbf3d9804cc9419a935",
+              "ClientRectangle": "1.4,0,8.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{databases_data_children_all_children_all.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "ed73b1e61d99f8f0c5eb660b79d19747",
+              "ClientRectangle": "14,0,5,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "efb91a064aae2a3c922f384124ff07c3",
+              "ClientRectangle": "10,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "databases_data_children_all_children_all",
+          "DataRelationName": "databases_data_children_all_children_all",
+          "MasterComponent": "DataBand1"
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

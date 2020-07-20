@@ -1,0 +1,42 @@
+{
+  "description": "",
+  "nodejs": true,
+  "version": "2019.3.1",
+  "main": "Designer.html",
+  "app_name": "Designer",
+  "name": "Designer",
+  "dependencies": {
+    "jimp": "^0.2.28",
+    "mssql": "^5.0.2",
+    "mysql": "^2.15.0",
+    "node-firebird": "^0.8.4",
+    "pg": "^4.5.1",
+    "sync-request": "^3.0.1"
+  },
+  "window": {
+    "fullscreen": false,
+    "resizable": true,
+    "show": false,
+    "always-on-top": false,
+    "frame": false,
+    "title": "Designer",
+    "kiosk": false,
+    "kiosk_emulation": false,
+    "exe_icon": "Designer.png",
+    "visible": true,
+    "as_desktop": false,
+    "mac_icon": "Designer.png",
+    "position": "",
+    "width": 1024,
+    "show_in_taskbar": true,
+    "height": 600,
+    "transparent": false,
+    "toolbar": true,
+    "icon": "Designer.png"
+  },
+  "webkit": {
+    "page-cache": false,
+    "java": false,
+    "plugin": true
+  }
+}

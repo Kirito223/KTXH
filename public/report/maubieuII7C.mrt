@@ -1,0 +1,2753 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "0a9481aa9d98f41fc56cddb11b32036e",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "maubieuII7C.mrt",
+  "ReportCreated": "/Date(1585690567000+0700)/",
+  "ReportChanged": "/Date(1585690567000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "0",
+        "Alias": "0",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "namthuchien",
+            "Index": -1,
+            "NameInSource": "namthuchien",
+            "Alias": "namthuchien",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "tenkehoach",
+            "Index": -1,
+            "NameInSource": "tenkehoach",
+            "Alias": "tenkehoach",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "isDelete",
+            "Index": -1,
+            "NameInSource": "isDelete",
+            "Alias": "isDelete",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "madonvi",
+            "Index": -1,
+            "NameInSource": "madonvi",
+            "Alias": "madonvi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "maubieus",
+            "Index": -1,
+            "NameInSource": "maubieus",
+            "Alias": "maubieus",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.0"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "0_maubieus",
+        "Alias": "0_maubieus",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenbieu",
+            "Index": -1,
+            "NameInSource": "tenbieu",
+            "Alias": "tenbieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "sobieumau",
+            "Index": -1,
+            "NameInSource": "sobieumau",
+            "Alias": "sobieumau",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "ngaybanhanh",
+            "Index": -1,
+            "NameInSource": "ngaybanhanh",
+            "Alias": "ngaybanhanh",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "vanbanchidao",
+            "Index": -1,
+            "NameInSource": "vanbanchidao",
+            "Alias": "vanbanchidao",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "kehoach",
+            "Index": -1,
+            "NameInSource": "kehoach",
+            "Alias": "kehoach",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "truocngay",
+            "Index": -1,
+            "NameInSource": "truocngay",
+            "Alias": "truocngay",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "thons",
+            "Index": -1,
+            "NameInSource": "thons",
+            "Alias": "thons",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "thanhviens",
+            "Index": -1,
+            "NameInSource": "thanhviens",
+            "Alias": "thanhviens",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.0_maubieus"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all_children_all"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all",
+        "Alias": "nutcon_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon",
+        "Alias": "nutcon",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet",
+        "Alias": "chitiet",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet1",
+        "Alias": "chitiet1",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet1"
+      },
+      "8": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet2",
+        "Alias": "chitiet2",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet2"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet3",
+        "Alias": "chitiet3",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet3"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "0",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "maubieus"
+        },
+        "NameInSource": "0_maubieus",
+        "Alias": "0",
+        "IsCloud": null,
+        "ParentSource": "0",
+        "ChildSource": "0_maubieus"
+      },
+      "1": {
+        "Name": "nutcon_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "2": {
+        "Name": "nutcon_children_all_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all"
+      },
+      "3": {
+        "Name": "nutcon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all",
+        "Alias": "nutcon",
+        "IsCloud": null,
+        "ParentSource": "nutcon",
+        "ChildSource": "nutcon_children_all"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "a1911f0cdc9354b125e3ea1f57cb6bf4",
+      "Conditions": {
+        "0": {
+          "Ident": "StiCondition",
+          "Condition": "Containing",
+          "Value1": "true",
+          "BorderSides": "None"
+        }
+      },
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text253",
+              "Guid": "a9b9c3cb7f450e8a015149f1a10e66aa",
+              "ClientRectangle": "0,0,6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ỦY BAN NHÂN DÂN"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text254",
+              "Guid": "8c2df70a8a71dc2ec36b43bd1f302d76",
+              "ClientRectangle": "7,0,12,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text255",
+              "Guid": "6b67da2c630249d456842bd9f70f9ebe",
+              "ClientRectangle": "0,0.6,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{n0.tendonvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text256",
+              "Guid": "aaa88d351496042b8b94a755683e26f0",
+              "ClientRectangle": "7,0.6,12,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Độc lập – Tự do – Hạnh phúc"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "93ebad09e1ac801aa27208505af4e342",
+              "ClientRectangle": "0,2.6,19,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "KẾ HOẠCH PHÁT TRIỂN KINH TẾ - XÃ HỘI\r\nNĂM {n0.namthuchien}\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;16;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive1",
+              "ClientRectangle": "1.6,1.2,3,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            },
+            "6": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive2",
+              "ClientRectangle": "10.4,1.2,5,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,5.2,19,50",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "4cd8fb5c082c3b0a88da254807be4930",
+              "ClientRectangle": "1.2,0,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần I: Đánh giá tình hình thực hiện KHPT KT-XH năm hiện tại (X)"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "6f9d6fef8e78fba67b5166187bfd0a08",
+              "ClientRectangle": "1.6,1,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "1. Những thuận lợi, khó khăn trong thực hiện KHPT KT-XH xã 6 tháng đầu năm\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "5fbac27e62e8372da1907c856a75fda6",
+              "ClientRectangle": "1.2,1.6,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này có mục đích đưa ra những kết luận chính liên quan đến tác động từ bên ngoài, vận động từ bên trong khu vực Kinh tế - Xã hội của xã để thấy được điểm mạnh, điểm yếu trong thực hiện kế hoạch Kinh tế - Xã hội của xã trong 6 tháng vừa qua, các cơ hội và thách thức đối với nhiệm vụ trong thời gian còn lại để xác định các mục tiêu và giải pháp thực hiện mang tính định hướng.\r\nCó các nội dung sau:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "03624ad1288edc766f4dda1936109583",
+              "ClientRectangle": "2.4,2.6,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tThuận lợi cần phát huy và khai thác"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b527b1c02587e23aceea7f0c00c05841",
+              "ClientRectangle": "1.2,3.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<div style=\"\"><font size=\"14\"><b style=\"\">Các yếu tố từ bên ngoài</b>: Nêu tóm tắt về các yếu tố tích cực từ chính sách, định hướng phát triển kinh tế, thành quả kinh tế của giai đoạn trước và những thay đổi trong tình hình phát triển kinh tế khu vực (các xã, huyện, tỉnh lân cận) có tác động trực tiếp giúp thực hiện tốt các nội dung kế hoạch trong thời gian qua.</font></div><div style=\"font-family: &quot;Times New Roman&quot;;\"><font size=\"14\"><br></font></div><div style=\"font-family: &quot;Times New Roman&quot;;\"><font size=\"14\"><b style=\"\"><span lang=\"DE\">Các yếu tố ở tại địa bàn xã:</span></b><span lang=\"DE\" style=\"\">&nbsp;Đưa ra nhận định về tiềm năng tại xã về tài nguyên, khí hậu, môi trường, con người (nguồn lao động, trình độ dân trí ..), vị trí địa lý, tự nhiên đã có ảnh hưởng tốt đến việc thực hiện kế hoạch trong thời gian qua.</span></font></div>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "239993f6e04ef57e09d3c4ffa9006dc3",
+              "ClientRectangle": "2.4,3.8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tNhững khó khăn thách thức cần hạn chế, khắc phục"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "57707c4b245651b8a4f08fe1f426d35f",
+              "ClientRectangle": "1.2,4.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>Các yếu tố từ bên ngoài:</b> Nêu tóm tắt về các yếu tố tiêu cực từ bên ngoài gây ra những trở ngại đối với việc thực hiện các nội dung kế hoạch trong thời gian qua. Các yếu tố đó có thể là: Biến đổi tiêu cực về tình hình Kinh tế - Xã hội các vùng lân cận, điều kiện tự nhiên, khí hậu xuống cấp, thảm họa.<br><b>\r\nCác yếu tố ở tại địa bàn xã:</b> Tóm tắt về những thách thức, khó khăn do điều kiện chủ quan như: Trình độ, năng lực quản lý chính quyền với các lĩnh vực Kinh tế - Xã hội chính, phân công trách nhiệm thực hiện, công tác giám sát thực hiện các hoạt động kế hoạch, những thay đổi về tập quán dân cư trong vùng, tập quán văn hóa …vv có tác động tiêu cực tới tình hình Kinh tế - Xã hội chung trong thời gian qua."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "a0809ae8565d88e14783dad7b42d7609",
+              "ClientRectangle": "1.6,5,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>2. Đánh giá tình hình</b>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "693e0d503ad755e52f6d4089f3526ad4",
+              "ClientRectangle": "1.2,5.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nêu tóm tắt kết quả đạt được, tồn tại, hạn chế và nguyên nhân theo từng lĩnh vực với thể thức."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "83d19b6ee74dc03bd725775ae6efceec",
+              "ClientRectangle": "2,6.2,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<i><b>2.1 Tên lĩnh vực [Nông, lâm, ngư nghiệp]</b></i>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "566f5a2cf55180114b99eab714c64c2c",
+              "ClientRectangle": "2.4,6.8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tKết quả đạt được và Tồn tại"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "f5b461242de6d82e056ff6fa3d0cb0bc",
+              "ClientRectangle": "1.2,7.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dựa trên các chỉ tiêu chính của lĩnh vực, nêu tóm tắt một vài con số, chẳng hạn: Tổng giá trị sản xuất nông nghiệp 6 tháng đầu năm ước đạt 3 tỷ đồng.\r\nNếu có thêm số liệu cụ thể thì phân tách thành 2 phần là Kết quả đạt được và Tồn tại, nếu không có số liệu thì trộn chung làm 1 phần.\r\nĐây là phần tổng hợp các vấn đề/ tồn tại trong biểu II.4.A đã thực hiện từ bước tổng hợp trước đó. Chỉ cần chép lại hoặc sao chép (nếu sử dụng máy tính) từ biểu tổng hợp sang và trình bày dưới dạng lời văn xuôi.\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "8acbd58abcdb5ec21c8e041f17b46a7f",
+              "ClientRectangle": "2.4,8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tNguyên nhân"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "f69c3b944251a323838c383f0a2c9d25",
+              "ClientRectangle": "1.2,8.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Đây là phần tổng hợp nguyên nhân trong biểu II.4.A đã phân tích từ bước tổng hợp trước đó. Chỉ cần chép lại hoặc sao chép (nếu sử dụng máy tính) từ biểu tổng hợp sang và trình bày dưới dạng lời văn xuôi.\r\nCác lĩnh vực cần bao quát là:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "06624bc2c35c1bdff0e86de837bf2528",
+              "ClientRectangle": "2.4,9.2,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.1. Nông nghiệp (Trồng trọt, Chăn nuôi, Lâm nghiệp, Thủy sản)\r\n2.2. Công nghiệp, tiểu thủ công nghiệp, xây dựng, cơ sở hạ tầng\r\n2.3. Dịch vụ (Thương mại, du lịch, vận tải, giải trí )\r\n2.4. Ngân sách và đầu tư phát triển\r\n2.5. Giáo dục và khuyến học\r\n2.6. Y tế, Dân số, Kế hoạch hóa gia đình\r\n2.7. Lao động, việc làm và xóa đói giảm nghèo\r\n2.8. Tài nguyên và môi trường\r\n2.9. Hoạt động của các tổ chức chính trị xã hội\r\n2.10. Văn hóa – Thể thao\r\n2.11. An ninh, Quốc phòng\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "9d6075b4939cd2a809e4254ad55364f8",
+              "ClientRectangle": "1.2,10.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này phục vụ cho việc dự báo các kết quả có thể đạt được trong thời gian còn lại của năm và là nơi phù hợp để đưa ra những biện pháp để cải thiện kết quả thực hiện kế hoạch trong thời gian còn lại. Phần lớn các thông tin thống kê chính trong phần này sẽ được cập nhật theo suốt thời gian lập kế hoạch.\r\nCác nội dung chính cần thể hiện là:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "ef863e381b3f158c9054901bac804322",
+              "ClientRectangle": "1.6,9.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3. Dự kiến kết quả thực hiện cả năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "1f10d9cb0d0377af9e0a95875464c9d6",
+              "ClientRectangle": "2,11,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.1. Dự kiến kết quả thực hiện cả năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "0099ac04186cd1d8d58f84c060157417",
+              "ClientRectangle": "1.2,11.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Căn cứ vào kết quả đánh giá thực hiện một số chỉ tiêu chính của bản kế hoạch đã xây dựng năm trước, cần cung cấp số liệu theo các chỉ tiêu mềm dẻo  sau đây để phản ánh tổng quát về tình hình thực hiện một số nhiệm vụ chủ yếu của xã trong năm đánh giá hiện trạng (năm X)."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "ee707dd88696336091fbe02bc8b0d1df",
+              "ClientRectangle": "1.6,12.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tThu nhập bình quân đầu người (ước)...............................triệu đồng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "20": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "d95b6fb6b000039737c8a0df0611d745",
+              "ClientRectangle": "1.6,12.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ nghèo.......................%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "21": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "d0d32412965854bd7b307aa0c0e99fc8",
+              "ClientRectangle": "1.6,13.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em từ 3-5 tuổi đến lớp.....................%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "22": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "018eb51d7f444a54a6f2d117fb6c5b44",
+              "ClientRectangle": "1.2,14.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<font size=\"10\"><span class=\"MsoFootnoteReference\" style=\"\"><!--[if !supportFootnotes]--><span class=\"MsoFootnoteReference\" style=\"\">[1]</span></span>Chỉ tiêu (thuật ngữ chính xác phải là Chỉ số, song do thói quen sử dụng tại địa phương nên trong sổ tay vẫn dùng là Chỉ tiêu) mềm dẻo có nghĩa là cấp xã hoàn toàn có thể bổ sung thêm những chỉ tiêu khác theo hướng dẫn của cấp huyện để phản ánh đúng nhất chức năng, nhiệm vụ của chính quyền địa phương trong cung cấp dịch vụ công cho cộng đồng trên địa bàn. Nhóm chỉ tiêu này nên trình bày theo từng lĩnh vực cụ thể. Chẳng hạn có thể sử dụng các chỉ tiêu phản ánh chất lượng thực hiện công tác cải cách hành chính công.</font>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "23": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "Guid": "ed9475738ff33432f357a185a924b646",
+              "ClientRectangle": "1.6,15,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi tiểu học đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "24": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "Guid": "d46b8b8c86da842088ebc2ac361a8c7f",
+              "ClientRectangle": "1.6,15.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ tăng dân số tự nhiên\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "25": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "Guid": "1893a4934c547350d075f926c93cbe5f",
+              "ClientRectangle": "1.6,16.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ thôn/ xóm/ bản đạt tiêu chuẩn làng văn hóa\t\tlàng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "26": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "Guid": "deffa894228a5dece71ba68198dbd32a",
+              "ClientRectangle": "1.6,16.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ gia đình đạt tiêu chuẩn gia đình văn hóa\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "27": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "Guid": "53a466ae5938194ff2a2989011f3a087",
+              "ClientRectangle": "1.6,17.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ được dùng điện\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "28": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "Guid": "310a7529c9f08222fe8d296581d1c7bc",
+              "ClientRectangle": "1.6,18,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ có hố xí hợp vệ sinh\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "29": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "Guid": "869847b0c170023cb644ca9163c25b41",
+              "ClientRectangle": "2,18.6,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.2. Các biện pháp thực hiện kế hoạch đến cuối năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "30": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "Guid": "7c247a426c7bd86802de188793ed51c6",
+              "ClientRectangle": "1.2,19.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dựa trên căn cứ tóm tắt các thuận lợi, khó khăn, cơ hội, thách thức cũng như các tồn tại, nguyên nhân đã phân tích và trình bày trong các phần trước, đưa ra tóm tắt một số biện pháp cần thực hiện trong thời gian tới để khắc phục khó khăn, giảm nhẹ thiệt hại, phát huy được các yếu tố thuận lợi, tiềm năng."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "31": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "Guid": "15c639c8c5e96a936c19465843422c65",
+              "ClientRectangle": "1.2,20.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần II: Kế hoạch Phát triển Kinh tế - Xã hội năm tới (năm X+1)"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "32": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "Guid": "ccd0d98b917b23f08c020fdb7df4a994",
+              "ClientRectangle": "1.6,20.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "1. Dự báo tình hình"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "33": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "Guid": "c533261c536bc137c23855c34b0edb52",
+              "ClientRectangle": "1.2,21.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này sẽ đưa ra những nhận định, phân tích về những xu hướng thay đổi của điều kiện kinh tế, xã hội, văn hóa, kinh doanh, nhân lực …vv trong thời gian tới có thể mang lại những điều kiện tích cực hoặc gây ra những ảnh hưởng tiêu cực đối với phát triển Kinh tế - Xã hội của xã. Ngoài ra, cũng nên có những nhận định về các nguồn lực trong thời gian tới để có kế hoạch khai thác hợp lý.\r\nCác nội dung cần bao hàm những mặt sau:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "34": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "Guid": "4d86c4de533e313e1490402bc75d7b17",
+              "ClientRectangle": "2.4,22,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tCác yếu tố dự kiến có tác động tích cực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "35": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "Guid": "e04dbb012a8dfb1fcadb0ba22bd4c6f8",
+              "ClientRectangle": "1.2,22.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Khi trình bày, cần nêu bật ra các yếu tố từ bên ngoài dự kiến sẽ thay đổi (từ huyện, tỉnh, các xã khác) theo đó sẽ mang lại những tác động tốt, giúp xã hoàn thành hoặc đẩy mạnh được các hoạt động phát triển kinh tế xã hội. Cần nêu được các yếu tố này sẽ mang lại tác động như thế nào; chẳng hạn:<i> Những thay đổi trong định hướng phát triển khu công nghiệp tập trung của tỉnh và huyện sẽ làm cho môi trường phát triển kinh tế xã hội chung trong xã biến đổi tích cực, tạo điều kiện để người dân chủ động tham gia vào các hoạt động phát triển nghề phụ ...vv</i>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "36": {
+              "Ident": "StiText",
+              "Name": "Text38",
+              "Guid": "717ac4b95976d6032208ca5dca78dcb8",
+              "ClientRectangle": "2.4,23.2,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tCác yếu tố dự kiến có tác động tiêu cực."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "37": {
+              "Ident": "StiText",
+              "Name": "Text39",
+              "Guid": "003bc934c067f1141321da50067b5ad6",
+              "ClientRectangle": "1.2,23.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tương tự như trên, cần tóm lược những nhân tố từ bên ngoài dự kiến sẽ thay đổi nhưng gây tác động tiêu cực, làm hạn chế các hoạt động phát triển kinh tế xã hội của xã hoặc thậm chí làm mất đi những nguồn lực tiềm năng trong xã. Khi phân tích, cần nêu cụ thể mức độ tác động tiêu cực; chẳng hạn: <i>Quy hoạch về vùng phát triển cây công nghiệp của huyện, tuy có thể tác động tốt đến tình hình KT-XH chung trong vùng nhưng sẽ làm tăng nguy cơ chuyển dịch tập quán canh tác cây đặc sản chè San tuyết sang các giống chè khác, rất có thể xã ta sẽ bị mai một giống chè nổi tiếng đã có lịch sử từ hàng trăm năm nay.</i>"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "38": {
+              "Ident": "StiText",
+              "Name": "Text40",
+              "Guid": "607af13591f817da10ac1fc8835049d2",
+              "ClientRectangle": "1.6,24.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2. Mục tiêu"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "39": {
+              "Ident": "StiText",
+              "Name": "Text41",
+              "Guid": "a9481e385da0c28fd48c8f23c20194f6",
+              "ClientRectangle": "2,25,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.1. Mục tiêu tổng thể "
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "40": {
+              "Ident": "StiText",
+              "Name": "Text42",
+              "Guid": "c8edbb3990124b867ff92223c85ca8d5",
+              "ClientRectangle": "1.2,25.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này trình bày mục tiêu tổng thể mà xã dự kiến đạt trong giai đoạn trung hạn (thông thường là 5 năm) và cuối năm kế hoạch (X+1). "
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "41": {
+              "Ident": "StiText",
+              "Name": "Text43",
+              "Guid": "0c590e686d2f503fce3826bc4610d81b",
+              "ClientRectangle": "1.2,26.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "a/ Mục tiêu tổng thể dài hạn 5 năm:  Thông thường, mục tiêu này có thể trích ra từ bản Kế hoạch phát triển Kinh tế - Xã hội 5 năm của xã, Nghị quyết của Hội đồng Nhân dân …vv. Ví dụ:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "42": {
+              "Ident": "StiText",
+              "Name": "Text44",
+              "Guid": "7f0474bd057df01fd01e9a0d4aacee1f",
+              "ClientRectangle": "1.2,26.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>Mục tiêu: </b>Tăng cường khai thác triệt để các nguồn lực trên địa bàn, nâng cao năng suất cây trồng, thúc đẩy chuyển đổi cơ cấu ngành trong nông nghiệp, phấn đấu đạt mức thu nhập bình quân đầu người bằng mức trung bình của huyện trong 5 năm tới. (Trích dẫn từ kế hoạch 5 năm của xã). "
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "43": {
+              "Ident": "StiText",
+              "Name": "Text45",
+              "Guid": "85eb526f93a0eb88c97f79e25b542886",
+              "ClientRectangle": "1.2,27.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>b/  Mục tiêu tổng thể năm kế hoạch:</b> &nbsp;<br><div>Có thể hiểu đây chính là chủ đề phát triển của toàn xã trong năm X+1 nhằm hướng tới  đạt mục tiêu dài hạn, thường là mục tiêu kế hoạch 5 năm. Mục tiêu này phản ảnh mong muốn tổng thể về tình hình của xã khi kết thúc năm kế hoạch. Nên trình bày dưới dạng cô đọng thể hiện được tình trạng mong đợi của toàn thể nhân dân, chính quyền xã khi thực hiện bản Kế hoạch PT KT-XH.<br>\r\nVí dụ: <br>\r\nMục tiêu tổng thể của xã năm 2017: Nâng cao năng suất, sản lượng cây trồng vật nuôi; cải thiện điều kiện giao thông phát triển giao thương hàng hóa; nâng cao mức thu nhập bình quân đầu người của người dân trong xã.  \r\n</div>"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "44": {
+              "Ident": "StiText",
+              "Name": "Text46",
+              "Guid": "1c3b14145ca4ed3bb08a90f7088559bd",
+              "ClientRectangle": "2,28,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.2. Mục tiêu cụ thể"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "45": {
+              "Ident": "StiText",
+              "Name": "Text47",
+              "Guid": "f432cb52d0e7c00d3e507fabc52b42d7",
+              "ClientRectangle": "1.2,28.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Mục tiêu cụ thể của các lĩnh vực/ngành:</b><br>\r\nPhần này là tóm tắt theo lĩnh vực chủ yếu của những mục tiêu đã xác định trong quá trình tổng hợp. Nên theo hướng bắt đầu từ các định hướng lớn nêu trong Kế hoạch phát triển Kinh tế - Xã hội 5 năm của xã, Nghị quyết của Hội đồng Nhân dân …vv. Làm như thế sẽ tạo ra sự gắn kết chặt chẽ giữa kế hoạch phát triển hàng năm với các định hướng mang tính chất dài hạn hơn.<br>\r\nĐây là trạng thái mong đợi vào cuối năm kế hoạch của từng ngành và việc đạt được mục tiêu của mỗi ngành sẽ giúp đạt được mục tiêu phát triển của toàn thể cộng đồng xã.\r\nChẳng hạn, với lĩnh vực nông nghiệp, mục tiêu cụ thể có thể là “Giống cây trồng được tăng cường cả về chất lượng và số lượng”.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "46": {
+              "Ident": "StiText",
+              "Name": "Text48",
+              "Guid": "fcb807550b42060b441fc0f3d347c852",
+              "ClientRectangle": "2,29.2,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.3. Chỉ tiêu phát triển"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "47": {
+              "Ident": "StiText",
+              "Name": "Text49",
+              "Guid": "595b57d9f892246ff6075399ee5108d3",
+              "ClientRectangle": "1.2,29.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dưới đây là danh mục các chỉ tiêu phát triển tham khảo. Các chỉ tiêu này nên sử dụng mềm dẻo để phản ánh sát thực với mục tiêu của địa phương. Tham khảo các chỉ tiêu cấp huyện vẫn giao hàng năm cho xã."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "48": {
+              "Ident": "StiText",
+              "Name": "Text50",
+              "Guid": "845b00a3eed09cf813dd981d8d94a0d0",
+              "ClientRectangle": "1.6,30.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tThu nhập bình quân đầu người\t\ttriệu đồng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "49": {
+              "Ident": "StiText",
+              "Name": "Text51",
+              "Guid": "665f2cc385260e3a1f0dfdc15089097b",
+              "ClientRectangle": "1.6,31,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ nghèo\t\thộ;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "50": {
+              "Ident": "StiText",
+              "Name": "Text52",
+              "Guid": "5918c19b74703cd028baeba7839d8d1a",
+              "ClientRectangle": "1.6,31.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em từ 3-5 tuổi đến lớp \t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "51": {
+              "Ident": "StiText",
+              "Name": "Text53",
+              "Guid": "3e8d40e508c995af9bfc2c7cbce23111",
+              "ClientRectangle": "1.6,32.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi tiểu học đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "52": {
+              "Ident": "StiText",
+              "Name": "Text54",
+              "Guid": "7c241eb48b6f2942ed78a64434875a3e",
+              "ClientRectangle": "1.6,32.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi trung học cơ sở đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "53": {
+              "Ident": "StiText",
+              "Name": "Text55",
+              "Guid": "449da4b7dbac77c08679880064761fbc",
+              "ClientRectangle": "1.6,33.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ tăng dân số tự nhiên\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "54": {
+              "Ident": "StiText",
+              "Name": "Text56",
+              "Guid": "ce036386e820cb5585095ab1221caf80",
+              "ClientRectangle": "1.6,34,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ thôn/ xóm/ bản đạt tiêu chuẩn làng văn hóa\t\tlàng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "55": {
+              "Ident": "StiText",
+              "Name": "Text57",
+              "Guid": "adbbfc0b4534624736eb404ccce0c1b7",
+              "ClientRectangle": "1.6,34.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ gia đình đạt tiêu chuẩn gia đình văn hóa\t\thộ;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "56": {
+              "Ident": "StiText",
+              "Name": "Text58",
+              "Guid": "f343d1d61ca1bacdb88c022004b8d6e0",
+              "ClientRectangle": "1.6,35.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ được dùng điện\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "57": {
+              "Ident": "StiText",
+              "Name": "Text59",
+              "Guid": "e88f1d0221ce0c31f431c7f8dec556e6",
+              "ClientRectangle": "1.6,35.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ có hố xí hợp vệ sinh\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "58": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "Guid": "4e7faf357ec7bdbd300cdf4eb8d68b79",
+              "ClientRectangle": "1.6,36.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3. Các giải pháp chính"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "59": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "Guid": "fa666a757057a2e5facd8d2dd5ba63c6",
+              "ClientRectangle": "1.2,37,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này chính là kết quả tổng hợp các giải pháp trong bước trước và cũng phân ra theo các lĩnh vực như sau:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "60": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "Guid": "5f8ba82a80bfd5599322320e83a8256b",
+              "ClientRectangle": "2.4,37.6,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.1. Nông nghiệp (Trồng trọt, Chăn nuôi, Lâm nghiệp, Thủy sản)3.2. Công nghiệp, tiểu thủ công nghiệp, xây dựng, cơ sở hạ tầng …<br>\r\n3.3. Dịch vụ (Thương mại, du lịch, vận tải, giải trí …)<br>\r\n3.4. Ngân sách và đầu tư phát triển<br>\r\n3.5. Giáo dục và khuyến học<br>\r\n3.6. Y tế, Dân số, Kế hoạch hóa gia đình<br>\r\n3.7. Lao động, việc làm và xóa đói giảm nghèo<br>\r\n3.8. Tài nguyên và môi trường<br>\r\n3.9. Hoạt động của các tổ chức chính trị xã hội<br>\r\n3.10. Văn hóa – Thể thao<br>\r\n3.11. An ninh, Quốc phòng<br>\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "61": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "Guid": "6b7958eec19eddfb0f78ab7a33fad108",
+              "ClientRectangle": "1.6,38.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4. Khung Kế hoạch"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "62": {
+              "Ident": "StiText",
+              "Name": "Text64",
+              "Guid": "434f4ddad771f2f9630966c5cedb48b5",
+              "ClientRectangle": "2,38.8,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.1. Kế hoạch đã có nguồn lực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "63": {
+              "Ident": "StiText",
+              "Name": "Text65",
+              "Guid": "5ba43acbb3f04d3cce885c5d0b39b4dd",
+              "ClientRectangle": "1.2,39.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này sẽ trình bày các hoạt động đã được lập kế hoạch, có phân bổ nguồn lực thực hiện từ các chương trình mục tiêu quốc gia, tỉnh, huyện, ngân sách nhà nước, các chương trình sự nghiệp, đầu tư xây dựng cơ bản và những dự án đã khẳng định được nguồn lực (bao gồm phần đóng góp của dân). Đây là Mẫu biểu II.6.A trong bộ biểu tổng hợp của xã. Khi in bản thảo, cần bỏ trống trang này và bổ sung bằng bản in của biểu II.6.A có trong phần mềm tổng hợp kế hoạch xã."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "64": {
+              "Ident": "StiText",
+              "Name": "Text66",
+              "Guid": "2629b59ac7b751226c4a1907e537de20",
+              "ClientRectangle": "2,40,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.2. Kế hoạch đề xuất nguồn lực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "65": {
+              "Ident": "StiText",
+              "Name": "Text67",
+              "Guid": "b81f59f1fb3345a051dd711f7c5cb12f",
+              "ClientRectangle": "1.2,40.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này bao gồm các hoạt động đề xuất chưa phân bổ được nguồn lực hoặc chưa xác định được nguồn lực để thực hiện, tuy nhiên đã có mức xếp loại ưu tiên. Đây là Mẫu biểu II.6.B trong bộ biểu tổng hợp của xã. Các hoạt động trong Mẫu biểu này là cơ sở cơ sở để các cấp, các chương trình dự án, các bên liên quan khác xem xét điều chỉnh và cân đối vốn trong năm kế hoạch hoặc năm sau hoặc cũng là danh mục đầu tư sẵn sàng nếu trong năm kế hoạch, xã tìm kiếm được các nguồn vốn thực hiện. \r\nKhi in bản thảo, cần bỏ trống trang này và bổ sung bằng bản in của biểu II.6.A có trong phần mềm tổng hợp kế hoạch xã.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "66": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "Guid": "811ed26e626d8afe2f4da972e633f41a",
+              "ClientRectangle": "1.2,41.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Mô tả cách tổ chức thực hiện các hoạt động đã nêu trong khung kế hoạch đó, nêu bật được vai trò, trách nhiệm của các bên liên quan (các ban ngành, thôn bản, lãnh đạo xã). Phần này cần đưa ra khung cơ cấu tổ chức tổng thể để biết rõ trách nhiệm khâu nối thực hiện của từng đơn vị tham gia. Các nội dung cần xác định là:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "67": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "Guid": "865367da86f5decf098daedeb6653c22",
+              "ClientRectangle": "1.6,41.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5. Tổ chức thực hiện"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "68": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "Guid": "e655fc1dbf2fce61a877c6af67537a62",
+              "ClientRectangle": "1.6,42.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tAi tham gia vào thực hiện kế hoạch?"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "69": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "Guid": "97b11a7d360acd9942a245cc8757469b",
+              "ClientRectangle": "1.6,43,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTrách nhiệm: Hỗ trợ, điều phối, khâu nối thực hiện ra sao?"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "70": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "Guid": "b6b1345b4bc2577d3f16ff5a1ab000a3",
+              "ClientRectangle": "1.6,43.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tGiám sát và Đánh giá: Cần xác định rõ <b>trách nhiệm giám sát/ đánh giá</b> về các <b>nội dung gì? Số lần thực hiện giám sát</b> theo tháng/ quý/ năm ra sao? Cách thức giám sát, các hệ thổng biểu mẫu báo cáo liên quan thế nào? Những ai tham gia vào quá trình giám sát. Phương pháp thực hiện cụ thể sẽ được cụ thể hóa trong phần thực hiện kế hoạch và khung theo dõi đánh giá Kế hoạch PT KT-XH hàng năm của xã. Tuy nhiên, cũng cần phải khái quát được những nội dung vừa đề cập để các bên liên quan hiểu được phạm vi, con người, thời gian và không gian mà xã dự kiến sẽ sử dụng cho công tác Giám sát đánh giá."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "71": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "Guid": "2da81eab87d1dc16aa1b24e384daa730",
+              "ClientRectangle": "1.2,44.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Trách nhiệm theo dõi giám sát cần phải được cụ thể đối với từng nội dung hoạt động dựa trên các mặt sau:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "72": {
+              "Ident": "StiText",
+              "Name": "Text74",
+              "Guid": "431b581f69e7e609e08c54f684055833",
+              "ClientRectangle": "1.6,44.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát về tiến độ thực hiện (Giám sát quá trình)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "73": {
+              "Ident": "StiText",
+              "Name": "Text75",
+              "Guid": "a49889aafb1d50f397fd337f58e9d7db",
+              "ClientRectangle": "1.6,45.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát về kết quả thực hiện (Giám sát đầu ra)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "74": {
+              "Ident": "StiText",
+              "Name": "Text76",
+              "Guid": "e94df86971a69452f9dcae08fd56c3cd",
+              "ClientRectangle": "1.6,46,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát ảnh hưởng, tác động của các hoạt động trong khung kế hoạch sau thời gian&nbsp;"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "75": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox1",
+              "ClientRectangle": "1,45,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "76": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox2",
+              "Guid": "0de87308ad07f7a8d4389c170aaf31bc",
+              "MaxSize": "0.4,0.4",
+              "ClientRectangle": "1,45.6,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "77": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox3",
+              "Guid": "8e515485d8d5e4ae0874b44ff852840d",
+              "MaxSize": "0.4,0.4",
+              "ClientRectangle": "1,46.2,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "78": {
+              "Ident": "StiText",
+              "Name": "Text77",
+              "Guid": "600414ab7c18d7624db39d7f3bad221d",
+              "ClientRectangle": "1.6,46.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "đối với xã hội, con người, môi trường …vv (Giám sát tác động)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "79": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "Guid": "7065147557f7727517dbb8a70deff59a",
+              "ClientRectangle": "1.2,47.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Cần chỉ rõ được các nội dung cần giám sát đối với mỗi hoạt động, nguồn tài liệu, phương tiện xác minh và cá nhân tham gia vào quá trình giám sát là ai? Thời gian định kỳ thực hiện giám sát đánh giá ra sao?<br>\r\nCác biểu mẫu liên quan sẽ được cung cấp khi triển khai thực hiện Theo dõi đánh giá và tổ chức thực hiện bản Kế hoạch PT KT-XH của xã.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "80": {
+              "Ident": "StiText",
+              "Name": "Text79",
+              "Guid": "0db600acb9dbc3a494f6228e51367ea3",
+              "ClientRectangle": "9,48.4,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "UBND XÃ …………………..."
+              },
+              "AutoWidth": true,
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "81": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive3",
+              "ClientRectangle": "1.6,14.4,5,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,56,19,0",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent"
+        }
+      },
+      "PaperSize": "A4",
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

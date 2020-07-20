@@ -1,0 +1,23 @@
+.e-datewidget {
+  width: 100%;
+}
+
+.modal-lg {
+  width: 72% !important;
+}
+
+.bd-example-modal-lg .modal-dialog {
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  top: calc(50% - 24px);
+}
+
+.bd-example-modal-lg .modal-dialog .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-search {
+  margin-top: 20px;
+}

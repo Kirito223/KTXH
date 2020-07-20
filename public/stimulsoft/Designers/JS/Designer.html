@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Designer</title>
+
+	<link id="stiviewer_stylesheet" href="styles/stimulsoft.viewer.office2013.whiteblue.css" rel="stylesheet">
+	<link id="stidesigner_stylesheet" href="styles/stimulsoft.designer.office2013.whiteblue.css" rel="stylesheet">
+	<link id="stidesignerruntime_stylesheet" href="styles/stimulsoft.designer.runtime.office2013.whiteblue.css"
+		rel="stylesheet">
+
+	<script src="scripts/jquery.1.8.3.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.reports.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.dashboards.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.reports.maps.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.viewer.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.designer.js" type="text/javascript"></script>
+	<script src="scripts/stimulsoft.designer.runtime.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		var path = require('path');
+		var gui = require('nw.gui');
+		var win = gui.Window.get();
+		var fs = require("fs");
+
+		if (process.env.LOCALAPPDATA) {
+			var stimulsoftPath = path.join(process.env.LOCALAPPDATA, "Stimulsoft");
+			var licenceKeyPath = path.join(stimulsoftPath, "license.key");
+			var licenceKeyPathWorkFolder = path.join(process.execPath.substring(0, process.execPath.lastIndexOf(path.sep) + 1), "license.key");
+			var accountSettingsPath = path.join(stimulsoftPath, "account.dat");
+			var licenceKeyTempPath = path.join(stimulsoftPath, "temp-license.key");
+			var accountSettingsTempPath = path.join(stimulsoftPath, "temp-account.dat");
+			var themeSettingsPath = path.join(stimulsoftPath, "Stimulsoft.Designer.GUI.json");
+
+			if (!fs.existsSync(stimulsoftPath)) fs.mkdirSync(stimulsoftPath);
+
+			StiJsDesigner.prototype.SaveLicenseKey = function (licenceKey) {
+				if (fs.existsSync(licenceKeyPath)) fs.unlinkSync(licenceKeyPath);
+				fs.writeFileSync(licenceKeyPath, licenceKey);
+			}
+
+			StiJsDesigner.prototype.LoadLicenseKey = function () {
+				var licenseKey = null;
+
+				if (fs.existsSync(licenceKeyPath)) {
+					licenseKey = Stimulsoft.System.IO.File.getFile(licenceKeyPath);
+					return licenseKey;
+				}
+
+				if (fs.existsSync(licenceKeyTempPath)) {
+					licenseKey = Stimulsoft.System.IO.File.getFile(licenceKeyTempPath);
+					if (fs.existsSync(licenceKeyTempPath)) fs.unlinkSync(licenceKeyTempPath);
+					this.options.licenseKey = licenseKey;
+
+					return licenseKey;
+				}
+
+				if (fs.existsSync(licenceKeyPathWorkFolder)) {
+					licenseKey = Stimulsoft.System.IO.File.getFile(licenceKeyPathWorkFolder);
+					return licenseKey;
+				}
+
+				return licenseKey;
+			}
+
+			StiJsDesigner.prototype.RemoveLicenseKey = function () {
+				if (fs.existsSync(licenceKeyPath)) fs.unlinkSync(licenceKeyPath);
+				if (fs.existsSync(licenceKeyPathWorkFolder)) fs.unlinkSync(licenceKeyPathWorkFolder);
+			}
+
+			StiJsDesigner.prototype.SaveAccountSettings = function (userInfo) {
+				var accountSettings = {
+					FirstName: userInfo.FirstName,
+					LastName: userInfo.LastName,
+					UserName: userInfo.UserName,
+					UserKey: this.options.UserKey,
+					SessionKey: this.options.SessionKey,
+					SessionDate: this.DateToJSONDateFormat(new Date())
+				};
+
+				if (!this.options.licenseKey) {
+					if (fs.existsSync(accountSettingsPath)) fs.unlinkSync(accountSettingsPath);
+					fs.writeFileSync(accountSettingsPath, Stimulsoft.Base.StiEncryption.encryptS(JSON.stringify(accountSettings), this.options.encriptKey));
+				}
+				else {
+					this.options.accountSettings = accountSettings;
+				}
+			}
+
+			StiJsDesigner.prototype.RemoveAccountSettings = function () {
+				if (fs.existsSync(accountSettingsPath)) fs.unlinkSync(accountSettingsPath);
+			}
+
+			StiJsDesigner.prototype.LoadAccountSettings = function () {
+				var accountSettings = null;
+
+				if (fs.existsSync(accountSettingsPath)) {
+					var accountSettingsStr = Stimulsoft.System.IO.File.getFile(accountSettingsPath);
+					accountSettings = JSON.parse(Stimulsoft.Base.StiEncryption.decryptS(accountSettingsStr, this.options.encriptKey));
+
+					return accountSettings;
+				}
+
+				if (fs.existsSync(accountSettingsTempPath)) {
+					var accountSettingsStr = Stimulsoft.System.IO.File.getFile(accountSettingsTempPath);
+					accountSettings = JSON.parse(Stimulsoft.Base.StiEncryption.decryptS(accountSettingsStr, this.options.encriptKey));
+					if (fs.existsSync(accountSettingsTempPath)) fs.unlinkSync(accountSettingsTempPath);
+					this.options.accountSettings = accountSettings;
+
+					return accountSettings;
+				}
+
+				return null;
+			}
+		}
+
+		StiJsDesigner.prototype.SaveThemeSettings = function (themeSettings) {
+			if (fs.existsSync(themeSettingsPath)) fs.unlinkSync(themeSettingsPath);
+			fs.writeFileSync(themeSettingsPath, JSON.stringify(themeSettings));
+		}
+
+		StiJsDesigner.prototype.LoadThemeSettings = function () {
+			var themeSettings = {
+				Theme: "Office2013White",
+				Style: "Teal"
+			};
+
+			if (fs.existsSync(themeSettingsPath)) {
+				themeSettings = JSON.parse(Stimulsoft.System.IO.File.getFile(themeSettingsPath));
+			}
+
+			return themeSettings;
+		}
+
+		var options = new Stimulsoft.Designer.StiDesignerOptions();
+		options.appearance.fullScreenMode = true;
+		options.appearance.interfaceType = "Mouse";
+		options.toolbar.showFileMenuExit = false;
+		options.viewerOptions.toolbar.showOpenButton = true;
+		options.appearance.showLocalization = true;
+		Stimulsoft.System.NodeJs.localizationPath = "locales";
+
+		var openReport = "";
+		var wizard = "";
+		var dataSetFiles = [];
+		var args = gui.App.argv;
+		for (var index = 0; index < args.length; index++) {
+			if (args[index].indexOf("=") != -1) {
+				args.splice(index + 1, 0, args[index].split("=")[1].trim());
+				args[index] = args[index].split("=")[0].trim();
+				index++;
+			}
+		}
+
+		for (var index = 0; index < args.length; index++) {
+			if (args[index].indexOf("-report") == 0) {
+				openReport = args[0].substring(7).trim();
+			}
+			else if (args[index] == "-runwizard") {
+				index++;
+				wizard = args[index];
+			}
+			else if (args[index] == "-locales") {
+				index++;
+				Stimulsoft.System.NodeJs.localizationPath = args[index];
+			}
+			else if (args[index] == "-data") {
+				index++;
+				var folder = args[index];
+				if (fs.existsSync(folder)) {
+					var files = fs.readdirSync(folder);
+
+					for (var fileIndex in files) {
+						if (path.extname(files[fileIndex]) == ".xsd" || path.extname(files[fileIndex]) == ".xml") {
+							dataSetFiles.push(path.join(folder, files[fileIndex]));
+						}
+					}
+				}
+			}
+		}
+
+
+		Stimulsoft.System.NodeJs.initialize(function () {
+			Stimulsoft.System.NodeJs.useWebKit = true;
+
+			var designer = new Stimulsoft.Designer.StiDesigner(options, "StiDesigner", false);
+
+			designer.overrideRenderHtml = designer.renderHtml;
+			designer.renderHtml = function (element) {
+				var isMaximize = true;
+				var changeLocalizationEvent = false;
+
+				if (designer.jsObject) {
+					isMaximize = designer.jsObject.options.toolBar.maximizeButton.style.display == "none";
+					changeLocalizationEvent = designer.jsObject.options.changeLocalizationEvent;
+				}
+
+				designer.overrideRenderHtml(element);
+				designer.jsObject.options.nodeJsMode = true;
+				designer.jsObject.InitializeLoginControls();
+
+				designer.jsObject.options.toolBar.closeButton.style.display = "";
+
+				designer.jsObject.options.toolBar.maximizeButton.style.display = isMaximize ? "none" : "";
+				designer.jsObject.options.toolBar.minimizeToWindowButton.style.display = isMaximize ? "" : "none";
+
+				if (!Stimulsoft.Base.StiLicense.licenseKey && !changeLocalizationEvent) {
+					//var lastDateShowingAuthFormStr = designer.jsObject.GetCookie("lastDateShowingAuthForm");
+					//var lastDateShowingAuthForm = lastDateShowingAuthFormStr ? designer.jsObject.JSONDateFormatToDate(lastDateShowingAuthFormStr) : null;
+					//var deltaDays = lastDateShowingAuthForm ? Math.floor(((new Date()).getTime() - new Date(lastDateShowingAuthForm).getTime()) / 1000 / 60 / 60 / 24) : null;
+					/*if (deltaDays == null || deltaDays >= 1)*/ designer.jsObject.options.forms.authForm.show();
+				}
+			}
+
+			designer.onExit = function (e) {
+				gui.App.quit();
+			}
+
+			designer.renderHtml("designer");
+
+			designer.jsObject.options.toolBar.minimizeButton.style.display = "";
+			designer.jsObject.options.toolBar.maximizeButton.style.display = "none";
+			designer.jsObject.options.toolBar.minimizeToWindowButton.style.display = "";
+
+			designer.jsObject.overrideAssignReport = designer.jsObject.assignReport;
+			designer.jsObject.assignReport = function (report) {
+				designer.jsObject.assignReport = designer.jsObject.overrideAssignReport;
+				designer.jsObject.assignReport(report);
+
+				if (wizard) {
+					if (wizard == "standard") {
+						designer.jsObject.ExecuteAction("standartReportButton");
+					}
+					else if (wizard == "masterdetail") {
+						designer.jsObject.ExecuteAction("masterDetailReportButton");
+					}
+				}
+
+				if (dataSetFiles) {
+					var dataSets = [];
+
+					for (var dataSetFilesIndex in dataSetFiles) {
+						var file = dataSetFiles[dataSetFilesIndex];
+
+						if (path.extname(file) == ".xsd") {
+							var fileName = path.basename(file, ".xsd");
+
+							var dataSet = new Stimulsoft.System.Data.DataSet(fileName);
+							dataSet.readXmlSchemaFile(file);
+							dataSets.push(dataSet);
+						}
+					}
+					for (var dataSetFilesIndex in dataSetFiles) {
+						var file = dataSetFiles[dataSetFilesIndex];
+						if (path.extname(file) == ".xml") {
+							var fileName = path.basename(file, ".xml");
+
+							var dataSet = null;
+							for (var dataSetIndex in dataSets) {
+								if (dataSets[dataSetIndex].dataSetName.toLower() == fileName.toLower()) dataSet = dataSets[dataSetIndex];
+							}
+
+							if (dataSet == null) {
+								dataSet = new Stimulsoft.System.Data.DataSet(fileName);
+							}
+							dataSet.readXmlFile(file);
+
+							designer.report.regData(dataSet.dataSetName, dataSet.dataSetName, dataSet);
+						}
+					}
+				}
+			}
+
+			if (openReport) {
+				var fileData = Stimulsoft.System.IO.File.getFile(openReport, true);
+				var base64Data = "base64," + Stimulsoft.System.Convert.toBase64String(fileData);
+				designer.jsObject.OpenReport(path.basename(openReport), base64Data);
+			}
+			else {
+				if (wizard == "blankdashboard") designer.report = Stimulsoft.Report.StiReport.createNewDashboard();
+				else designer.report = new Stimulsoft.Report.StiReport();
+			}
+		});
+
+		win.show();
+		win.maximize();
+
+	</script>
+</head>
+
+<body style="overflow: hidden">
+	<div id="designer"></div>
+</body>
+
+</html>

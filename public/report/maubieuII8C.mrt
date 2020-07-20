@@ -1,0 +1,1472 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "1a6c669ad833d17c769e43712c8e18e7",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "maubieuII8C.mrt",
+  "ReportCreated": "/Date(1585766167000+0700)/",
+  "ReportChanged": "/Date(1585766167000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all_children_all"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all",
+        "Alias": "nutcon_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon",
+        "Alias": "nutcon",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet",
+        "Alias": "chitiet",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet1",
+        "Alias": "chitiet1",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet1"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet2",
+        "Alias": "chitiet2",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet2"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet3",
+        "Alias": "chitiet3",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "ten",
+            "Index": -1,
+            "NameInSource": "ten",
+            "Alias": "ten",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "firstYear",
+            "Index": -1,
+            "NameInSource": "firstYear",
+            "Alias": "firstYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "twoYear",
+            "Index": -1,
+            "NameInSource": "twoYear",
+            "Alias": "twoYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "threeYear",
+            "Index": -1,
+            "NameInSource": "threeYear",
+            "Alias": "threeYear",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "datas.chitiet3"
+      },
+      "8": {
+        "Ident": "StiDataTableSource",
+        "Name": "0",
+        "Alias": "0",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "namthuchien",
+            "Index": -1,
+            "NameInSource": "namthuchien",
+            "Alias": "namthuchien",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "tenkehoach",
+            "Index": -1,
+            "NameInSource": "tenkehoach",
+            "Alias": "tenkehoach",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "isDelete",
+            "Index": -1,
+            "NameInSource": "isDelete",
+            "Alias": "isDelete",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "madonvi",
+            "Index": -1,
+            "NameInSource": "madonvi",
+            "Alias": "madonvi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "maubieus",
+            "Index": -1,
+            "NameInSource": "maubieus",
+            "Alias": "maubieus",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.0"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
+        "Name": "0_maubieus",
+        "Alias": "0_maubieus",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenbieu",
+            "Index": -1,
+            "NameInSource": "tenbieu",
+            "Alias": "tenbieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "sobieumau",
+            "Index": -1,
+            "NameInSource": "sobieumau",
+            "Alias": "sobieumau",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "ngaybanhanh",
+            "Index": -1,
+            "NameInSource": "ngaybanhanh",
+            "Alias": "ngaybanhanh",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "vanbanchidao",
+            "Index": -1,
+            "NameInSource": "vanbanchidao",
+            "Alias": "vanbanchidao",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "kehoach",
+            "Index": -1,
+            "NameInSource": "kehoach",
+            "Alias": "kehoach",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "truocngay",
+            "Index": -1,
+            "NameInSource": "truocngay",
+            "Alias": "truocngay",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "thons",
+            "Index": -1,
+            "NameInSource": "thons",
+            "Alias": "thons",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "thanhviens",
+            "Index": -1,
+            "NameInSource": "thanhviens",
+            "Alias": "thanhviens",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.0_maubieus"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "nutcon_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "1": {
+        "Name": "nutcon_children_all_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all"
+      },
+      "2": {
+        "Name": "nutcon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all",
+        "Alias": "nutcon",
+        "IsCloud": null,
+        "ParentSource": "nutcon",
+        "ChildSource": "nutcon_children_all"
+      },
+      "3": {
+        "Name": "Quanhệ",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ",
+        "Alias": "Quanhệ",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "nutcon"
+      },
+      "4": {
+        "Name": "Quanhệ2",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ2",
+        "Alias": "Quanhệ2",
+        "IsCloud": null,
+        "ParentSource": "nutcon",
+        "ChildSource": "nutcon_children_all"
+      },
+      "5": {
+        "Name": "Quanhệ3",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ3",
+        "Alias": "Quanhệ3",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "6": {
+        "Name": "Quanhệ4",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ4",
+        "Alias": "Quanhệ4",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all"
+      },
+      "7": {
+        "Name": "chitiet1",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "chitiet1",
+        "Alias": "chitiet1",
+        "IsCloud": null,
+        "ParentSource": "chitiet1",
+        "ChildSource": "nutcon_children_all"
+      },
+      "8": {
+        "Name": "chitiet2",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "chitiet2",
+        "Alias": "chitiet2",
+        "IsCloud": null,
+        "ParentSource": "chitiet2",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "9": {
+        "Name": "chitiet3",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "chitiet3",
+        "Alias": "chitiet3",
+        "IsCloud": null,
+        "ParentSource": "chitiet3",
+        "ChildSource": "nutcon_children_all_children_all_children_all"
+      },
+      "10": {
+        "Name": "0",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "maubieus"
+        },
+        "NameInSource": "0_maubieus",
+        "Alias": "0",
+        "IsCloud": null,
+        "ParentSource": "0",
+        "ChildSource": "0_maubieus"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page2",
+      "Guid": "287e37e3739a6ce7238aef25db7e13cb",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "055ff569887ad8c5d2694e604f981bfc",
+              "ClientRectangle": "0.8,0,7.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Xã: {n0.tendonvi}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "74b265eded509e163f03b17e0ecac7fc",
+              "ClientRectangle": "11,0,8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Năm hiện trạng: {n0.namthuchien}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,2.2,19,1",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "5cb7f46a75e5b0ffb3adf7df3dbf8d18",
+              "ClientRectangle": "0,0,1.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "STT"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "3d6f92b2bdc2554ce285aa2cd3f3364c",
+              "ClientRectangle": "1.4,0,8.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CHỈ TIÊU"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "8a0f3b0a9de2f7b03e6c2e2d2222912c",
+              "ClientRectangle": "14,0,5,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Số liệu"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "96fa3dffd4b3f70d43483cb21ca1cd16",
+              "ClientRectangle": "10,0,4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Đơn vị tính"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "Guid": "b61e3df2fcc39797fcbafdb2029226f8",
+          "ClientRectangle": "0,4,19,0.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text67",
+              "Guid": "462c05daaec0bc01293ec41873d6e596",
+              "ClientRectangle": "0,0,1.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineABC}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "Guid": "b486be37f891d04bb2cbcc2bbaf198c7",
+              "ClientRectangle": "1.4,0,8.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "Guid": "543f639d9110497dfb22e9498cc41cb0",
+              "ClientRectangle": "14,0,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "Guid": "c3ff1d39f3b09097adfe142d85f05bb9",
+              "ClientRectangle": "10,0,4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon.Quanhệ.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "nutcon"
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "Guid": "afd362200e19980eb310b24dc921ffda",
+          "ClientRectangle": "0,5.4,19,0.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "Guid": "204ac3f0b9c99e18687f07d6d044886e",
+              "ClientRectangle": "0,0,1.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineRoman}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "Guid": "80e938f599f2fec2a775d51b926b6b5b",
+              "ClientRectangle": "1.4,0,8.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "Guid": "e966540b96c0f2a3b62ea0b0082cd7c0",
+              "ClientRectangle": "14,0,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text74",
+              "Guid": "e35badacf4ded34e13877c75af271043",
+              "ClientRectangle": "10,0,4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all.chitiet1.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "nutcon_children_all",
+          "DataRelationName": "Quanhệ2",
+          "MasterComponent": "DataBand2"
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand4",
+          "Guid": "63f295b9dbaaa73b93a8d3267fe87b3b",
+          "ClientRectangle": "0,6.8,19,0.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text75",
+              "Guid": "8a44dd39b85676f4215520f1e14abc22",
+              "ClientRectangle": "0,0,1.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Line}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text76",
+              "Guid": "73772e281f354d0c62d5f30917f3d3b7",
+              "ClientRectangle": "1.4,0,8.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all_children_all.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text77",
+              "Guid": "605026a4fe344cc59d0a0c8b37e1a125",
+              "ClientRectangle": "14,0,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "Guid": "d393a247ea0e0a2600b74ed3a7b0e12b",
+              "ClientRectangle": "10,0,4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all_children_all.chitiet2.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "nutcon_children_all_children_all",
+          "DataRelationName": "Quanhệ3",
+          "MasterComponent": "DataBand3"
+        },
+        "5": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand5",
+          "Guid": "7865c27a35a2713d289d8d73c0879949",
+          "ClientRectangle": "0,8.2,19,0.6",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text79",
+              "Guid": "3679f98ee075954304c390fa70c4c1bf",
+              "ClientRectangle": "0,0,1.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text80",
+              "Guid": "3269a3d72ec903f36b0e7cb0600fd9ad",
+              "ClientRectangle": "1.4,0,8.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all_children_all_children_all.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text81",
+              "Guid": "4a04c338fbc72001905ff397406213f0",
+              "ClientRectangle": "14,0,5,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "0"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text82",
+              "Guid": "c0b0299b85c088ea9c1e735991aade15",
+              "ClientRectangle": "10,0,4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcon_children_all_children_all_children_all.chitiet3.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "nutcon_children_all_children_all_children_all",
+          "DataRelationName": "Quanhệ4",
+          "MasterComponent": "DataBand4"
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

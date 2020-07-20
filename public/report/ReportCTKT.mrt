@@ -1,0 +1,2314 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "883ca51b251d4683a6d497159f3b4821",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "ReportCTKT.mrt",
+  "ReportCreated": "/Date(-7200000+0700)/",
+  "ReportChanged": "/Date(1589666611000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "Variables": {
+      "0": {
+        "Name": "location",
+        "DialogInfo": {
+          "DateTimeType": "DateAndTime"
+        },
+        "Alias": "location",
+        "Type": "System.String"
+      },
+      "1": {
+        "Name": "date",
+        "DialogInfo": {
+          "DateTimeType": "DateAndTime"
+        },
+        "Alias": "date",
+        "Type": "System.String"
+      },
+      "2": {
+        "Name": "month",
+        "DialogInfo": {
+          "DateTimeType": "DateAndTime"
+        },
+        "Alias": "month",
+        "Type": "System.String"
+      },
+      "3": {
+        "Name": "year",
+        "DialogInfo": {
+          "DateTimeType": "DateAndTime"
+        },
+        "Alias": "year",
+        "Type": "System.String"
+      }
+    },
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_Detail",
+        "Alias": "root_Detail",
+        "Key": "0f8b81e8841b489abd98ecbc1d3d6bb6",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_Detail"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "root",
+        "Alias": "root",
+        "Key": "c9f4b38714bf40feb08759a0cebc7d5c",
+        "Columns": {
+          "0": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcha",
+        "Alias": "nutcha",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcha"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all_children_all"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all_children_all_children_all"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all",
+        "Alias": "nutcon_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon",
+        "Alias": "nutcon",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "tendonvi",
+            "Index": -1,
+            "NameInSource": "tendonvi",
+            "Alias": "tendonvi",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon"
+      },
+      "8": {
+        "Ident": "StiDataTableSource",
+        "Name": "nutcon_children_all_children_all_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all_children_all_children_all",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "tenchitieu",
+            "Index": -1,
+            "NameInSource": "tenchitieu",
+            "Alias": "tenchitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "created_at",
+            "Index": -1,
+            "NameInSource": "created_at",
+            "Alias": "created_at",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "updated_at",
+            "Index": -1,
+            "NameInSource": "updated_at",
+            "Alias": "updated_at",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "donvitinh",
+            "Index": -1,
+            "NameInSource": "donvitinh",
+            "Alias": "donvitinh",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "machitieu",
+            "Index": -1,
+            "NameInSource": "machitieu",
+            "Alias": "machitieu",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "IsDelete",
+            "Index": -1,
+            "NameInSource": "IsDelete",
+            "Alias": "IsDelete",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "_lft",
+            "Index": -1,
+            "NameInSource": "_lft",
+            "Alias": "_lft",
+            "Type": "System.Decimal"
+          },
+          "9": {
+            "Name": "_rgt",
+            "Index": -1,
+            "NameInSource": "_rgt",
+            "Alias": "_rgt",
+            "Type": "System.Decimal"
+          },
+          "10": {
+            "Name": "parent_id",
+            "Index": -1,
+            "NameInSource": "parent_id",
+            "Alias": "parent_id",
+            "Type": "System.Decimal"
+          },
+          "11": {
+            "Name": "children_all",
+            "Index": -1,
+            "NameInSource": "children_all",
+            "Alias": "children_all",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.nutcon_children_all_children_all_children_all_children_all_children_all"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet_Detail",
+        "Alias": "chitiet_Detail",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet_Detail"
+      },
+      "10": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet",
+        "Alias": "chitiet",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet"
+      },
+      "11": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet1_Detail",
+        "Alias": "chitiet1_Detail",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet1_Detail"
+      },
+      "12": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet1",
+        "Alias": "chitiet1",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet1"
+      },
+      "13": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet2_Detail",
+        "Alias": "chitiet2_Detail",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet2_Detail"
+      },
+      "14": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet2",
+        "Alias": "chitiet2",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet2"
+      },
+      "15": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet3_Detail",
+        "Alias": "chitiet3_Detail",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet3_Detail"
+      },
+      "16": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet3",
+        "Alias": "chitiet3",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet3"
+      },
+      "17": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet4_Detail",
+        "Alias": "chitiet4_Detail",
+        "Columns": {
+          "0": {
+            "Name": "value",
+            "Index": -1,
+            "NameInSource": "value",
+            "Alias": "value",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet4_Detail"
+      },
+      "18": {
+        "Ident": "StiDataTableSource",
+        "Name": "chitiet4",
+        "Alias": "chitiet4",
+        "Columns": {
+          "0": {
+            "Name": "id",
+            "Index": -1,
+            "NameInSource": "id",
+            "Alias": "id",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "chitieu",
+            "Index": -1,
+            "NameInSource": "chitieu",
+            "Alias": "chitieu",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "idcha",
+            "Index": -1,
+            "NameInSource": "idcha",
+            "Alias": "idcha",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "strid",
+            "Index": -1,
+            "NameInSource": "strid",
+            "Alias": "strid",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "donvi",
+            "Index": -1,
+            "NameInSource": "donvi",
+            "Alias": "donvi",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "KHpreYear",
+            "Index": -1,
+            "NameInSource": "KHpreYear",
+            "Alias": "KHpreYear",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "KHcurrentYear",
+            "Index": -1,
+            "NameInSource": "KHcurrentYear",
+            "Alias": "KHcurrentYear",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "estimate",
+            "Index": -1,
+            "NameInSource": "estimate",
+            "Alias": "estimate",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "Detail",
+            "Index": -1,
+            "NameInSource": "Detail",
+            "Alias": "Detail",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.chitiet4"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "root",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "root_Detail",
+        "Alias": "root",
+        "IsCloud": null,
+        "ParentSource": "root",
+        "ChildSource": "root_Detail"
+      },
+      "1": {
+        "Name": "nutcon_children_all_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all"
+      },
+      "2": {
+        "Name": "nutcon_children_all_children_all_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all_children_all"
+      },
+      "3": {
+        "Name": "nutcon_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all",
+        "Alias": "nutcon_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "4": {
+        "Name": "nutcon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all",
+        "Alias": "nutcon",
+        "IsCloud": null,
+        "ParentSource": "nutcon",
+        "ChildSource": "nutcon_children_all"
+      },
+      "5": {
+        "Name": "nutcon_children_all_children_all_children_all_children_all",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "children_all"
+        },
+        "NameInSource": "nutcon_children_all_children_all_children_all_children_all_children_all",
+        "Alias": "nutcon_children_all_children_all_children_all_children_all",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all_children_all_children_all_children_all",
+        "ChildSource": "nutcon_children_all_children_all_children_all_children_all_children_all"
+      },
+      "6": {
+        "Name": "chitiet",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "chitiet_Detail",
+        "Alias": "chitiet",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "chitiet_Detail"
+      },
+      "7": {
+        "Name": "Quanhệ",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ",
+        "Alias": "Quanhệ",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "nutcha"
+      },
+      "8": {
+        "Name": "Quanhệ2",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ2",
+        "Alias": "Quanhệ2",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "nutcon"
+      },
+      "9": {
+        "Name": "Quanhệ3",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ3",
+        "Alias": "Quanhệ3",
+        "IsCloud": null,
+        "ParentSource": "nutcha",
+        "ChildSource": "nutcon"
+      },
+      "10": {
+        "Name": "Quanhệ4",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ4",
+        "Alias": "Quanhệ4",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "nutcon_children_all"
+      },
+      "11": {
+        "Name": "Quanhệ5",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ5",
+        "Alias": "Quanhệ5",
+        "IsCloud": null,
+        "ParentSource": "nutcon",
+        "ChildSource": "nutcon_children_all"
+      },
+      "12": {
+        "Name": "Quanhệ6",
+        "ChildColumns": {
+          "0": "id"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ6",
+        "Alias": "Quanhệ6",
+        "IsCloud": null,
+        "ParentSource": "chitiet",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "13": {
+        "Name": "Quanhệ7",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "id"
+        },
+        "NameInSource": "Quanhệ7",
+        "Alias": "Quanhệ7",
+        "IsCloud": null,
+        "ParentSource": "nutcon_children_all",
+        "ChildSource": "nutcon_children_all_children_all"
+      },
+      "14": {
+        "Name": "chitiet1",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "chitiet1_Detail",
+        "Alias": "chitiet1",
+        "IsCloud": null,
+        "ParentSource": "chitiet1",
+        "ChildSource": "chitiet1_Detail"
+      },
+      "15": {
+        "Name": "chitiet2",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "chitiet2_Detail",
+        "Alias": "chitiet2",
+        "IsCloud": null,
+        "ParentSource": "chitiet2",
+        "ChildSource": "chitiet2_Detail"
+      },
+      "16": {
+        "Name": "chitiet3",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "chitiet3_Detail",
+        "Alias": "chitiet3",
+        "IsCloud": null,
+        "ParentSource": "chitiet3",
+        "ChildSource": "chitiet3_Detail"
+      },
+      "17": {
+        "Name": "chitiet4",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "Detail"
+        },
+        "NameInSource": "chitiet4_Detail",
+        "Alias": "chitiet4",
+        "IsCloud": null,
+        "ParentSource": "chitiet4",
+        "ChildSource": "chitiet4_Detail"
+      },
+      "18": {
+        "Name": "Quanhệ8",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "strid"
+        },
+        "NameInSource": "Quanhệ8",
+        "Alias": "Quanhệ8",
+        "IsCloud": null,
+        "ParentSource": "nutcha",
+        "ChildSource": "chitiet"
+      },
+      "19": {
+        "Name": "Quanhệ9",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "strid"
+        },
+        "NameInSource": "Quanhệ9",
+        "Alias": "Quanhệ9",
+        "IsCloud": null,
+        "Active": true,
+        "ParentSource": "chitiet",
+        "ChildSource": "chitiet1"
+      },
+      "20": {
+        "Name": "Quanhệ10",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "strid"
+        },
+        "NameInSource": "Quanhệ10",
+        "Alias": "Quanhệ10",
+        "IsCloud": null,
+        "Active": true,
+        "ParentSource": "chitiet1",
+        "ChildSource": "chitiet2"
+      },
+      "21": {
+        "Name": "Quanhệ11",
+        "ChildColumns": {
+          "0": "idcha"
+        },
+        "ParentColumns": {
+          "0": "strid"
+        },
+        "NameInSource": "Quanhệ11",
+        "Alias": "Quanhệ11",
+        "IsCloud": null,
+        "Active": true,
+        "ParentSource": "chitiet2",
+        "ChildSource": "chitiet3"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "70b7f812385a4aceaad51befd88938ec",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "bf86654cac617b581797815d2420a7ae",
+              "ClientRectangle": "0,0,18.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>KẾ HOẠCH SẢN XUẤT NÔNG LÂM NGHIỆP NĂM {year} TRÊN ĐỊA BÀN {location}</b>\r\n<br>\r\n<i>(Kèm theo Báo cáo số        /BC-NN ngày {date} tháng {month} năm {year} của Phòng Nông nghiệp & PTNT {location})</i>"
+              },
+              "HorAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand2",
+          "ClientRectangle": "0,2,19,0.8",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "b769f68f52d69f7c28e4410901d94333",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "STT"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "907c937d14474b4ab05ab9b255b4edb9",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Chỉ tiêu"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "1c4c22256ce34c6d89d262adb765c330",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ĐVT"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "2f93842d564c40bab7421a3246f75f35",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "KH {year-1}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "31937ef9e6be4b4abc397586e5535c75",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Ước thực hiện {year}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "dff52ca96f10445abbbb950e96fffaf0",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "KH {year}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,3.6,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "825b3c134ab54e85a35a6986157bc5fc",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineABC}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "f46247fc237e4b44bd59d3844bda63ac",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcha.tenchitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "66e61418cf5549ba82fced95cc7d6db2",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcha.Quanhệ.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "29876950020f4d9ba948bd4ed61fff42",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcha.Quanhệ.KHpreYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "025f1ee50aeb46faa4f61537d3c19ec4",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcha.Quanhệ.KHcurrentYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "8f3164c56d74402fafdb3c412724c495",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{nutcha.Quanhệ.estimate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "nutcha"
+        },
+        "3": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "Guid": "86cc046770fba8f06a12db29b4532d91",
+          "ClientRectangle": "0,5.4,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "c8ca897b44ca991486961b49c5543b52",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{LineRoman}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "0da94b80a5e3ac7607fb507c070b6be9",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet.chitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "45ed28d196f1f4de8bb4d2c7c411217e",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "6c087aa0f32905dc8cb722b6bb48ad5c",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet.KHpreYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "10291d1f5ae74926b4eab8ea79104b70",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet.KHcurrentYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "7137673c4f9d75fb64cd92b09d969ece",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet.estimate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Bold;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "chitiet",
+          "DataRelationName": "Quanhệ8",
+          "MasterComponent": "DataBand1"
+        },
+        "4": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "Guid": "e8a5fcfd62647e268387ccd9c5ef7ed4",
+          "ClientRectangle": "0,7.2,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "c0f81d96420141f43fd677549aa5d9a6",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{Line}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "SystemVariables"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "38bcdcc3b34971f7ecca6f3712314974",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet1.chitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "ae8a3cd0f941bd26be48a66183dfe492",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet1.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "b49896832dd51e6a0139c6a7acd4a834",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet1.KHpreYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "713f1d077c6e320dc99306372d13800a",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet1.KHcurrentYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "Guid": "7b7fa26666b9bd4c864cca59857e994e",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet1.estimate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "chitiet1",
+          "DataRelationName": "Quanhệ9",
+          "MasterComponent": "DataBand2"
+        },
+        "5": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand4",
+          "Guid": "9ab7df9f4da57cfacc93747af48ac435",
+          "ClientRectangle": "0,9,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "Guid": "53fb222c364a34af5cd95b72b54c7dec",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "-"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "Guid": "0c43e78affb1b8bd6f4ec1098a1b7b36",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet2.chitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "Guid": "0e8d1cb6fc17e5fefda65be433107c21",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet2.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "Guid": "aea2ec2ad33cce436904b6c660f14713",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet2.KHpreYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "Guid": "58ac831d39ff77550d9faf6f12c772d1",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet2.KHcurrentYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "Guid": "e1d8535328a59362abd420e6e4b412e1",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet2.estimate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "chitiet2",
+          "DataRelationName": "Quanhệ10",
+          "MasterComponent": "DataBand3"
+        },
+        "6": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand5",
+          "ClientRectangle": "0,10.8,19,1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "Guid": "8b0acd9e4db60fa17842bd24575d2e1e",
+              "ClientRectangle": "0,0,1,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "+"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "Guid": "5775f7f8f047da34ffcca04ab9fe8eff",
+              "ClientRectangle": "1,0,5.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet3.chitieu}"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "Guid": "4aea1c7bb636a03c0b0df6ef9705c389",
+              "ClientRectangle": "6.4,0,2.2,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet3.donvi}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "Guid": "72f4eb8bcfa8bdb84fbd7a086cce0412",
+              "ClientRectangle": "8.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet3.KHpreYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "Guid": "eb5a25b3c50a0625007961c6d52dcd4c",
+              "ClientRectangle": "12,0,3.6,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet3.KHcurrentYear}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "Guid": "36ce20cc1e00d19ed1d17966e6b3035f",
+              "ClientRectangle": "15.6,0,3.4,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "{chitiet3.estimate}"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;Italic;",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:Black",
+              "Type": "DataColumn"
+            }
+          },
+          "PrintIfDetailEmpty": true,
+          "DataSourceName": "chitiet3",
+          "DataRelationName": "Quanhệ11",
+          "MasterComponent": "DataBand4"
+        }
+      },
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}

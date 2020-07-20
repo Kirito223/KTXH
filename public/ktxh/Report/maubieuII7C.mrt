@@ -1,0 +1,5040 @@
+{
+  "ReportVersion": "2019.3.1",
+  "ReportGuid": "b2d1785467f96b9c2209e44095464f08",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportFile": "maubieuII7C.mrt",
+  "ReportCreated": "/Date(1585640167000+0700)/",
+  "ReportChanged": "/Date(1585640167000+0700)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "ReportUnit": "Centimeters",
+  "PreviewSettings": 268435455,
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu_hkI",
+        "Alias": "Dulieu_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "kinhphicapbu",
+            "Index": -1,
+            "NameInSource": "kinhphicapbu",
+            "Alias": "kinhphicapbu",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu_hkI"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu_hkII",
+        "Alias": "Dulieu_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "kinhphicapbu",
+            "Index": -1,
+            "NameInSource": "kinhphicapbu",
+            "Alias": "kinhphicapbu",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu_hkII"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "Dulieu",
+        "Alias": "Dulieu",
+        "Columns": {
+          "0": {
+            "Name": "tenlop",
+            "Index": -1,
+            "NameInSource": "tenlop",
+            "Alias": "tenlop",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Dulieu"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "Tieude",
+        "Alias": "Tieude",
+        "Columns": {
+          "0": {
+            "Name": "truong",
+            "Index": -1,
+            "NameInSource": "truong",
+            "Alias": "truong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hk2",
+            "Index": -1,
+            "NameInSource": "hk2",
+            "Alias": "hk2",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hk1",
+            "Index": -1,
+            "NameInSource": "hk1",
+            "Alias": "hk1",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "nam",
+            "Index": -1,
+            "NameInSource": "nam",
+            "Alias": "nam",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "ngay",
+            "Index": -1,
+            "NameInSource": "ngay",
+            "Alias": "ngay",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "sodt",
+            "Index": -1,
+            "NameInSource": "sodt",
+            "Alias": "sodt",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "dt",
+            "Index": -1,
+            "NameInSource": "dt",
+            "Alias": "dt",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "huyen",
+            "Index": -1,
+            "NameInSource": "huyen",
+            "Alias": "huyen",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "data.Tieude"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "root",
+        "Alias": "root",
+        "Columns": {
+          "0": {
+            "Name": "truong",
+            "Index": -1,
+            "NameInSource": "truong",
+            "Alias": "truong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "hk2",
+            "Index": -1,
+            "NameInSource": "hk2",
+            "Alias": "hk2",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "hk1",
+            "Index": -1,
+            "NameInSource": "hk1",
+            "Alias": "hk1",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "nam",
+            "Index": -1,
+            "NameInSource": "nam",
+            "Alias": "nam",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "ngay",
+            "Index": -1,
+            "NameInSource": "ngay",
+            "Alias": "ngay",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "sodt",
+            "Index": -1,
+            "NameInSource": "sodt",
+            "Alias": "sodt",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "dt",
+            "Index": -1,
+            "NameInSource": "dt",
+            "Alias": "dt",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "ngoaiconglap",
+            "Index": -1,
+            "NameInSource": "ngoaiconglap",
+            "Alias": "ngoaiconglap",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi_hkI",
+        "Alias": "root_conglap_mamnonthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi_hkI"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonthanhthi_hkII",
+        "Alias": "root_conglap_mamnonthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonthanhthi_hkII"
+      },
+      "8": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi",
+        "Alias": "root_conglap_thcsthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi"
+      },
+      "9": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi_hkI",
+        "Alias": "root_conglap_thcsthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi_hkI"
+      },
+      "10": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsthanhthi_hkII",
+        "Alias": "root_conglap_thcsthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsthanhthi_hkII"
+      },
+      "11": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon",
+        "Alias": "root_conglap_mamnonnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon"
+      },
+      "12": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon_hkI",
+        "Alias": "root_conglap_mamnonnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon_hkI"
+      },
+      "13": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonnongthon_hkII",
+        "Alias": "root_conglap_mamnonnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonnongthon_hkII"
+      },
+      "14": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon",
+        "Alias": "root_conglap_thcsnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon"
+      },
+      "15": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon_hkI",
+        "Alias": "root_conglap_thcsnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon_hkI"
+      },
+      "16": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsnongthon_hkII",
+        "Alias": "root_conglap_thcsnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsnongthon_hkII"
+      },
+      "17": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui",
+        "Alias": "root_conglap_mamnonmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui"
+      },
+      "18": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui_hkI",
+        "Alias": "root_conglap_mamnonmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui_hkI"
+      },
+      "19": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_mamnonmiennui_hkII",
+        "Alias": "root_conglap_mamnonmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_mamnonmiennui_hkII"
+      },
+      "20": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui",
+        "Alias": "root_conglap_thcsmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui"
+      },
+      "21": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui_hkI",
+        "Alias": "root_conglap_thcsmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui_hkI"
+      },
+      "22": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap_thcsmiennui_hkII",
+        "Alias": "root_conglap_thcsmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap_thcsmiennui_hkII"
+      },
+      "23": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_conglap",
+        "Alias": "root_conglap",
+        "Columns": {
+          "0": {
+            "Name": "mamnonthanhthi",
+            "Index": -1,
+            "NameInSource": "mamnonthanhthi",
+            "Alias": "mamnonthanhthi",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "thcsthanhthi",
+            "Index": -1,
+            "NameInSource": "thcsthanhthi",
+            "Alias": "thcsthanhthi",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "mamnonnongthon",
+            "Index": -1,
+            "NameInSource": "mamnonnongthon",
+            "Alias": "mamnonnongthon",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "thcsnongthon",
+            "Index": -1,
+            "NameInSource": "thcsnongthon",
+            "Alias": "thcsnongthon",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "mamnonmiennui",
+            "Index": -1,
+            "NameInSource": "mamnonmiennui",
+            "Alias": "mamnonmiennui",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "thcsmiennui",
+            "Index": -1,
+            "NameInSource": "thcsmiennui",
+            "Alias": "thcsmiennui",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_conglap"
+      },
+      "24": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi"
+      },
+      "25": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi_hkI"
+      },
+      "26": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonthanhthi_hkII"
+      },
+      "27": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi"
+      },
+      "28": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi_hkI"
+      },
+      "29": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsthanhthi_hkII"
+      },
+      "30": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon"
+      },
+      "31": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Alias": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon_hkI"
+      },
+      "32": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Alias": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonnongthon_hkII"
+      },
+      "33": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon"
+      },
+      "34": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Alias": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon_hkI"
+      },
+      "35": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Alias": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsnongthon_hkII"
+      },
+      "36": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui"
+      },
+      "37": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Alias": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui_hkI"
+      },
+      "38": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Alias": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_mamnonmiennui_hkII"
+      },
+      "39": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "Columns": {
+          "0": {
+            "Name": "tentruong",
+            "Index": -1,
+            "NameInSource": "tentruong",
+            "Alias": "tentruong",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "conglap",
+            "Index": -1,
+            "NameInSource": "conglap",
+            "Alias": "conglap",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "diaban",
+            "Index": -1,
+            "NameInSource": "diaban",
+            "Alias": "diaban",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "loaitruong",
+            "Index": -1,
+            "NameInSource": "loaitruong",
+            "Alias": "loaitruong",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hkI",
+            "Index": -1,
+            "NameInSource": "hkI",
+            "Alias": "hkI",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "hkII",
+            "Index": -1,
+            "NameInSource": "hkII",
+            "Alias": "hkII",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui"
+      },
+      "40": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Alias": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui_hkI"
+      },
+      "41": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Alias": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Columns": {
+          "0": {
+            "Name": "mienhocphi",
+            "Index": -1,
+            "NameInSource": "mienhocphi",
+            "Alias": "mienhocphi",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "giam50",
+            "Index": -1,
+            "NameInSource": "giam50",
+            "Alias": "giam50",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "giam70",
+            "Index": -1,
+            "NameInSource": "giam70",
+            "Alias": "giam70",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "thang",
+            "Index": -1,
+            "NameInSource": "thang",
+            "Alias": "thang",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "hocphi",
+            "Index": -1,
+            "NameInSource": "hocphi",
+            "Alias": "hocphi",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "capbu",
+            "Index": -1,
+            "NameInSource": "capbu",
+            "Alias": "capbu",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap_thcsmiennui_hkII"
+      },
+      "42": {
+        "Ident": "StiDataTableSource",
+        "Name": "root_ngoaiconglap",
+        "Alias": "root_ngoaiconglap",
+        "Columns": {
+          "0": {
+            "Name": "mamnonthanhthi",
+            "Index": -1,
+            "NameInSource": "mamnonthanhthi",
+            "Alias": "mamnonthanhthi",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "thcsthanhthi",
+            "Index": -1,
+            "NameInSource": "thcsthanhthi",
+            "Alias": "thcsthanhthi",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "mamnonnongthon",
+            "Index": -1,
+            "NameInSource": "mamnonnongthon",
+            "Alias": "mamnonnongthon",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "thcsnongthon",
+            "Index": -1,
+            "NameInSource": "thcsnongthon",
+            "Alias": "thcsnongthon",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "mamnonmiennui",
+            "Index": -1,
+            "NameInSource": "mamnonmiennui",
+            "Alias": "mamnonmiennui",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "thcsmiennui",
+            "Index": -1,
+            "NameInSource": "thcsmiennui",
+            "Alias": "thcsmiennui",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "relationId",
+            "Index": -1,
+            "NameInSource": "relationId",
+            "Alias": "relationId",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "datas.root_ngoaiconglap"
+      }
+    },
+    "Relations": {
+      "0": {
+        "Name": "Dulieu",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "Dulieu_hkI",
+        "Alias": "Dulieu",
+        "IsCloud": null,
+        "ParentSource": "Dulieu",
+        "ChildSource": "Dulieu_hkI"
+      },
+      "1": {
+        "Name": "Dulieu",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "Dulieu_hkII",
+        "Alias": "Dulieu",
+        "IsCloud": null,
+        "ParentSource": "Dulieu",
+        "ChildSource": "Dulieu_hkII"
+      },
+      "2": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkI",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "3": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "Dulieu_hkII",
+        "ChildSource": "Dulieu"
+      },
+      "4": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonthanhthi"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "5": {
+        "Name": "root_conglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi_hkI",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi",
+        "ChildSource": "root_conglap_mamnonthanhthi_hkI"
+      },
+      "6": {
+        "Name": "root_conglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonthanhthi_hkII",
+        "Alias": "root_conglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi",
+        "ChildSource": "root_conglap_mamnonthanhthi_hkII"
+      },
+      "7": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsthanhthi"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "8": {
+        "Name": "root_conglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi_hkI",
+        "Alias": "root_conglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi",
+        "ChildSource": "root_conglap_thcsthanhthi_hkI"
+      },
+      "9": {
+        "Name": "root_conglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsthanhthi_hkII",
+        "Alias": "root_conglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi",
+        "ChildSource": "root_conglap_thcsthanhthi_hkII"
+      },
+      "10": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonnongthon"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonnongthon"
+      },
+      "11": {
+        "Name": "root_conglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon_hkI",
+        "Alias": "root_conglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonnongthon",
+        "ChildSource": "root_conglap_mamnonnongthon_hkI"
+      },
+      "12": {
+        "Name": "root_conglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonnongthon_hkII",
+        "Alias": "root_conglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonnongthon",
+        "ChildSource": "root_conglap_mamnonnongthon_hkII"
+      },
+      "13": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsnongthon"
+        },
+        "NameInSource": "root_conglap_thcsnongthon",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsnongthon"
+      },
+      "14": {
+        "Name": "root_conglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsnongthon_hkI",
+        "Alias": "root_conglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsnongthon",
+        "ChildSource": "root_conglap_thcsnongthon_hkI"
+      },
+      "15": {
+        "Name": "root_conglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsnongthon_hkII",
+        "Alias": "root_conglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsnongthon",
+        "ChildSource": "root_conglap_thcsnongthon_hkII"
+      },
+      "16": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonmiennui"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_mamnonmiennui"
+      },
+      "17": {
+        "Name": "root_conglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui_hkI",
+        "Alias": "root_conglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonmiennui",
+        "ChildSource": "root_conglap_mamnonmiennui_hkI"
+      },
+      "18": {
+        "Name": "root_conglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_mamnonmiennui_hkII",
+        "Alias": "root_conglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonmiennui",
+        "ChildSource": "root_conglap_mamnonmiennui_hkII"
+      },
+      "19": {
+        "Name": "root_conglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsmiennui"
+        },
+        "NameInSource": "root_conglap_thcsmiennui",
+        "Alias": "root_conglap",
+        "IsCloud": null,
+        "ParentSource": "root_conglap",
+        "ChildSource": "root_conglap_thcsmiennui"
+      },
+      "20": {
+        "Name": "root_conglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_conglap_thcsmiennui_hkI",
+        "Alias": "root_conglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsmiennui",
+        "ChildSource": "root_conglap_thcsmiennui_hkI"
+      },
+      "21": {
+        "Name": "root_conglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_conglap_thcsmiennui_hkII",
+        "Alias": "root_conglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsmiennui",
+        "ChildSource": "root_conglap_thcsmiennui_hkII"
+      },
+      "22": {
+        "Name": "root",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "conglap"
+        },
+        "NameInSource": "root_conglap",
+        "Alias": "root",
+        "IsCloud": null,
+        "ParentSource": "root",
+        "ChildSource": "root_conglap"
+      },
+      "23": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonthanhthi"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi"
+      },
+      "24": {
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi_hkI"
+      },
+      "25": {
+        "Name": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_mamnonthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonthanhthi",
+        "ChildSource": "root_ngoaiconglap_mamnonthanhthi_hkII"
+      },
+      "26": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsthanhthi"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi"
+      },
+      "27": {
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi_hkI",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsthanhthi",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi_hkI"
+      },
+      "28": {
+        "Name": "root_ngoaiconglap_thcsthanhthi",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsthanhthi_hkII",
+        "Alias": "root_ngoaiconglap_thcsthanhthi",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsthanhthi",
+        "ChildSource": "root_ngoaiconglap_thcsthanhthi_hkII"
+      },
+      "29": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonnongthon"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon"
+      },
+      "30": {
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon_hkI",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonnongthon",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon_hkI"
+      },
+      "31": {
+        "Name": "root_ngoaiconglap_mamnonnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonnongthon_hkII",
+        "Alias": "root_ngoaiconglap_mamnonnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonnongthon",
+        "ChildSource": "root_ngoaiconglap_mamnonnongthon_hkII"
+      },
+      "32": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsnongthon"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon"
+      },
+      "33": {
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon_hkI",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsnongthon",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon_hkI"
+      },
+      "34": {
+        "Name": "root_ngoaiconglap_thcsnongthon",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsnongthon_hkII",
+        "Alias": "root_ngoaiconglap_thcsnongthon",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsnongthon",
+        "ChildSource": "root_ngoaiconglap_thcsnongthon_hkII"
+      },
+      "35": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "mamnonmiennui"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui"
+      },
+      "36": {
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui_hkI",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonmiennui",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui_hkI"
+      },
+      "37": {
+        "Name": "root_ngoaiconglap_mamnonmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_mamnonmiennui_hkII",
+        "Alias": "root_ngoaiconglap_mamnonmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_mamnonmiennui",
+        "ChildSource": "root_ngoaiconglap_mamnonmiennui_hkII"
+      },
+      "38": {
+        "Name": "root_ngoaiconglap",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "thcsmiennui"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui",
+        "Alias": "root_ngoaiconglap",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui"
+      },
+      "39": {
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkI"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui_hkI",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsmiennui",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui_hkI"
+      },
+      "40": {
+        "Name": "root_ngoaiconglap_thcsmiennui",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "hkII"
+        },
+        "NameInSource": "root_ngoaiconglap_thcsmiennui_hkII",
+        "Alias": "root_ngoaiconglap_thcsmiennui",
+        "IsCloud": null,
+        "ParentSource": "root_ngoaiconglap_thcsmiennui",
+        "ChildSource": "root_ngoaiconglap_thcsmiennui_hkII"
+      },
+      "41": {
+        "Name": "root",
+        "ChildColumns": {
+          "0": "relationId"
+        },
+        "ParentColumns": {
+          "0": "ngoaiconglap"
+        },
+        "NameInSource": "root_ngoaiconglap",
+        "Alias": "root",
+        "IsCloud": null,
+        "ParentSource": "root",
+        "ChildSource": "root_ngoaiconglap"
+      },
+      "42": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi_hkI",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "43": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_mamnonthanhthi_hkII",
+        "ChildSource": "root_conglap_mamnonthanhthi"
+      },
+      "44": {
+        "Name": "HK1",
+        "ChildColumns": {
+          "0": "hkI"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK1",
+        "Alias": "HK1",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkI",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      },
+      "45": {
+        "Name": "HK2",
+        "ChildColumns": {
+          "0": "hkII"
+        },
+        "ParentColumns": {
+          "0": "relationId"
+        },
+        "NameInSource": "HK2",
+        "Alias": "HK2",
+        "IsCloud": null,
+        "ParentSource": "root_conglap_thcsthanhthi_hkII",
+        "ChildSource": "root_conglap_thcsthanhthi"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "a1911f0cdc9354b125e3ea1f57cb6bf4",
+      "Conditions": {
+        "0": {
+          "Ident": "StiCondition",
+          "Condition": "Containing",
+          "Value1": "true",
+          "BorderSides": "None"
+        }
+      },
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:Transparent",
+      "Components": {
+        "0": {
+          "Ident": "StiReportTitleBand",
+          "Name": "ReportTitleBand1",
+          "ClientRectangle": "0,0.4,19,4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text253",
+              "Guid": "a9b9c3cb7f450e8a015149f1a10e66aa",
+              "ClientRectangle": "0,0,6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "ỦY BAN NHÂN DÂN"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text254",
+              "Guid": "8c2df70a8a71dc2ec36b43bd1f302d76",
+              "ClientRectangle": "7,0,12,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text255",
+              "Guid": "6b67da2c630249d456842bd9f70f9ebe",
+              "ClientRectangle": "0,0.6,6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "XÃ …………………"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text256",
+              "Guid": "aaa88d351496042b8b94a755683e26f0",
+              "ClientRectangle": "7,0.6,12,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Độc lập – Tự do – Hạnh phúc"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;11;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "93ebad09e1ac801aa27208505af4e342",
+              "ClientRectangle": "0,2.6,19,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "KẾ HOẠCH PHÁT TRIỂN KINH TẾ - XÃ HỘI\r\nNĂM ……………\r\n"
+              },
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;16;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive1",
+              "ClientRectangle": "1.6,1.2,3,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            },
+            "6": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive2",
+              "ClientRectangle": "10.4,1.2,5,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiHeaderBand",
+          "Name": "HeaderBand1",
+          "ClientRectangle": "0,5.2,19,50",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text2",
+              "Guid": "4cd8fb5c082c3b0a88da254807be4930",
+              "ClientRectangle": "1.2,0,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần I: Đánh giá tình hình thực hiện KHPT KT-XH năm hiện tại (X)"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text3",
+              "Guid": "6f9d6fef8e78fba67b5166187bfd0a08",
+              "ClientRectangle": "1.6,1,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "1. Những thuận lợi, khó khăn trong thực hiện KHPT KT-XH xã 6 tháng đầu năm\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text4",
+              "Guid": "5fbac27e62e8372da1907c856a75fda6",
+              "ClientRectangle": "1.2,1.6,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này có mục đích đưa ra những kết luận chính liên quan đến tác động từ bên ngoài, vận động từ bên trong khu vực Kinh tế - Xã hội của xã để thấy được điểm mạnh, điểm yếu trong thực hiện kế hoạch Kinh tế - Xã hội của xã trong 6 tháng vừa qua, các cơ hội và thách thức đối với nhiệm vụ trong thời gian còn lại để xác định các mục tiêu và giải pháp thực hiện mang tính định hướng.\r\nCó các nội dung sau:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text5",
+              "Guid": "03624ad1288edc766f4dda1936109583",
+              "ClientRectangle": "2.4,2.6,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tThuận lợi cần phát huy và khai thác"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text6",
+              "Guid": "b527b1c02587e23aceea7f0c00c05841",
+              "ClientRectangle": "1.2,3.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<div style=\"\"><font size=\"14\"><b style=\"\">Các yếu tố từ bên ngoài</b>: Nêu tóm tắt về các yếu tố tích cực từ chính sách, định hướng phát triển kinh tế, thành quả kinh tế của giai đoạn trước và những thay đổi trong tình hình phát triển kinh tế khu vực (các xã, huyện, tỉnh lân cận) có tác động trực tiếp giúp thực hiện tốt các nội dung kế hoạch trong thời gian qua.</font></div><div style=\"font-family: &quot;Times New Roman&quot;;\"><font size=\"14\"><br></font></div><div style=\"font-family: &quot;Times New Roman&quot;;\"><font size=\"14\"><b style=\"\"><span lang=\"DE\">Các yếu tố ở tại địa bàn xã:</span></b><span lang=\"DE\" style=\"\">&nbsp;Đưa ra nhận định về tiềm năng tại xã về tài nguyên, khí hậu, môi trường, con người (nguồn lao động, trình độ dân trí ..), vị trí địa lý, tự nhiên đã có ảnh hưởng tốt đến việc thực hiện kế hoạch trong thời gian qua.</span></font></div>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text7",
+              "Guid": "239993f6e04ef57e09d3c4ffa9006dc3",
+              "ClientRectangle": "2.4,3.8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tNhững khó khăn thách thức cần hạn chế, khắc phục"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text8",
+              "Guid": "57707c4b245651b8a4f08fe1f426d35f",
+              "ClientRectangle": "1.2,4.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>Các yếu tố từ bên ngoài:</b> Nêu tóm tắt về các yếu tố tiêu cực từ bên ngoài gây ra những trở ngại đối với việc thực hiện các nội dung kế hoạch trong thời gian qua. Các yếu tố đó có thể là: Biến đổi tiêu cực về tình hình Kinh tế - Xã hội các vùng lân cận, điều kiện tự nhiên, khí hậu xuống cấp, thảm họa.<br><b>\r\nCác yếu tố ở tại địa bàn xã:</b> Tóm tắt về những thách thức, khó khăn do điều kiện chủ quan như: Trình độ, năng lực quản lý chính quyền với các lĩnh vực Kinh tế - Xã hội chính, phân công trách nhiệm thực hiện, công tác giám sát thực hiện các hoạt động kế hoạch, những thay đổi về tập quán dân cư trong vùng, tập quán văn hóa …vv có tác động tiêu cực tới tình hình Kinh tế - Xã hội chung trong thời gian qua."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text9",
+              "Guid": "a0809ae8565d88e14783dad7b42d7609",
+              "ClientRectangle": "1.6,5,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>2. Đánh giá tình hình</b>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text10",
+              "Guid": "693e0d503ad755e52f6d4089f3526ad4",
+              "ClientRectangle": "1.2,5.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Nêu tóm tắt kết quả đạt được, tồn tại, hạn chế và nguyên nhân theo từng lĩnh vực với thể thức."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text11",
+              "Guid": "83d19b6ee74dc03bd725775ae6efceec",
+              "ClientRectangle": "2,6.2,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<i><b>2.1 Tên lĩnh vực [Nông, lâm, ngư nghiệp]</b></i>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text12",
+              "Guid": "566f5a2cf55180114b99eab714c64c2c",
+              "ClientRectangle": "2.4,6.8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tKết quả đạt được và Tồn tại"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text13",
+              "Guid": "f5b461242de6d82e056ff6fa3d0cb0bc",
+              "ClientRectangle": "1.2,7.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dựa trên các chỉ tiêu chính của lĩnh vực, nêu tóm tắt một vài con số, chẳng hạn: Tổng giá trị sản xuất nông nghiệp 6 tháng đầu năm ước đạt 3 tỷ đồng.\r\nNếu có thêm số liệu cụ thể thì phân tách thành 2 phần là Kết quả đạt được và Tồn tại, nếu không có số liệu thì trộn chung làm 1 phần.\r\nĐây là phần tổng hợp các vấn đề/ tồn tại trong biểu II.4.A đã thực hiện từ bước tổng hợp trước đó. Chỉ cần chép lại hoặc sao chép (nếu sử dụng máy tính) từ biểu tổng hợp sang và trình bày dưới dạng lời văn xuôi.\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text14",
+              "Guid": "8acbd58abcdb5ec21c8e041f17b46a7f",
+              "ClientRectangle": "2.4,8,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tNguyên nhân"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text15",
+              "Guid": "f69c3b944251a323838c383f0a2c9d25",
+              "ClientRectangle": "1.2,8.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Đây là phần tổng hợp nguyên nhân trong biểu II.4.A đã phân tích từ bước tổng hợp trước đó. Chỉ cần chép lại hoặc sao chép (nếu sử dụng máy tính) từ biểu tổng hợp sang và trình bày dưới dạng lời văn xuôi.\r\nCác lĩnh vực cần bao quát là:"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text16",
+              "Guid": "06624bc2c35c1bdff0e86de837bf2528",
+              "ClientRectangle": "2.4,9.2,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.1. Nông nghiệp (Trồng trọt, Chăn nuôi, Lâm nghiệp, Thủy sản)\r\n2.2. Công nghiệp, tiểu thủ công nghiệp, xây dựng, cơ sở hạ tầng\r\n2.3. Dịch vụ (Thương mại, du lịch, vận tải, giải trí )\r\n2.4. Ngân sách và đầu tư phát triển\r\n2.5. Giáo dục và khuyến học\r\n2.6. Y tế, Dân số, Kế hoạch hóa gia đình\r\n2.7. Lao động, việc làm và xóa đói giảm nghèo\r\n2.8. Tài nguyên và môi trường\r\n2.9. Hoạt động của các tổ chức chính trị xã hội\r\n2.10. Văn hóa – Thể thao\r\n2.11. An ninh, Quốc phòng\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text17",
+              "Guid": "9d6075b4939cd2a809e4254ad55364f8",
+              "ClientRectangle": "1.2,10.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này phục vụ cho việc dự báo các kết quả có thể đạt được trong thời gian còn lại của năm và là nơi phù hợp để đưa ra những biện pháp để cải thiện kết quả thực hiện kế hoạch trong thời gian còn lại. Phần lớn các thông tin thống kê chính trong phần này sẽ được cập nhật theo suốt thời gian lập kế hoạch.\r\nCác nội dung chính cần thể hiện là:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text18",
+              "Guid": "ef863e381b3f158c9054901bac804322",
+              "ClientRectangle": "1.6,9.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3. Dự kiến kết quả thực hiện cả năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text19",
+              "Guid": "1f10d9cb0d0377af9e0a95875464c9d6",
+              "ClientRectangle": "2,11,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.1. Dự kiến kết quả thực hiện cả năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text20",
+              "Guid": "0099ac04186cd1d8d58f84c060157417",
+              "ClientRectangle": "1.2,11.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Căn cứ vào kết quả đánh giá thực hiện một số chỉ tiêu chính của bản kế hoạch đã xây dựng năm trước, cần cung cấp số liệu theo các chỉ tiêu mềm dẻo  sau đây để phản ánh tổng quát về tình hình thực hiện một số nhiệm vụ chủ yếu của xã trong năm đánh giá hiện trạng (năm X)."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiText",
+              "Name": "Text21",
+              "Guid": "ee707dd88696336091fbe02bc8b0d1df",
+              "ClientRectangle": "1.6,12.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tThu nhập bình quân đầu người (ước)...............................triệu đồng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "20": {
+              "Ident": "StiText",
+              "Name": "Text22",
+              "Guid": "d95b6fb6b000039737c8a0df0611d745",
+              "ClientRectangle": "1.6,12.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ nghèo.......................%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "21": {
+              "Ident": "StiText",
+              "Name": "Text23",
+              "Guid": "d0d32412965854bd7b307aa0c0e99fc8",
+              "ClientRectangle": "1.6,13.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em từ 3-5 tuổi đến lớp.....................%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "22": {
+              "Ident": "StiText",
+              "Name": "Text24",
+              "Guid": "018eb51d7f444a54a6f2d117fb6c5b44",
+              "ClientRectangle": "1.2,14.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<font size=\"10\"><span class=\"MsoFootnoteReference\" style=\"\"><!--[if !supportFootnotes]--><span class=\"MsoFootnoteReference\" style=\"\">[1]</span></span>Chỉ tiêu (thuật ngữ chính xác phải là Chỉ số, song do thói quen sử dụng tại địa phương nên trong sổ tay vẫn dùng là Chỉ tiêu) mềm dẻo có nghĩa là cấp xã hoàn toàn có thể bổ sung thêm những chỉ tiêu khác theo hướng dẫn của cấp huyện để phản ánh đúng nhất chức năng, nhiệm vụ của chính quyền địa phương trong cung cấp dịch vụ công cho cộng đồng trên địa bàn. Nhóm chỉ tiêu này nên trình bày theo từng lĩnh vực cụ thể. Chẳng hạn có thể sử dụng các chỉ tiêu phản ánh chất lượng thực hiện công tác cải cách hành chính công.</font>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;10;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "23": {
+              "Ident": "StiText",
+              "Name": "Text25",
+              "Guid": "ed9475738ff33432f357a185a924b646",
+              "ClientRectangle": "1.6,15,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi tiểu học đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "24": {
+              "Ident": "StiText",
+              "Name": "Text26",
+              "Guid": "d46b8b8c86da842088ebc2ac361a8c7f",
+              "ClientRectangle": "1.6,15.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ tăng dân số tự nhiên\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "25": {
+              "Ident": "StiText",
+              "Name": "Text27",
+              "Guid": "1893a4934c547350d075f926c93cbe5f",
+              "ClientRectangle": "1.6,16.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ thôn/ xóm/ bản đạt tiêu chuẩn làng văn hóa\t\tlàng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "26": {
+              "Ident": "StiText",
+              "Name": "Text28",
+              "Guid": "deffa894228a5dece71ba68198dbd32a",
+              "ClientRectangle": "1.6,16.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ gia đình đạt tiêu chuẩn gia đình văn hóa\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "27": {
+              "Ident": "StiText",
+              "Name": "Text29",
+              "Guid": "53a466ae5938194ff2a2989011f3a087",
+              "ClientRectangle": "1.6,17.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ được dùng điện\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "28": {
+              "Ident": "StiText",
+              "Name": "Text30",
+              "Guid": "310a7529c9f08222fe8d296581d1c7bc",
+              "ClientRectangle": "1.6,18,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ có hố xí hợp vệ sinh\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "29": {
+              "Ident": "StiText",
+              "Name": "Text31",
+              "Guid": "869847b0c170023cb644ca9163c25b41",
+              "ClientRectangle": "2,18.6,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.2. Các biện pháp thực hiện kế hoạch đến cuối năm"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "30": {
+              "Ident": "StiText",
+              "Name": "Text32",
+              "Guid": "7c247a426c7bd86802de188793ed51c6",
+              "ClientRectangle": "1.2,19.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dựa trên căn cứ tóm tắt các thuận lợi, khó khăn, cơ hội, thách thức cũng như các tồn tại, nguyên nhân đã phân tích và trình bày trong các phần trước, đưa ra tóm tắt một số biện pháp cần thực hiện trong thời gian tới để khắc phục khó khăn, giảm nhẹ thiệt hại, phát huy được các yếu tố thuận lợi, tiềm năng."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "31": {
+              "Ident": "StiText",
+              "Name": "Text33",
+              "Guid": "15c639c8c5e96a936c19465843422c65",
+              "ClientRectangle": "1.2,20.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần II: Kế hoạch Phát triển Kinh tế - Xã hội năm tới (năm X+1)"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "32": {
+              "Ident": "StiText",
+              "Name": "Text34",
+              "Guid": "ccd0d98b917b23f08c020fdb7df4a994",
+              "ClientRectangle": "1.6,20.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "1. Dự báo tình hình"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "33": {
+              "Ident": "StiText",
+              "Name": "Text35",
+              "Guid": "c533261c536bc137c23855c34b0edb52",
+              "ClientRectangle": "1.2,21.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này sẽ đưa ra những nhận định, phân tích về những xu hướng thay đổi của điều kiện kinh tế, xã hội, văn hóa, kinh doanh, nhân lực …vv trong thời gian tới có thể mang lại những điều kiện tích cực hoặc gây ra những ảnh hưởng tiêu cực đối với phát triển Kinh tế - Xã hội của xã. Ngoài ra, cũng nên có những nhận định về các nguồn lực trong thời gian tới để có kế hoạch khai thác hợp lý.\r\nCác nội dung cần bao hàm những mặt sau:\r\n"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "34": {
+              "Ident": "StiText",
+              "Name": "Text36",
+              "Guid": "4d86c4de533e313e1490402bc75d7b17",
+              "ClientRectangle": "2.4,22,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tCác yếu tố dự kiến có tác động tích cực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "35": {
+              "Ident": "StiText",
+              "Name": "Text37",
+              "Guid": "e04dbb012a8dfb1fcadb0ba22bd4c6f8",
+              "ClientRectangle": "1.2,22.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Khi trình bày, cần nêu bật ra các yếu tố từ bên ngoài dự kiến sẽ thay đổi (từ huyện, tỉnh, các xã khác) theo đó sẽ mang lại những tác động tốt, giúp xã hoàn thành hoặc đẩy mạnh được các hoạt động phát triển kinh tế xã hội. Cần nêu được các yếu tố này sẽ mang lại tác động như thế nào; chẳng hạn:<i> Những thay đổi trong định hướng phát triển khu công nghiệp tập trung của tỉnh và huyện sẽ làm cho môi trường phát triển kinh tế xã hội chung trong xã biến đổi tích cực, tạo điều kiện để người dân chủ động tham gia vào các hoạt động phát triển nghề phụ ...vv</i>"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "36": {
+              "Ident": "StiText",
+              "Name": "Text38",
+              "Guid": "717ac4b95976d6032208ca5dca78dcb8",
+              "ClientRectangle": "2.4,23.2,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "•\tCác yếu tố dự kiến có tác động tiêu cực."
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "Type": "Expression"
+            },
+            "37": {
+              "Ident": "StiText",
+              "Name": "Text39",
+              "Guid": "003bc934c067f1141321da50067b5ad6",
+              "ClientRectangle": "1.2,23.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Tương tự như trên, cần tóm lược những nhân tố từ bên ngoài dự kiến sẽ thay đổi nhưng gây tác động tiêu cực, làm hạn chế các hoạt động phát triển kinh tế xã hội của xã hoặc thậm chí làm mất đi những nguồn lực tiềm năng trong xã. Khi phân tích, cần nêu cụ thể mức độ tác động tiêu cực; chẳng hạn: <i>Quy hoạch về vùng phát triển cây công nghiệp của huyện, tuy có thể tác động tốt đến tình hình KT-XH chung trong vùng nhưng sẽ làm tăng nguy cơ chuyển dịch tập quán canh tác cây đặc sản chè San tuyết sang các giống chè khác, rất có thể xã ta sẽ bị mai một giống chè nổi tiếng đã có lịch sử từ hàng trăm năm nay.</i>"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "38": {
+              "Ident": "StiText",
+              "Name": "Text40",
+              "Guid": "607af13591f817da10ac1fc8835049d2",
+              "ClientRectangle": "1.6,24.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2. Mục tiêu"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "39": {
+              "Ident": "StiText",
+              "Name": "Text41",
+              "Guid": "a9481e385da0c28fd48c8f23c20194f6",
+              "ClientRectangle": "2,25,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.1. Mục tiêu tổng thể "
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "40": {
+              "Ident": "StiText",
+              "Name": "Text42",
+              "Guid": "c8edbb3990124b867ff92223c85ca8d5",
+              "ClientRectangle": "1.2,25.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này trình bày mục tiêu tổng thể mà xã dự kiến đạt trong giai đoạn trung hạn (thông thường là 5 năm) và cuối năm kế hoạch (X+1). "
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "41": {
+              "Ident": "StiText",
+              "Name": "Text43",
+              "Guid": "0c590e686d2f503fce3826bc4610d81b",
+              "ClientRectangle": "1.2,26.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "a/ Mục tiêu tổng thể dài hạn 5 năm:  Thông thường, mục tiêu này có thể trích ra từ bản Kế hoạch phát triển Kinh tế - Xã hội 5 năm của xã, Nghị quyết của Hội đồng Nhân dân …vv. Ví dụ:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "42": {
+              "Ident": "StiText",
+              "Name": "Text44",
+              "Guid": "7f0474bd057df01fd01e9a0d4aacee1f",
+              "ClientRectangle": "1.2,26.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>Mục tiêu: </b>Tăng cường khai thác triệt để các nguồn lực trên địa bàn, nâng cao năng suất cây trồng, thúc đẩy chuyển đổi cơ cấu ngành trong nông nghiệp, phấn đấu đạt mức thu nhập bình quân đầu người bằng mức trung bình của huyện trong 5 năm tới. (Trích dẫn từ kế hoạch 5 năm của xã). "
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "43": {
+              "Ident": "StiText",
+              "Name": "Text45",
+              "Guid": "85eb526f93a0eb88c97f79e25b542886",
+              "ClientRectangle": "1.2,27.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>b/  Mục tiêu tổng thể năm kế hoạch:</b> &nbsp;<br><div>Có thể hiểu đây chính là chủ đề phát triển của toàn xã trong năm X+1 nhằm hướng tới  đạt mục tiêu dài hạn, thường là mục tiêu kế hoạch 5 năm. Mục tiêu này phản ảnh mong muốn tổng thể về tình hình của xã khi kết thúc năm kế hoạch. Nên trình bày dưới dạng cô đọng thể hiện được tình trạng mong đợi của toàn thể nhân dân, chính quyền xã khi thực hiện bản Kế hoạch PT KT-XH.<br>\r\nVí dụ: <br>\r\nMục tiêu tổng thể của xã năm 2017: Nâng cao năng suất, sản lượng cây trồng vật nuôi; cải thiện điều kiện giao thông phát triển giao thương hàng hóa; nâng cao mức thu nhập bình quân đầu người của người dân trong xã.  \r\n</div>"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "44": {
+              "Ident": "StiText",
+              "Name": "Text46",
+              "Guid": "1c3b14145ca4ed3bb08a90f7088559bd",
+              "ClientRectangle": "2,28,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.2. Mục tiêu cụ thể"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "45": {
+              "Ident": "StiText",
+              "Name": "Text47",
+              "Guid": "f432cb52d0e7c00d3e507fabc52b42d7",
+              "ClientRectangle": "1.2,28.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "<b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Mục tiêu cụ thể của các lĩnh vực/ngành:</b><br>\r\nPhần này là tóm tắt theo lĩnh vực chủ yếu của những mục tiêu đã xác định trong quá trình tổng hợp. Nên theo hướng bắt đầu từ các định hướng lớn nêu trong Kế hoạch phát triển Kinh tế - Xã hội 5 năm của xã, Nghị quyết của Hội đồng Nhân dân …vv. Làm như thế sẽ tạo ra sự gắn kết chặt chẽ giữa kế hoạch phát triển hàng năm với các định hướng mang tính chất dài hạn hơn.<br>\r\nĐây là trạng thái mong đợi vào cuối năm kế hoạch của từng ngành và việc đạt được mục tiêu của mỗi ngành sẽ giúp đạt được mục tiêu phát triển của toàn thể cộng đồng xã.\r\nChẳng hạn, với lĩnh vực nông nghiệp, mục tiêu cụ thể có thể là “Giống cây trồng được tăng cường cả về chất lượng và số lượng”.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "46": {
+              "Ident": "StiText",
+              "Name": "Text48",
+              "Guid": "fcb807550b42060b441fc0f3d347c852",
+              "ClientRectangle": "2,29.2,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "2.3. Chỉ tiêu phát triển"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "47": {
+              "Ident": "StiText",
+              "Name": "Text49",
+              "Guid": "595b57d9f892246ff6075399ee5108d3",
+              "ClientRectangle": "1.2,29.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Dưới đây là danh mục các chỉ tiêu phát triển tham khảo. Các chỉ tiêu này nên sử dụng mềm dẻo để phản ánh sát thực với mục tiêu của địa phương. Tham khảo các chỉ tiêu cấp huyện vẫn giao hàng năm cho xã."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "48": {
+              "Ident": "StiText",
+              "Name": "Text50",
+              "Guid": "845b00a3eed09cf813dd981d8d94a0d0",
+              "ClientRectangle": "1.6,30.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tThu nhập bình quân đầu người\t\ttriệu đồng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "49": {
+              "Ident": "StiText",
+              "Name": "Text51",
+              "Guid": "665f2cc385260e3a1f0dfdc15089097b",
+              "ClientRectangle": "1.6,31,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ nghèo\t\thộ;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "50": {
+              "Ident": "StiText",
+              "Name": "Text52",
+              "Guid": "5918c19b74703cd028baeba7839d8d1a",
+              "ClientRectangle": "1.6,31.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em từ 3-5 tuổi đến lớp \t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "51": {
+              "Ident": "StiText",
+              "Name": "Text53",
+              "Guid": "3e8d40e508c995af9bfc2c7cbce23111",
+              "ClientRectangle": "1.6,32.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi tiểu học đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "52": {
+              "Ident": "StiText",
+              "Name": "Text54",
+              "Guid": "7c241eb48b6f2942ed78a64434875a3e",
+              "ClientRectangle": "1.6,32.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ trẻ em trong độ tuổi trung học cơ sở đến trường\t\t%"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "53": {
+              "Ident": "StiText",
+              "Name": "Text55",
+              "Guid": "449da4b7dbac77c08679880064761fbc",
+              "ClientRectangle": "1.6,33.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ tăng dân số tự nhiên\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "54": {
+              "Ident": "StiText",
+              "Name": "Text56",
+              "Guid": "ce036386e820cb5585095ab1221caf80",
+              "ClientRectangle": "1.6,34,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ thôn/ xóm/ bản đạt tiêu chuẩn làng văn hóa\t\tlàng;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "55": {
+              "Ident": "StiText",
+              "Name": "Text57",
+              "Guid": "adbbfc0b4534624736eb404ccce0c1b7",
+              "ClientRectangle": "1.6,34.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ gia đình đạt tiêu chuẩn gia đình văn hóa\t\thộ;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "56": {
+              "Ident": "StiText",
+              "Name": "Text58",
+              "Guid": "f343d1d61ca1bacdb88c022004b8d6e0",
+              "ClientRectangle": "1.6,35.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ được dùng điện\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "57": {
+              "Ident": "StiText",
+              "Name": "Text59",
+              "Guid": "e88f1d0221ce0c31f431c7f8dec556e6",
+              "ClientRectangle": "1.6,35.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTỷ lệ hộ có hố xí hợp vệ sinh\t\t%;"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "Type": "Expression"
+            },
+            "58": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "Guid": "4e7faf357ec7bdbd300cdf4eb8d68b79",
+              "ClientRectangle": "1.6,36.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3. Các giải pháp chính"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "59": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "Guid": "fa666a757057a2e5facd8d2dd5ba63c6",
+              "ClientRectangle": "1.2,37,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này chính là kết quả tổng hợp các giải pháp trong bước trước và cũng phân ra theo các lĩnh vực như sau:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "60": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "Guid": "5f8ba82a80bfd5599322320e83a8256b",
+              "ClientRectangle": "2.4,37.6,16.6,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "3.1. Nông nghiệp (Trồng trọt, Chăn nuôi, Lâm nghiệp, Thủy sản)3.2. Công nghiệp, tiểu thủ công nghiệp, xây dựng, cơ sở hạ tầng …<br>\r\n3.3. Dịch vụ (Thương mại, du lịch, vận tải, giải trí …)<br>\r\n3.4. Ngân sách và đầu tư phát triển<br>\r\n3.5. Giáo dục và khuyến học<br>\r\n3.6. Y tế, Dân số, Kế hoạch hóa gia đình<br>\r\n3.7. Lao động, việc làm và xóa đói giảm nghèo<br>\r\n3.8. Tài nguyên và môi trường<br>\r\n3.9. Hoạt động của các tổ chức chính trị xã hội<br>\r\n3.10. Văn hóa – Thể thao<br>\r\n3.11. An ninh, Quốc phòng<br>\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "61": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "Guid": "6b7958eec19eddfb0f78ab7a33fad108",
+              "ClientRectangle": "1.6,38.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4. Khung Kế hoạch"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "62": {
+              "Ident": "StiText",
+              "Name": "Text64",
+              "Guid": "434f4ddad771f2f9630966c5cedb48b5",
+              "ClientRectangle": "2,38.8,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.1. Kế hoạch đã có nguồn lực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "63": {
+              "Ident": "StiText",
+              "Name": "Text65",
+              "Guid": "5ba43acbb3f04d3cce885c5d0b39b4dd",
+              "ClientRectangle": "1.2,39.4,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này sẽ trình bày các hoạt động đã được lập kế hoạch, có phân bổ nguồn lực thực hiện từ các chương trình mục tiêu quốc gia, tỉnh, huyện, ngân sách nhà nước, các chương trình sự nghiệp, đầu tư xây dựng cơ bản và những dự án đã khẳng định được nguồn lực (bao gồm phần đóng góp của dân). Đây là Mẫu biểu II.6.A trong bộ biểu tổng hợp của xã. Khi in bản thảo, cần bỏ trống trang này và bổ sung bằng bản in của biểu II.6.A có trong phần mềm tổng hợp kế hoạch xã."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "64": {
+              "Ident": "StiText",
+              "Name": "Text66",
+              "Guid": "2629b59ac7b751226c4a1907e537de20",
+              "ClientRectangle": "2,40,17,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.2. Kế hoạch đề xuất nguồn lực"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold, Italic;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "65": {
+              "Ident": "StiText",
+              "Name": "Text67",
+              "Guid": "b81f59f1fb3345a051dd711f7c5cb12f",
+              "ClientRectangle": "1.2,40.6,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Phần này bao gồm các hoạt động đề xuất chưa phân bổ được nguồn lực hoặc chưa xác định được nguồn lực để thực hiện, tuy nhiên đã có mức xếp loại ưu tiên. Đây là Mẫu biểu II.6.B trong bộ biểu tổng hợp của xã. Các hoạt động trong Mẫu biểu này là cơ sở cơ sở để các cấp, các chương trình dự án, các bên liên quan khác xem xét điều chỉnh và cân đối vốn trong năm kế hoạch hoặc năm sau hoặc cũng là danh mục đầu tư sẵn sàng nếu trong năm kế hoạch, xã tìm kiếm được các nguồn vốn thực hiện. \r\nKhi in bản thảo, cần bỏ trống trang này và bổ sung bằng bản in của biểu II.6.A có trong phần mềm tổng hợp kế hoạch xã.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "66": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "Guid": "811ed26e626d8afe2f4da972e633f41a",
+              "ClientRectangle": "1.2,41.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Mô tả cách tổ chức thực hiện các hoạt động đã nêu trong khung kế hoạch đó, nêu bật được vai trò, trách nhiệm của các bên liên quan (các ban ngành, thôn bản, lãnh đạo xã). Phần này cần đưa ra khung cơ cấu tổ chức tổng thể để biết rõ trách nhiệm khâu nối thực hiện của từng đơn vị tham gia. Các nội dung cần xác định là:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "67": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "Guid": "865367da86f5decf098daedeb6653c22",
+              "ClientRectangle": "1.6,41.2,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5. Tổ chức thực hiện"
+              },
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "68": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "Guid": "e655fc1dbf2fce61a877c6af67537a62",
+              "ClientRectangle": "1.6,42.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tAi tham gia vào thực hiện kế hoạch?"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "69": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "Guid": "97b11a7d360acd9942a245cc8757469b",
+              "ClientRectangle": "1.6,43,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tTrách nhiệm: Hỗ trợ, điều phối, khâu nối thực hiện ra sao?"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "70": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "Guid": "b6b1345b4bc2577d3f16ff5a1ab000a3",
+              "ClientRectangle": "1.6,43.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "o\tGiám sát và Đánh giá: Cần xác định rõ <b>trách nhiệm giám sát/ đánh giá</b> về các <b>nội dung gì? Số lần thực hiện giám sát</b> theo tháng/ quý/ năm ra sao? Cách thức giám sát, các hệ thổng biểu mẫu báo cáo liên quan thế nào? Những ai tham gia vào quá trình giám sát. Phương pháp thực hiện cụ thể sẽ được cụ thể hóa trong phần thực hiện kế hoạch và khung theo dõi đánh giá Kế hoạch PT KT-XH hàng năm của xã. Tuy nhiên, cũng cần phải khái quát được những nội dung vừa đề cập để các bên liên quan hiểu được phạm vi, con người, thời gian và không gian mà xã dự kiến sẽ sử dụng cho công tác Giám sát đánh giá."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "71": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "Guid": "2da81eab87d1dc16aa1b24e384daa730",
+              "ClientRectangle": "1.2,44.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Trách nhiệm theo dõi giám sát cần phải được cụ thể đối với từng nội dung hoạt động dựa trên các mặt sau:"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "72": {
+              "Ident": "StiText",
+              "Name": "Text74",
+              "Guid": "431b581f69e7e609e08c54f684055833",
+              "ClientRectangle": "1.6,44.8,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát về tiến độ thực hiện (Giám sát quá trình)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "73": {
+              "Ident": "StiText",
+              "Name": "Text75",
+              "Guid": "a49889aafb1d50f397fd337f58e9d7db",
+              "ClientRectangle": "1.6,45.4,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát về kết quả thực hiện (Giám sát đầu ra)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "74": {
+              "Ident": "StiText",
+              "Name": "Text76",
+              "Guid": "e94df86971a69452f9dcae08fd56c3cd",
+              "ClientRectangle": "1.6,46,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Giám sát ảnh hưởng, tác động của các hoạt động trong khung kế hoạch sau thời gian&nbsp;"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Bottom",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "75": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox1",
+              "ClientRectangle": "1,45,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "76": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox2",
+              "Guid": "0de87308ad07f7a8d4389c170aaf31bc",
+              "MaxSize": "0.4,0.4",
+              "ClientRectangle": "1,45.6,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "77": {
+              "Ident": "StiCheckBox",
+              "Name": "CheckBox3",
+              "Guid": "8e515485d8d5e4ae0874b44ff852840d",
+              "MaxSize": "0.4,0.4",
+              "ClientRectangle": "1,46.2,0.4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Brush": "solid:Transparent",
+              "Border": "All;;;;;;;solid:0,0,0",
+              "TextBrush": "solid:0,0,0",
+              "Editable": true,
+              "Checked": {
+                "Value": "true"
+              },
+              "CheckStyleForFalse": "Check"
+            },
+            "78": {
+              "Ident": "StiText",
+              "Name": "Text77",
+              "Guid": "600414ab7c18d7624db39d7f3bad221d",
+              "ClientRectangle": "1.6,46.6,17.4,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "đối với xã hội, con người, môi trường …vv (Giám sát tác động)."
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "79": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "Guid": "7065147557f7727517dbb8a70deff59a",
+              "ClientRectangle": "1.2,47.2,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Cần chỉ rõ được các nội dung cần giám sát đối với mỗi hoạt động, nguồn tài liệu, phương tiện xác minh và cá nhân tham gia vào quá trình giám sát là ai? Thời gian định kỳ thực hiện giám sát đánh giá ra sao?<br>\r\nCác biểu mẫu liên quan sẽ được cung cấp khi triển khai thực hiện Theo dõi đánh giá và tổ chức thực hiện bản Kế hoạch PT KT-XH của xã.\r\n"
+              },
+              "AutoWidth": true,
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextOptions": {
+                "WordWrap": true
+              },
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "80": {
+              "Ident": "StiText",
+              "Name": "Text79",
+              "Guid": "0db600acb9dbc3a494f6228e51367ea3",
+              "ClientRectangle": "9,48.4,10,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "UBND XÃ …………………..."
+              },
+              "AutoWidth": true,
+              "HorAlignment": "Center",
+              "VertAlignment": "Center",
+              "Font": "Times New Roman;13;Bold;",
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:Transparent",
+              "TextBrush": "solid:0,0,0",
+              "TextQuality": "Wysiwyg",
+              "AllowHtmlTags": true,
+              "Type": "Expression"
+            },
+            "81": {
+              "Ident": "StiHorizontalLinePrimitive",
+              "Name": "HorizontalLinePrimitive3",
+              "ClientRectangle": "1.6,14.4,5,0.0254",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "StartCap": ";;;",
+              "EndCap": ";;;"
+            }
+          },
+          "PrintIfEmpty": true
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,56,19,0",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:Transparent"
+        }
+      },
+      "PaperSize": "A4",
+      "PageWidth": 21,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1,
+        "Right": 1,
+        "Top": 1,
+        "Bottom": 1
+      }
+    }
+  }
+}
