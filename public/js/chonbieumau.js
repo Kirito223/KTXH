@@ -704,7 +704,7 @@ function initEvent() {
                 .then((res) => {
                     if (res.data["success"] == 200) {
                         window.location = "viewDanhsachNhaplieu";
-                    }else if (res.data["succes"] == 400) {
+                    } else if (res.data["succes"] == 400) {
                         Swal.fire(
                             "Dữ liệu đã tồn tại không thể thêm số liệu tương tự",
                             "Dữ liệu đã tồn tại",
