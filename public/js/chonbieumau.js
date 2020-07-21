@@ -334,6 +334,20 @@ function initData() {
         dataSource: "danhsachkybaocao",
         displayExpr: "tenky",
         valueExpr: "id",
+        onValueChanged: function (e) {
+            var idKy = e.value;
+            axios
+                .get("indexBieumauApdung/" + idKy)
+                .then((res) => {
+                    let data = res.data;
+                    $("#cbBieumau")
+                        .dxSelectBox("instance")
+                        .option("dataSource", data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
     });
 
     let nam = [];
@@ -348,7 +362,7 @@ function initData() {
         .dxSelectBox("instance")
         .option("value", new Date().getFullYear());
     $("#cbBieumau").dxSelectBox({
-        dataSource: "indexBieumauApdung",
+        // dataSource: "indexBieumauApdung",
         displayExpr: "tenbieumau",
         valueExpr: "id",
         onValueChanged: function (e) {

@@ -27,18 +27,20 @@ class Quanlybaocao extends Controller
     }
 
     # lay danh sachc cac bieu mau ap dung
-    public function danhsachBaocaoApdung()
+    public function danhsachBaocaoApdung($ky)
     {
         $madonvi = Session::get('madonvi');
         $donvicha = Session::get('donvicha');
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
+            ->where('tbl_bieumau.kybaocao', '=', $ky)
             ->where('tbl_bieumau.madonvi', '=', $madonvi)
             ->get()->toArray();
         $datacha = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
+            ->where('tbl_bieumau.kybaocao', '=', $ky)
             ->where('tbl_bieumau.madonvi', '=', $donvicha)
             ->get()->toArray();
         $data = array_merge($data, $datacha);

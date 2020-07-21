@@ -75,6 +75,18 @@
                                                 id="trangthaiapdung"><label for="trangthaiapdung"></label></div>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2">Đính kèm:</label>
+                                    <div class="col-sm-10 col-md-10">
+                                        <input type="file" id="file" />
+                                        <div class="">
+                                            <ul id="listFile">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -73,7 +73,7 @@
                                 <div>
                                     <p style="margin-top: 10px; cursor: pointer;" data-file="" id="filedinhkem"></p>
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -110,13 +110,6 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="col-md-12">
-                                    <div class="col-sm-11" id="chondiaban"></div>
-                                    <div class="col-sm-1">
-                                        <button id="getdiaban" class="btn btn-sm btn-success"><i
-                                                class="fa fa-street-view" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
                                 <div class="col-md-12">
                                     <div id="gridDanhsachdonvi" style="height: 200px; overflow: auto;">
                                         <table class="table table-bordered">

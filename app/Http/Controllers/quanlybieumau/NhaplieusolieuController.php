@@ -45,12 +45,12 @@ class NhaplieusolieuController extends Controller
     {
         $madonvi = Session::get('madonvi');
         $donvicha = Session::get('donvicha');
-		//echo $donvicha;
+        //echo $donvicha;
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->where('tbl_bieumau.loaibaocao', '=', 0)
-			->Where(function($query) use ($madonvi,$donvicha) {
+            ->Where(function ($query) use ($madonvi, $donvicha) {
                 $query->Orwhere('tbl_bieumau.madonvi', '=', $madonvi)
-                      ->Orwhere('tbl_bieumau.madonvi', '=', $donvicha);
+                    ->Orwhere('tbl_bieumau.madonvi', '=', $donvicha);
             })
             ->where('tbl_bieumau.trangthai', '=', 1)
             ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
@@ -66,6 +66,12 @@ class NhaplieusolieuController extends Controller
     # Luu thong tin bieu mau nhap lieu
     public function store(Request $request)
     {
+        // Upload file vao thu muc chua tai lieu
+        $file = null;
+        if (!isset($request->fileedit) && isset($request->file)) {
+            $request->file->storeAs('upload', $request->file->getClientOriginalName());
+            $file = $request->file->getClientOriginalName();
+        }
         $bieumau = new tbl_bieumau();
         $bieumau->sohieu = $request->sohieu;
         $bieumau->tenbieumau = $request->tenbieumau;
@@ -76,6 +82,7 @@ class NhaplieusolieuController extends Controller
         $bieumau->loaibaocao = 0;
         $bieumau->mota = $request->mota;
         $bieumau->isDelete = 0;
+        $bieumau->file = $file;
         if ($request->trangthaiapdung == "true") {
             $bieumau->trangthai = 1;
         }
@@ -123,7 +130,7 @@ class NhaplieusolieuController extends Controller
         $bieumau = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->where('tbl_bieumau.id', '=', $id)
             ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
-        // ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
+            // ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
             ->select(
                 'tbl_bieumau.id',
                 'tbl_bieumau.*',
@@ -141,7 +148,7 @@ class NhaplieusolieuController extends Controller
         $result = json_encode($result);
         return response($result);
     }
-
+    // Chinh sua bieu mau
     public function update(Request $request)
     {
         $bieumau = tbl_bieumau::find($request->id);
@@ -152,7 +159,13 @@ class NhaplieusolieuController extends Controller
         $bieumau->soquyetdinh = $request->soquyetdinh;
         $bieumau->ngayquyetdinh = $request->ngayquyetdinh;
         $bieumau->mota = $request->mota;
-		        $request->trangthaiapdung ? $bieumau->trangthai = 1 : $bieumau->trangthai = 0;
+        $request->trangthaiapdung ? $bieumau->trangthai = 1 : $bieumau->trangthai = 0;
+        // Upload file
+        if ($request->file != "null") {
+            $request->file->storeAs('upload', $request->file->getClientOriginalName());
+            $file = $request->file->getClientOriginalName();
+            $bieumau->file = $file;
+        }
 
         if ($bieumau->save()) {
             # Xoa chi tiet bieu mau cu
@@ -225,14 +238,14 @@ class NhaplieusolieuController extends Controller
         $data = tbl_solieutheobieu::where('tbl_solieutheobieu.isDelete', 0)
             ->where('tbl_solieutheobieu.loaibaocao', 0)
             //->where('tbl_solieutheobieu.donvinhap', '=', $madonvi)
-			->Where(function($query) use ($madonvi,$donvicha) {
+            ->Where(function ($query) use ($madonvi, $donvicha) {
                 $query->Orwhere('tbl_solieutheobieu.donvinhap', '=', $madonvi)
-                      ->Orwhere('tbl_solieutheobieu.donvinhap', '=', $donvicha);
+                    ->Orwhere('tbl_solieutheobieu.donvinhap', '=', $donvicha);
             })
             ->join('tbl_bieumau', 'tbl_bieumau.id', 'tbl_solieutheobieu.bieumau')
             ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_solieutheobieu.taikhoan')
             ->select('tbl_solieutheobieu.id', 'tbl_bieumau.sohieu', DB::raw('CONCAT(tbl_bieumau.tenbieumau,"-", tbl_taikhoan.tentaikhoan) AS tenbieumau'), 'tbl_solieutheobieu.created_at', 'tbl_taikhoan.tentaikhoan', 'tbl_solieutheobieu.namnhap')
-            ->get()->toArray();       
+            ->get()->toArray();
         return response()->json($data);
     }
     public function danhsachBieumauNhapLieu()
@@ -363,15 +376,15 @@ class NhaplieusolieuController extends Controller
                 $obj->id = $item[5]; // Id cua chi tieu;
                 $obj->ten = $item[0];
                 $obj->sanluong = $item[1];
-                if($ParentId != null){
+                if ($ParentId != null) {
                     $obj->idcha = $ParentId->idcha;
-                }else{
+                } else {
                     $obj->idcha = null;
                 }
                 $obj->donvi = $item[2];
                 array_push($result, $obj);
                 // IF object exist idcha
-                if($ParentId != null){
+                if ($ParentId != null) {
                     $idFind = $ParentId->idcha;
                     if ($ParentId->idcha != null) {
                         // Find Parent node of this child node
@@ -393,7 +406,6 @@ class NhaplieusolieuController extends Controller
                         }
                     }
                 }
-                
             }
         }
         return response()->json($result);
@@ -448,7 +460,6 @@ class NhaplieusolieuController extends Controller
                 } else {
                     return response()->json(['succes' => 400]);
                 }
-
             } else {
                 $solieutheobieu = tbl_solieutheobieu::find($request->edit);
                 $solieutheobieu->bieumau = $request->mabieumau;
@@ -486,7 +497,6 @@ class NhaplieusolieuController extends Controller
                     return response()->json(['succes' => 200]);
                 }
             }
-
         } catch (Exception $ex) {
             return dd($ex);
         }

@@ -3,6 +3,8 @@ var trangthaiapdung;
 var idBieumau = 0;
 var chitiet = [];
 var dataChiteu;
+var fileEdit;
+
 import {
     renderTable,
     checkallSelect,
@@ -24,6 +26,10 @@ function loadData() {
             $("#tableChitieu").treetable({
                 expandable: true,
             });
+            idBieumau = Number(localStorage.getItem("idBieumau"));
+            if (idBieumau != 0) {
+                setTimeout(loadInfoEdit, 500);
+            }
         })
         .catch((err) => {
             console.log(err);
@@ -35,10 +41,6 @@ function loadData() {
         value: now,
         displayFormat: "shortdate",
     });
-    idBieumau = Number(localStorage.getItem("idBieumau"));
-    if (idBieumau != 0) {
-        setTimeout(loadInfoEdit, 500);
-    }
 }
 
 //Ham gan cac su kien cho cac control
@@ -55,6 +57,9 @@ function initEvent() {
     });
 
     $("#btnLuu").on("click", () => {
+        let file = null;
+        file = document.getElementById("file").files[0];
+
         trangthaiapdung = Ultils.checkStatusCheckBox("trangthaiapdung");
         let ngayQD = $("#ngayquyetdinh").dxDateBox("instance");
         let dateBoxValue = ngayQD.option("value");
@@ -66,20 +71,28 @@ function initEvent() {
         for (let index = 0; index < checkedChitieu.length; index++) {
             arrID.push(Number(checkedChitieu[index].value));
         }
-        
+
         let time = moment(dateBoxValue).format("YYYY-MM-DD");
+
+        let config = {
+            headers: { "content-type": "multipart/form-data" },
+        };
+
         if (idBieumau == 0) {
+            let formData = new FormData();
+            formData.append("sohieu", $("#sohieu").val());
+            formData.append("tenbieumau", $("#tenbieumau").val());
+            formData.append("soquyetdinh", $("#soquyetdinh").val());
+            formData.append("ngayquyetdinh", time);
+            formData.append("mota", $("#mota").val());
+            formData.append("trangthaiapdung", trangthaiapdung);
+            formData.append("chitieu", JSON.stringify(arrID));
+            formData.append("loaibaocao", 1);
+            if (file != null) {
+                formData.append("file", file);
+            }
             axios
-                .post("luuBieunauNhaplieuSolieu", {
-                    sohieu: $("#sohieu").val(),
-                    tenbieumau: $("#tenbieumau").val(),
-                    soquyetdinh: $("#soquyetdinh").val(),
-                    ngayquyetdinh: time,
-                    mota: $("#mota").val(),
-                    trangthaiapdung: trangthaiapdung,
-                    chitieu: JSON.stringify(arrID),
-                    loaibaocao: 1,
-                })
+                .post("luuBieunauNhaplieuSolieu", formData, config)
                 .then((res) => {
                     if (res.status == 200) {
                         window.location = "viewDanhsachBieumauNhaplieu";
@@ -96,19 +109,25 @@ function initEvent() {
                 });
         }
         if (idBieumau != 0) {
+            // Sua bieu mau
+            let formData = new FormData();
+            formData.append("donvi", window.idphongban);
+            formData.append("taikhoan", window.idnguoidung);
+            formData.append("sohieu", $("#sohieu").val());
+            formData.append("tenbieumau", $("#tenbieumau").val());
+            formData.append("soquyetdinh", $("#soquyetdinh").val());
+            formData.append("ngayquyetdinh", time);
+            formData.append("mota", $("#mota").val());
+            formData.append("trangthaiapdung", trangthaiapdung);
+            formData.append("chitieu", JSON.stringify(arrID));
+            formData.append("id", idBieumau);
+            if (file == undefined) {
+                formData.append("file", null);
+            } else {
+                formData.append("file", file);
+            }
             axios
-                .post("editBieumauNhaplieu", {
-                    donvi: window.idphongban,
-                    taikhoan: window.idnguoidung,
-                    sohieu: $("#sohieu").val(),
-                    tenbieumau: $("#tenbieumau").val(),
-                    soquyetdinh: $("#soquyetdinh").val(),
-                    ngayquyetdinh: time,
-                    mota: $("#mota").val(),
-                    trangthaiapdung: trangthaiapdung,
-                    chitieu: JSON.stringify(arrID),
-                    id: idBieumau,
-                })
+                .post("editBieumauNhaplieu", formData, config)
                 .then((res) => {
                     if (res.status == 200) {
                         localStorage.setItem("idBieumau", 0);
@@ -145,7 +164,7 @@ function loadInfoEdit() {
             $("#tenbieumau").val(thongtinchung.tenbieumau);
             $("#soquyetdinh").val(thongtinchung.soquyetdinh);
             $("#mota").val(thongtinchung.mota);
-		if (thongtinchung.trangthai == 1) {
+            if (thongtinchung.trangthai == 1) {
                 $("#trangthaiapdung").prop("checked", true);
             }
             chitiet.map((item) => {
@@ -154,6 +173,12 @@ function loadInfoEdit() {
                 );
                 element.checked = true;
             });
+            if (thongtinchung.file != null) {
+                $("#listFile").append(
+                    `<li><a href="#">${thongtinchung.file}</a> <i class="fas fa-trash-alt fa-sm fa-fw"></i></li>`
+                );
+                fileEdit = thongtinchung.file;
+            }
             checkallSelect();
         })
         .catch((err) => {
