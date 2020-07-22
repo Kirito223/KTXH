@@ -49,17 +49,21 @@ class Quanlybaocao extends Controller
 
     public function index()
     {
-       $madonvi = Session::get('madonvi');
+        $madonvi = Session::get('madonvi');
         $donvicha = Session::get('donvicha');
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
+            ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
             ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
             ->where('tbl_bieumau.madonvi', '=', $madonvi)
+            ->select('tbl_bieumau.*', 'tbl_taikhoan.tentaikhoan')
             ->get()->toArray();
         $datacha = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
+            ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
             ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
             ->where('tbl_bieumau.madonvi', '=', $donvicha)
+            ->select('tbl_bieumau.*', 'tbl_taikhoan.tentaikhoan')
             ->get()->toArray();
         $data = array_merge($data, $datacha);
         return json_encode($data);
@@ -67,6 +71,12 @@ class Quanlybaocao extends Controller
 
     public function store(Request $request)
     {
+        // Upload file vao thu muc chua tai lieu
+        $file = null;
+        if (!isset($request->fileedit) && isset($request->file)) {
+            $request->file->move('upload', $request->file->getClientOriginalName());
+            $file = $request->file->getClientOriginalName();
+        }
         $bieumau = new tbl_bieumau();
         $bieumau->sohieu = $request->sohieu;
         $bieumau->tenbieumau = $request->tenbieumau;
@@ -83,7 +93,7 @@ class Quanlybaocao extends Controller
             $bieumau->trangthai = 1;
         }
         $bieumau->mota = $request->mota;
-
+        $bieumau->file = $file;
         if ($bieumau->save()) {
             // lưu thông tin chi tiết biểu mẫu
             $id = $bieumau->id;
@@ -106,7 +116,7 @@ class Quanlybaocao extends Controller
         $bieumau = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->where('tbl_bieumau.id', '=', $id)
             ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
-        // ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
+            // ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
             ->select(
                 'tbl_bieumau.id',
                 'tbl_bieumau.*',
@@ -137,8 +147,15 @@ class Quanlybaocao extends Controller
         $bieumau->kybaocao = $request->kybaocao;
         $bieumau->loaisolieu = $request->loaisolieu;
         $bieumau->mota = $request->mota;
-		$request->trangthaiapdung ? $bieumau->trangthai = 1 : $bieumau->trangthai = 0;
+        $request->trangthaiapdung ? $bieumau->trangthai = 1 : $bieumau->trangthai = 0;
 
+            // Upload file
+            if ($request->file != "null") {
+                $request->file->move('upload', $request->file->getClientOriginalName());
+                $file = $request->file->getClientOriginalName();
+                $bieumau->file = $file;
+            }
+    
         if ($bieumau->save()) {
             # Xoa chi tiet bieu mau cu
             $chitietcu = tbl_chitietbieumau::where('bieumau', '=', $request->id)

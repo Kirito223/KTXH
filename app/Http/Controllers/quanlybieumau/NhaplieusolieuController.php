@@ -104,8 +104,9 @@ class NhaplieusolieuController extends Controller
         }
     }
 
-    public function downloadFileQuyetdinh($file){
-        return response()->download(public_path('upload/'. $file));
+    public function downloadFileQuyetdinh($file)
+    {
+        return response()->download(public_path('upload/' . $file));
     }
 
     public function showDeltalBieumau($id)
@@ -223,11 +224,16 @@ class NhaplieusolieuController extends Controller
         }
     }
 
-    public function delFileQuyetdinh($id){
+    public function delFileQuyetdinh($id)
+    {
         $bieumau = tbl_bieumau::find($id);
-        $bieumau->file=null;
-        $bieumau->save();
-        return response()->json(["code"=>200, "message"=>"ok"]);
+        $file = $bieumau->file;
+        $bieumau->file = null;
+        if ($bieumau->save()) {
+            unlink(public_path('upload'.'/'. $file));
+            return response()->json(["code" => 200, "message" => "ok"]);
+        }
+        return response()->json(["code" => 401, "message" => "fail"]);
     }
 
     # Phan nhap lieu bieu mau

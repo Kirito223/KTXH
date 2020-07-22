@@ -25,6 +25,11 @@ function loadData() {
             $("#tableChitieu").treetable({
                 expandable: true,
             });
+
+            idBaocao = Number(localStorage.getItem("idbaocao"));
+            if (idBaocao != 0) {
+                setTimeout(loadInfoEdit, 500);
+            }
         })
         .catch((err) => {
             console.log(err);
@@ -36,11 +41,6 @@ function loadData() {
         displayFormat: "shortdate",
     });
     initEvent();
-    idBaocao = Number(localStorage.getItem("idbaocao"));
-    if (idBaocao != 0) {
-        setTimeout(loadInfoEdit, 500);
-    }
-
     loadKybaocao();
 }
 
@@ -77,7 +77,25 @@ function loadInfoEdit() {
                 );
                 element.checked = true;
             });
+            if (thongtinchung.file != null) {
+                $("#listFile").append(
+                    `<li><a href="downloadFileQD/${thongtinchung.file}" target="blank">${thongtinchung.file}</a> <i class="fas fa-trash-alt fa-sm fa-fw" id="btnDelFile"></i></li>`
+                );
+            }
             checkallSelect();
+            $("#btnDelFile").on("click", (e) => {
+                axios
+                    .get("delFileQuyetdinh/" + idBaocao)
+                    .then((res) => {
+                        let data = res.data;
+                        if (data.code == 200) {
+                            $("#listFile").empty();
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            });
         })
         .catch((err) => {
             console.log(err);
@@ -125,6 +143,9 @@ function initEvent() {
         window.location = "viewQuanlyBieumaubaocao";
     });
     $("#btnLuu").on("click", () => {
+        let file = null;
+        file = document.getElementById("file").files[0];
+
         trangthaiapdung = Ultils.checkStatusCheckBox("trangthaiapdung");
 
         let kybaocao = $("input.checkbox-kybaocao:checked");
@@ -144,24 +165,29 @@ function initEvent() {
             arrID.push(Number(checkedChitieu[index].value));
         }
         let time = moment(dateBoxValue).format("YYYY-MM-DD");
-
+        let config = {
+            headers: { "content-type": "multipart/form-data" },
+        };
         if (idBaocao == 0) {
+            let formData = new FormData();
+            formData.append("donvi", window.idphongban);
+            formData.append("taikhoan", window.idnguoidung);
+            formData.append("sohieu", $("#sohieu").val());
+            formData.append("tenbieumau", $("#tenbieumau").val());
+            formData.append("soquyetdinh", $("#soquyetdinh").val());
+            formData.append("ngayquyetdinh", time);
+            formData.append("mota", $("#mota").val());
+            formData.append("trangthaiapdung", trangthaiapdung);
+            formData.append("trangthaisudung", 0);
+            formData.append("kybaocao", kybaocaosudungbieumau);
+            formData.append("loaisolieu", loaisolieu);
+            formData.append("chitieu", JSON.stringify(arrID));
+            formData.append("loaibaocao", 1);
+            if (file != null) {
+                formData.append("file", file);
+            }
             axios
-                .post("LuuBieumaubaocao", {
-                    donvi: window.idphongban,
-                    taikhoan: window.idnguoidung,
-                    sohieu: $("#sohieu").val(),
-                    tenbieumau: $("#tenbieumau").val(),
-                    soquyetdinh: $("#soquyetdinh").val(),
-                    ngayquyetdinh: time,
-                    mota: $("#mota").val(),
-                    trangthaiapdung: trangthaiapdung,
-                    trangthaisudung: 0,
-                    kybaocao: kybaocaosudungbieumau,
-                    loaisolieu: loaisolieu,
-                    chitieu: JSON.stringify(arrID),
-                    loaibaocao: 1,
-                })
+                .post("LuuBieumaubaocao", formData, config)
                 .then((res) => {
                     if (res.status == 200) {
                         window.location = "viewQuanlyBieumaubaocao";
@@ -178,23 +204,28 @@ function initEvent() {
                 });
         }
         if (idBaocao != 0) {
+            let formData = new FormData();
+            formData.append("donvi", window.idphongban);
+            formData.append("taikhoan", window.idnguoidung);
+            formData.append("sohieu", $("#sohieu").val());
+            formData.append("tenbieumau", $("#tenbieumau").val());
+            formData.append("soquyetdinh", $("#soquyetdinh").val());
+            formData.append("ngayquyetdinh", time);
+            formData.append("mota", $("#mota").val());
+            formData.append("trangthaiapdung", trangthaiapdung);
+            formData.append("trangthaisudung", 0);
+            formData.append("kybaocao", kybaocaosudungbieumau);
+            formData.append("loaisolieu", loaisolieu);
+            formData.append("chitieu", JSON.stringify(arrID));
+            formData.append("loaibaocao", 1);
+            formData.append("id", idBaocao);
+            if (file == undefined) {
+                formData.append("file", null);
+            } else {
+                formData.append("file", file);
+            }
             axios
-                .post("SuaBieumaubaocao", {
-                    donvi: window.idphongban,
-                    taikhoan: window.idnguoidung,
-                    sohieu: $("#sohieu").val(),
-                    tenbieumau: $("#tenbieumau").val(),
-                    soquyetdinh: $("#soquyetdinh").val(),
-                    ngayquyetdinh: time,
-                    mota: $("#mota").val(),
-                    trangthaiapdung: trangthaiapdung,
-                    trangthaisudung: 0,
-                    kybaocao: kybaocaosudungbieumau,
-                    loaisolieu: loaisolieu,
-                    chitieu: JSON.stringify(arrID),
-                    loaibaocao: 1,
-                    id: idBaocao,
-                })
+                .post("SuaBieumaubaocao", formData, config)
                 .then((res) => {
                     if (res.status == 200) {
                         localStorage.setItem("idbaocao", 0);
