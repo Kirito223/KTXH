@@ -3,14 +3,8 @@ var trangthaiapdung;
 var idBieumau = 0;
 var chitiet = [];
 var dataChiteu;
-var fileEdit;
 
-import {
-    renderTable,
-    checkallSelect,
-    selectNode,
-    selectedParent,
-} from "./treeTable.js";
+import { renderTable, checkallSelect } from "./treeTable.js";
 
 $(document).ready(() => {
     loadData();
@@ -175,11 +169,25 @@ function loadInfoEdit() {
             });
             if (thongtinchung.file != null) {
                 $("#listFile").append(
-                    `<li><a href="#">${thongtinchung.file}</a> <i class="fas fa-trash-alt fa-sm fa-fw"></i></li>`
+                    `<li><a href="downloadFileQD/${thongtinchung.file}" target="blank">${thongtinchung.file}</a> <i class="fas fa-trash-alt fa-sm fa-fw" id="btnDelFile"></i></li>`
                 );
-                fileEdit = thongtinchung.file;
+               
             }
             checkallSelect();
+
+            $("#btnDelFile").on("click", (e) => {
+                axios
+                    .get("delFileQuyetdinh/" + idBieumau)
+                    .then((res) => {
+                        let data = res.data;
+                        if (data.code == 200) {
+                            $('#listFile').empty();
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            });
         })
         .catch((err) => {
             console.log(err);

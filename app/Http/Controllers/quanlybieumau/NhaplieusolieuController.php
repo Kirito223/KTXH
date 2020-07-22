@@ -69,7 +69,7 @@ class NhaplieusolieuController extends Controller
         // Upload file vao thu muc chua tai lieu
         $file = null;
         if (!isset($request->fileedit) && isset($request->file)) {
-            $request->file->storeAs('upload', $request->file->getClientOriginalName());
+            $request->file->move('upload', $request->file->getClientOriginalName());
             $file = $request->file->getClientOriginalName();
         }
         $bieumau = new tbl_bieumau();
@@ -102,6 +102,10 @@ class NhaplieusolieuController extends Controller
         } else {
             return response(301);
         }
+    }
+
+    public function downloadFileQuyetdinh($file){
+        return response()->download(public_path('upload/'. $file));
     }
 
     public function showDeltalBieumau($id)
@@ -162,7 +166,7 @@ class NhaplieusolieuController extends Controller
         $request->trangthaiapdung ? $bieumau->trangthai = 1 : $bieumau->trangthai = 0;
         // Upload file
         if ($request->file != "null") {
-            $request->file->storeAs('upload', $request->file->getClientOriginalName());
+            $request->file->move('upload', $request->file->getClientOriginalName());
             $file = $request->file->getClientOriginalName();
             $bieumau->file = $file;
         }
@@ -217,6 +221,13 @@ class NhaplieusolieuController extends Controller
         } else {
             return 500;
         }
+    }
+
+    public function delFileQuyetdinh($id){
+        $bieumau = tbl_bieumau::find($id);
+        $bieumau->file=null;
+        $bieumau->save();
+        return response()->json(["code"=>200, "message"=>"ok"]);
     }
 
     # Phan nhap lieu bieu mau
