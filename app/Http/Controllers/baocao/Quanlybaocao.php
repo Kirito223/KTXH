@@ -74,7 +74,7 @@ class Quanlybaocao extends Controller
         // Upload file vao thu muc chua tai lieu
         $file = null;
         if (!isset($request->fileedit) && isset($request->file)) {
-            $request->file->move('upload', $request->file->getClientOriginalName());
+            $request->file->move(public_path('upload'), $request->file->getClientOriginalName());
             $file = $request->file->getClientOriginalName();
         }
         $bieumau = new tbl_bieumau();

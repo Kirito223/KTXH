@@ -369,9 +369,9 @@ function initEvent() {
         let sohieu = $("#sokyhieubaocao").val();
         let tieude = $("#tieudebaocao").val();
         let nam = $("#nambaocao").dxSelectBox("instance").option("value");
-        let hoanthanh = false;
+        let hoanthanh = 0;
         if (Ultil.checkStatusCheckBox("hoanthanh")) {
-            hoanthanh = true;
+            hoanthanh = 1;
         }
         let file = null;
         if (fileEdit == "") {

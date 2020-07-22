@@ -39,7 +39,7 @@ class ProductionPlanReportController extends Controller
             ->where('tbl_chitieu.idcha', null)
             ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
-        //->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            //->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
             ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi', DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as strid'))
 
             ->get();
@@ -97,9 +97,19 @@ class ProductionPlanReportController extends Controller
         $Ultil = new ChitieuUltils();
         $TreeChitieu = $Ultil->getTreeChitieu($listChitieu);
         $Result = array();
-        $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
+
+        // Tong hop bao cao theo huyen
+        $listXaofHuyen = null;
+        if ($request->diaban == 1) {
+            $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
             ->get();
-// Gan so level cho chi tieu;
+        } else {
+            // Tong hop bao cao theo xa
+            $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
+            ->get();
+        }
+        
+        // Gan so level cho chi tieu;
         foreach ($TreeChitieu as $items) {
             $items->level = $this->findLevel($TreeChitieu, $items, 1);
         }
@@ -162,7 +172,7 @@ class ProductionPlanReportController extends Controller
         $lastcol = 0;
         foreach ($Result as $Item) {
             $activeSheet->setCellValueByColumnAndRow(1, $row, $rowIndex);
-            $activeSheet->setCellValueByColumnAndRow(2, $row, $this->writeLevel($Item->level). $Item->chitieu);
+            $activeSheet->setCellValueByColumnAndRow(2, $row, $this->writeLevel($Item->level) . $Item->chitieu);
             $activeSheet->setCellValueByColumnAndRow(3, $row, $Item->donvi);
             $activeSheet->setCellValueByColumnAndRow(4, $row, $Item->KHpreYear);
             $activeSheet->setCellValueByColumnAndRow(5, $row, $Item->estimate);
@@ -245,7 +255,6 @@ class ProductionPlanReportController extends Controller
             if ($values->id == $obj->idcha) {
                 return $values;
             }
-
         }
         return null;
     }
@@ -338,5 +347,15 @@ class ProductionPlanReportController extends Controller
             ->select('tbl_donvihanhchinh.id', 'tbl_donvihanhchinh.tendonvi')
             ->get();
         return $listUnit;
+    }
+
+    // Bao cao tong hop cap xa
+    public function danhsachXa()
+    {
+        $madiaban = session('madiabandvch');
+        $data = tbl_donvihanhchinh::where('isDelete', 0)
+            ->where('madonvi',  $madiaban)
+            ->get();
+        return response()->json($data);
     }
 }

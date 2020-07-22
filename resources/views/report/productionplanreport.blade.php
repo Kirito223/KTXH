@@ -13,7 +13,11 @@
                 <div class="widget-body">
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
-                            <label>Huyện</label>
+                            <label>Địa bàn</label>
+                            <div id="cbDiaban"></div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <label id="titleDiaban"></label>
                             <div id="cbHuyen"></div>
                         </div>
                         <div class="col-md-2 col-sm-12">

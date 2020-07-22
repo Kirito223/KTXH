@@ -85,7 +85,7 @@ class DanhsachBaocaoController extends Controller
             $baocao->ngaycapnhatsaucung = $request->ngaysaucung;
             $baocao->nguoicapnhat = $request->nguoicapnhat;
             $baocao->gui = 0;
-            $baocao->trangthai = 0;
+            $baocao->trangthai = $request->hoanthanh;
             $baocao->nambaocao = $request->nam;
             $baocao->file = $file;
             if ($baocao->save()) {
@@ -144,7 +144,7 @@ class DanhsachBaocaoController extends Controller
             $baocao->ngaycapnhatsaucung = $request->ngaysaucung;
             $baocao->nguoicapnhat = $request->nguoicapnhat;
             $baocao->gui = 0;
-            $baocao->trangthai = 0;
+            $baocao->trangthai = $request->hoanthanh;
             $baocao->file = $file;
             if ($baocao->save()) {
                 // Xoa bao chi tiet bao cao

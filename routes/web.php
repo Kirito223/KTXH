@@ -362,5 +362,9 @@ Route::post('/updateroute', 'tbl_quyenController@addAvailableRouteToDB');
 
 # lay thong tin bieu mau
 Route::get('getChitieuNhaplieu/{idTemplate}', 'quanlybieumau\NhaplieubaocaoController@ChitieuNhaplieu');
+
 Route::get('downloadFileQD/{file}', 'quanlybieumau\NhaplieusolieuController@downloadFileQuyetdinh');
 Route::get('delFileQuyetdinh/{id}', 'quanlybieumau\NhaplieusolieuController@delFileQuyetdinh');
+
+#Phan bao cao san xuat cấp xã
+Route::get('danhsachXa', 'Report\ProductionPlanReportController@danhsachXa');

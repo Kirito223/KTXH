@@ -52,7 +52,7 @@ class TaikhoanLoginController extends Controller
                     Session::put('tenphongban', $phongban->tenphongban);
                     Session::put('madonvi', $phongban->idDonvihanhchinh);
                     Session::put('tendonvi',  $phongban->tendonvi);
-                    Session::put('idDonvihanhchinh', $phongban->idDonvihanhchinh);
+                   
                     Session::put('nameprovince', $province->_name);
                     Session::put('idprovince', $province->id);
                     Session::put('madiaban', $phongban->diaban);
@@ -100,7 +100,7 @@ class TaikhoanLoginController extends Controller
             $phongban = tbl_taikhoan::where('tbl_taikhoan.id', '=', $taikhoan->id)
                 ->leftJoin('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
                 ->join('tbl_donvihanhchinh', 'tbl_donvihanhchinh.id', 'tbl_taikhoan.donvi')
-                ->select('tbl_phongban.id', 'tbl_phongban.tenphongban', 'tbl_donvihanhchinh.diaban', 'tbl_phongban.madonvi', 'tbl_donvihanhchinh.tendonvi', 'tbl_donvihanhchinh.id as idDonvihanhchinh')
+                ->select('tbl_phongban.id', 'tbl_phongban.tenphongban', 'tbl_donvihanhchinh.diaban', 'tbl_phongban.madonvi', 'tbl_donvihanhchinh.tendonvi', 'tbl_donvihanhchinh.id as idDonvihanhchinh', 'tbl_donvihanhchinh.madonvi as madv')
                 ->first();
             if ($phongban != null) {
                 $province = tbl_tinh::find($phongban->diaban);
@@ -110,10 +110,10 @@ class TaikhoanLoginController extends Controller
                 Session::put('tenphongban', $phongban->tenphongban);
                 Session::put('madonvi', $phongban->idDonvihanhchinh);
                 Session::put('tendonvi',  $phongban->tendonvi);
-                Session::put('idDonvihanhchinh', $phongban->idDonvihanhchinh);
                 Session::put('nameprovince', $province->_name);
                 Session::put('idprovince', $province->id);
                 Session::put('madiaban', $phongban->diaban);
+                Session::put('madiabandvch', $phongban->madv);
                 if ($phongban->id) {
                     Session::put('admin', true);
                 }

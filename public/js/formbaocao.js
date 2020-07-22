@@ -85,7 +85,7 @@ function loadInfoEdit() {
             checkallSelect();
             $("#btnDelFile").on("click", (e) => {
                 axios
-                    .get("delFileQuyetdinh/" + idBaocao)
+                    .get("delFileQuyetdinh/" + idBieumau)
                     .then((res) => {
                         let data = res.data;
                         if (data.code == 200) {

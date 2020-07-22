@@ -8,7 +8,7 @@ $(document).ready(() => {
 });
 function loadData() {
     $("#cbHuyen").dxSelectBox({
-        dataSource: "listDonvihanhchinParent",
+        // dataSource: "listDonvihanhchinParent",
         displayExpr: "tendonvi",
         valueExpr: "id",
     });
@@ -22,6 +22,39 @@ function loadData() {
 
     $("#cbNam").dxDateBox({
         value: new Date(),
+    });
+    $("#cbDiaban").dxSelectBox({
+        dataSource: [
+            { id: 1, name: "Huyện" },
+            { id: 2, name: "Xã" },
+        ],
+        displayExpr: "name",
+        valueExpr: "id",
+        onValueChanged: (e) => {
+            if (e.value == 1) {
+                axios
+                    .get("listDonvihanhchinParent")
+                    .then((res) => {
+                        $("#cbHuyen")
+                            .dxSelectBox("instance")
+                            .option("dataSource", res.data);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            } else {
+                axios
+                    .get("danhsachXa")
+                    .then((res) => {
+                        $("#cbHuyen")
+                            .dxSelectBox("instance")
+                            .option("dataSource", res.data);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            }
+        },
     });
 
     Ultil.ShowReport("../report/ReportCTKT.mrt", "report", true);
@@ -79,6 +112,8 @@ function initEvent() {
             icon: "info",
             showConfirmButton: false,
         });
+
+        let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
         axios
             .post("exportDataProductionPlanreport", {
                 location: location,
@@ -87,6 +122,7 @@ function initEvent() {
                 namelocation: $("#cbHuyen")
                     .dxSelectBox("instance")
                     .option("text"),
+                diaban: diaban,
             })
             .then((res) => {
                 Swal.close();
