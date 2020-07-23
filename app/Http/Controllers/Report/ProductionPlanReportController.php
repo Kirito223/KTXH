@@ -33,8 +33,15 @@ class ProductionPlanReportController extends Controller
         $TreeChitieu = $Ultil->getTreeChitieu($listChitieu);
         $dulieu = new stdClass();
         $Result = array();
-        $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
+        $listXaofHuyen = null;
+        if ($request->diaban == 1) {
+            $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
             ->get();
+        } else {
+            // Tong hop bao cao theo xa
+            $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
+            ->get();
+        }
         $datacha = tbl_chitietbieumau::where('bieumau', '=', $Form)
             ->where('tbl_chitieu.idcha', null)
             ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
@@ -108,7 +115,7 @@ class ProductionPlanReportController extends Controller
             $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
             ->get();
         }
-        
+
         // Gan so level cho chi tieu;
         foreach ($TreeChitieu as $items) {
             $items->level = $this->findLevel($TreeChitieu, $items, 1);

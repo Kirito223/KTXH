@@ -17,6 +17,10 @@ class TestDataController extends Controller
         
       DB::table('tbl_solieutheobieu')->delete();
        DB::table('tbl_chitietsolieutheobieu')->delete();
+       DB::table('tbl_bieumau')->delete();
+       DB::table('tbl_chitietbieumau')->delete();
+       DB::table('tbl_baocao')->delete();
+       DB::table('tbl_chitietbaocao')->delete();
         return json_encode('ok');
     }
 }

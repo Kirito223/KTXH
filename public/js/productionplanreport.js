@@ -70,6 +70,7 @@ function initEvent() {
             icon: "info",
             showConfirmButton: false,
         });
+        let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
         axios
             .post("reportofProductionPlanreport", {
                 location: location,
@@ -78,6 +79,7 @@ function initEvent() {
                 namelocation: $("#cbHuyen")
                     .dxSelectBox("instance")
                     .option("text"),
+                diaban: diaban,
             })
             .then((res) => {
                 Swal.close();

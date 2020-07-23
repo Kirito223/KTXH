@@ -20,6 +20,10 @@ class SummaryIndicatorReportController extends Controller
         return view('report\summaryindicatorsreport');
     }
 
+    public function viewDaksong(){
+        return view('baocaodaksong\index');
+    }
+
     public function Summary(Request $request)
     {
         $currentYear = $request->year;
@@ -184,5 +188,72 @@ class SummaryIndicatorReportController extends Controller
             }
         }
         return $Result;
+    }
+
+    # Tong hop kinh te xa hoi huyen daksong
+
+    public function BaocaoDaksong(Request $request)
+    {
+        $currentYear = $request->year;
+        $previuosYear = $currentYear - 1;
+        $form = $request->form;
+        $listUnitOfLocation = $this->getUnitOfLocation($request->location);
+        $FormController = new NhaplieusolieuController();
+        $arrChitieu = $FormController->showDeltalBieumauTH($request->form);
+        // Make Tree chi tieu
+        $dulieu = new stdClass();
+        $TreeChitieu = $arrChitieu; //$Ultil->getTreeChitieu($arrChitieu);
+        $datacha = tbl_chitietbieumau::where('bieumau', '=', $form)
+            ->where('tbl_chitieu.idcha', null)
+            ->where('tbl_chitietbieumau.isDelete', 0)
+            ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi', DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as strid'))
+            ->get();
+        $datacha = $this->LocBieumau($TreeChitieu, $datacha);
+        $datacha = $this->unique_array($datacha);
+
+        $data = tbl_chitieu::with('childrenAll')->where('tbl_chitieu.IsDelete', 0)
+            ->where('tbl_chitietbieumau.bieumau', '=', $form)
+            ->whereNotNull('tbl_chitieu.idcha')
+            ->join('tbl_chitietbieumau', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi')
+            ->get();
+        $data = $this->LocBieumau($TreeChitieu, $data);
+        $data = $this->unique_array($data);
+        // Summary Report
+        $Result = array();
+        foreach ($TreeChitieu as $Chitieu) {
+            $Item = new stdClass();
+            $Item->id = $Chitieu->id;
+            $Item->ten = $Chitieu->tenchitieu;
+            $Item->idcha = $Chitieu->idcha;
+            $Item->strid = strval($Chitieu->id);
+            $Item->donvi = $Chitieu->tendonvi;
+            $firstYear = $this->processForYear($Chitieu->id, $listUnitOfLocation, $currentYear, $form);
+            if ($firstYear == null) {
+                $Item->firstYear = 0;
+            } else {
+                $Item->firstYear = round($firstYear);
+            }
+            $twoYear = $this->processForYear($Chitieu->id, $listUnitOfLocation, $previuosYear, $form);
+            if ($twoYear == null) {
+                $Item->twoYear = 0;
+            } else {
+                $Item->twoyear = round($twoYear);
+            }
+            
+            array_push($Result, $Item);
+        }
+
+        $Result = $this->Loctrung($Result);
+        $dulieu->nutcha = $datacha;
+        $dulieu->nutcon = $data;
+        $dulieu->chitiet = $Result;
+        $dulieu->chitiet1 = $Result;
+        $dulieu->chitiet2 = $Result;
+        $dulieu->chitiet3 = $Result;
+        return response()->json($dulieu);
     }
 }

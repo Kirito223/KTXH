@@ -368,3 +368,7 @@ Route::get('delFileQuyetdinh/{id}', 'quanlybieumau\NhaplieusolieuController@delF
 
 #Phan bao cao san xuat cấp xã
 Route::get('danhsachXa', 'Report\ProductionPlanReportController@danhsachXa');
+
+#Bao cao chi tieu kinh te tong hop huyen daksong
+Route::get('viewBCChitieuKTXHDaksong', 'Report\SummaryIndicatorReportController@viewDaksong')->middleware('auth:taikhoan');
+Route::post('tongbcDaksong', 'Report\SummaryIndicatorReportController@BaocaoDaksong');
