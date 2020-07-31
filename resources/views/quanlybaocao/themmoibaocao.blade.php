@@ -67,7 +67,6 @@
                             <label class="control-label col-sm-2">Tập tin đính kèm</label>
                             <div class="col-sm-10">
                                 <div style="display: flex;">
-                                    <input type="file" id="file" placeholder="Chọn tập tin" />
                                     <button class="btn btn-primary btn-sm" id="btnkyso">Ký văn bản</button>
                                 </div>
                                 <div>
@@ -233,6 +232,8 @@
                             </div>
                             <div class="toolbar">
                                 <button id="btnkypheduyet" class="btn btn-default btn-sm">Ký phê duyệt</button>
+                                <button class="btn btn-default btn-sm" id="btnchonfiledongdau">Chọn file đóng dấu</button>
+                                <input type="file" id="filedongdau" class="hidden"/>
                                 <button id="btnĐongauphathanh" class="btn btn-default btn-sm">Đóng dấu phát
                                     hành</button>
                                 <button id="btnKycongvan" class="btn btn-default btn-sm">Ký công văn đến</button>

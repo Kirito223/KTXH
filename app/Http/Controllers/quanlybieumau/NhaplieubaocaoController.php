@@ -228,6 +228,7 @@ $nhaplieubaocao = new NhaplieubaocaoController();
     private function checkDataExist($diaban, $nam, $bieumau, $kynhap)
     {
         $check = tbl_solieutheobieu::where('diaban', $diaban)
+        ->where('isDelete', 0)
             ->where('namnhap', $nam)->where('bieumau', $bieumau)->where('kynhap', $kynhap)->first();
         if ($check == null) {
             return true;

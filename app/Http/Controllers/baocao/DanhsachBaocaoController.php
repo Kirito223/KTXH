@@ -69,15 +69,6 @@ class DanhsachBaocaoController extends Controller
     public function store(Request $request)
     {
         try {
-            // Luu bao cao
-            $file = "";
-            if ($request->file != "null") {
-                $request->file->storeAs('upload', $request->file->getClientOriginalName());
-                $file = $request->file->getClientOriginalName();
-            } else {
-                $file = null;
-            }
-
             $baocao = new tbl_baocao();
             $baocao->sohieu = $request->sohieu;
             $baocao->tieude = $request->tieude;
@@ -87,7 +78,7 @@ class DanhsachBaocaoController extends Controller
             $baocao->gui = 0;
             $baocao->trangthai = $request->hoanthanh;
             $baocao->nambaocao = $request->nam;
-            $baocao->file = $file;
+            $baocao->file = $request->file;
             if ($baocao->save()) {
                 // Luu chi tiet bao cao
                 $chitiet = new tbl_chitietbaocao();
@@ -100,15 +91,18 @@ class DanhsachBaocaoController extends Controller
                 }
             }
         } catch (Exception $ex) {
-            return response()->json(['error' => $ex]);
+            return $ex;
         }
     }
 
     public function show($id)
     {
         $baocao = tbl_baocao::where('tbl_baocao.id', $id)->join('tbl_kybaocao', 'tbl_kybaocao.id', 'tbl_baocao.kybaocao')
-            ->select('tbl_baocao.*', 'tbl_kybaocao.tenky', 
-                'tbl_baocao.nguoiky')->first();
+            ->select(
+                'tbl_baocao.*',
+                'tbl_kybaocao.tenky',
+                'tbl_baocao.nguoiky'
+            )->first();
         $chitiet = tbl_chitietbaocao::where('baocao', '=', $id)->first();
         $nguoiky = null;
         if ($baocao->nguoiky != null) {
@@ -124,19 +118,6 @@ class DanhsachBaocaoController extends Controller
     public function update(Request $request)
     {
         try {
-            // Luu bao cao
-            $file = "";
-            if ($request->file != "null") {
-                $request->file->storeAs('upload', $request->file->getClientOriginalName());
-                $file = $request->file->getClientOriginalName();
-            } else {
-                if ($request->fileEdit != "") {
-                    $file = $request->fileEdit;
-                } else {
-                    $file = null;
-                }
-            }
-
             $baocao = tbl_baocao::find($request->id);
             $baocao->sohieu = $request->sohieu;
             $baocao->tieude = $request->tieude;
@@ -145,7 +126,7 @@ class DanhsachBaocaoController extends Controller
             $baocao->nguoicapnhat = $request->nguoicapnhat;
             $baocao->gui = 0;
             $baocao->trangthai = $request->hoanthanh;
-            $baocao->file = $file;
+            $baocao->file = $request->file;
             if ($baocao->save()) {
                 // Xoa bao chi tiet bao cao
                 $find = tbl_chitietbaocao::where('baocao', '=', $request->id)->first();
@@ -280,73 +261,73 @@ class DanhsachBaocaoController extends Controller
         $tukhoa = $request->tukhoa;
         $admin = session('phongbanid');
         $data = null;
-        if($admin != null){
+        if ($admin != null) {
             $data = tbl_baocao::where('tbl_baocao.deleted_at', '=', null)
-            ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_baocao.nguoicapnhat')
-            ->join('tbl_donvihanhchinh', 'tbl_donvihanhchinh.id', 'tbl_taikhoan.donvi')
-            ->join('tbl_xaphuong', 'tbl_xaphuong.id', 'tbl_donvihanhchinh.phuong')
-            ->join('tbl_quanhuyen', 'tbl_quanhuyen.id', 'tbl_xaphuong._district_id')
-            ->join('tbl_tinh', 'tbl_tinh.id', 'tbl_quanhuyen._province_id')
-            ->join('tbl_kybaocao', 'tbl_kybaocao.id', 'tbl_baocao.kybaocao')
-            ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
-            ->select(
-                'tbl_baocao.id',
-                'tbl_baocao.sohieu',
-                'tbl_baocao.tieude',
-                'tbl_kybaocao.tenky',
-                'tbl_baocao.ngaycapnhatsaucung',
-                'tbl_donvihanhchinh.tendonvi',
-                'tbl_tinh._name as tinh'
-            )
-            ->when($tukhoa, function ($query) use ($tukhoa) {
-                return $query->where('tieude', 'LIKE', '%' . $tukhoa . '%');
-            })
-            ->when($nambaocao, function ($query) use ($nambaocao) {
-                return $query->where('nambaocao', '=', $nambaocao);
-            })
-            ->when($donvigui, function ($query) use ($donvigui) {
-                return $query->where('tbl_donvihanhchinh.id', '=', $donvigui);
-            })
-            ->when($phongban, function ($query) use ($phongban) {
-                return $query->where('tbl_phongban.id', '=', $phongban);
-            })
-            ->when($kybaocao, function ($query) use ($kybaocao) {
-                return $query->where('tbl_kybaocao.id', '=', $kybaocao);
-            })
-            ->get();
-        }else{
+                ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_baocao.nguoicapnhat')
+                ->join('tbl_donvihanhchinh', 'tbl_donvihanhchinh.id', 'tbl_taikhoan.donvi')
+                ->join('tbl_xaphuong', 'tbl_xaphuong.id', 'tbl_donvihanhchinh.phuong')
+                ->join('tbl_quanhuyen', 'tbl_quanhuyen.id', 'tbl_xaphuong._district_id')
+                ->join('tbl_tinh', 'tbl_tinh.id', 'tbl_quanhuyen._province_id')
+                ->join('tbl_kybaocao', 'tbl_kybaocao.id', 'tbl_baocao.kybaocao')
+                ->join('tbl_phongban', 'tbl_phongban.id', 'tbl_taikhoan.phongban')
+                ->select(
+                    'tbl_baocao.id',
+                    'tbl_baocao.sohieu',
+                    'tbl_baocao.tieude',
+                    'tbl_kybaocao.tenky',
+                    'tbl_baocao.ngaycapnhatsaucung',
+                    'tbl_donvihanhchinh.tendonvi',
+                    'tbl_tinh._name as tinh'
+                )
+                ->when($tukhoa, function ($query) use ($tukhoa) {
+                    return $query->where('tieude', 'LIKE', '%' . $tukhoa . '%');
+                })
+                ->when($nambaocao, function ($query) use ($nambaocao) {
+                    return $query->where('nambaocao', '=', $nambaocao);
+                })
+                ->when($donvigui, function ($query) use ($donvigui) {
+                    return $query->where('tbl_donvihanhchinh.id', '=', $donvigui);
+                })
+                ->when($phongban, function ($query) use ($phongban) {
+                    return $query->where('tbl_phongban.id', '=', $phongban);
+                })
+                ->when($kybaocao, function ($query) use ($kybaocao) {
+                    return $query->where('tbl_kybaocao.id', '=', $kybaocao);
+                })
+                ->get();
+        } else {
             $data = tbl_baocao::where('tbl_baocao.deleted_at', '=', null)
-            ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_baocao.nguoicapnhat')
-            ->join('tbl_donvihanhchinh', 'tbl_donvihanhchinh.id', 'tbl_taikhoan.donvi')
-            ->join('tbl_xaphuong', 'tbl_xaphuong.id', 'tbl_donvihanhchinh.phuong')
-            ->join('tbl_quanhuyen', 'tbl_quanhuyen.id', 'tbl_xaphuong._district_id')
-            ->join('tbl_tinh', 'tbl_tinh.id', 'tbl_quanhuyen._province_id')
-            ->join('tbl_kybaocao', 'tbl_kybaocao.id', 'tbl_baocao.kybaocao')
-            ->select(
-                'tbl_baocao.id',
-                'tbl_baocao.sohieu',
-                'tbl_baocao.tieude',
-                'tbl_kybaocao.tenky',
-                'tbl_baocao.ngaycapnhatsaucung',
-                'tbl_donvihanhchinh.tendonvi',
-                'tbl_tinh._name as tinh'
-            )
-            ->when($tukhoa, function ($query) use ($tukhoa) {
-                return $query->where('tieude', 'LIKE', '%' . $tukhoa . '%');
-            })
-            ->when($nambaocao, function ($query) use ($nambaocao) {
-                return $query->where('nambaocao', '=', $nambaocao);
-            })
-            ->when($kybaocao, function ($query) use ($kybaocao) {
-                return $query->where('tbl_kybaocao.id', '=', $kybaocao);
-            })
-            ->when($donvigui, function ($query) use ($donvigui) {
-                return $query->where('tbl_donvihanhchinh.id', '=', $donvigui);
-            })
-            ->get();
+                ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_baocao.nguoicapnhat')
+                ->join('tbl_donvihanhchinh', 'tbl_donvihanhchinh.id', 'tbl_taikhoan.donvi')
+                ->join('tbl_xaphuong', 'tbl_xaphuong.id', 'tbl_donvihanhchinh.phuong')
+                ->join('tbl_quanhuyen', 'tbl_quanhuyen.id', 'tbl_xaphuong._district_id')
+                ->join('tbl_tinh', 'tbl_tinh.id', 'tbl_quanhuyen._province_id')
+                ->join('tbl_kybaocao', 'tbl_kybaocao.id', 'tbl_baocao.kybaocao')
+                ->select(
+                    'tbl_baocao.id',
+                    'tbl_baocao.sohieu',
+                    'tbl_baocao.tieude',
+                    'tbl_kybaocao.tenky',
+                    'tbl_baocao.ngaycapnhatsaucung',
+                    'tbl_donvihanhchinh.tendonvi',
+                    'tbl_tinh._name as tinh'
+                )
+                ->when($tukhoa, function ($query) use ($tukhoa) {
+                    return $query->where('tieude', 'LIKE', '%' . $tukhoa . '%');
+                })
+                ->when($nambaocao, function ($query) use ($nambaocao) {
+                    return $query->where('nambaocao', '=', $nambaocao);
+                })
+                ->when($kybaocao, function ($query) use ($kybaocao) {
+                    return $query->where('tbl_kybaocao.id', '=', $kybaocao);
+                })
+                ->when($donvigui, function ($query) use ($donvigui) {
+                    return $query->where('tbl_donvihanhchinh.id', '=', $donvigui);
+                })
+                ->get();
         }
 
-        
+
         return response()->json($data, 200);
     }
     public function viewChitietBaocao()
@@ -404,7 +385,7 @@ class DanhsachBaocaoController extends Controller
         return \view('quanlybaocao\xembaocao');
     }
 
-   public function getChitiet()
+    public function getChitiet()
     {
         $id = session('idXembaocao');
         $baocao = tbl_baocao::where('tbl_baocao.id', $id)
@@ -415,7 +396,7 @@ class DanhsachBaocaoController extends Controller
                 'tbl_baocao.nambaocao',
                 'tbl_baocao.trangthai',
                 'tbl_kybaocao.tenky',
-                'tbl_baocao.file', 
+                'tbl_baocao.file',
                 'tbl_baocao.nguoiky'
             )->first();
         $chitiet = tbl_chitietbaocao::where('baocao', '=', $id)->first();
