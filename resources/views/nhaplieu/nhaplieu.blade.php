@@ -56,8 +56,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2">Biểu mẫu nhập liệu</label>
-                                <div class="col-sm-10">
+                                <label class="col-md-2 col-sm-2">Chọn loại biểu mẫu</label>
+                                <div class="col-md-3 col-sm-3">
+                                    <div id="cbLoaibieumau"></div>
+                                </div>
+                                <label class="col-md-2 col-sm-2">Chọn biểu mẫu</label>
+                                <div class="col-sm-5 col-md-5">
                                     <div id="cbBieumau"></div>
                                 </div>
                             </div>
@@ -75,6 +79,7 @@
                             <button class="btn btn-sm btn-primary" id="sum-with-location">Cộng dồn theo địa
                                 bàn</button>
                             <button class="btn btn-sm btn-primary" id="sum-with-time">Cộng dồn theo kỳ</button>
+                            <button class="btn btn-sm btn-primary" id="sum-with-bm">Cộng dồn theo biểu mẫu</button>
                         </div>
                         <div class="col-md-12">
                             <span style="color: blue">Click chuột phải vào từng chỉ tiêu để cập nhật số liệu theo hệ
@@ -91,6 +96,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="modalImportFromExcel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
         <div class="modal-dialog" role="document">

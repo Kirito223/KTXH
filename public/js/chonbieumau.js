@@ -7,6 +7,7 @@ var idReport = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
+var gridBieumaubc;
 $(document).ready(() => {
     if ($("#nhaplieubaocao").length) {
         initData();
@@ -381,8 +382,86 @@ function initData() {
             }
         },
     });
+
+    $("#cbLoaibieumau").dxSelectBox({
+        dataSource: [
+            { id: 1, loai: "Biểu mẫu số liệu" },
+            { id: 2, loai: "Biểu mẫu báo cáo" },
+        ],
+        displayExpr: "loai",
+        valueExpr: "id",
+        onValueChanged: function (e) {
+            var select = e.value;
+            let url = "";
+            if (select == 1) {
+                url = "indexNhaplieuBieumau";
+            }
+            if (select == 2) {
+                let idKy = $("#cbKynhaplieu")
+                    .dxSelectBox("instance")
+                    .option("value");
+                if (idKy == null) {
+                    Swal.fire(
+                        "Chưa chọn kỳ báo cáo",
+                        "Chưa chọn kỳ báo cáo",
+                        "warning"
+                    );
+                } else {
+                    url = "indexBieumauApdung/" + idKy;
+                }
+            }
+
+            axios
+                .get(url)
+                .then((res) => {
+                    let data = res.data;
+                    $("#cbBieumau")
+                        .dxSelectBox("instance")
+                        .option("dataSource", data);
+                    $("#cbBieumau")
+                        .dxSelectBox("instance")
+                        .option("value", null);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        },
+    });
 }
 function initEvent() {
+    $("#sum-with-bm").on("click", (e) => {
+        let namnhap = $("#cbNamnhaplieu")
+            .dxSelectBox("instance")
+            .option("value");
+        let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
+        let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
+        if (namnhap == null) {
+            Swal.fire(
+                "Chưa chọn năm nhập liệu",
+                "Xin vui lòng chọn năm nhập liệU",
+                "warning"
+            );
+        } else if (diaban == null) {
+            Swal.fire(
+                "Chưa chọn địa bàn",
+                "Xin vui lòng chọn địa bàn",
+                "warning"
+            );
+        } else {
+            axios
+                .post("accumulateDataBaocao", {
+                    bieumau: JSON.stringify([{ id: bieumau }]),
+                })
+                .then((res) => {
+                    let data = res.data;
+                    ShowData(data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    });
+
     // TODO sum with report selected
     $("#sum-with-report").on("click", () => {
         let namnhap = $("#cbNamnhaplieu")

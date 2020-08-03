@@ -47,7 +47,7 @@ class NhaplieubaocaoController extends Controller
         $madonvi = Session::get('madonvi');
 
         $data = tbl_solieutheobieu::where('tbl_solieutheobieu.isDelete', '=', 0)
-        // ->where('tbl_solieutheobieu.loaibaocao', '=', 1)
+            // ->where('tbl_solieutheobieu.loaibaocao', '=', 1)
             ->where('tbl_solieutheobieu.namnhap', '=', $currentYear)
             ->where('tbl_solieutheobieu.donvinhap', '=', $madonvi)
             ->join('tbl_bieumau', 'tbl_bieumau.id', 'tbl_solieutheobieu.bieumau')
@@ -130,7 +130,7 @@ class NhaplieubaocaoController extends Controller
         $spreadsheet = $reader->load($file);
         $sheet = $spreadsheet->getActiveSheet()->toArray();
         $result = array();
-$nhaplieubaocao = new NhaplieubaocaoController();
+        $nhaplieubaocao = new NhaplieubaocaoController();
         for ($index = 7; $index < count($sheet); $index++) {
             $item = $sheet[$index];
             if ($item[0] != null) {
@@ -140,15 +140,15 @@ $nhaplieubaocao = new NhaplieubaocaoController();
                 $obj->ten = $item[0];
                 $obj->sanluong = $item[1];
                 $obj->donvi = $item[2];
-                if($ParentId != null){
+                if ($ParentId != null) {
                     $obj->idcha = $ParentId->idcha;
-                }else{
+                } else {
                     $obj->idcha = null;
                 }
-                
+
                 array_push($result, $obj);
                 // IF object exist idcha
-                if($ParentId != null){
+                if ($ParentId != null) {
                     $idFind = $ParentId->idcha;
                     if ($ParentId->idcha != null) {
                         // Find Parent node of this child node
@@ -228,7 +228,7 @@ $nhaplieubaocao = new NhaplieubaocaoController();
     private function checkDataExist($diaban, $nam, $bieumau, $kynhap)
     {
         $check = tbl_solieutheobieu::where('diaban', $diaban)
-        ->where('isDelete', 0)
+            ->where('isDelete', 0)
             ->where('namnhap', $nam)->where('bieumau', $bieumau)->where('kynhap', $kynhap)->first();
         if ($check == null) {
             return true;
@@ -240,41 +240,41 @@ $nhaplieubaocao = new NhaplieubaocaoController();
     public function importData(Request $request)
     {
         $sheet = json_decode($request->dataImport);
-		
-        try {
-            if (!isset($request->edit)) {		
-                if($this->checkDataExist($request->diaban, $request->namnhap, $request->mabieumau, $request->kynhap)){
-					
-                    // Doc du lieu tu file excel
-                $solieutheobieu = new tbl_solieutheobieu();
-                $solieutheobieu->bieumau = $request->mabieumau;
-                $solieutheobieu->donvinhap = $request->donvi;
-                $solieutheobieu->taikhoan = $request->taikhoan;
-                $solieutheobieu->diaban = $request->diaban;
-                $solieutheobieu->capnhap = 0;
-                $solieutheobieu->loaisolieu = $request->loaisolieu;
-                $solieutheobieu->kynhap = $request->kynhap;
-                $solieutheobieu->namnhap = $request->namnhap;
-                $solieutheobieu->loaibaocao = 1;
-				
-                if ($solieutheobieu->save()) {
 
-                    for ($index = 0; $index < count($sheet); $index++) {
-                        $item = $sheet[$index];
-                        $chitiet = new tbl_chitietsolieutheobieu();
-                        $chitiet->mabieusolieu = $solieutheobieu->id;
-                        $chitiet->chitieu = $item->id;
-                        if ($item->sanluong != null) {
-                            $chitiet->sanluong = $item->sanluong;
-                        } else {
-                            $chitiet->sanluong = 0;
+        try {
+            if (!isset($request->edit)) {
+                if ($this->checkDataExist($request->diaban, $request->namnhap, $request->mabieumau, $request->kynhap)) {
+
+                    // Doc du lieu tu file excel
+                    $solieutheobieu = new tbl_solieutheobieu();
+                    $solieutheobieu->bieumau = $request->mabieumau;
+                    $solieutheobieu->donvinhap = $request->donvi;
+                    $solieutheobieu->taikhoan = $request->taikhoan;
+                    $solieutheobieu->diaban = $request->diaban;
+                    $solieutheobieu->capnhap = 0;
+                    $solieutheobieu->loaisolieu = $request->loaisolieu;
+                    $solieutheobieu->kynhap = $request->kynhap;
+                    $solieutheobieu->namnhap = $request->namnhap;
+                    $solieutheobieu->loaibaocao = 1;
+
+                    if ($solieutheobieu->save()) {
+
+                        for ($index = 0; $index < count($sheet); $index++) {
+                            $item = $sheet[$index];
+                            $chitiet = new tbl_chitietsolieutheobieu();
+                            $chitiet->mabieusolieu = $solieutheobieu->id;
+                            $chitiet->chitieu = $item->id;
+                            if ($item->sanluong != null) {
+                                $chitiet->sanluong = $item->sanluong;
+                            } else {
+                                $chitiet->sanluong = 0;
+                            }
+                            $chitiet->madonvi = $request->donvi;
+                            $chitiet->save();
                         }
-                        $chitiet->madonvi = $request->donvi;
-                        $chitiet->save();
+                        return response()->json(['success' => 200]);
                     }
-                    return response()->json(['success' => 200]);
-                }
-                }else {
+                } else {
                     return response()->json(['succes' => 400]);
                 }
             } else {
@@ -426,6 +426,7 @@ $nhaplieubaocao = new NhaplieubaocaoController();
 
         return response()->json($result);
     }
+    
 
     private function getDetailBieumau($id, $chitieu = null)
     {
@@ -447,6 +448,9 @@ $nhaplieubaocao = new NhaplieubaocaoController();
             ->where('isDelete', 0)->get();
         return $bieumau;
     }
+
+    
+
 
     public function accumulateDataBieumau(Request $request)
     {
@@ -548,8 +552,8 @@ $nhaplieubaocao = new NhaplieubaocaoController();
             return response()->json($sumsanluong);
         }
     }
-	
-	public function ChitieuNhaplieu($idTemplate)
+
+    public function ChitieuNhaplieu($idTemplate)
     {
         $deltailTemplate = tbl_chitietbieumau::where('tbl_chitietbieumau.bieumau', '=', $idTemplate)
             ->where('tbl_chitietbieumau.isDelete', '=', 0)
@@ -557,16 +561,16 @@ $nhaplieubaocao = new NhaplieubaocaoController();
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
             ->select('tbl_chitietbieumau.id', 'tbl_chitietbieumau.chitieu', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
             ->get();
-       $result = array();
-            foreach ($deltailTemplate as $key => $value) {
-                $obj = new stdClass();
-                $obj->id = $value->chitieu;
-                $obj->ten = $value->tenchitieu;
-                $obj->donvi = $value->tendonvi;
-                $obj->idcha = $value->idcha;
-                $obj->sanluong = 0;
-                array_push($result, $obj); 
-            }
+        $result = array();
+        foreach ($deltailTemplate as $key => $value) {
+            $obj = new stdClass();
+            $obj->id = $value->chitieu;
+            $obj->ten = $value->tenchitieu;
+            $obj->donvi = $value->tendonvi;
+            $obj->idcha = $value->idcha;
+            $obj->sanluong = 0;
+            array_push($result, $obj);
+        }
         return response()->json(["data" => $result, "code" => 200]);
     }
 }
