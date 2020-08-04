@@ -433,7 +433,8 @@ class NhaplieusolieuController extends Controller
         $check = tbl_solieutheobieu::where('diaban', $diaban)
             ->where('namnhap', $nam)
             ->where('isDelete', 0)
-            ->where('bieumau', $bieumau)->where('kynhap', $kynhap)->first();
+            ->where('bieumau', $bieumau)
+            ->where('kynhap', $kynhap)->first();
         if ($check == null) {
             return true;
         }

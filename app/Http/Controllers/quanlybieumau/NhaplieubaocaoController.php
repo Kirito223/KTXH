@@ -423,6 +423,7 @@ class NhaplieubaocaoController extends Controller
 
         return response()->json($result);
     }
+    
 
     private function getDetailBieumau($id, $chitieu = null)
     {
@@ -444,6 +445,9 @@ class NhaplieubaocaoController extends Controller
             ->where('isDelete', 0)->get();
         return $bieumau;
     }
+
+    
+
 
     public function accumulateDataBieumau(Request $request)
     {

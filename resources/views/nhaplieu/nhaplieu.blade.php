@@ -56,8 +56,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2">Biểu mẫu nhập liệu</label>
-                                <div class="col-sm-10">
+                             
+                                <label class="col-md-2 col-sm-2">Chọn biểu mẫu</label>
+                                <div class="col-sm-10 col-md-10">
                                     <div id="cbBieumau"></div>
                                 </div>
                             </div>
