@@ -7,6 +7,7 @@ var idReport = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
+var gridBieumauNhaplieu, cbLoaibieumau;
 $(document).ready(() => {
     if ($("#nhaplieubaocao").length) {
         initData();
@@ -54,6 +55,32 @@ function loadDataEdit() {
 }
 
 function initData() {
+    gridBieumauNhaplieu = $("#gridBieumauNhaplieu")
+        .dxDataGrid({
+            selection: {
+                mode: "multiple",
+            },
+            columns: [
+                { dataField: "sohieu", caption: "Số hiệu" },
+                {
+                    dataField: "tenbieumau",
+                    caption: "Tên biểu mẫu",
+                },
+                {
+                    dataField: "created_at",
+                    caption: "Ngày nhập",
+                    customizeText: function (cellInfo) {
+                        return moment(cellInfo.value).format("DD/MM/YYYY");
+                    },
+                },
+                {
+                    dataField: "namnhap",
+                    caption: "Năm",
+                },
+            ],
+        })
+        .dxDataGrid("instance");
+
     arrValueInput.length = 0;
     gridlocaltion = $("#grid-location")
         .dxDataGrid({
@@ -335,18 +362,18 @@ function initData() {
         displayExpr: "tenky",
         valueExpr: "id",
         onValueChanged: function (e) {
-            var idKy = e.value;
-            axios
-                .get("indexBieumauApdung/" + idKy)
-                .then((res) => {
-                    let data = res.data;
-                    $("#cbBieumau")
-                        .dxSelectBox("instance")
-                        .option("dataSource", data);
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            // var idKy = e.value;
+            // axios
+            //     .get("indexBieumauApdung")
+            //     .then((res) => {
+            //         let data = res.data;
+            //         $("#cbBieumau")
+            //             .dxSelectBox("instance")
+            //             .option("dataSource", data);
+            //     })
+            //     .catch((err) => {
+            //         console.log(err);
+            //     });
         },
     });
 
@@ -362,7 +389,7 @@ function initData() {
         .dxSelectBox("instance")
         .option("value", new Date().getFullYear());
     $("#cbBieumau").dxSelectBox({
-        // dataSource: "indexBieumauApdung",
+        dataSource: "indexBieumauApdung",
         displayExpr: "tenbieumau",
         valueExpr: "id",
         onValueChanged: function (e) {
@@ -381,8 +408,93 @@ function initData() {
             }
         },
     });
+
+    cbLoaibieumau = $("#cbLoaibieumau")
+        .dxSelectBox({
+            //dataSource: "indexBieumauNhaplieu",
+            displayExpr: "tenbieumau",
+            valueExpr: "id",
+            onValueChanged: function (e) {
+                var id = e.value;
+                Promise.all([loadBieumau(id), setGrid(id)]);
+            },
+        })
+        .dxSelectBox("instance");
 }
+
+async function loadBieumau(id) {
+    $("#cbBieumau").dxSelectBox("instance").option("value", id);
+    axios
+        .get("getListBieumauNhaplieu/" + id)
+        .then((res) => {
+            gridBieumauNhaplieu.option("dataSource", res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
+async function setGrid(id) {
+    axios
+        .get("getChitieuNhaplieu/" + id)
+        .then((res) => {
+            arrGrid = res.data.data;
+            loadDataToArray(arrGrid);
+            TreeInput.option("dataSource", arrGrid);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}
+
 function initEvent() {
+    $("#btnCongdontheobieu").on("click", () => {
+        let namnhap = $("#cbNamnhaplieu")
+            .dxSelectBox("instance")
+            .option("value");
+        let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
+        let bieumau = JSON.stringify(gridBieumauNhaplieu.getSelectedRowsData());
+        if (namnhap == null) {
+            Swal.fire(
+                "Chưa chọn năm nhập liệu",
+                "Xin vui lòng chọn năm nhập liệU",
+                "warning"
+            );
+        } else if (diaban == null) {
+            Swal.fire(
+                "Chưa chọn địa bàn",
+                "Xin vui lòng chọn địa bàn",
+                "warning"
+            );
+        } else {
+            axios
+                .post("accumulateDataBaocao", {
+                    bieumau: bieumau,
+                })
+                .then((res) => {
+                    let data = res.data;
+                    ShowData(data);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    });
+
+    $("#sum-with-bm").on("click", (e) => {
+        axios
+            .get("indexBieumauNhaplieu")
+            .then((res) => {
+                cbLoaibieumau.option("dataSource", res.data);
+            })
+            .then(() => {
+                $("#modelCongtheobieu").modal("show");
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    });
+
     // TODO sum with report selected
     $("#sum-with-report").on("click", () => {
         let namnhap = $("#cbNamnhaplieu")

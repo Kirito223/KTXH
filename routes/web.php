@@ -211,7 +211,7 @@ Route::post('SumDataofLocation', 'quanlybieumau\NhaplieusolieuController@SumData
 
 # Phan nhap lieu bao cao
 Route::get('viewNhaplieuBaocao', 'quanlybieumau\NhaplieubaocaoController@view')->middleware('auth:taikhoan');
-Route::get('indexBieumauApdung/{ky}', 'baocao\Quanlybaocao@danhsachBaocaoApdung')->middleware('auth:taikhoan');
+Route::get('indexBieumauApdung', 'baocao\Quanlybaocao@danhsachBaocaoApdung')->middleware('auth:taikhoan');
 Route::post('downloadBieumau', 'quanlybieumau\NhaplieubaocaoController@DowloadExcel');
 Route::post('importExcelBaocao',  'quanlybieumau\NhaplieubaocaoController@importExcel');
 Route::post('nhapDulieu', 'quanlybieumau\NhaplieubaocaoController@importData');
@@ -372,3 +372,5 @@ Route::get('danhsachXa', 'Report\ProductionPlanReportController@danhsachXa');
 #Bao cao chi tieu kinh te tong hop huyen daksong
 Route::get('viewBCChitieuKTXHDaksong', 'Report\SummaryIndicatorReportController@viewDaksong')->middleware('auth:taikhoan');
 Route::post('tongbcDaksong', 'Report\SummaryIndicatorReportController@BaocaoDaksong');
+
+Route::get('getListBieumauNhaplieu/{bieumau}', 'quanlybieumau\NhaplieubaocaoController@getListBieumauNhaplieu');

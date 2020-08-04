@@ -75,6 +75,7 @@
                             <button class="btn btn-sm btn-primary" id="sum-with-location">Cộng dồn theo địa
                                 bàn</button>
                             <button class="btn btn-sm btn-primary" id="sum-with-time">Cộng dồn theo kỳ</button>
+                            <button class="btn btn-sm btn-primary" id="sum-with-bm">Cộng dồn theo biểu mẫu</button>
                         </div>
                         <div class="col-md-12">
                             <span style="color: blue">Click chuột phải vào từng chỉ tiêu để cập nhật số liệu theo hệ
@@ -91,6 +92,29 @@
             </div>
         </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelCongtheobieu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cộng theo biểu mẫu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <div id="cbLoaibieumau"></div>
+                <div id="gridBieumauNhaplieu"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" id="btnCongdontheobieu"> <i class="fas fa-plus"></i> Cộng dồn</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="modal fade" id="modalImportFromExcel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
