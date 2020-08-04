@@ -72,52 +72,48 @@ class NhaplieubaocaoController extends Controller
     public function DowloadExcel(Request $request)
     {
         $getBieumau = tbl_bieumau::where('tbl_bieumau.id', '=', $request->bieumau)->first();
-        if ($getBieumau->kybaocao != $request->ky) {
-            return 405;
-        } else {
-            $chitiet = tbl_chitietbieumau::where('tbl_chitietbieumau.bieumau', '=', $getBieumau->id)
-                ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
-                ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
-                ->where('tbl_chitietbieumau.isDelete', '=', 0)
-                ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_donvitinh.tendonvi')
-                ->get();
-            $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/xuatbieumau.xlsx');
-            $sheet->setActiveSheetIndex(0);
-            $activeSheet = $sheet->getActiveSheet();
-            $row = 8;
-            $activeSheet->setCellValueExplicit('A1', $getBieumau->tenbieumau, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $activeSheet->setCellValueExplicit('B2', $request->diaban, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $activeSheet->setCellValueExplicit('D2', $request->khuvuc, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $activeSheet->setCellValueExplicit('B3', $request->loaisolieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $activeSheet->setCellValueExplicit('B4', $request->kynhaplieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            $activeSheet->setCellValueExplicit('B5', $request->namnhaplieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-            foreach ($chitiet as $value) {
-                $activeSheet->setCellValueExplicit('A' . $row, $value->tenchitieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-                $activeSheet->setCellValueExplicit('C' . $row, $value->tendonvi, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
-                $activeSheet->setCellValueExplicit('F' . $row, $value->id, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_NUMERIC);
-                $row++;
-            }
-            $activeSheet->getStyle("A8:C" . $row)->applyFromArray(array(
-                'borders' => array(
-                    'outline' => array(
-                        'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-                        'color' => array('argb' => '000000'),
-                        'size' => 1,
-                    ),
-                    'inside' => array(
-                        'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
-                        'color' => array('argb' => '000000'),
-                        'size' => 1,
-                    ),
-                ),
-            ));
-            $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($sheet);
-            if (!file_exists(public_path('export'))) {
-                mkdir(public_path('export'));
-            }
-            $writer->save(public_path('export') . '/bieumauNhapBaocao.xlsx');
-            return 'bieumauNhapBaocao.xlsx';
+        $chitiet = tbl_chitietbieumau::where('tbl_chitietbieumau.bieumau', '=', $getBieumau->id)
+            ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->where('tbl_chitietbieumau.isDelete', '=', 0)
+            ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_donvitinh.tendonvi')
+            ->get();
+        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/xuatbieumau.xlsx');
+        $sheet->setActiveSheetIndex(0);
+        $activeSheet = $sheet->getActiveSheet();
+        $row = 8;
+        $activeSheet->setCellValueExplicit('A1', $getBieumau->tenbieumau, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $activeSheet->setCellValueExplicit('B2', $request->diaban, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $activeSheet->setCellValueExplicit('D2', $request->khuvuc, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $activeSheet->setCellValueExplicit('B3', $request->loaisolieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $activeSheet->setCellValueExplicit('B4', $request->kynhaplieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        $activeSheet->setCellValueExplicit('B5', $request->namnhaplieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+        foreach ($chitiet as $value) {
+            $activeSheet->setCellValueExplicit('A' . $row, $value->tenchitieu, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $activeSheet->setCellValueExplicit('C' . $row, $value->tendonvi, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+            $activeSheet->setCellValueExplicit('F' . $row, $value->id, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_NUMERIC);
+            $row++;
         }
+        $activeSheet->getStyle("A8:C" . $row)->applyFromArray(array(
+            'borders' => array(
+                'outline' => array(
+                    'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => array('argb' => '000000'),
+                    'size' => 1,
+                ),
+                'inside' => array(
+                    'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => array('argb' => '000000'),
+                    'size' => 1,
+                ),
+            ),
+        ));
+        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($sheet);
+        if (!file_exists(public_path('export'))) {
+            mkdir(public_path('export'));
+        }
+        $writer->save(public_path('export') . '/bieumauNhapBaocao.xlsx');
+        return 'bieumauNhapBaocao.xlsx';
     }
     public function importExcel(Request $request)
     {

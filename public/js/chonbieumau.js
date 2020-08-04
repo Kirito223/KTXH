@@ -361,20 +361,7 @@ function initData() {
         dataSource: "danhsachkybaocao",
         displayExpr: "tenky",
         valueExpr: "id",
-        onValueChanged: function (e) {
-            // var idKy = e.value;
-            // axios
-            //     .get("indexBieumauApdung")
-            //     .then((res) => {
-            //         let data = res.data;
-            //         $("#cbBieumau")
-            //             .dxSelectBox("instance")
-            //             .option("dataSource", data);
-            //     })
-            //     .catch((err) => {
-            //         console.log(err);
-            //     });
-        },
+       
     });
 
     let nam = [];
@@ -474,6 +461,7 @@ function initEvent() {
                 .then((res) => {
                     let data = res.data;
                     ShowData(data);
+                    $('#modelCongtheobieu').modal('toggle');
                 })
                 .catch((err) => {
                     console.log(err);
@@ -719,33 +707,31 @@ function initEvent() {
             .dxSelectBox("instance")
             .option("text");
 
-        if (check.checkselect()) {
             axios
-                .post("downloadBieumau", {
-                    bieumau: bieumau,
-                    ky: ky,
-                    diaban: diaban,
-                    khuvuc: khuvuc,
-                    loaisolieu: loaisolieu,
-                    kynhaplieu: kynhaplieu,
-                    namnhaplieu: namnhaplieu,
-                })
-                .then((res) => {
-                    if (res.data == 405) {
-                        Swal.fire(
-                            "Sai thông tin",
-                            "Kỳ báo cáo không đúng với biểu mẫu vui lòng kiểm tra lại",
-                            "warning"
-                        );
-                    } else {
-                        window.open("Download/" + res.data);
-                        $("#modalNhapExcel").css("display", "block");
-                    }
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }
+            .post("downloadBieumau", {
+                bieumau: bieumau,
+                ky: ky,
+                diaban: diaban,
+                khuvuc: khuvuc,
+                loaisolieu: loaisolieu,
+                kynhaplieu: kynhaplieu,
+                namnhaplieu: namnhaplieu,
+            })
+            .then((res) => {
+                if (res.data == 405) {
+                    Swal.fire(
+                        "Sai thông tin",
+                        "Kỳ báo cáo không đúng với biểu mẫu vui lòng kiểm tra lại",
+                        "warning"
+                    );
+                } else {
+                    window.open("Download/" + res.data);
+                    $("#modalNhapExcel").css("display", "block");
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     });
 
     $("#btnNhap").on("click", () => {

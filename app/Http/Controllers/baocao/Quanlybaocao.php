@@ -9,6 +9,7 @@ use App\tbl_chitietbieumau;
 use Illuminate\Http\Request;
 use Session;
 use stdClass;
+use DB;
 
 class Quanlybaocao extends Controller
 {
@@ -32,15 +33,19 @@ class Quanlybaocao extends Controller
         $madonvi = Session::get('madonvi');
         $donvicha = Session::get('donvicha');
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
+        ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
            // ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
             //->where('tbl_bieumau.kybaocao', '=', $ky)
             ->where('tbl_bieumau.madonvi', '=', $madonvi)
+            ->select(DB::raw('CONCAT(tbl_bieumau.tenbieumau,"-", tbl_taikhoan.tentaikhoan) AS tenbieumau'), 'tbl_bieumau.*')
             ->get()->toArray();
         $datacha = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
+        ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
             //->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
             // ->where('tbl_bieumau.kybaocao', '=', $ky)
+            ->select(DB::raw('CONCAT(tbl_bieumau.tenbieumau,"-", tbl_taikhoan.tentaikhoan) AS tenbieumau'), 'tbl_bieumau.*')
             ->where('tbl_bieumau.madonvi', '=', $donvicha)
             ->get()->toArray();
         $data = array_merge($data, $datacha);
