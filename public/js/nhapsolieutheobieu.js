@@ -486,7 +486,22 @@ function initEvent() {
                 .post("importFileBieumauNhapLieu", data, settings)
                 .then((res) => {
                     if (res.status == 200) {
-                        TreeInput.option("dataSource", res.data);
+                        arrGrid.length = 0;
+                        res.data.forEach((item) => {
+                            arrGrid.push({
+                                id: item.id,
+                                value:
+                                    item.sanluong == null ||
+                                    item.sanluong == undefined
+                                        ? 0
+                                        : item.sanluong,
+                                parent: item.idcha,
+                                unit: item.donvi,
+                            });
+                            document.querySelector(
+                                `.inputValue[data-chitieu ="${item.id}"]`
+                            ).value = item.sanluong;
+                        });
                         $("#modalImportFromExcel").modal("toggle");
                     } else {
                         Swal.fire(
@@ -512,20 +527,12 @@ function initEvent() {
 
     $("#btnImport").on("click", () => {
         let dataImport = [];
-        TreeInput.forEachNode(function (node) {
-            if (node.data.sanluong == "") {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: null,
-                });
-            } else {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: node.data.sanluong,
-                });
-            }
+        arrGrid.forEach((item) => {
+            dataImport.push({
+                id: item.id,
+                sanluong: item.value,
+            });
         });
-
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
         let loaisolieu = $("#cbLoaisolieu")
