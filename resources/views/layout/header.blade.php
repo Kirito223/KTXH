@@ -5,8 +5,8 @@
     <meta name="description" content="Admin, Dashboard, Bootstrap">
 	<base href="/public">
 	<style>
-        .hidden-item {
-            display: none !important;
+        .app-navbar{
+            opacity: 100 !important;
         }
     </style>
     <link rel="shortcut icon" sizes="196x196" href="images/huyhieu.png">

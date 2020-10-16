@@ -107,7 +107,7 @@ function bindEvent() {
                 url: "/donvihanhchinh",
                 data,
                 success: function (data) {
-                    window.location.reload();
+                    //   window.location.reload();
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     alert(
@@ -165,14 +165,14 @@ function bindEvent() {
 }
 
 function themDonvi(e) {
-  idDonvi = null;
+    idDonvi = null;
     let idcha = e.dataset.id;
     donvitructhuoc.value = idcha;
     tendonvi.value = "";
     sodienthoai.value = "";
     email.value = "";
     diachi.value = "";
-    tinh.value='none';
+    tinh.value = "none";
     huyen.value = "";
     xa.value = "";
     mota.value = "";

@@ -6,13 +6,13 @@ var idBieunhap = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
-$(document).ready(() => {
+window.onload = function () {
     if ($("#nhapdulieutheobieu").length) {
         initData();
         initEvent();
         loadDataEdit();
     }
-});
+};
 
 function loadDataEdit() {
     idBieunhap = localStorage.getItem("idBieunhap");
@@ -46,7 +46,6 @@ function loadDataEdit() {
                 arrGrid = detail;
                 // init data to array Value Input
                 loadDataToArray(detail);
-                
 
                 TreeInput.option("dataSource", detail);
             })
@@ -322,7 +321,12 @@ function initData() {
                 {
                     dataField: "sanluong",
                     caption: "Sản lượng",
-                    allowEditing: true,
+
+                    cellTemplate: function (container, options) {
+                        container
+                            .append(`<input data-id="${options.data.id}"/>`)
+                            .css("text-align", "center");
+                    },
                 },
                 {
                     dataField: "donvi",
@@ -770,7 +774,10 @@ function UpdateParentNode(value, idItem) {
             let plus = Number(value) - Number(oldValue);
             arrValueInput[indexInValue].value = Number(oldValue) + plus;
             arrGrid[indexGrid].sanluong = Number(oldValue) + plus;
-            updateGrid(arrValueInput[indexInValue].parent, Number(oldValue) + plus);
+            updateGrid(
+                arrValueInput[indexInValue].parent,
+                Number(oldValue) + plus
+            );
         } else if (oldValue > value) {
             let minus = Number(oldValue) - Number(oldValue);
             arrValueInput[indexInValue].value =

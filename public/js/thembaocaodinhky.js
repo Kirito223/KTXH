@@ -10,7 +10,7 @@ var diabanedit;
 var selectedDiabanEdit = [];
 var selectedBieumau = [];
 var listDonvi;
-var urlFile = "";
+var urlFile;
 $(document).ready(() => {
     if ($("#thongtinbaocao").length) {
         idBaocao = Number(localStorage.getItem("Baocao"));
@@ -49,14 +49,12 @@ function loadEdit() {
                 }
                 if (baocao.file != null) {
                     fileEdit = baocao.file;
-                    fileEdit = fileEdit.split("{/}");
-                    let f = "";
-                    for (let index = 1; index < fileEdit.length; index++) {
-                        f += fileEdit[index];
-                    }
                     $("#filedinhkem").html(
-                        `<a href="https://api.lihanet.com/filesigned/${f}">${f}</a><i id="deleteFile" style="color:red;" class="fa fa-trash" aria-hidden="true"></i>`
+                        fileEdit +
+                            `<i id="deleteFile" style="color:red;" class="fa fa-trash" aria-hidden="true"></i>`
                     );
+                    $("#filedinhkem").data("file", fileEdit);
+
                     $("#deleteFile").on("click", () => {
                         $("#filedinhkem").remove();
                         fileEdit = "";
@@ -249,17 +247,7 @@ function delTemplate(id) {
 }
 
 function initEvent() {
-    $("#filedongdau").on("change", (e) => {
-        let file = $("#filedongdau")[0].files[0];
-        let urlFile = URL.createObjectURL(file);
-        $("#viewfile").attr("src", urlFile);
-    });
-
-    $("#btnchonfiledongdau").on("click", (e) => {
-        $("#filedongdau").click();
-    });
-
-    $("#btnĐongauphathanh").on("click", (e) => {
+    $("#btnDongdauphathanh").on("click", (e) => {
         exc_sign_issued();
     });
 
@@ -268,6 +256,38 @@ function initEvent() {
     });
     $("#btnKycongvan").on("click", (e) => {
         exc_sign_income();
+    });
+    $("#file").on("change", () => {
+        let getfile = document.getElementById("file").files[0];
+        let extension = getfile.name.split(".").pop();
+        if (extension != "pdf") {
+            Swal.fire(
+                "Xin vui lòng tải lên tệp tin pdf",
+                "tệp tin không hợp lệ",
+                "warning"
+            );
+        } else {
+            let data = new FormData();
+            data.append("file", getfile);
+            let settings = {
+                headers: { "content-type": "multipart/form-data" },
+            };
+            axios
+                .post("uploadFileKyso", data, settings)
+                .then((res) => {
+                    let fileUrl = res.data;
+                    urlFile =
+                        window.location.protocol +
+                        "//" +
+                        window.location.host +
+                        "/public/upload/" +
+                        fileUrl;
+                    $("#viewfile").attr("src", urlFile);
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        }
     });
 
     $("#btnkyso").on("click", () => {
@@ -349,18 +369,23 @@ function initEvent() {
         let sohieu = $("#sokyhieubaocao").val();
         let tieude = $("#tieudebaocao").val();
         let nam = $("#nambaocao").dxSelectBox("instance").option("value");
-        let hoanthanh = 0;
+        let hoanthanh = false;
         if (Ultil.checkStatusCheckBox("hoanthanh")) {
-            hoanthanh = 1;
+            hoanthanh = true;
+        }
+        let file = null;
+        if (fileEdit == "") {
+            file = document.getElementById("file").files[0];
         }
         let noidung = CKEDITOR.instances.noidung.getData();
         let ngaysaucung = new Date();
         let data = new FormData();
-        if (fileEdit != null) {
-            data.append("file", `${new Date().getMilliseconds}{/}.${fileEdit}`);
+        if (file != null) {
+            data.append("file", file, file.name);
         } else {
             data.append("file", null);
         }
+
         data.append("kybaocao", kybaocao);
         data.append("sohieu", sohieu);
         data.append("tieude", tieude);
@@ -371,6 +396,7 @@ function initEvent() {
         data.append("nguoicapnhat", window.idnguoidung);
         data.append("donvinhan", JSON.stringify(arrDonvi));
         data.append("cacbieusolieu", JSON.stringify(arrBieumau));
+        data.append("fileEdit", fileEdit);
 
         let settings = {
             headers: { "content-type": "multipart/form-data" },
@@ -504,39 +530,55 @@ function loadDanhsachDiaban(checked = false, datacheck = null) {
 /*********************************************************
  * Ký số văn bản *
  ********************************************************/
-function SignFileCallBack(rv) {
-    let message = JSON.parse(rv);
-    if (message.Status == 0) {
-        fileEdit = message.FileServer;
-        $("#viewfile").attr("src", message.FileServer);
+function SignFileCallBack1(rv) {
+    var received_msg = JSON.parse(rv);
+    console.log(received_msg);
+    if (received_msg.Status == 0) {
+        Swal.fire(
+            received_msg.FileName +
+                ":" +
+                received_msg.FileServer +
+                ":" +
+                received_msg.DocumentNumber +
+                ":" +
+                received_msg.DocumentDate,
+            "Thông báo",
+            "info"
+        );
+        //them code luu tru file ky so va tai ve thu muc lucu tru file
+        console.log(received_msg.FileServer);
+        // document.getElementById("file1").value = received_msg.FileServer;
+        // document.getElementById("file2").value = received_msg.FileServer;
     } else {
-        Swal.fire(message.Message, "Không thành công", "error");
+        Swal.fire(received_msg.Message, "Không thành công", "error");
     }
 }
 
 // Đóng dấu phát hành
 function exc_sign_issued() {
-    let file = $("#filedongdau")[0].files[0];
     var prms = {};
+
     prms["FileUploadHandler"] =
         "https://api.lihanet.com/FileUploadHandler.aspx";
     prms["SessionId"] = "";
-    prms["FileName"] = file.name;
-    prms["DocNumber"] = "123/BCY-CTSBMTT";
+    prms["FileName"] = urlFile;
+    prms["DocNumber"] = $("#docNumber");
     prms["IssuedDate"] = new Date();
+
     var json_prms = JSON.stringify(prms);
-    vgca_sign_issued(json_prms, SignFileCallBack);
+    vgca_sign_issued(json_prms, SignFileCallBack1);
 }
 // Ham ky phe duyet
 function exc_sign_approved() {
     var prms = {};
+
     prms["FileUploadHandler"] =
         "https://api.lihanet.com/FileUploadHandler.aspx";
     prms["SessionId"] = "";
     prms["FileName"] = urlFile; //"http://localhost:16227/files/test1.pdf";
 
     var json_prms = JSON.stringify(prms);
-    vgca_sign_approved(json_prms, SignFileCallBack);
+    vgca_sign_approved(json_prms, SignFileCallBack1);
 }
 ///Ký số công văn đến
 function exc_sign_income() {
@@ -550,7 +592,7 @@ function exc_sign_income() {
     prms["MetaData"] = scv;
 
     var json_prms = JSON.stringify(prms);
-    vgca_sign_income(json_prms, SignFileCallBack);
+    vgca_sign_income(json_prms, SignFileCallBack1);
 }
 function exc_appendix(url) {
     var prms = {};
@@ -564,7 +606,7 @@ function exc_appendix(url) {
     prms["MetaData"] = scv;
 
     var json_prms = JSON.stringify(prms);
-    vgca_sign_appendix(json_prms, SignFileCallBack);
+    vgca_sign_appendix(json_prms, SignFileCallBack1);
 }
 
 function exc_sign_copy(url) {
@@ -579,7 +621,7 @@ function exc_sign_copy(url) {
     prms["MetaData"] = scv;
 
     var json_prms = JSON.stringify(prms);
-    vgca_sign_copy(json_prms, SignFileCallBack);
+    vgca_sign_copy(json_prms, SignFileCallBack1);
 }
 
 export default { ReviewReport };

@@ -36,11 +36,11 @@ class ProductionPlanReportController extends Controller
         $listXaofHuyen = null;
         if ($request->diaban == 1) {
             $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
-            ->get();
+                ->get();
         } else {
             // Tong hop bao cao theo xa
             $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
-            ->get();
+                ->get();
         }
         $datacha = tbl_chitietbieumau::where('bieumau', '=', $Form)
             ->where('tbl_chitieu.idcha', null)
@@ -109,11 +109,11 @@ class ProductionPlanReportController extends Controller
         $listXaofHuyen = null;
         if ($request->diaban == 1) {
             $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
-            ->get();
+                ->get();
         } else {
             // Tong hop bao cao theo xa
             $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
-            ->get();
+                ->get();
         }
 
         // Gan so level cho chi tieu;
@@ -365,4 +365,7 @@ class ProductionPlanReportController extends Controller
             ->get();
         return response()->json($data);
     }
+
+
+    
 }

@@ -361,7 +361,6 @@ function initData() {
         dataSource: "danhsachkybaocao",
         displayExpr: "tenky",
         valueExpr: "id",
-       
     });
 
     let nam = [];
@@ -461,7 +460,7 @@ function initEvent() {
                 .then((res) => {
                     let data = res.data;
                     ShowData(data);
-                    $('#modelCongtheobieu').modal('toggle');
+                    $("#modelCongtheobieu").modal("toggle");
                 })
                 .catch((err) => {
                     console.log(err);
@@ -707,7 +706,7 @@ function initEvent() {
             .dxSelectBox("instance")
             .option("text");
 
-            axios
+        axios
             .post("downloadBieumau", {
                 bieumau: bieumau,
                 ky: ky,
@@ -748,9 +747,34 @@ function initEvent() {
                 .post("importExcelBaocao", data, settings)
                 .then((res) => {
                     if (res.status == 200) {
-                        TreeInput.option("dataSource", res.data);
+                        let test = true;
+                        arrGrid.forEach((item) => {
+                            let check = res.data.findIndex(
+                                (x) => x.id == item.id
+                            );
+                            if (check == -1) {
+                                test = false;
+                                break;
+                            }
+                        });
+                        if (check) {
+                            let index = 0;
+                            arrGrid.forEach((item) => {
+                                item.sanluong = res.data[index].sanluong;
+                                index++;
+                            });
 
-                        $("#modalImportFromExcel").modal("toggle");
+                            TreeInput.option("dataSource", arrGrid);
+                            $("#modalImportFromExcel").modal("toggle");
+                        } else {
+                            Swal.fire(
+                                "Các chỉ tiêu trong biểu mẫu không hợp lệ vui lòng tải phiên bản mới nhất từ hệ thống",
+                                "Biểu mẫu không hợp lệ",
+                                "warning"
+                            );
+                        }
+
+                        
                     } else {
                         Swal.fire(
                             "Lỗi",

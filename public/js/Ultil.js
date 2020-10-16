@@ -125,9 +125,53 @@ function ShowReportData(
             break;
     }
 }
+
+export function initBieumau(Mauluongxuat, container) {
+    document.getElementById(container).innerHTML = "";
+    let u = document.createElement("u");
+    u.setAttribute("class", "homeproduct");
+    for (let index = 0; index < Mauluongxuat.length; index++) {
+        const element = Mauluongxuat[index];
+        let li = document.createElement("li");
+        li.setAttribute("class", "item-bieumau");
+        li.setAttribute("data-toggle", "tooltip");
+        li.setAttribute("data-placement", "left");
+        li.setAttribute("title", element.Name);
+
+        let divicon = document.createElement("div");
+        divicon.setAttribute("class", "iconbieumau");
+
+        let i = document.createElement("i");
+        i.setAttribute("class", "fa fa-file");
+
+        if (element.loai == 1) {
+            i.classList.add("type1");
+        }
+        if(element.loai == 2){
+            i.classList.add("type2");
+        }
+        if(element.loai == 3){
+            i.classList.add("type3");
+        }
+        let h5 = document.createElement("h5");
+        let text = document.createTextNode(
+            element.Name.length > 10
+                ? element.Name.substring(0, 10)
+                : element.Name
+        );
+        li.appendChild(divicon);
+        divicon.appendChild(i);
+        h5.appendChild(text);
+        li.appendChild(h5);
+        li.addEventListener("click", element.function);
+        u.appendChild(li);
+    }
+    document.getElementById(container).appendChild(u);
+}
+
 export default {
     checkStatusCheckBox,
     listNam,
     ShowReport,
-    ShowReportData
+    ShowReportData,
 };
