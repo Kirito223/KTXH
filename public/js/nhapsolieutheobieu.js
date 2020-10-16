@@ -260,9 +260,7 @@ function initEvent() {
                 .then((res) => {
                     let data = res.data;
                     arrValueInput.length = 0;
-                    loadDataToArray(data);
-                    gridtemplate.columnOption("tenbieumau", { visible: true });
-                    gridtemplate.option("dataSource", data);
+                    console.log(data);
                 })
                 .catch((err) => {
                     console.log(err);

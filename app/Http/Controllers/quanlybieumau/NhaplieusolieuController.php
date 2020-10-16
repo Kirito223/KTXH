@@ -230,7 +230,7 @@ class NhaplieusolieuController extends Controller
         $file = $bieumau->file;
         $bieumau->file = null;
         if ($bieumau->save()) {
-            unlink(public_path('upload'.'/'. $file));
+            unlink(public_path('upload' . '/' . $file));
             return response()->json(["code" => 200, "message" => "ok"]);
         }
         return response()->json(["code" => 401, "message" => "fail"]);
@@ -451,7 +451,7 @@ class NhaplieusolieuController extends Controller
                 if ($this->checkDataExist($request->diaban, $request->namnhap, $request->mabieumau, $request->kynhap)) {
                     $solieutheobieu = new tbl_solieutheobieu();
                     $solieutheobieu->bieumau = $request->mabieumau;
-                    $solieutheobieu->donvinhap = $request->donvi;
+                    $solieutheobieu->donvinhap = 1; //$request->donvi;
                     $solieutheobieu->taikhoan = $request->taikhoan;
                     $solieutheobieu->diaban = $request->diaban;
                     $solieutheobieu->capnhap = $request->capnhap;
@@ -472,7 +472,7 @@ class NhaplieusolieuController extends Controller
                                 $chitiet->sanluong = 0;
                             }
                             //   $chitiet->created_at = $request->namnhap . "-" . $now->month . "-" . $now->day;
-                            $chitiet->madonvi = $request->donvi;
+                            $chitiet->madonvi = 1; // $request->donvi;
                             $chitiet->save();
                         }
                         return response()->json(['succes' => 200]);
