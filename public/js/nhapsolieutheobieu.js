@@ -259,8 +259,13 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    arrValueInput.length = 0;
-                    console.log(data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                 })
                 .catch((err) => {
                     console.log(err);
@@ -303,8 +308,13 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    gridtemplate.columnOption("tenbieumau", { visible: false });
-                    gridtemplate.option("dataSource", data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                 })
                 .catch((err) => {
                     console.log(err);
@@ -348,7 +358,14 @@ function initEvent() {
             axios
                 .post("ListDataofLocation", { donvi: diaban, bieumau: bieumau })
                 .then((res) => {
-                    gridlocaltion.option("dataSource", res.data);
+                    let data = res.data;
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.sum;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.sum;
+                    });
                     $("#modelLocaltion").modal("show");
                 })
                 .catch((err) => {
