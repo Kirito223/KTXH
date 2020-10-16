@@ -6,6 +6,9 @@ var idBieunhap = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
+
+var html = "";
+
 window.onload = function () {
     if ($("#nhapdulieutheobieu").length) {
         initData();
@@ -53,17 +56,6 @@ function loadDataEdit() {
                 console.log(err);
             });
     }
-}
-
-function loadDataToArray(data) {
-    data.forEach((element) => {
-        arrValueInput.push({
-            id: element.id,
-            value: element.sanluong == null ? 0 : element.sanluong,
-            parent: element.idcha,
-            unit: element.donvi,
-        });
-    });
 }
 
 function initData() {
@@ -124,218 +116,6 @@ function initData() {
         })
         .dxDataGrid("instance");
 
-    TreeInput = $("#GridCheckImportExcel")
-        .dxTreeList({
-            keyExpr: "id",
-            showRowLines: true,
-            showBorders: true,
-            autoExpandAll: true,
-            parentIdExpr: "idcha",
-            columnAutoWidth: true,
-            editing: {
-                allowUpdating: true,
-                mode: "cell",
-            },
-            selection: {
-                recursive: true,
-            },
-            onRowUpdating: function (e) {
-                let old = e.oldData;
-                let newdata = e.newData;
-                UpdateParentNode(newdata.sanluong, old.id);
-            },
-            onCellPrepared: function (e) {
-                if (e.rowType == "detailAdaptive") {
-                    e.cellElement.addClass("adaptiveRowStyle");
-                }
-            },
-            onContextMenuPreparing: function (e) {
-                if (e.target == "content") {
-                    // e.items can be undefined
-                    if (!e.items) e.items = [];
-
-                    // Add a custom menu item
-                    e.items.push({
-                        text: "Số liệu cập nhật lần trước",
-                        icon: "fas fa-clock",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data.id;
-
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                axios
-                                    .post("ListTempalatewithIdBieumau", {
-                                        bieumau: bieumau,
-                                        namnhap: namnhap,
-                                        donvi: window.madonvi,
-                                        diaban: diaban,
-                                    })
-                                    .then((res) => {
-                                        let data = res.data;
-                                        gridtemplate.columnOption(
-                                            "tenbieumau",
-                                            { visible: true }
-                                        );
-                                        gridtemplate.option("dataSource", data);
-                                    })
-                                    .catch((err) => {
-                                        console.log(err);
-                                    });
-                                $("#modelReportSelect").modal("show");
-                            }
-                        },
-                    });
-                    e.items.push({
-                        text: "Cộng dồn theo các kỳ",
-                        icon: "fas fa-clock",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data;
-
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                axios
-                                    .post("ListTempalatewithIdBieumau", {
-                                        bieumau: bieumau,
-                                        namnhap: namnhap,
-                                        donvi: window.madonvi,
-                                        diaban: diaban,
-                                    })
-                                    .then((res) => {
-                                        let data = res.data;
-                                        gridtemplate.columnOption(
-                                            "tenbieumau",
-                                            { visible: false }
-                                        );
-                                        gridtemplate.option("dataSource", data);
-                                    })
-                                    .catch((err) => {
-                                        console.log(err);
-                                    });
-                                $("#modelReportSelect").modal("show");
-                            }
-                        },
-                    });
-                    e.items.push({
-                        text: "Cộng dồn theo các địa bàn",
-                        icon: "plus",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data.id;
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let kynhap = $("#cbKynhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                if (namnhap == null) {
-                                    Swal.fire(
-                                        "Chưa chọn năm nhập liệu",
-                                        "Xin vui lòng chọn năm nhập liệU",
-                                        "warning"
-                                    );
-                                } else if (bieumau == null) {
-                                    Swal.fire(
-                                        "Chưa chọn biểu mẫu",
-                                        "Xin vui lòng chọn biểu mẫu",
-                                        "warning"
-                                    );
-                                } else if (diaban == null) {
-                                    Swal.fire(
-                                        "Chưa chọn địa bàn",
-                                        "Xin vui lòng chọn địa bàn",
-                                        "warning"
-                                    );
-                                } else if (kynhap == null) {
-                                    Swal.fire(
-                                        "Chưa chọn kỳ nhập",
-                                        "Xin vui lòng chọn kỳ nhập",
-                                        "warning"
-                                    );
-                                } else {
-                                    axios
-                                        .post("ListDataofLocation", {
-                                            donvi: diaban,
-                                            bieumau: bieumau,
-                                        })
-                                        .then((res) => {
-                                            gridlocaltion.option(
-                                                "dataSource",
-                                                res.data
-                                            );
-                                            $("#modelLocaltion").modal("show");
-                                        })
-                                        .catch((err) => {
-                                            console.log(err);
-                                        });
-                                }
-                            }
-                        },
-                    });
-                }
-            },
-            columns: [
-                {
-                    dataField: "ten",
-                    caption: "Tên chỉ tiêu",
-                },
-                {
-                    dataField: "sanluong",
-                    caption: "Sản lượng",
-
-                    cellTemplate: function (container, options) {
-                        container
-                            .append(`<input data-id="${options.data.id}"/>`)
-                            .css("text-align", "center");
-                    },
-                },
-                {
-                    dataField: "donvi",
-                    caption: "Đơn vị",
-                },
-            ],
-        })
-        .dxTreeList("instance");
-
     $("#cbTinh").dxSelectBox({
         dataSource: "danhsachdonvihanhchinh",
         displayExpr: "tendonvi",
@@ -384,9 +164,13 @@ function initData() {
                 axios
                     .get("getChitieuNhaplieu/" + idTemplate)
                     .then((res) => {
-                        arrGrid = res.data.data;
-                        loadDataToArray(arrGrid);
-                        TreeInput.option("dataSource", arrGrid);
+                        showTable(res.data.data);
+                        document.getElementById(
+                            "GridCheckImportExcel"
+                        ).innerHTML = html;
+                        $("#tableChitieu").treetable({ expandable: false });
+                        mapValue(res.data.flat);
+                        setEventInput();
                     })
                     .catch((err) => {
                         console.error(err);
@@ -396,6 +180,49 @@ function initData() {
     });
 }
 
+function mapValue(data) {
+    arrGrid.length = 0;
+    arrGrid = data.map((item) => {
+        return {
+            id: item.chitieu,
+            value:
+                item.sanluong == null || item.sanluong == undefined
+                    ? 0
+                    : item.sanluong,
+            parent: item.idcha,
+            unit: item.tendonvi,
+        };
+    });
+}
+
+function showTable(result) {
+    for (const item in result) {
+        if (result[item].hasOwnProperty("children")) {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+            <td>${element.tenchitieu}</td>
+            <td>${element.tendonvi}</td>
+            <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+            </tr>`;
+            showTable(result[item].children);
+        } else {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+                    <td>${element.tenchitieu}</td>
+                    <td>${element.tendonvi}</td>
+                    <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+                    </tr>`;
+        }
+    }
+}
 function initEvent() {
     // TODO sum with report selected
     $("#sum-with-report").on("click", () => {
@@ -758,86 +585,48 @@ function initEvent() {
         }
     });
 }
-// Ham tinh tong cac chi tieu
-function UpdateParentNode(value, idItem) {
-    let indexInValue = arrValueInput.findIndex((x) => x.id == idItem);
 
-    let indexGrid = arrGrid.findIndex((x) => x.id == idItem);
-    if (arrValueInput[indexInValue].value == null) {
-        arrValueInput[indexInValue].value = value;
+function setEventInput() {
+    let inputValue = document.getElementsByClassName("inputValue");
 
-        arrGrid[indexGrid].sanluong = value;
-        updateGrid(arrValueInput[indexInValue].parent, value);
-    } else {
-        let oldValue = arrValueInput[indexInValue].value;
-        if (oldValue < value) {
-            let plus = Number(value) - Number(oldValue);
-            arrValueInput[indexInValue].value = Number(oldValue) + plus;
-            arrGrid[indexGrid].sanluong = Number(oldValue) + plus;
-            updateGrid(
-                arrValueInput[indexInValue].parent,
-                Number(oldValue) + plus
-            );
-        } else if (oldValue > value) {
-            let minus = Number(oldValue) - Number(oldValue);
-            arrValueInput[indexInValue].value =
-                Number(oldValue) - Number(minus);
-            arrGrid[indexGrid].sanluong = Number(oldValue) - Number(minus);
-            updateGrid(
-                arrValueInput[indexInValue].parent,
-                Number(oldValue) - Number(minus)
-            );
-        }
+    for (const input of inputValue) {
+        input.addEventListener("keyup", function (evt) {
+            if (evt.keyCode == 13) {
+                let index = arrGrid.findIndex(
+                    (x) => x.id == input.dataset.chitieu
+                );
+                arrGrid[index].value = input.value;
+                sumParent(arrGrid[index].parent, arrGrid[index].unit);
+
+                // Focus next input
+                if (arrGrid[index + 1] != undefined) {
+                    let idSelect = arrGrid[index + 1].id;
+                    let selectedInput = document.querySelector(
+                        `.inputValue[data-chitieu="${idSelect}"]`
+                    );
+                    selectedInput.focus();
+                }
+            }
+        });
     }
 }
 
-function updateGrid(idcha, sanluong) {
-    // Cong cac so lieu trong mang arrValueInput mang cha
-    let indexInput = arrValueInput.findIndex((x) => x.id == idcha);
-    if (indexInput != -1) {
-        let suminput = 0;
-        let donvicha = arrValueInput[indexInput].unit;
-        arrValueInput.forEach((item) => {
-            if (item.parent == idcha && item.unit == donvicha) {
-                suminput += Number(item.value);
-            }
+function sumParent(parent, unit) {
+    if (parent != null || parent != undefined) {
+        let child = arrGrid.filter((item) => {
+            return item.parent == parent && item.unit == unit;
         });
-        arrValueInput[indexInput].value = suminput;
-        // Cap nhat lai cho mang data grid
-        let indexDataGrid = arrGrid.findIndex((x) => x.id == idcha);
+        let sum = 0;
+        child.forEach((item) => {
+            sum += Number(item.value);
+        });
 
-        let sumgrid = 0;
-        arrGrid.forEach((item) => {
-            if (item.idcha == idcha && item.donvi == donvicha) {
-                sumgrid += Number(item.sanluong);
-            }
-        });
-        arrGrid[indexDataGrid].sanluong = sumgrid;
-        TreeInput.refresh();
+        document.querySelector(
+            `.inputValue[data-chitieu ="${parent}"]`
+        ).value = sum;
     }
 }
 
-// hiển thị dữ liệu
-function ShowData(data) {
-    TreeInput.forEachNode(function (node) {
-        let index = data.findIndex((x) => x.id == node.data.id);
-        if (index != -1) {
-            let indexvalue = arrValueInput.findIndex(
-                (z) => z.id == node.data.id
-            );
-            if (indexvalue == -1) {
-                arrValueInput.push({
-                    id: node.data.id,
-                    value: data[index].quantity,
-                    parent: node.data.idcha,
-                });
-            }
-            node.data.sanluong = data[index].quantity;
-        }
-    });
-
-    TreeInput.refresh();
-}
 function checkselect() {
     let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
 

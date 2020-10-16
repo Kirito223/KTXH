@@ -79,7 +79,21 @@
                         <div class="col-md-12">
                             <span style="color: blue">Click chuột phải vào từng chỉ tiêu để cập nhật số liệu theo hệ
                                 thống</span>
-                            <div id="GridCheckImportExcel"></div>
+                            <div>
+                                <table class="table" id="tableChitieu">
+                                    <thead>
+                                        <tr>
+                                            <th>Chỉ tiêu</th>
+                                            <th>Đơn vị tính</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="GridCheckImportExcel">
+                                        
+                                    </tbody>
+                                </table>
+
+                            </div>
                         </div>
                         <div class="col-md-12" style="text-align: center; margin-top: 10px;">
                             <button class="btn btn-info" id="btnImport"><i class="fas fa-save"></i> Nhập dữ

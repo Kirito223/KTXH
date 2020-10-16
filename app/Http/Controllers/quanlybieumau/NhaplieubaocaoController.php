@@ -423,7 +423,7 @@ class NhaplieubaocaoController extends Controller
 
         return response()->json($result);
     }
-    
+
 
     private function getDetailBieumau($id, $chitieu = null)
     {
@@ -446,7 +446,7 @@ class NhaplieubaocaoController extends Controller
         return $bieumau;
     }
 
-    
+
 
 
     public function accumulateDataBieumau(Request $request)
@@ -557,17 +557,33 @@ class NhaplieubaocaoController extends Controller
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
             ->select('tbl_chitietbieumau.id', 'tbl_chitietbieumau.chitieu', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
             ->get();
+
+        $flat = tbl_chitietbieumau::where('tbl_chitietbieumau.bieumau', '=', $idTemplate)
+            ->where('tbl_chitietbieumau.isDelete', '=', 0)
+            ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select('tbl_chitietbieumau.id', 'tbl_chitietbieumau.chitieu', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->get();
+            
         $result = array();
-        foreach ($deltailTemplate as $key => $value) {
-            $obj = new stdClass();
-            $obj->id = $value->chitieu;
-            $obj->ten = $value->tenchitieu;
-            $obj->donvi = $value->tendonvi;
-            $obj->idcha = $value->idcha;
-            $obj->sanluong = 0;
-            array_push($result, $obj);
+        $result = $this->buildTree($deltailTemplate);
+        return response()->json(["data" => $result, "code" => 200, 'flat' => $flat]);
+    }
+
+    function buildTree($elements, $parentId = 0)
+    {
+        $branch = array();
+        foreach ($elements as $element) {
+            if ($element['idcha'] == $parentId) {
+                $children = $this->buildTree($elements, $element['chitieu']);
+                if ($children) {
+                    $element['children'] = $children;
+                }
+                $branch[$element['chitieu']] = $element;
+                unset($element);
+            }
         }
-        return response()->json(["data" => $result, "code" => 200]);
+        return $branch;
     }
 
 
