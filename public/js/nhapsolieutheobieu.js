@@ -259,13 +259,8 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    data.forEach((item) => {
-                        let index = arrGrid.findIndex((x) => x.id == item.id);
-                        arrGrid[index].value = item.quantity;
-                        document.querySelector(
-                            `.inputValue[data-chitieu ="${item.id}"]`
-                        ).value = item.quantity;
-                    });
+                    gridtemplate.columnOption("tenbieumau", { visible: true });
+                    gridtemplate.option("dataSource", data);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -308,13 +303,8 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    data.forEach((item) => {
-                        let index = arrGrid.findIndex((x) => x.id == item.id);
-                        arrGrid[index].value = item.quantity;
-                        document.querySelector(
-                            `.inputValue[data-chitieu ="${item.id}"]`
-                        ).value = item.quantity;
-                    });
+                    gridtemplate.columnOption("tenbieumau", { visible: false });
+                    gridtemplate.option("dataSource", data);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -358,14 +348,7 @@ function initEvent() {
             axios
                 .post("ListDataofLocation", { donvi: diaban, bieumau: bieumau })
                 .then((res) => {
-                    let data = res.data;
-                    data.forEach((item) => {
-                        let index = arrGrid.findIndex((x) => x.id == item.id);
-                        arrGrid[index].value = item.sum;
-                        document.querySelector(
-                            `.inputValue[data-chitieu ="${item.id}"]`
-                        ).value = item.sum;
-                    });
+                    gridlocaltion.option("dataSource", res.data);
                     $("#modelLocaltion").modal("show");
                 })
                 .catch((err) => {
@@ -384,7 +367,14 @@ function initEvent() {
                     bieumau: bieumau,
                 })
                 .then((res) => {
-                    ShowData(res.data);
+                    let data = res.data;
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelLocaltion").modal("toggle");
                 })
                 .catch((err) => {
@@ -398,7 +388,13 @@ function initEvent() {
                     chitieu: idChitieu,
                 })
                 .then((res) => {
-                    ShowData(res.data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.sum;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.sum;
+                    });
                     idChitieu = undefined;
                     $("#modelLocaltion").modal("toggle");
                 })
@@ -417,7 +413,13 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    ShowData(data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelReportSelect").modal("toggle");
                 })
                 .catch((err) => {
