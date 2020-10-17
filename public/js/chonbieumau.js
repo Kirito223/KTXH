@@ -1,27 +1,27 @@
-import check from "../js/nhapsolieutheobieu.js";
 var TreeInput;
 var gridtemplate;
 var gridlocaltion;
 var idChitieu = undefined;
-var idReport = 0;
+var idBieunhap = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
-var gridBieumauNhaplieu, cbLoaibieumau;
-$(document).ready(() => {
-    if ($("#nhaplieubaocao").length) {
-        initData();
-        initEvent();
-        loadDataEdit();
-    }
-});
+var cbLoaibieumau;
+
+var html = "";
+
+window.onload = function () {
+    initData();
+    initEvent();
+    loadDataEdit();
+};
 
 function loadDataEdit() {
-    idReport = localStorage.getItem("idInputReport");
-    idReport = Number(idReport);
-    if (idReport > 0) {
+    idBieunhap = localStorage.getItem("idBieunhap");
+    idBieunhap = Number(idBieunhap);
+    if (idBieunhap > 0) {
         axios
-            .get("showEditBieumau/" + idReport)
+            .get("showEditBieumau/" + idBieunhap)
             .then((res) => {
                 let data = res.data;
                 let form = data.Form;
@@ -45,7 +45,10 @@ function loadDataEdit() {
                     .dxSelectBox("instance")
                     .option("value", form.capnhap);
                 let detail = data.Detail;
+                arrGrid = detail;
+                // init data to array Value Input
                 loadDataToArray(detail);
+
                 TreeInput.option("dataSource", detail);
             })
             .catch((err) => {
@@ -55,32 +58,6 @@ function loadDataEdit() {
 }
 
 function initData() {
-    gridBieumauNhaplieu = $("#gridBieumauNhaplieu")
-        .dxDataGrid({
-            selection: {
-                mode: "multiple",
-            },
-            columns: [
-                { dataField: "sohieu", caption: "Số hiệu" },
-                {
-                    dataField: "tenbieumau",
-                    caption: "Tên biểu mẫu",
-                },
-                {
-                    dataField: "created_at",
-                    caption: "Ngày nhập",
-                    customizeText: function (cellInfo) {
-                        return moment(cellInfo.value).format("DD/MM/YYYY");
-                    },
-                },
-                {
-                    dataField: "namnhap",
-                    caption: "Năm",
-                },
-            ],
-        })
-        .dxDataGrid("instance");
-
     arrValueInput.length = 0;
     gridlocaltion = $("#grid-location")
         .dxDataGrid({
@@ -109,7 +86,6 @@ function initData() {
                 pageSize: 15,
                 pageIndex: 1,
             },
-
             columns: [
                 {
                     dataField: "tenbieumau",
@@ -139,208 +115,37 @@ function initData() {
         })
         .dxDataGrid("instance");
 
-    TreeInput = $("#GridSolieu")
-        .dxTreeList({
-            keyExpr: "id",
-            parentIdExpr: "idcha",
-            showRowLines: true,
-            showBorders: true,
-            autoExpandAll: true,
-            columnAutoWidth: true,
-            editing: {
-                allowUpdating: true,
-                mode: "cell",
-            },
-            selection: {
-                recursive: true,
-            },
-            onRowUpdating: function (e) {
-                let old = e.oldData;
-                let newdata = e.newData;
-                UpdateParentNode(newdata.sanluong, old.id);
-            },
-            onContextMenuPreparing: function (e) {
-                if (e.target == "content") {
-                    // e.items can be undefined
-                    if (!e.items) e.items = [];
-
-                    // Add a custom menu item
-                    e.items.push({
-                        text: "Số liệu cập nhật lần trước",
-                        icon: "fas fa-clock",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data.id;
-
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                axios
-                                    .post("ListTempalatewithIdBaocao", {
-                                        bieumau: bieumau,
-                                        namnhap: namnhap,
-                                        donvi: window.madonvi,
-                                        diaban: diaban,
-                                    })
-                                    .then((res) => {
-                                        let data = res.data;
-                                        gridtemplate.option("dataSource", data);
-                                    })
-                                    .catch((err) => {
-                                        console.log(err);
-                                    });
-                                $("#modelReportSelect").modal("show");
-                            }
-                        },
-                    });
-                    e.items.push({
-                        text: "Cộng dồn theo các kỳ",
-                        icon: "fas fa-clock",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data;
-
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                axios
-                                    .post("ListTempalatewithIdBaocao", {
-                                        bieumau: bieumau,
-                                        namnhap: namnhap,
-                                        donvi: window.madonvi,
-                                        diaban: diaban,
-                                    })
-                                    .then((res) => {
-                                        let data = res.data;
-                                        gridtemplate.columnOption(
-                                            "tenbieumau",
-                                            { visible: false }
-                                        );
-                                        gridtemplate.option("dataSource", data);
-                                    })
-                                    .catch((err) => {
-                                        console.log(err);
-                                    });
-                                $("#modelReportSelect").modal("show");
-                            }
-                        },
-                    });
-                    e.items.push({
-                        text: "Cộng dồn theo các địa bàn",
-                        icon: "plus",
-                        onItemClick: function () {
-                            if (e.rowIndex == -1) {
-                                Swal.fire(
-                                    "Chưa chọn biểu mẫu",
-                                    "Vui lòng chọn biểu mẫu nhập liệu",
-                                    "warning"
-                                );
-                            } else {
-                                idChitieu = e.row.data.id;
-                                let namnhap = $("#cbNamnhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let bieumau = $("#cbBieumau")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let diaban = $("#cbTinh")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                let kynhap = $("#cbKynhaplieu")
-                                    .dxSelectBox("instance")
-                                    .option("value");
-                                if (namnhap == null) {
-                                    Swal.fire(
-                                        "Chưa chọn năm nhập liệu",
-                                        "Xin vui lòng chọn năm nhập liệU",
-                                        "warning"
-                                    );
-                                } else if (bieumau == null) {
-                                    Swal.fire(
-                                        "Chưa chọn biểu mẫu",
-                                        "Xin vui lòng chọn biểu mẫu",
-                                        "warning"
-                                    );
-                                } else if (diaban == null) {
-                                    Swal.fire(
-                                        "Chưa chọn địa bàn",
-                                        "Xin vui lòng chọn địa bàn",
-                                        "warning"
-                                    );
-                                } else if (kynhap == null) {
-                                    Swal.fire(
-                                        "Chưa chọn kỳ nhập",
-                                        "Xin vui lòng chọn kỳ nhập",
-                                        "warning"
-                                    );
-                                } else {
-                                    axios
-                                        .post("ListDataofLocationBaocao", {
-                                            donvi: diaban,
-                                            bieumau: bieumau,
-                                        })
-                                        .then((res) => {
-                                            gridlocaltion.option(
-                                                "dataSource",
-                                                res.data
-                                            );
-                                            $("#modelLocaltion").modal("show");
-                                        })
-                                        .catch((err) => {
-                                            console.log(err);
-                                        });
-                                }
-                            }
-                        },
-                    });
-                }
-            },
-            columns: [
-                {
-                    dataField: "ten",
-                    caption: "Tên chỉ tiêu",
-                },
-                {
-                    dataField: "sanluong",
-                    caption: "Sản lượng",
-                },
-                {
-                    dataField: "donvi",
-                    caption: "Đơn vị",
-                },
-            ],
-        })
-        .dxTreeList("instance");
-
     $("#cbTinh").dxSelectBox({
         dataSource: "danhsachdonvihanhchinh",
         displayExpr: "tendonvi",
         valueExpr: "id",
     });
+
+    cbLoaibieumau = $("#cbLoaibieumau")
+        .dxSelectBox({
+            //dataSource: "indexBieumauNhaplieu",
+            displayExpr: "tenbieumau",
+            valueExpr: "id",
+            onValueChanged: function (e) {
+                var id = e.value;
+                axios
+                    .get("getChitieuNhaplieu/" + id)
+                    .then((res) => {
+                        html = "";
+                        showTable(res.data.data);
+                        document.getElementById(
+                            "GridCheckImportExcel"
+                        ).innerHTML = html;
+                        $("#tableChitieu").treetable({ expandable: false });
+                        mapValue(res.data.flat);
+                        setEventInput();
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            },
+        })
+        .dxSelectBox("instance");
 
     let option = [
         { text: "Toàn tỉnh", value: 0 },
@@ -380,66 +185,77 @@ function initData() {
         valueExpr: "id",
         onValueChanged: function (e) {
             var idTemplate = e.value;
-            if (templateedit != idTemplate) {
+            if (idTemplate != templateedit) {
                 axios
                     .get("getChitieuNhaplieu/" + idTemplate)
                     .then((res) => {
-                        arrGrid = res.data.data;
-                        loadDataToArray(arrGrid);
-                        TreeInput.option("dataSource", arrGrid);
+                        html = "";
+                        showTable(res.data.data);
+                        document.getElementById(
+                            "GridCheckImportExcel"
+                        ).innerHTML = html;
+                        $("#tableChitieu").treetable({ expandable: false });
+                        mapValue(res.data.flat);
+                        setEventInput();
                     })
                     .catch((err) => {
-                        console.log(err);
+                        console.error(err);
                     });
             }
         },
     });
-
-    cbLoaibieumau = $("#cbLoaibieumau")
-        .dxSelectBox({
-            //dataSource: "indexBieumauNhaplieu",
-            displayExpr: "tenbieumau",
-            valueExpr: "id",
-            onValueChanged: function (e) {
-                var id = e.value;
-                Promise.all([loadBieumau(id), setGrid(id)]);
-            },
-        })
-        .dxSelectBox("instance");
 }
 
-async function loadBieumau(id) {
-    $("#cbBieumau").dxSelectBox("instance").option("value", id);
-    axios
-        .get("getListBieumauNhaplieu/" + id)
-        .then((res) => {
-            gridBieumauNhaplieu.option("dataSource", res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+function mapValue(data) {
+    arrGrid.length = 0;
+    arrGrid = data.map((item) => {
+        return {
+            id: item.chitieu,
+            value:
+                item.sanluong == null || item.sanluong == undefined
+                    ? 0
+                    : item.sanluong,
+            parent: item.idcha,
+            unit: item.tendonvi,
+        };
+    });
 }
 
-async function setGrid(id) {
-    axios
-        .get("getChitieuNhaplieu/" + id)
-        .then((res) => {
-            arrGrid = res.data.data;
-            loadDataToArray(arrGrid);
-            TreeInput.option("dataSource", arrGrid);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+function showTable(result) {
+    for (const item in result) {
+        if (result[item].hasOwnProperty("children")) {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+            <td>${element.tenchitieu}</td>
+            <td>${element.tendonvi}</td>
+            <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+            </tr>`;
+            showTable(result[item].children);
+        } else {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+                    <td>${element.tenchitieu}</td>
+                    <td>${element.tendonvi}</td>
+                    <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+                    </tr>`;
+        }
+    }
 }
-
 function initEvent() {
     $("#btnCongdontheobieu").on("click", () => {
         let namnhap = $("#cbNamnhaplieu")
             .dxSelectBox("instance")
             .option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
-        let bieumau = JSON.stringify(gridBieumauNhaplieu.getSelectedRowsData());
+        let bieumau = JSON.stringify([{ id: cbLoaibieumau.value }]); //gridBieumauNhaplieu.getSelectedRowsData()
         if (namnhap == null) {
             Swal.fire(
                 "Chưa chọn năm nhập liệu",
@@ -459,7 +275,13 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    ShowData(data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelCongtheobieu").modal("toggle");
                 })
                 .catch((err) => {
@@ -516,6 +338,7 @@ function initEvent() {
                     diaban: diaban,
                 })
                 .then((res) => {
+                    // hien thi modal chon bieu mau
                     let data = res.data;
                     gridtemplate.columnOption("tenbieumau", { visible: true });
                     gridtemplate.option("dataSource", data);
@@ -553,7 +376,7 @@ function initEvent() {
             );
         } else {
             axios
-                .post("ListTempalatewithIdBaocao", {
+                .post("ListTempalatewithIdBieumau", {
                     bieumau: bieumau,
                     namnhap: namnhap,
                     donvi: window.madonvi,
@@ -617,54 +440,25 @@ function initEvent() {
                 });
         }
     });
-
-    // TODO Sum folllow perivious Reports
-    $("#btnplus").on("click", () => {
-        let rowselect = gridtemplate.getSelectedRowsData();
-        if (idChitieu === undefined) {
-            axios
-                .post("accumulateDataBaocao", {
-                    bieumau: JSON.stringify(rowselect),
-                })
-                .then((res) => {
-                    let data = res.data;
-                    ShowData(data);
-                    $("#modelReportSelect").modal("toggle");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        } else {
-            axios
-                .post("accumulateDataBaocao", {
-                    bieumau: JSON.stringify(rowselect),
-                    chitieu: idChitieu,
-                })
-                .then((res) => {
-                    let data = res.data;
-                    ShowData(data);
-                    idChitieu = undefined;
-                    $("#modelReportSelect").modal("toggle");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-        }
-    });
-
     // TODO sum data with location
     $("#btnSumlocation").on("click", () => {
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = gridlocaltion.getSelectedRowsData();
         if (idChitieu === undefined) {
             axios
-                .post("SumDataofLocationBaocao", {
+                .post("SumDataofLocation", {
                     donvi: JSON.stringify(diaban),
                     bieumau: bieumau,
                 })
                 .then((res) => {
-                    ShowData(res.data);
-                    idChitieu = undefined;
+                    let data = res.data;
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelLocaltion").modal("toggle");
                 })
                 .catch((err) => {
@@ -672,13 +466,20 @@ function initEvent() {
                 });
         } else {
             axios
-                .post("SumDataofLocationBaocao", {
+                .post("SumDataofLocation", {
                     donvi: JSON.stringify(diaban),
                     bieumau: bieumau,
                     chitieu: idChitieu,
                 })
                 .then((res) => {
-                    ShowData(res.data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.sum;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.sum;
+                    });
+                    idChitieu = undefined;
                     $("#modelLocaltion").modal("toggle");
                 })
                 .catch((err) => {
@@ -686,10 +487,47 @@ function initEvent() {
                 });
         }
     });
+    // TODO Sum folllow perivious Report
+    $("#btnplus").on("click", () => {
+        let rowselect = gridtemplate.getSelectedRowsData();
+        if (idChitieu === undefined) {
+            axios
+                .post("accumulateDataBieumau", {
+                    bieumau: JSON.stringify(rowselect),
+                })
+                .then((res) => {
+                    let data = res.data;
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
+                    $("#modelReportSelect").modal("toggle");
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            axios
+                .post("accumulateDataBieumau", {
+                    bieumau: JSON.stringify(rowselect),
+                    chitieu: idChitieu,
+                })
+                .then((res) => {
+                    let data = res.data;
 
-    $("#btnImportFromExcel").on("click", () => {
-        $("#modalImportFromExcel").modal("show");
+                    ShowData(data);
+                    idChitieu = undefined;
+                    $("#modelReportSelect").modal("toggle");
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     });
+    // TODO Tai bieu mau nhap lieu
     $("#btnTaibieumau").on("click", () => {
         let ky = $("#cbKynhaplieu").dxSelectBox("instance").option("value");
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
@@ -706,31 +544,33 @@ function initEvent() {
             .dxSelectBox("instance")
             .option("text");
 
-        axios
-            .post("downloadBieumau", {
-                bieumau: bieumau,
-                ky: ky,
-                diaban: diaban,
-                khuvuc: khuvuc,
-                loaisolieu: loaisolieu,
-                kynhaplieu: kynhaplieu,
-                namnhaplieu: namnhaplieu,
-            })
-            .then((res) => {
-                if (res.data == 405) {
-                    Swal.fire(
-                        "Sai thông tin",
-                        "Kỳ báo cáo không đúng với biểu mẫu vui lòng kiểm tra lại",
-                        "warning"
-                    );
-                } else {
-                    window.open("Download/" + res.data);
-                    $("#modalNhapExcel").css("display", "block");
-                }
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        if (checkselect()) {
+            axios
+                .post("downloadFileBieumauNhapLieu", {
+                    bieumau: bieumau,
+                    ky: ky,
+                    diaban: diaban,
+                    khuvuc: khuvuc,
+                    loaisolieu: loaisolieu,
+                    kynhaplieu: kynhaplieu,
+                    namnhaplieu: namnhaplieu,
+                })
+                .then((res) => {
+                    if (res.data == 405) {
+                        Swal.fire(
+                            "Sai thông tin",
+                            "Kỳ báo cáo không đúng với biểu mẫu vui lòng kiểm tra lại",
+                            "warning"
+                        );
+                    } else {
+                        window.open("Download/" + res.data);
+                        $("#modalNhapExcel").css("display", "block");
+                    }
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     });
 
     $("#btnNhap").on("click", () => {
@@ -744,37 +584,26 @@ function initEvent() {
                 headers: { "content-type": "multipart/form-data" },
             };
             axios
-                .post("importExcelBaocao", data, settings)
+                .post("importFileBieumauNhapLieu", data, settings)
                 .then((res) => {
                     if (res.status == 200) {
-                        let test = true;
-                        arrGrid.forEach((item) => {
-                            let check = res.data.findIndex(
-                                (x) => x.id == item.id
-                            );
-                            if (check == -1) {
-                                test = false;
-                                break;
-                            }
-                        });
-                        if (check) {
-                            let index = 0;
-                            arrGrid.forEach((item) => {
-                                item.sanluong = res.data[index].sanluong;
-                                index++;
+                        arrGrid.length = 0;
+                        res.data.forEach((item) => {
+                            arrGrid.push({
+                                id: item.id,
+                                value:
+                                    item.sanluong == null ||
+                                    item.sanluong == undefined
+                                        ? 0
+                                        : item.sanluong,
+                                parent: item.idcha,
+                                unit: item.donvi,
                             });
-
-                            TreeInput.option("dataSource", arrGrid);
-                            $("#modalImportFromExcel").modal("toggle");
-                        } else {
-                            Swal.fire(
-                                "Các chỉ tiêu trong biểu mẫu không hợp lệ vui lòng tải phiên bản mới nhất từ hệ thống",
-                                "Biểu mẫu không hợp lệ",
-                                "warning"
-                            );
-                        }
-
-                        
+                            document.querySelector(
+                                `.inputValue[data-chitieu ="${item.id}"]`
+                            ).value = item.sanluong;
+                        });
+                        $("#modalImportFromExcel").modal("toggle");
                     } else {
                         Swal.fire(
                             "Lỗi",
@@ -788,25 +617,22 @@ function initEvent() {
                 });
         }
     });
+    $("#btnImportFromExcel").on("click", () => {
+        $("#modalImportFromExcel").modal("show");
+    });
 
     $("#btnExit").on("click", () => {
-        window.location = "/home";
+        window.location = "/viewListNhaplieu";
+        localStorage.setItem("idBieunhap", 0);
     });
 
     $("#btnImport").on("click", () => {
         let dataImport = [];
-        TreeInput.forEachNode(function (node) {
-            if (node.data.sanluong == "") {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: null,
-                });
-            } else {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: node.data.sanluong,
-                });
-            }
+        arrGrid.forEach((item) => {
+            dataImport.push({
+                id: item.id,
+                sanluong: item.value,
+            });
         });
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
@@ -819,7 +645,8 @@ function initEvent() {
         let namnhaplieu = $("#cbNamnhaplieu")
             .dxSelectBox("instance")
             .option("value");
-        if (check.checkselect()) {
+        let capnhap = $("#cbphamvi").dxSelectBox("instance").option("value");
+        if (checkselect()) {
             let data = new FormData();
             data.append("mabieumau", bieumau);
             data.append("donvi", window.madonvi);
@@ -828,9 +655,10 @@ function initEvent() {
             data.append("loaisolieu", loaisolieu);
             data.append("kynhap", kynhaplieu);
             data.append("namnhap", namnhaplieu);
+            data.append("capnhap", capnhap);
             data.append("dataImport", JSON.stringify(dataImport));
-            if (idReport > 0) {
-                data.append("edit", idReport);
+            if (idBieunhap > 0) {
+                data.append("edit", idBieunhap);
             }
             let settings = {
                 headers: { "content-type": "multipart/form-data" },
@@ -838,8 +666,13 @@ function initEvent() {
             axios
                 .post("nhapDulieu", data, settings)
                 .then((res) => {
-                    if (res.data["success"] == 200) {
-                        window.location = "viewDanhsachNhaplieu";
+                    if (res.data["succes"] == 200) {
+                        Swal.fire(
+                            "Nhập dữ liệu thành công",
+                            "Bạn đã nhập dữ liệu thành công",
+                            "success"
+                        );
+                        window.location = "viewListNhaplieu";
                     } else if (res.data["succes"] == 400) {
                         Swal.fire(
                             "Dữ liệu đã tồn tại không thể thêm số liệu tương tự",
@@ -848,8 +681,8 @@ function initEvent() {
                         );
                     } else {
                         Swal.fire(
+                            "Đã xảy ra lỗi không thể lưu dữ liệu",
                             "Lỗi",
-                            "Đã xảy ra lỗi vui lòng thử lại sau",
                             "error"
                         );
                     }
@@ -861,90 +694,93 @@ function initEvent() {
     });
 }
 
-function ShowData(data) {
-    TreeInput.forEachNode(function (node) {
-        let index = data.findIndex((x) => x.id == node.data.id);
-        if (index != -1) {
-            let indexvalue = arrValueInput.findIndex(
-                (z) => z.id == node.data.id
-            );
-            if (indexvalue == -1) {
-                arrValueInput.push({
-                    id: node.data.id,
-                    value: data[index].quantity,
-                    parent: node.data.idcha,
-                });
+function setEventInput() {
+    let inputValue = document.getElementsByClassName("inputValue");
+
+    for (const input of inputValue) {
+        input.addEventListener("keyup", function (evt) {
+            if (evt.keyCode == 13) {
+                let index = arrGrid.findIndex(
+                    (x) => x.id == input.dataset.chitieu
+                );
+                arrGrid[index].value = input.value;
+                sumParent(arrGrid[index].parent, arrGrid[index].unit);
+
+                // Focus next input
+                if (arrGrid[index + 1] != undefined) {
+                    let idSelect = arrGrid[index + 1].id;
+                    let selectedInput = document.querySelector(
+                        `.inputValue[data-chitieu="${idSelect}"]`
+                    );
+                    selectedInput.focus();
+                }
             }
-            node.data.sanluong = data[index].quantity;
-        }
-    });
-    TreeInput.refresh();
+        });
+    }
 }
-// Ham tinh tong cac chi tieu
-function UpdateParentNode(value, idItem) {
-    let indexInValue = arrValueInput.findIndex((x) => x.id == idItem);
 
-    let indexGrid = arrGrid.findIndex((x) => x.id == idItem);
-    if (arrValueInput[indexInValue].value == null) {
-        arrValueInput[indexInValue].value = value;
+function sumParent(parent, unit) {
+    if (parent != null || parent != undefined) {
+        let child = arrGrid.filter((item) => {
+            return item.parent == parent && item.unit == unit;
+        });
+        let sum = 0;
+        child.forEach((item) => {
+            sum += Number(item.value);
+        });
 
-        arrGrid[indexGrid].sanluong = value;
-        updateGrid(arrValueInput[indexInValue].parent, value);
+        document.querySelector(
+            `.inputValue[data-chitieu ="${parent}"]`
+        ).value = sum;
+    }
+}
+
+function checkselect() {
+    let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
+
+    let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
+
+    let loaisolieu = $("#cbLoaisolieu").dxSelectBox("instance").option("value");
+    let kynhaplieu = $("#cbKynhaplieu").dxSelectBox("instance").option("value");
+    let namnhaplieu = $("#cbNamnhaplieu")
+        .dxSelectBox("instance")
+        .option("value");
+    if (bieumau == null) {
+        Swal.fire(
+            "Chưa chọn biểu mẫu",
+            "Xin vui lòng chọn biểu mẫu",
+            "warning"
+        );
+        return false;
+    } else if (diaban == null) {
+        Swal.fire(
+            "Chưa chọn tỉnh thành",
+            "Xin vui lòng chọn tỉnh thành",
+            "warning"
+        );
+        return false;
+    } else if (loaisolieu == null) {
+        Swal.fire(
+            "Chưa chọn loại số liệu",
+            "Xin vui lòng chọn loại số liệu",
+            "warning"
+        );
+        return false;
+    } else if (kynhaplieu == null) {
+        Swal.fire(
+            "Chưa chọn kỳ nhập liệu",
+            "Xin vui lòng chọn kỳ nhập liệu",
+            "warning"
+        );
+        return false;
+    } else if (namnhaplieu == null) {
+        Swal.fire(
+            "Chưa chọn năm nhập liệu",
+            "Xin vui lòng chọn năm số liệu",
+            "warning"
+        );
+        return false;
     } else {
-        let oldValue = arrValueInput[indexInValue].value;
-        if (oldValue < value) {
-            let plus = Number(value) - Number(oldValue);
-            arrValueInput[indexInValue].value = Number(oldValue) + plus;
-            arrGrid[indexGrid].sanluong = Number(oldValue) + plus;
-            updateGrid(
-                arrValueInput[indexInValue].parent,
-                Number(oldValue) + plus
-            );
-        } else if (oldValue > value) {
-            let minus = Number(oldValue) - Number(oldValue);
-            arrValueInput[indexInValue].value =
-                Number(oldValue) - Number(minus);
-            arrGrid[indexGrid].sanluong = Number(oldValue) - Number(minus);
-            updateGrid(
-                arrValueInput[indexInValue].parent,
-                Number(oldValue) - Number(minus)
-            );
-        }
+        return true;
     }
-}
-
-function updateGrid(idcha, sanluong) {
-    // Cong cac so lieu trong mang arrValueInput mang cha
-    let indexInput = arrValueInput.findIndex((x) => x.id == idcha);
-    if (indexInput != -1) {
-        let suminput = 0;
-        let donvicha = arrValueInput[indexInput].unit;
-        arrValueInput.forEach((item) => {
-            if (item.parent == idcha && item.unit == donvicha) {
-                suminput += Number(item.value);
-            }
-        });
-        arrValueInput[indexInput].value = suminput;
-        // Cap nhat lai cho mang data grid
-        let indexDataGrid = arrGrid.findIndex((x) => x.id == idcha);
-
-        let sumgrid = 0;
-        arrGrid.forEach((item) => {
-            if (item.idcha == idcha && item.donvi == donvicha) {
-                sumgrid += Number(item.sanluong);
-            }
-        });
-        arrGrid[indexDataGrid].sanluong = sumgrid;
-        TreeInput.refresh();
-    }
-}
-function loadDataToArray(data) {
-    data.forEach((element) => {
-        arrValueInput.push({
-            id: element.id,
-            value: element.sanluong == null ? 0 : element.sanluong,
-            parent: element.idcha,
-            unit: element.donvi,
-        });
-    });
 }
