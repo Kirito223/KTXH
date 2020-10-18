@@ -209,7 +209,11 @@ function showTable(result) {
             html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
             <td>${element.tenchitieu}</td>
             <td>${element.tendonvi}</td>
-            <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+            <td><input value="${
+                element.sanluong != null ? element.sanluong : ""
+            }" class="inputValue form-control" type="number" data-chitieu="${
+                element.chitieu
+            }" /></td>
             </tr>`;
             showTable(result[item].children);
         } else {

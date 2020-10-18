@@ -1,4 +1,3 @@
-
 var TreeInput;
 var gridtemplate;
 var gridlocaltion;
@@ -7,10 +6,11 @@ var idReport = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
+var html = "";
 var gridBieumauNhaplieu, cbLoaibieumau;
 $(document).ready(() => {
-	var bieumau=$("#nhaplieubaocao");
-    if (bieumau.length>0) {
+    var bieumau = $("#nhaplieubaocao");
+    if (bieumau.length > 0) {
         initData();
         initEvent();
         loadDataEdit();
@@ -45,9 +45,16 @@ function loadDataEdit() {
                 $("#cbphamvi")
                     .dxSelectBox("instance")
                     .option("value", form.capnhap);
-                arrGrid = data.Detail;
-                loadDataToArray(arrGrid);
-                TreeInput.option("dataSource", arrGrid);
+                let detail = data.Detail;
+
+                showTable(detail);
+
+                document.getElementById(
+                    "GridCheckImportExcel"
+                ).innerHTML = html;
+                $("#tableChitieu").treetable({ expandable: false });
+                mapValue(res.data.flat);
+                setEventInput();
             })
             .catch((err) => {
                 console.log(err);
@@ -66,12 +73,12 @@ function initData() {
                 {
                     dataField: "tenbieumau",
                     caption: "Tên biểu mẫu",
-					width:300,
+                    width: 300,
                 },
                 {
                     dataField: "created_at",
                     caption: "Ngày nhập",
-					
+
                     customizeText: function (cellInfo) {
                         return moment(cellInfo.value).format("DD/MM/YYYY");
                     },
@@ -401,9 +408,13 @@ function initData() {
                 axios
                     .get("getChitieuNhaplieu/" + idTemplate)
                     .then((res) => {
-                        arrGrid = res.data.data;
-                        loadDataToArray(arrGrid);
-                        TreeInput.option("dataSource", arrGrid);
+                        showTable(res.data.data);
+                        document.getElementById(
+                            "GridCheckImportExcel"
+                        ).innerHTML = html;
+                        $("#tableChitieu").treetable({ expandable: false });
+                        mapValue(res.data.flat);
+                        setEventInput();
                     })
                     .catch((err) => {
                         console.log(err);
@@ -423,6 +434,99 @@ function initData() {
             },
         })
         .dxSelectBox("instance");
+}
+
+function sumParent(parent, unit) {
+    if (parent != null || parent != undefined) {
+        let child = arrGrid.filter((item) => {
+            return item.parent == parent && item.unit == unit;
+        });
+        let sum = 0;
+        child.forEach((item) => {
+            sum += Number(item.value);
+        });
+
+        document.querySelector(
+            `.inputValue[data-chitieu ="${parent}"]`
+        ).value = sum;
+    }
+}
+
+function mapValue(data) {
+    arrGrid.length = 0;
+    arrGrid = data.map((item) => {
+        return {
+            id: item.chitieu,
+            value:
+                item.sanluong == null || item.sanluong == undefined
+                    ? 0
+                    : item.sanluong,
+            parent: item.idcha,
+            unit: item.tendonvi,
+        };
+    });
+}
+
+function showTable(result) {
+    for (const item in result) {
+        if (result[item].hasOwnProperty("children")) {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+            <td>${element.tenchitieu}</td>
+            <td>${element.tendonvi}</td>
+            <td><input value="${
+                element.sanluong != null ? element.sanluong : ""
+            }" class="inputValue form-control" type="number" data-chitieu="${
+                element.chitieu
+            }" /></td>
+            </tr>`;
+            showTable(result[item].children);
+        } else {
+            let element = result[item];
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+                    <td>${element.tenchitieu}</td>
+                    <td>${element.tendonvi}</td>
+                    <td><input value="${
+                        element.sanluong != null ? element.sanluong : ""
+                    }" class="inputValue form-control" type="number" data-chitieu="${
+                element.chitieu
+            }" /></td>
+                    </tr>`;
+        }
+    }
+}
+
+function setEventInput() {
+    let inputValue = document.getElementsByClassName("inputValue");
+
+    for (const input of inputValue) {
+        input.addEventListener("keyup", function (evt) {
+            if (evt.keyCode == 13) {
+                let index = arrGrid.findIndex(
+                    (x) => x.id == input.dataset.chitieu
+                );
+                arrGrid[index].value = input.value;
+                sumParent(arrGrid[index].parent, arrGrid[index].unit);
+
+                // Focus next input
+                if (arrGrid[index + 1] != undefined) {
+                    let idSelect = arrGrid[index + 1].id;
+                    let selectedInput = document.querySelector(
+                        `.inputValue[data-chitieu="${idSelect}"]`
+                    );
+                    selectedInput.focus();
+                }
+            }
+        });
+    }
 }
 
 async function loadBieumau(id) {
@@ -456,7 +560,7 @@ function initEvent() {
             .dxSelectBox("instance")
             .option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
-        let rowselect  =gridBieumauNhaplieu.getSelectedRowsData();
+        let rowselect = gridBieumauNhaplieu.getSelectedRowsData();
         if (namnhap == null) {
             Swal.fire(
                 "Chưa chọn năm nhập liệu",
@@ -471,12 +575,18 @@ function initEvent() {
             );
         } else {
             axios
-                 .post("accumulateDataBaocao", {
+                .post("accumulateDataBaocao", {
                     bieumau: JSON.stringify(rowselect),
                 })
                 .then((res) => {
                     let data = res.data;
-                    ShowData(data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelCongtheobieu").modal("toggle");
                 })
                 .catch((err) => {
@@ -645,7 +755,13 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
-                    ShowData(data);
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     $("#modelReportSelect").modal("toggle");
                 })
                 .catch((err) => {
@@ -680,7 +796,14 @@ function initEvent() {
                     bieumau: bieumau,
                 })
                 .then((res) => {
-                    ShowData(res.data);
+                    let data = res.data;
+                    data.forEach((item) => {
+                        let index = arrGrid.findIndex((x) => x.id == item.id);
+                        arrGrid[index].value = item.quantity;
+                        document.querySelector(
+                            `.inputValue[data-chitieu ="${item.id}"]`
+                        ).value = item.quantity;
+                    });
                     idChitieu = undefined;
                     $("#modelLocaltion").modal("toggle");
                 })
@@ -723,7 +846,7 @@ function initEvent() {
             .dxSelectBox("instance")
             .option("text");
 
-            axios
+        axios
             .post("downloadBieumau", {
                 bieumau: bieumau,
                 ky: ky,
@@ -764,14 +887,13 @@ function initEvent() {
                 .post("importExcelBaocao", data, settings)
                 .then((res) => {
                     if (res.status == 200) {
-						let test = true;
+                        let test = true;
                         arrGrid.forEach((item) => {
                             let check = res.data.findIndex(
                                 (x) => x.id == item.id
                             );
                             if (check == -1) {
                                 test = false;
-                                
                             }
                         });
                         if (test) {
@@ -810,19 +932,14 @@ function initEvent() {
 
     $("#btnImport").on("click", () => {
         let dataImport = [];
-        TreeInput.forEachNode(function (node) {
-            if (node.data.sanluong == "") {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: null,
-                });
-            } else {
-                dataImport.push({
-                    id: node.data.id,
-                    sanluong: node.data.sanluong,
-                });
-            }
-        });
+        let input = document.getElementsByClassName("inputValue");
+
+        for (const ip of input) {
+            dataImport.push({
+                id: ip.dataset.chitieu,
+                sanluong: ip.value,
+            });
+        }
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
         let loaisolieu = $("#cbLoaisolieu")
