@@ -3,19 +3,21 @@ var cbBieuMau;
 var danhsachBieumau;
 var idBieumau = undefined;
 var cbLoaibieumau;
+var cbLoaisolieu;
 $(document).ready(() => {
     if ($("#productionplanreport").length) {
         loadData();
         initEvent();
     }
 });
+
 function loadData() {
     cbLoaibieumau = $("#loaibieumau")
         .dxSelectBox({
             dataSource: [
-                { value: 1, name: "Loại 1" },
-                { value: 2, name: "Loại 2" },
-                { value: 3, name: "Loại 3" },
+                { value: 1, name: "Báo cáo cơ sở" },
+                { value: 2, name: "Báo cáo tổng hợp" },
+                { value: 3, name: "Báo cáo khác" },
             ],
             displayExpr: "name",
             valueExpr: "value",
@@ -27,8 +29,13 @@ function loadData() {
         displayExpr: "tendonvi",
         valueExpr: "id",
     });
+    $("#cbSoLieu").dxSelectBox({
+        dataSource: "getloaisolieu",
+        displayExpr: "tenloaisolieu",
+        valueExpr: "id",
+    });
     $("#cbBieumau").dxSelectBox({
-        dataSource: "Bieumaubaocaoindex",
+        dataSource: "danhsachbieumau",
         displayExpr: "tenbieumau",
         valueExpr: "id",
     });
@@ -48,7 +55,7 @@ function loadData() {
         onValueChanged: (e) => {
             if (e.value == 1) {
                 axios
-                    .get("listDonvihanhchinParent")
+                    .get("danhsachHuyen")
                     .then((res) => {
                         $("#cbHuyen")
                             .dxSelectBox("instance")
@@ -72,7 +79,7 @@ function loadData() {
         },
     });
 
-    Ultil.ShowReport("../report/ReportCTKT.mrt", "report", true);
+    Ultil.ShowReport("../report/ReportCTKT.mrt", "report", false);
 }
 function initEvent() {
     $("#btnLuuBieumau").on("click", function (e) {
@@ -109,8 +116,8 @@ function initEvent() {
                         if (res.data["code"] == 200) {
                             loadBieumau();
                             loadDanhsachBieumau();
-                            $('#modalThembieumau').modal('toggle');
-                            $('#modalBieumau').modal('toggle');
+                            $("#modalThembieumau").modal("toggle");
+                            $("#modalBieumau").modal("toggle");
                         } else {
                             Swal.fire(
                                 "Đã có lõi xảy ra vui lòng kiểm tra lại",
@@ -131,7 +138,7 @@ function initEvent() {
                     if (res.data["code"] == 200) {
                         loadBieumau();
                         loadDanhsachBieumau();
-                        $('#modalBieumau').modal('toggle');
+                        $("#modalBieumau").modal("toggle");
                     } else {
                         Swal.fire(
                             "Đã có lõi xảy ra vui lòng kiểm tra lại",
@@ -200,13 +207,13 @@ function restInputBieumau() {
     $(".fileBM").text("");
     $("#chkApdung").prop("checked", true);
     idBieumau = undefined;
-    
 }
 async function loadBieumau() {
     await axios
-        .get("danhsachBieumau")
+        .get("danhsachBieumau/1")
         .then((res) => {
             let data = res.data;
+
             danhsachBieumau = data.map((item) => {
                 return {
                     Name: item.name,
@@ -219,6 +226,9 @@ async function loadBieumau() {
                             .dxDateBox("instance")
                             .option("value");
                         let province = $("#cbHuyen")
+                            .dxSelectBox("instance")
+                            .option("text");
+                        let loaisolieu = $("#cbSoLieu")
                             .dxSelectBox("instance")
                             .option("text");
                         Swal.fire({
@@ -236,6 +246,9 @@ async function loadBieumau() {
                                 location: location,
                                 year: nam.getFullYear(),
                                 bieumau: cbBieuMau.option("value"),
+                                loaisolieu: $("#cbSoLieu")
+                                    .dxSelectBox("instance")
+                                    .option("value"),
                                 namelocation: $("#cbHuyen")
                                     .dxSelectBox("instance")
                                     .option("text"),
@@ -244,18 +257,19 @@ async function loadBieumau() {
                             .then((res) => {
                                 Swal.close();
                                 let para = new Map();
-                                // para.set("date", nam.getDate());
-                                // para.set("month", nam.getMonth() + 1);
-                                // para.set("year", nam.getFullYear());
-                                // para.set("location", province);
+                                /* para.set("date", nam.getDate());
+                                para.set("month", nam.getMonth() + 1);
+                                para.set("year", nam.getFullYear());
+                                para.set("location", province);*/
                                 Ultil.ShowReportData(
                                     `../report/${item.filename}`,
                                     res.data,
                                     para,
                                     "report",
                                     true,
-                                    true
+                                    false
                                 );
+
                                 $("#modelDanhsachBieumau").modal("toggle");
                             })
                             .catch((err) => {

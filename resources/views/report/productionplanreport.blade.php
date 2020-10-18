@@ -21,10 +21,14 @@
                             <div id="cbHuyen"></div>
                         </div>
                         <div class="col-md-2 col-sm-12">
+                            <label>Loại số liệu</label>
+                            <div id="cbSoLieu"></div>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
                             <label>Năm</label>
                             <div id="cbNam" style="width: 100%"></div>
                         </div>
-                        <div class="col-md-2 col-sm-12">
+                        <div class="col-md-4 col-sm-12">
                             <label>Biểu mẫu</label>
                             <div id="cbBieumau" style="width: 100%"></div>
                         </div>
@@ -33,7 +37,7 @@
                             <button class="btn btn-success btn-sm btn-search" id="btnView"><i
                                     class="fas fa-eye fa-sm fa-fw"></i>
                                 Xem báo cáo</button>
-                            <button class="btn btn-success btn-sm btn-search" id="btnSearch"><i
+                            <button class="btn btn-success btn-sm btn-search" id="btnSearch" style="display: none"><i
                                     class="fas fa-download fa-sm fa-fw"></i>
                                 Xuất báo cáo</button>
                         </div>
@@ -84,7 +88,7 @@
             </div>
 
             <!-- Modal Bieu mau -->
-            
+
 
             <!-- Thêm mới biểu mẫu -->
             <div class="modal fade" id="modalThembieumau" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"

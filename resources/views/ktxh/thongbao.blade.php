@@ -112,7 +112,8 @@
                                                 </h3>
                                                 <small>Từ ngày: <small><small id="details-start-day"></small> -
                                                         <small>Đến ngày: </small><small id="details-end-day"></small>
-                                                        <p class="m-b-lg" id="details-content" style="margin-top: 15px; padding:5px; border-style:dotted;border-width:1px">
+                                                        <p class="m-b-lg" id="details-content"
+                                                            style="margin-top: 15px; padding:5px; border-style:dotted;border-width:1px">
                                                         </p>
                                             </div>
                                             <span><b>Tải tài liệu :</b></span><i class="fa fa-file-pdf-o"
@@ -170,13 +171,16 @@
                                                     rows="3"></textarea>
                                             </div>
                                             <div class="form-group row">
-                                               <!-- <label for="create-input-taptin">Tải tập tin</label>
+                                                <!-- <label for="create-input-taptin">Tải tập tin</label>
                                                 <input type="file" class="form-control-file" name="taptin"
                                                     id="edit-input-taptin"> -->
-												<div class="col-sm-2" style="padding-left: 0px; padding-right: 0px">
-                                                <input type="file" name="uploadfile" id="edit-input-taptin" style="width: 85px;"/>
+                                                <div class="col-sm-2" style="padding-left: 0px; padding-right: 0px">
+                                                    <input type="file" name="uploadfile" id="edit-input-taptin"
+                                                        style="width: 85px;" />
                                                 </div>
-                                                <label for="edit-input-taptin" class="col-sm-10" style="padding-left: 0px;" id="edit-label-taptin">No file chosen</label>
+                                                <label for="edit-input-taptin" class="col-sm-10"
+                                                    style="padding-left: 0px;" id="edit-label-taptin">No file
+                                                    chosen</label>
                                             </div>
                                             <div class="form-check">
                                                 <input type="checkbox" name="kichhoat" class="form-check-input"
@@ -238,15 +242,14 @@
                                                     @if(count($donvihanhchinhcons) > 0)
                                                     @foreach($donvihanhchinhcons as $donvihanhchinhcon)
                                                     <div class="form-check">
-                                                        <input class="form-check-input donvinhan-input"
-                                                            type="checkbox" name="donvinhan"
-                                                            value="{{ $donvihanhchinhcon-> id }}">
+                                                        <input class="form-check-input donvinhan-input" type="checkbox"
+                                                            name="donvinhan" value="{{ $donvihanhchinhcon-> id }}">
                                                         <label class="form-check-label">
                                                             {{ $donvihanhchinhcon->tendonvi }}
                                                         </label>
                                                     </div>
                                                     @endforeach
-                                                    @else 
+                                                    @else
                                                     <p>Không có đơn vị hành chính trực thuộc</p>
                                                     @endif
                                                 </div>
@@ -257,9 +260,27 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success"
-                                            id="confirm-send-btn">Gửi thông báo</button>
+                                        <button type="button" class="btn btn-success" id="confirm-send-btn">Gửi thông
+                                            báo</button>
                                         <button type="button" class="btn" data-dismiss="modal">Hủy Bỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade in" id="sent-details-modal" tabindex="-1" role="dialog"
+                            aria-labelledby="deleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="deleteModalLabel">Chi tiết thông báo đã gửi</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" data-dismiss="modal">Đóng</button>
                                     </div>
                                 </div>
                             </div>
@@ -273,9 +294,9 @@
                                         <th style="width: 15%">Ngày Bắt Đầu</th>
                                         <th style="width: 15%">Ngày Kết Thúc</th>
                                         <th class="hidden-item">Nội Dung</th>
-                                        <th style="width: 10%">Kích Hoạt</th>
+                                        <th style="width: 5%">Kích Hoạt</th>
                                         <th class="hidden-item">Tập Tin</th>
-                                        <th style="width: 30%">Thao Tác</th>
+                                        <th style="width: 35%">Thao Tác</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tbody-thongbao">
@@ -310,14 +331,20 @@
                                                 <label for="kichhoatCheckbox{{ $thongbao->id }}"></label>
                                             </div>
                                         </td>
-                                        <td style="vertical-align: middle" class="hidden-item">{{ $thongbao->taptin }}</td>
+                                        <td style="vertical-align: middle" class="hidden-item">{{ $thongbao->taptin }}
+                                        </td>
                                         <td>
-                                            <button type="button" class="btn btn-success btn-sm send-btn" id="send-btn-{{ $thongbao->id }}" style="margin: 2px">
+                                            <button type="button" class="btn btn-success btn-sm send-btn"
+                                                id="send-btn-{{ $thongbao->id }}" style="margin: 2px">
                                                 @if(count($thongbao->taikhoans) > 0)
                                                 <span>Đã gửi</span>
                                                 @else
                                                 <i class="fa fa-send"></i> Gửi
                                                 @endif
+                                            </button>
+                                            <button type="button" class="btn btn-info btn-sm sent-details-btn"
+                                                id="sent-details-btn-{{ $thongbao->id }}" style="margin: 2px">
+                                                <i class="fa fa-truck"></i> Chi tiết
                                             </button>
                                             <button type="button" class="btn btn-primary btn-sm edit-btn"
                                                 style="margin: 2px" id="edit-btn-{{ $thongbao->id }}">

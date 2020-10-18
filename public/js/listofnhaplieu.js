@@ -26,18 +26,23 @@ function loadData() {
                     dataField: "tenbieumau",
                     caption: "Tên biểu mẫu"
                 },
-                {
-                    dataField: "tentaikhoan",
-                    caption: "Người cập nhật"
+				{
+                    dataField: "tenloaisolieu",
+                    caption: "Loại số liệu"
                 },
-                {
+				{
                     dataField: "namnhap",
                     caption: "Năm nhập", 
 				
                 },
                 {
+                    dataField: "tentaikhoan",
+                    caption: "Người cập nhật"
+                },
+                
+                {
                     dataField: "created_at",
-                    caption: "Ngày",
+                    caption: "Ngày nhập",
                     customizeText: function(cellInfo) {
                      return   moment(cellInfo.value).format(
                             "DD/MM/YYYY"

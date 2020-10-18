@@ -234,4 +234,25 @@ class tbl_thongbaoController extends Controller
         Auth::user()->thongbaos()->updateExistingPivot($id, ['isSeen' => true]);
         return response()->json(['success' => $thongbao]);   
     }
+	
+	public function getThongbaoSentDetails($id) {
+        $donvi = Auth::user()->getDonvi();
+        if($donvi != null) {
+            $donvihanhchinhcons = $donvi->donvihanhchinhcon;
+        } else {
+            $donvihanhchinhcons = [];
+        }
+        $donviconNameArr = array();
+        foreach($donvihanhchinhcons as $dvhc) {
+            array_push($donviconNameArr, $dvhc->tendonvi);
+        }
+        $thongbao = tbl_thongbao::findOrFail($id);
+        $taikhoans = $thongbao->taikhoans()->get();
+        foreach($taikhoans as $taikhoan) {
+            $taikhoan->tendonvi = in_array($taikhoan->getDonViName(), $donviconNameArr) ? $taikhoan->getDonViName() : "";
+        }
+        $taikhoans = $taikhoans->groupBy('tendonvi');
+        $taikhoans = json_encode($taikhoans);
+        return response()->json(['success' => $taikhoans]);
+    }
 }

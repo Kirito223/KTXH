@@ -30,10 +30,16 @@ function loadData() {
                 {
                     dataField: "tenky",
                     caption: "Kỳ báo cáo",
+					
                 },
                 {
                     dataField: "ngaycapnhatsaucung",
                     caption: "Kỳ báo cáo",
+					customizeText: function(cellInfo) {
+                     return   moment(cellInfo.value).format(
+                            "DD/MM/YYYY"
+                        )
+                    },
                 },
                 {
                     dataField: "tentaikhoan",
@@ -51,6 +57,22 @@ function loadData() {
                         if (options.data.gui == 1) {
                             $(
                                 "<span style='color:blue'>Đã gửi</span>"
+                            ).appendTo(container);
+                        }
+                    },
+                },
+				{
+                    dataField: "trangthai",
+                    caption: "Tình trạng",
+                    cellTemplate: function (container, options) {
+                        if (options.data.trangthai == 0) {
+                            $(
+                                "<span style='color:red'>Chưa duyệt</span>"
+                            ).appendTo(container);
+                        }
+                        if (options.data.trangthai == 1) {
+                            $(
+                                "<span style='color:blue'>Đã duyệt</span>"
                             ).appendTo(container);
                         }
                     },

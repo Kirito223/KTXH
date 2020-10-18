@@ -192,8 +192,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-striped"
-                                cellspacing="0" width="100%">
+                            <table class="table table-striped" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th style="width: 30%">Tên Phòng Ban</th>

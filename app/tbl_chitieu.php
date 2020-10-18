@@ -15,6 +15,7 @@ class tbl_chitieu extends Model
 
     public function tbl_donvitinh()
     {
+        // return $this->hasOne('App\tbl_donvitinh', 'donvi', 'id');
         return $this->belongsTo('App\tbl_donvitinh', 'donvi');
     }
 

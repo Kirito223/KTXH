@@ -38,10 +38,10 @@
                             <div class="row mb-1 mt-1 px-3">
                                 @if(count($errors) > 0)
                                 <div class="alert alert-danger">
-                                @foreach($errors->all() as $error)
+                                    @foreach($errors->all() as $error)
                                     <small class="text-danger"><b>{{ $error }}</b></small>
                                     <br>
-                                @endforeach
+                                    @endforeach
                                 </div>
                                 @endif
                             </div>

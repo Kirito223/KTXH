@@ -77,7 +77,15 @@ class tbl_taikhoan extends Authenticatable
     }
 	
 	public function getDonviChaId() {
-		return $this->tbl_phongban !== null ? $this->tbl_phongban->donvihanhchinh->madonvi : $this->tbl_donvihanhchinh->madonvi;
+		if($this->tbl_phongban !== null) {
+			return $this->tbl_phongban->donvihanhchinh->madonvi;
+		} else {
+			if($this->tbl_donvihanhchinh !== null) {
+				return $this->tbl_donvihanhchinh->madonvi;
+			} else {
+				return 0;
+			}
+		}
 	}
 	
 	public function hasPermissionBasedOnRoute(string $route) {
@@ -91,5 +99,24 @@ class tbl_taikhoan extends Authenticatable
 	
 	public function getDonVi() {
         return $this->tbl_phongban !== null ? $this->tbl_phongban->donvihanhchinh : $this->tbl_donvihanhchinh;
+    }
+	
+	public function getDonViName() {
+        if($this->phongban == null && $this->donvi == 0) {
+            return null;
+        }
+        return $this->tbl_phongban !== null ? $this->tbl_phongban->donvihanhchinh->tendonvi : $this->tbl_donvihanhchinh->tendonvi;
+    }
+	
+	public function hasAnyDonvicon() {
+        $donvi = $this->getDonVi();
+        if($donvi !== null) {
+           $donvicon = $donvi->donvihanhchinhcon;
+           if(count($donvicon) > 0) {
+               return true;
+           }
+            return false;
+        } 
+        return false;
     }
 }

@@ -13,7 +13,7 @@ function loadData() {
         valueExpr: "id",
     });
     $("#cbBieumau").dxSelectBox({
-        dataSource: "indexBieumauNhaplieu",
+        dataSource: "danhsachbieumau",
         displayExpr: "tenbieumau",
         valueExpr: "id",
     });
@@ -22,7 +22,7 @@ function loadData() {
 
     $("#cbNam").dxDateBox({
         value: new Date(),
-		 displayFormat: "d/MM/yyyy",
+        displayFormat: "d/MM/yyyy",
     });
 
     Ultil.ShowReport("../report/SummaryIndicatorReport.mrt", "report");

@@ -48,6 +48,92 @@ function simpleModelService(urlLink) {
         this.style.width = '400px';
         editLabelForTaptin.classList.add('hidden-item');
     })
+	
+	//  Xem chi tiết thông báo đã gửi
+
+    var sentDetailsBtns = [...document.getElementsByClassName('sent-details-btn')];
+    var sentDetailsModal = document.getElementById('sent-details-modal');
+    
+    for(let i = 0; i < sentDetailsBtns.length; i++) {
+        sentDetailsBtns[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            let id = this.id.split('-')[this.id.split('-').length - 1];
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'GET',
+                url: URLLINK + "/" + id + '/getThongbaoSentDetails',
+                success: function(resData) {
+                    if (!$.isEmptyObject(resData.error)) {
+
+                    } else {
+                        let data = JSON.parse(resData.success);
+                        generateSentDetailsModalContent(data);
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr
+                        .responseText);
+                }
+            });
+        })
+    }
+    function generateSentDetailsModalContent(data) {
+        let sentDetailsModalBody = sentDetailsModal.querySelector('.modal-body');
+        sentDetailsModalBody.innerHTML = "";
+        let keys = Object.keys(data);
+        keys = keys.filter(i => i.length > 0);
+        if(keys.length > 0) {
+            sentDetailsModalBody.appendChild(createList(keys));
+        } else {
+            let h4Element = document.createElement('h4');
+            h4Element.innerText = "Không có thông tin đơn vị"
+            sentDetailsModalBody.appendChild(h4Element);
+        }
+        $('#sent-details-modal').modal('show');
+
+        function createList(itemArray) {
+            let ulElement = document.createElement('ul');
+            ulElement.classList.add('list-group');
+            itemArray.forEach(i => {
+                let liElement = document.createElement('li');
+                liElement.classList.add('list-group-item');
+                let h4Element = document.createElement('h4');
+                h4Element.innerText = "Đơn vị: " + i
+                liElement.appendChild(h4Element);
+                if(data[i] !== null && data[i] !== undefined && data[i].length > 0) {
+                    liElement.appendChild(createInnerList(data[i]));
+                } 
+                ulElement.appendChild(liElement);
+            })
+            return ulElement;
+     }
+
+     function createInnerList(itemArr) {
+        let ulElement = document.createElement('ul');
+        ulElement.classList.add('list-group');
+        itemArr.forEach(i => {
+            let { tendangnhap, pivot } = i;
+            let { isSeen } = pivot;
+            let spanElement = document.createElement('span');
+            if(isSeen) {
+                spanElement.classList.add('badge', 'badge-success');
+                spanElement.innerText = 'Đã xem';
+            } else {
+                spanElement.classList.add('badge', 'badge-info');
+                spanElement.innerText = 'Đã gửi';
+            }
+            let liElement = document.createElement('li');
+            liElement.classList.add('list-group-item');
+            liElement.innerText = tendangnhap;
+            liElement.appendChild(spanElement);
+            ulElement.appendChild(liElement);
+        });
+        return ulElement;
+     }
+}    
+//end chi tiết thông báo đã gửi
 
     function setOrdersArray(rowsClassName) {
         var rows = document.getElementsByClassName(rowsClassName);

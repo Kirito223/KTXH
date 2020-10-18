@@ -8,13 +8,13 @@ class tbl_chitietsolieutheobieu extends Model
 {
     protected $table = 'tbl_chitietsolieutheobieu';
 
-    public function tbl_solieutheobieu()
+ public function tbl_solieutheobieu()
     {
-        return $this->belongsTo('App\User', 'mabieusolieu');
+        return $this->belongsTo('App\tbl_solieutheobieu', 'mabieusolieu');
     }
     public function tbl_chitieu()
     {
-        return $this->hasMany('App\tbl_chitieu', 'chitieu', 'id');
+        return $this->belongsTo('App\tbl_chitieu', 'chitieu', 'id');
     }
         public function tbl_donvihanhchinh()
     {

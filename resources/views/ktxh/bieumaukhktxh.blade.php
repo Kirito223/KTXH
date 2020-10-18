@@ -12,14 +12,14 @@
                 <hr class="widget-separator">
                 <div class="widget-body">
                     <div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-							<label for="exampleInputEmail1">Chọn Năm</label>
-								<div id="cbNam"></div>
-							</div>							
-						</div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Chọn Năm</label>
+                                <div id="cbNam"></div>
+                            </div>
+                        </div>
                         <div class="col-md-9">
-                            <input class="hidden-item" id="kehoachIdInput" value="{{ $kehoachId }}"></input> 
+                            <input class="hidden-item" id="kehoachIdInput" value="{{ $kehoachId }}"></input>
                             <div class="form-group">
 
                                 <label for="exampleInputEmail1">Chọn biểu mẫu</label>
@@ -37,24 +37,24 @@
                     <div class="row">
                         <button type="button" class="btn btn-primary" id="timkiem" style="float: right;">
                             <i class="fa fa-search" aria-hidden="true"></i> Tìm kiếm</button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-<div class="row">
+    </div>
+    <div class="row">
         <div class="col-md-12">
-                <div class="widget-body">
-                        <div class="row">
-                            <div id="content"></div>
-                        </div>
-                    </div>
+            <div class="widget-body">
+                <div class="row">
+                    <div id="content"></div>
                 </div>
-			</div>
-    </section>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script type="module">	
-		import Ultil from "/js/Ultil.js";
+<script type="module">
+    import Ultil from "/js/Ultil.js";
 		$(document).ready(() => {
 			$("#cbNam").dxDateBox({
        			value: new Date(),
@@ -403,4 +403,4 @@
        
      });
     </script>
-    @endsection
+@endsection

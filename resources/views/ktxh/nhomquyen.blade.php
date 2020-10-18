@@ -46,15 +46,17 @@
                                         <form id="createNhomquyenForm">
                                             <div class="form-group row">
                                                 <label for="create-input-tennhomquyen" class="col-sm-3 col-form-label">
-                                                Tên nhóm quyền
+                                                    Tên nhóm quyền
                                                 </label>
                                                 <div class="col-sm-9">
                                                     <input type="text" name="tennhomquyen" class="form-control"
-                                                        id="create-input-tennhomquyen" placeholder="Nhập tên nhóm quyền">
+                                                        id="create-input-tennhomquyen"
+                                                        placeholder="Nhập tên nhóm quyền">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label for="create-input-mota" class="col-sm-3 col-form-label">Mô tả</label>
+                                                <label for="create-input-mota" class="col-sm-3 col-form-label">Mô
+                                                    tả</label>
                                                 <div class="col-sm-9">
                                                     <input type="text" name="mota" class="form-control"
                                                         id="create-input-mota" placeholder="Nhập mô tả">
@@ -116,55 +118,55 @@
                                     </div>
                                     @csrf
                                     <div class="modal-body">
-                                    <div class="form-group row">
-                                                <label for="edit-input-tennhomquyen" class="col-sm-3 col-form-label">
+                                        <div class="form-group row">
+                                            <label for="edit-input-tennhomquyen" class="col-sm-3 col-form-label">
                                                 Tên nhóm quyền
-                                                </label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="tennhomquyen" class="form-control"
-                                                        id="edit-input-tennhomquyen" placeholder="Nhập tên nhóm quyền">
-                                                </div>
+                                            </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="tennhomquyen" class="form-control"
+                                                    id="edit-input-tennhomquyen" placeholder="Nhập tên nhóm quyền">
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="edit-input-mota" class="col-sm-3 col-form-label">Mô tả</label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="mota" class="form-control"
-                                                        id="edit-input-mota" placeholder="Nhập mô tả">
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="edit-input-mota" class="col-sm-3 col-form-label">Mô tả</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="mota" class="form-control" id="edit-input-mota"
+                                                    placeholder="Nhập mô tả">
                                             </div>
-                                            <fieldset class="form-group">
-                                                <div class="row">
-                                                    <legend class="col-form-label col-sm-3 pt-0">Quyền</legend>
-                                                    <div class="col-sm-9">
-                                                        @if(count($quyens) > 0)
-                                                        @foreach($quyens as $quyen)
-                                                        <div class="form-check">
-                                                            <input class="form-check-input edit-input-quyen"
-                                                                type="checkbox" name="quyen"
-                                                                id="edit-input-quyen-{{ $quyen->id }}"
-                                                                value="{{ $quyen-> id }}">
-                                                            <label class="form-check-label"
-                                                                for="edit-input-quyen-{{ $quyen->id }}">
-                                                                {{ $quyen->mota }}
-                                                            </label>
-                                                        </div>
-                                                        @endforeach
-                                                        @endif
+                                        </div>
+                                        <fieldset class="form-group">
+                                            <div class="row">
+                                                <legend class="col-form-label col-sm-3 pt-0">Quyền</legend>
+                                                <div class="col-sm-9">
+                                                    @if(count($quyens) > 0)
+                                                    @foreach($quyens as $quyen)
+                                                    <div class="form-check">
+                                                        <input class="form-check-input edit-input-quyen" type="checkbox"
+                                                            name="quyen" id="edit-input-quyen-{{ $quyen->id }}"
+                                                            value="{{ $quyen-> id }}">
+                                                        <label class="form-check-label"
+                                                            for="edit-input-quyen-{{ $quyen->id }}">
+                                                            {{ $quyen->mota }}
+                                                        </label>
                                                     </div>
+                                                    @endforeach
+                                                    @endif
                                                 </div>
-                                            </fieldset>
-                                            <div class="form-check">
-                                                <input type="checkbox" name="kichhoat" class="form-check-input"
-                                                    id="edit-input-kichhoat" value="1">
-                                                <label class="form-check-label" for="edit-input-kichhoat">Kích
-                                                    hoạt</label>
                                             </div>
+                                        </fieldset>
+                                        <div class="form-check">
+                                            <input type="checkbox" name="kichhoat" class="form-check-input"
+                                                id="edit-input-kichhoat" value="1">
+                                            <label class="form-check-label" for="edit-input-kichhoat">Kích
+                                                hoạt</label>
+                                        </div>
                                         <div class="alert alert-danger print-error-msg-on-edit" style="display:none">
                                             <ul></ul>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success mw-md" id="confirm-edit-btn">Chỉnh sửa</button>
+                                        <button type="button" class="btn btn-success mw-md" id="confirm-edit-btn">Chỉnh
+                                            sửa</button>
                                         <button type="button" class="btn btn-danger mw-md" data-dismiss="modal">Hủy
                                             bỏ</button>
                                     </div>
@@ -209,16 +211,16 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tbody-nhomquyen">
-                                        <div class="row" style="display:flex; justify-content: flex-start">
-                                            <button type="submit" class="btn mw-md btn-primary m-xs">Lưu thay
-                                                đổi</button>
-                                            <div style="margin-left: auto">
-                                                <button type="button" class="btn mw-md btn-success m-xs"
-                                                    id="show-create-modal">
-                                                    Tạo Mới
-                                                </button>
-                                            </div>
+                                    <div class="row" style="display:flex; justify-content: flex-start">
+                                        <button type="submit" class="btn mw-md btn-primary m-xs">Lưu thay
+                                            đổi</button>
+                                        <div style="margin-left: auto">
+                                            <button type="button" class="btn mw-md btn-success m-xs"
+                                                id="show-create-modal">
+                                                Tạo Mới
+                                            </button>
                                         </div>
+                                    </div>
                                     @if(count($nhomquyens) > 0)
                                     @foreach($nhomquyens as $nhomquyen)
                                     <tr id="nhomquyen-{{ $nhomquyen->id }}" class="row-nhomquyen">
@@ -245,9 +247,10 @@
                                         <td style="vertical-align: middle; text-align: center">
                                             <div class="checkbox checkbox-primary" style="vertical-align: middle">
                                                 <input type="checkbox" value="{{ $nhomquyen->id }}"
-                                                    id="nhomquyenCheckbox{{ $nhomquyen->id }}" class="nhomquyen-checkbox"
+                                                    id="nhomquyenCheckbox{{ $nhomquyen->id }}"
+                                                    class="nhomquyen-checkbox"
                                                     {{$nhomquyen->kichhoat == 1 ? 'checked' : ''}} />
-                                                    <label for="nhomquyenCheckbox{{ $nhomquyen->id }}"></label>
+                                                <label for="nhomquyenCheckbox{{ $nhomquyen->id }}"></label>
                                             </div>
                                         </td>
                                         <td style="vertical-align: middle">

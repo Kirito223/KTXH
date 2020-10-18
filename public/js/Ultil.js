@@ -147,15 +147,15 @@ export function initBieumau(Mauluongxuat, container) {
         if (element.loai == 1) {
             i.classList.add("type1");
         }
-        if(element.loai == 2){
+        if (element.loai == 2) {
             i.classList.add("type2");
         }
-        if(element.loai == 3){
+        if (element.loai == 3) {
             i.classList.add("type3");
         }
         let h5 = document.createElement("h5");
         let text = document.createTextNode(
-            element.Name.length > 10
+            element.Name.length > 50
                 ? element.Name.substring(0, 10)
                 : element.Name
         );
@@ -168,7 +168,6 @@ export function initBieumau(Mauluongxuat, container) {
     }
     document.getElementById(container).appendChild(u);
 }
-
 export default {
     checkStatusCheckBox,
     listNam,

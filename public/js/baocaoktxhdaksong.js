@@ -22,7 +22,7 @@ function loadData() {
 
     $("#cbNam").dxDateBox({
         value: new Date(),
-		 displayFormat: "d/MM/yyyy",
+        displayFormat: "d/MM/yyyy",
     });
 
     Ultil.ShowReport("../report/baocaochitieudaksong.mrt", "report");

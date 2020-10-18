@@ -15,25 +15,40 @@ function loadData() {
             columnAutoWidth: true,
             selection: {
                 mode: "multiple",
-                allowSelectAll: false
+                allowSelectAll: false,
             },
             columns: [
                 {
                     dataField: "sohieu",
-                    caption: "Số hiệu"
+                    caption: "Số hiệu",
                 },
                 {
                     dataField: "tenbieumau",
-                    caption: "Tên biểu mẫu"
+                    caption: "Tên biểu mẫu",
+                },
+                {
+                    dataField: "file",
+                    caption: "File quyết định",
+                    cellTemplate: function (element, info) {
+                        element
+                            .append(
+                                '<a href="http://ctktxh.lihanet.com/upload/' +
+                                    info.text +
+                                    '">' +
+                                    info.text +
+                                    "</a>"
+                            )
+                            .css("color", "red");
+                    },
                 },
                 {
                     dataField: "tentaikhoan",
-                    caption: "Người cập nhật"
+                    caption: "Người cập nhật",
                 },
                 {
                     dataField: "trangthai",
                     caption: "Áp dụng",
-                    cellTemplate: function(element, info) {
+                    cellTemplate: function (element, info) {
                         if (info.text == 1) {
                             element
                                 .append("<span>Đã áp dụng </span>")
@@ -43,10 +58,10 @@ function loadData() {
                                 .append("<span>Chưa áp dụng </span>")
                                 .css("color", "blue");
                         }
-                    }
-                }
+                    },
+                },
             ],
-            onToolbarPreparing: function(e) {
+            onToolbarPreparing: function (e) {
                 var dataGrid = e.component;
                 e.toolbarOptions.items.unshift(
                     {
@@ -54,18 +69,18 @@ function loadData() {
                         widget: "dxButton",
                         options: {
                             icon: "plus",
-                            onClick: function() {
+                            onClick: function () {
                                 localStorage.setItem("idbaocao", 0);
                                 window.location = "formthembaocao";
-                            }
-                        }
+                            },
+                        },
                     },
                     {
                         location: "after",
                         widget: "dxButton",
                         options: {
                             icon: "edit",
-                            onClick: function() {
+                            onClick: function () {
                                 let selected = treeList.getSelectedRowsData(
                                     "all"
                                 );
@@ -82,15 +97,15 @@ function loadData() {
                                     );
                                     window.location = "editBieumauBaocao";
                                 }
-                            }
-                        }
+                            },
+                        },
                     },
                     {
                         location: "after",
                         widget: "dxButton",
                         options: {
                             icon: "trash",
-                            onClick: function() {
+                            onClick: function () {
                                 var selectedData = treeList.getSelectedRowsData();
                                 Swal.fire({
                                     title: "Xoá dữ liệu",
@@ -98,34 +113,34 @@ function loadData() {
                                     icon: "warning",
                                     showCancelButton: true,
                                     cancelButtonText: "Không",
-                                    confirmButtonText: "Có"
-                                }).then(result => {
+                                    confirmButtonText: "Có",
+                                }).then((result) => {
                                     if (result.value) {
                                         axios
                                             .post("destroyBieumauBaocao", {
                                                 bieumau: JSON.stringify(
                                                     selectedData
-                                                )
+                                                ),
                                             })
-                                            .then(res => {
+                                            .then((res) => {
                                                 if (res.status == 200) {
                                                     dataGrid.refresh();
                                                 }
                                             })
-                                            .catch(err => {
+                                            .catch((err) => {
                                                 console.log(err);
                                             });
                                     }
                                 });
-                            }
-                        }
+                            },
+                        },
                     },
                     {
                         location: "after",
                         widget: "dxButton",
                         options: {
                             icon: "check",
-                            onClick: function() {
+                            onClick: function () {
                                 var selectedData = treeList.getSelectedRowsData();
 
                                 if (selectedData.length > 1) {
@@ -149,15 +164,15 @@ function loadData() {
                                         confirmButtonColor: "#3085d6",
                                         showCancelButton: true,
                                         cancelButtonColor: "d33",
-                                        cancelButtonText: "Không"
-                                    }).then(result => {
+                                        cancelButtonText: "Không",
+                                    }).then((result) => {
                                         if (result.value) {
                                             axios
                                                 .get(
                                                     "ApplyBieumauBaocao/" +
                                                         selectedData[0].id
                                                 )
-                                                .then(res => {
+                                                .then((res) => {
                                                     if (res.data == 200) {
                                                         Swal.fire(
                                                             "Đã áp dụng",
@@ -167,17 +182,17 @@ function loadData() {
                                                         treeList.refresh();
                                                     }
                                                 })
-                                                .catch(err => {
+                                                .catch((err) => {
                                                     console.log(err);
                                                 });
                                         }
                                     });
                                 }
-                            }
-                        }
+                            },
+                        },
                     }
                 );
-            }
+            },
         })
         .dxDataGrid("instance");
 }

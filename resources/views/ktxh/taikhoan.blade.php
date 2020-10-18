@@ -258,8 +258,7 @@
                         </div>
                         <input type="hidden" name="kichhoat" id="kichhoatArray" />
                         <div class="table-responsive">
-                            <table class="table" cellspacing="0"
-                                width="100%">
+                            <table class="table" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th style="width: 15%">Tên đăng nhập</th>

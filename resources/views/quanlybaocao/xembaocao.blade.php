@@ -96,8 +96,8 @@
                         </div>
 
                         <div class="form-group" style="text-align: center">
-                          <button class="btn btn-info btn-sm" id="btnDuyetbaocao">Duyệt báo cáo</button>
-                          <button class="btn btn-danger btn-sm" id="btnThoat">Thoát</button>
+                            <button class="btn btn-info btn-sm" id="btnDuyetbaocao">Duyệt báo cáo</button>
+                            <button class="btn btn-danger btn-sm" id="btnThoat">Thoát</button>
                         </div>
 
                     </div>

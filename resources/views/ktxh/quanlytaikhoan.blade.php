@@ -39,22 +39,26 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" class="hidden-item" name="id" value="{{ $taikhoan->id }}" id="reset-input-id" >
+                                        <input type="text" class="hidden-item" name="id" value="{{ $taikhoan->id }}"
+                                            id="reset-input-id">
                                         <div class="form-group row">
-                                            <label for="reset-input-password" class="col-sm-3 col-form-label">Mật khẩu mới</label>
+                                            <label for="reset-input-password" class="col-sm-3 col-form-label">Mật khẩu
+                                                mới</label>
                                             <div class="col-sm-9">
                                                 <input type="password" name="matkhau" class="form-control"
                                                     id="reset-input-password" placeholder="Nhập mật khẩu mới">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="confirm-input-password" class="col-sm-3 col-form-label">Xác nhận mật khẩu</label>
+                                            <label for="confirm-input-password" class="col-sm-3 col-form-label">Xác nhận
+                                                mật khẩu</label>
                                             <div class="col-sm-9">
                                                 <input type="password" name="matkhau" class="form-control"
                                                     id="confirm-input-password" placeholder="Xác nhận mật khẩu">
                                             </div>
                                         </div>
-                                        <div class="alert alert-danger print-error-msg-on-reset-password" style="display:none">
+                                        <div class="alert alert-danger print-error-msg-on-reset-password"
+                                            style="display:none">
                                             <ul></ul>
                                         </div>
                                     </div>
@@ -77,48 +81,57 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <input type="text" class="hidden-item" name="id" value="{{ $taikhoan->id }}" id="change-input-id" >
+                                        <input type="text" class="hidden-item" name="id" value="{{ $taikhoan->id }}"
+                                            id="change-input-id">
                                         <div class="form-group row">
-                                            <label for="change-input-tendangnhap" class="col-sm-3 col-form-label">Tên đăng nhập</label>
+                                            <label for="change-input-tendangnhap" class="col-sm-3 col-form-label">Tên
+                                                đăng nhập</label>
                                             <div class="col-sm-9">
                                                 <input type="text" name="tendangnhap" class="form-control"
-                                                    id="change-input-tendangnhap" placeholder="{{ $taikhoan-> tendangnhap }}" readonly>
+                                                    id="change-input-tendangnhap"
+                                                    placeholder="{{ $taikhoan-> tendangnhap }}" readonly>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="change-input-tentaikhoan" class="col-sm-3 col-form-label">Tên tài khoản</label>
+                                            <label for="change-input-tentaikhoan" class="col-sm-3 col-form-label">Tên
+                                                tài khoản</label>
                                             <div class="col-sm-9">
                                                 <input type="text" name="tentaikhoan" class="form-control"
-                                                    id="change-input-tentaikhoan" value="{{ $taikhoan-> tentaikhoan }}" placeholder="Nhập tên tài khoản">
+                                                    id="change-input-tentaikhoan" value="{{ $taikhoan-> tentaikhoan }}"
+                                                    placeholder="Nhập tên tài khoản">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="change-input-email" class="col-sm-3 col-form-label">Email</label>
+                                            <label for="change-input-email"
+                                                class="col-sm-3 col-form-label">Email</label>
                                             <div class="col-sm-9">
                                                 <input type="text" name="email" class="form-control"
-                                                    id="change-input-email" value="{{ $taikhoan-> email }}" placeholder="Nhập email">
+                                                    id="change-input-email" value="{{ $taikhoan-> email }}"
+                                                    placeholder="Nhập email">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="change-input-ho" class="col-sm-3 col-form-label">Họ</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="ho" class="form-control"
-                                                    id="change-input-ho" value="{{ $taikhoan-> ho }}" placeholder="Nhập họ">
+                                                <input type="text" name="ho" class="form-control" id="change-input-ho"
+                                                    value="{{ $taikhoan-> ho }}" placeholder="Nhập họ">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="change-input-ten" class="col-sm-3 col-form-label">Tên</label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="ten" class="form-control"
-                                                    id="change-input-ten" value="{{ $taikhoan-> ten }}" placeholder="Nhập tên">
+                                                <input type="text" name="ten" class="form-control" id="change-input-ten"
+                                                    value="{{ $taikhoan-> ten }}" placeholder="Nhập tên">
                                             </div>
                                         </div>
-                                        <div class="alert alert-danger print-error-msg-on-change-info" style="display:none">
+                                        <div class="alert alert-danger print-error-msg-on-change-info"
+                                            style="display:none">
                                             <ul></ul>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-success" id="button-confirm-changeinfo">Thay
+                                        <button type="button" class="btn btn-success"
+                                            id="button-confirm-changeinfo">Thay
                                             đổi</button>
                                         <button type="button" class="btn" data-dismiss="modal">Hủy Bỏ</button>
                                     </div>
@@ -127,7 +140,8 @@
                         </div>
                         <div class="row" style="display:flex; justify-content: flex-start">
                             <div style="margin-left: auto">
-                                <button type="button" class="btn mw-md btn-primary m-xs" id="show-reset-modal">Đổi mật khẩu</button>
+                                <button type="button" class="btn mw-md btn-primary m-xs" id="show-reset-modal">Đổi mật
+                                    khẩu</button>
                                 <button type="button" class="btn mw-md btn-success m-xs" id="show-change-modal">
                                     Đổi thông tin</button>
                             </div>

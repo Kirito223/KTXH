@@ -20,7 +20,7 @@ class Chitieu extends Controller
 
     public function getSlectChitieu()
     {
-        $madonvi = 1; //Session::get('madonvi');
+        $madonvi = Session::get('madonvi');
 
         $data = tbl_chitieu::select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_donvitinh.tendonvi', 'tbl_chitieu.idcha')
             ->where('tbl_chitieu.isDelete', 0)
@@ -34,6 +34,7 @@ class Chitieu extends Controller
         $this->data_tree($data, null);
         return response()->json($this->tree);
     }
+	
 
     private $tree = array();
 

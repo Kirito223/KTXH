@@ -19,8 +19,7 @@ class SummaryIndicatorReportController extends Controller
     {
         return view('report\summaryindicatorsreport');
     }
-
-    public function viewDaksong(){
+public function viewDaksong(){
         return view('baocaodaksong\index');
     }
 
@@ -189,8 +188,8 @@ class SummaryIndicatorReportController extends Controller
         }
         return $Result;
     }
-
-    # Tong hop kinh te xa hoi huyen daksong
+	
+	# Tong hop kinh te xa hoi huyen daksong
 
     public function BaocaoDaksong(Request $request)
     {

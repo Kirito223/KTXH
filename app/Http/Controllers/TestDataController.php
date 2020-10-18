@@ -15,12 +15,13 @@ class TestDataController extends Controller
     public function info()
     {
         
-      DB::table('tbl_solieutheobieu')->delete();
+      /* DB::table('tbl_solieutheobieu')->delete();
        DB::table('tbl_chitietsolieutheobieu')->delete();
        DB::table('tbl_bieumau')->delete();
        DB::table('tbl_chitietbieumau')->delete();
        DB::table('tbl_baocao')->delete();
-       DB::table('tbl_chitietbaocao')->delete();
-        return json_encode('ok');
+       DB::table('tbl_chitietbaocao')->delete();*/
+		$deltailTemplate = tbl_chitietbieumau::where('tbl_chitietbieumau.isDelete', '=', 0)->get();
+        return json_encode($deltailTemplate);
     }
 }

@@ -32,7 +32,7 @@
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-									
+
                                     <div class="modal-header row" style="padding: 5px">
                                         <h2 class="modal-title" id="modelForCreateKehoachLabel">Tạo mới kế hoạch
                                         </h2>
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-										
+
                                         <button class="btn btn-success mw-md" id="submit-button-for-create">Tạo
                                             mới</button>
                                         <button type="button" class="btn btn-danger mw-md" data-dismiss="modal">Hủy
@@ -91,8 +91,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="edit-input-namthuchien">Năm thực hiện</label>
-                                                <input type="text" name="namthuchien" class="form-control" id="edit-input-namthuchien"
-                                                    placeholder="Nhập năm thực hiện">
+                                                <input type="text" name="namthuchien" class="form-control"
+                                                    id="edit-input-namthuchien" placeholder="Nhập năm thực hiện">
                                             </div>
                                         </form>
                                         <div class="alert alert-danger print-error-msg-on-edit" style="display:none">
@@ -131,8 +131,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table no-footer"
-                                cellspacing="0" width="100%">
+                            <table class="table no-footer" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th style="width: 60%">Tên kế hoạch</th>
@@ -147,7 +146,8 @@
                                         {{ method_field('PUT') }}
                                         <div class="row" style="display:flex; justify-content: flex-start">
                                             <div style="margin-left: auto">
-                                                <button type="button" class="btn mw-md btn-success m-xs" id="show-create-modal">
+                                                <button type="button" class="btn mw-md btn-success m-xs"
+                                                    id="show-create-modal">
                                                     Tạo Mới</button>
                                             </div>
                                         </div>
@@ -162,7 +162,9 @@
                                                     <i class="zmdi zmdi-long-arrow-up zmdi-hc-2x"></i>
                                                 </button>
                                             </td> -->
-                                            <td style="vertical-align: middle"><a href="/kehoachktxhxa/{{ $kehoachktxhxa->id }}/details">{{ $kehoachktxhxa->tenkehoach }}</a></td>
+                                            <td style="vertical-align: middle"><a
+                                                    href="/kehoachktxhxa/{{ $kehoachktxhxa->id }}/details">{{ $kehoachktxhxa->tenkehoach }}</a>
+                                            </td>
                                             <td style="vertical-align: middle">{{ $kehoachktxhxa->namthuchien }}</td>
                                             <td>
                                                 <button type="button" class="btn btn-primary btn-sm edit-btn"
@@ -188,7 +190,7 @@
 
 <script type="text/javascript" src="{{ URL::asset('js/kehoachktxhxa.js') }}"></script>
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

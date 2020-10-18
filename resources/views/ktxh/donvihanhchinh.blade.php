@@ -48,9 +48,8 @@
                                             <div class="row">
                                                 <div class="form-group col-sm-6">
                                                     <label for="create-input-tendonvi">Tên Đơn Vị</label>
-                                                    <input type="text"
-                                                        class="form-control form-control-sm" id="create-input-tendonvi"
-                                                        placeholder="Nhập tên đơn vị">
+                                                    <input type="text" class="form-control form-control-sm"
+                                                        id="create-input-tendonvi" placeholder="Nhập tên đơn vị">
                                                     <div class="row" style="display:flex; margin-top : 10px">
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="thuoc"

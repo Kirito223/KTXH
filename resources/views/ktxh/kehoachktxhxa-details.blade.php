@@ -43,8 +43,9 @@
                         <div class="col-sm-6">
                             {{ $kehoachktxhxa->namthuchien }}
                         </div>
-						<div class="col-sm-2">
-                            <a href="/bieumaukhktxh/{{ $kehoachktxhxa->id }}" type="button" class="btn btn-primary" target="_blank">Danh sách biểu mẫu</a>
+                        <div class="col-sm-2">
+                            <a href="/bieumaukhktxh/{{ $kehoachktxhxa->id }}" type="button" class="btn btn-primary"
+                                target="_blank">Danh sách biểu mẫu</a>
                         </div>
                         <div class="col-sm-2">
                             <button type="button" class="btn btn-success" id="save-changes-btn">Lưu thay đổi</button>
@@ -584,7 +585,8 @@
                                     <li class="list-group-item dexuat-item-row">
                                         <div class="row">
                                             <div class="col-sm-11">
-                                                <button class="btn btn-link collapse-btn" type="button" id="collapse-btn-{{ $dexuat->id }}">
+                                                <button class="btn btn-link collapse-btn" type="button"
+                                                    id="collapse-btn-{{ $dexuat->id }}">
                                                     {{ !empty($dexuat->hoatdong) ? $dexuat->hoatdong : 'Hoạt động mới' }}
                                                 </button>
                                             </div>
@@ -703,7 +705,7 @@
 
 <script type="text/javascript" src="{{ URL::asset('js/kehoachktxhxaDetails.js') }}"></script>
 <script>
-kehoachktxhxaDetailsServices();
+    kehoachktxhxaDetailsServices();
 
 </script>
 

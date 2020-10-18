@@ -151,8 +151,7 @@
                             </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-striped"
-                                cellspacing="0" width="100%">
+                            <table class="table table-striped" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
                                         <th style="width: 10%">Thứ Tự</th>

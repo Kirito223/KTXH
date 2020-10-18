@@ -67,6 +67,7 @@
                             <label class="control-label col-sm-2">Tập tin đính kèm</label>
                             <div class="col-sm-10">
                                 <div style="display: flex;">
+                                    <input type="file" id="file" placeholder="Chọn tập tin" />
                                     <button class="btn btn-primary btn-sm" id="btnkyso">Ký văn bản</button>
                                 </div>
                                 <div>
@@ -109,6 +110,13 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <div class="col-sm-11" id="chondiaban"></div>
+                                    <div class="col-sm-1">
+                                        <button id="getdiaban" class="btn btn-sm btn-success"><i
+                                                class="fa fa-street-view" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
                                 <div class="col-md-12">
                                     <div id="gridDanhsachdonvi" style="height: 200px; overflow: auto;">
                                         <table class="table table-bordered">
@@ -156,6 +164,8 @@
                                         <thead>
                                             <th></th>
                                             <th>Số hiệu</th>
+                                            <th>Loại số liệu</th>
+                                            <th>Năm</th>
                                             <th>Tên biểu mẫu</th>
                                         </thead>
                                         <tbody id="listBieumau">
@@ -232,8 +242,6 @@
                             </div>
                             <div class="toolbar">
                                 <button id="btnkypheduyet" class="btn btn-default btn-sm">Ký phê duyệt</button>
-                                <button class="btn btn-default btn-sm" id="btnchonfiledongdau">Chọn file đóng dấu</button>
-                                <input type="file" id="filedongdau" class="hidden"/>
                                 <button id="btnĐongauphathanh" class="btn btn-default btn-sm">Đóng dấu phát
                                     hành</button>
                                 <button id="btnKycongvan" class="btn btn-default btn-sm">Ký công văn đến</button>

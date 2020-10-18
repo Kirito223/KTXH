@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ultils;
 use App\tbl_chitietbieumau;
 use App\tbl_chitieu;
 use stdClass;
+use Session;
 
 class ChitieuUltils
 {
@@ -86,7 +87,54 @@ class ChitieuUltils
         }
         return $result;
     }
+	
+	public function getTreeChitieunew($id)
+    {
+       $madonvi = Session::get('madonvi');
+        $donvicha = Session::get('donvicha');
+		if($donvicha==null) $donvicha=$madonvi;
+        
+            
 
+        $data = tbl_chitieu::select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_donvitinh.tendonvi', 'tbl_chitieu.idcha')
+            ->where('tbl_chitieu.isDelete', 0)
+			->where('madonvi','=', $donvicha)
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            
+            ->get();
+        $this->data_tree($data, $id);
+        
+			
+			
+			
+			
+			
+			
+      
+        return $this->tree;
+		
+    }
+	
+	
+
+    private $tree = array();
+
+    private function data_tree($data, $parent_id)
+    {
+        foreach ($data as $key => $value) {
+            if ($value->idcha == $parent_id) 
+			{
+				$obj = new stdClass();
+				$obj->id = $value->id; // Id cua chi tieu;
+				$obj->ten = $value->tenchitieu;
+				$obj->donvi = $value->tendonvi;
+				$obj->idcha = $value->idcha;
+                array_push($this->tree, $obj);
+               
+                $this->data_tree($data, $obj->id);
+            }
+        }
+    }
     public function getInfochitieu($Id)
     {
         $chitieu = tbl_chitieu::where('tbl_chitieu.id', '=', $Id)

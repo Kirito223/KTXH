@@ -45,5 +45,8 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasPermissionBasedOnRoute($route->route);
         }); 
         }
+		Gate::define('has-donvicon', function($user) {
+            return $user->hasAnyDonvicon();
+        });
     }
 }

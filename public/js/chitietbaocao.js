@@ -8,21 +8,21 @@ var kybaocao,
     gridDonvi,
     gridBieumau,
     filedinhkem,
-	btnDuyetbaocao,
-    noidung, btnThoat;
+    btnDuyetbaocao,
+    noidung,
+    btnThoat;
 var idBaocao;
 $(document).ready(() => {
     initControl();
     loadData();
-	initEvent();
+    initEvent();
 });
 
-
 function initEvent() {
-	btnThoat.onclick = (e)=>{
-    window.history.back();
-}
-	
+    btnThoat.onclick = (e) => {
+        window.history.back();
+    };
+
     btnDuyetbaocao.onclick = function () {
         Swal.fire({
             title: "Bạn muốn duyệt báo cáo này không?",
@@ -64,7 +64,7 @@ function loadData() {
             if (bieumau.trangthai == 1) {
                 hoanthanh.prop("checked", true);
             }
-if (baocao.nguoiky != null) {
+            if (baocao.nguoiky != null) {
                 btnDuyetbaocao.disabled = true;
             }
             let chitiet = baocao.chitiet;
@@ -126,7 +126,7 @@ if (baocao.nguoiky != null) {
                 window.open("downloadFileDinhkem/" + file);
             };
             noidung.innerHTML = chitiet.noidung;
-		idBaocao = chitiet.baocao;
+            idBaocao = chitiet.baocao;
         })
         .catch((err) => {
             console.error(err);
@@ -134,8 +134,8 @@ if (baocao.nguoiky != null) {
 }
 
 function initControl() {
-	 btnThoat = document.getElementById("btnThoat");
-	 btnDuyetbaocao = document.getElementById("btnDuyetbaocao");
+    btnThoat = document.getElementById("btnThoat");
+    btnDuyetbaocao = document.getElementById("btnDuyetbaocao");
     kybaocao = document.getElementById("kybaocao");
     sokyhieubaocao = document.getElementById("sokyhieubaocao");
     tieudebaocao = document.getElementById("tieudebaocao");

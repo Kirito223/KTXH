@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Quanlydanhmuc\Quanlychitieu;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\tbl_chitieu;
+use Session;
 
 class Chitieu extends Controller
 {
@@ -15,30 +16,35 @@ class Chitieu extends Controller
 
 	public function getchitieu()
 	{
-
+		$madonvi = Session::get('madonvi');
 		$data =  tbl_chitieu::select('tbl_chitieu.*', 'tbl_donvitinh.tendonvi')
 			->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+			->where('tbl_chitieu.madonvi','=', $madonvi)
 			->where('tbl_chitieu.IsDelete', '0')->get();
 		return json_encode($data, JSON_UNESCAPED_UNICODE);
 	}
 
 	public function InsertChitieu(Request $rq)
 	{
+		$madonvi = Session::get('madonvi');
 		$tbl_chitieu = new tbl_chitieu();
 		$tbl_chitieu->machitieu = $rq->machitieu;
 		$tbl_chitieu->tenchitieu = $rq->tenchitieu;
 		$tbl_chitieu->donvitinh = $rq->donvi;
+		$tbl_chitieu->madonvi = $madonvi;
 		$success = $tbl_chitieu->save();
 		return json_encode($success, JSON_UNESCAPED_UNICODE);
 	}
 	public function InsertChitieuCon(Request $rq)
 	{
+		$madonvi = Session::get('madonvi');
 		$tbl_chitieu = new tbl_chitieu();
 		$tbl_chitieu->machitieu = $rq->machitieu;
 		$tbl_chitieu->tenchitieu = $rq->tenchitieu;
 		$tbl_chitieu->idcha = $rq->idcha;
 		$tbl_chitieu->donvitinh = $rq->donvi;
 		$tbl_chitieu->parent_id = $rq->idcha;
+		$tbl_chitieu->madonvi = $madonvi;
 		$success = $tbl_chitieu->save();
 		return json_encode($success, JSON_UNESCAPED_UNICODE);
 	}

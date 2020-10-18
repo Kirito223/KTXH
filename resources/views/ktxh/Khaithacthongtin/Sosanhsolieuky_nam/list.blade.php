@@ -11,7 +11,7 @@
 			<hr class="widget-separator">
 			<div class="widget-body">
 				<div class="row">
-					<div class="form-group row" style="margin-bottom: 10px">
+					<div class="form-group row" style="margin-bottom: 10px" hidden>
 						<h5 class="col-sm-3 col-form-label">Số liệu của địa bàn : </h5>
 						<div class="col-sm-9">
 							<div class="row">
@@ -31,7 +31,7 @@
 					</div>
 
 					<div class="form-group row" style="margin-bottom: 10px">
-						<h5 class="col-sm-3 col-form-label">So sánh số liệu của đơn vị : </h5>
+						<h5 class="col-sm-3 col-form-label">Số liệu của địa bàn : </h5>
 						<div class="col-sm-9">
 							<div class="row">
 								<div class="col-md-8">
@@ -157,12 +157,13 @@
 
 
 
-<div id="bieudo" class="modal fade in" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
+<div id="bieudo" class="modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">×</span>
+				<h4 class="modal-title" id="title"></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
 			<div class="modal-body">
@@ -182,6 +183,6 @@
 
 
 
-<script type="text/javascript" src="ktxh/Khaithacthongtin/Sosanhsolieuky_nam/sosanhsolieuky.js"></script>
+<script type="text/javascript" src="/ktxh/Khaithacthongtin/Sosanhsolieuky_nam/sosanhsolieuky.js"></script>
 
 @endsection

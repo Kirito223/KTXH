@@ -46,11 +46,14 @@ function loadDataEdit() {
                     .dxSelectBox("instance")
                     .option("value", form.capnhap);
                 let detail = data.Detail;
-                arrGrid = detail;
-                // init data to array Value Input
-                loadDataToArray(detail);
+                showTable(detail);
 
-                TreeInput.option("dataSource", detail);
+                document.getElementById(
+                    "GridCheckImportExcel"
+                ).innerHTML = html;
+                $("#tableChitieu").treetable({ expandable: false });
+                mapValue(res.data.flat);
+                setEventInput();
             })
             .catch((err) => {
                 console.log(err);
@@ -218,7 +221,11 @@ function showTable(result) {
             html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
                     <td>${element.tenchitieu}</td>
                     <td>${element.tendonvi}</td>
-                    <td><input class="inputValue form-control" type="number" data-chitieu="${element.chitieu}" /></td>
+                    <td><input value="${
+                        element.sanluong != null ? element.sanluong : ""
+                    }" class="inputValue form-control" type="number" data-chitieu="${
+                element.chitieu
+            }" /></td>
                     </tr>`;
         }
     }
@@ -544,12 +551,7 @@ function initEvent() {
 
     $("#btnImport").on("click", () => {
         let dataImport = [];
-        arrGrid.forEach((item) => {
-            dataImport.push({
-                id: item.id,
-                sanluong: item.value,
-            });
-        });
+        arrGrid.forEach((item) => {});
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
         let loaisolieu = $("#cbLoaisolieu")
@@ -572,6 +574,15 @@ function initEvent() {
             data.append("kynhap", kynhaplieu);
             data.append("namnhap", namnhaplieu);
             data.append("capnhap", capnhap);
+
+            let input = document.getElementsByClassName("inputValue");
+
+            for (const ip of input) {
+                dataImport.push({
+                    id: ip.dataset.chitieu,
+                    sanluong: ip.value,
+                });
+            }
             data.append("dataImport", JSON.stringify(dataImport));
             if (idBieunhap > 0) {
                 data.append("edit", idBieunhap);
@@ -588,7 +599,7 @@ function initEvent() {
                             "Bạn đã nhập dữ liệu thành công",
                             "success"
                         );
-                        window.location = "viewListNhaplieu";
+                        // window.location = "viewListNhaplieu";
                     } else if (res.data["succes"] == 400) {
                         Swal.fire(
                             "Dữ liệu đã tồn tại không thể thêm số liệu tương tự",

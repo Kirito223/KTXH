@@ -11,6 +11,7 @@ use App\tbl_tinh;
 use Illuminate\Http\Request;
 use Validator;
 use Auth;
+use Session;
 class tbl_donvihanhchinhController extends Controller
 {
 	public function __construct()
@@ -144,8 +145,11 @@ class tbl_donvihanhchinhController extends Controller
 
     public function editchitieu($id)
     {
+		$madonvi = Session::get('madonvi');
         $donvihanhchinh = tbl_donvihanhchinh::findOrFail($id);
-        $chitieusAll = tbl_chitieu::Where('idcha', null)->Where('IsDelete', 0)->get();
+        $chitieusAll = tbl_chitieu::Where('idcha', null)
+			->where('tbl_chitieu.madonvi','=', $madonvi)
+			->Where('IsDelete', 0)->get();
         return view('ktxh.donvihanhchinh-edit-chitieu', [
             'donvihanhchinh' => $donvihanhchinh,
             'chitieusAll' => $chitieusAll

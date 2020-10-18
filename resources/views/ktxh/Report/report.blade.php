@@ -10,11 +10,11 @@
 			</header>
 			<hr class="widget-separator">
 			<div class="widget-body">
-				<div class="row">		
+				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Chọn biểu mẫu</label>
-							<select type ="text" class="form-control" id="maubieu">
+							<select type="text" class="form-control" id="maubieu">
 								<option value="1">Mẫu Quyết định</option>
 								<option value="2">Công văn triển khai</option>
 								<option value="3">Mẫu đề xuất</option>
@@ -23,16 +23,17 @@
 								<option value="6">Danh mục chỉ tiêu KTXH</option>
 							</select>
 						</div>
-					</div>	
-				</div>				
-				<div class="row" >
-					<button type="button" class="btn btn-primary" id="timkiem" style="float: right;"><i class='fa fa-search' ></i> Tìm kiếm</button>
-				</div>				
+					</div>
+				</div>
+				<div class="row">
+					<button type="button" class="btn btn-primary" id="timkiem" style="float: right;"><i
+							class='fa fa-search'></i> Tìm kiếm</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-<div id="content"></div>	
+<div id="content"></div>
 
 
 

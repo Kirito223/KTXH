@@ -140,6 +140,14 @@ function loadData() {
                     caption: "Số hiệu",
                 },
                 {
+                    dataField: "tenloaisolieu",
+                    caption: "Loại số liệu",
+                },
+                {
+                    dataField: "namnhap",
+                    caption: "Năm",
+                },
+                {
                     dataField: "tenbieumau",
                     caption: "Tên biểu mẫu",
                 },
@@ -225,7 +233,7 @@ function ReviewReport(id) {
             }
 
             Ultil.ShowReportData(
-                "../public/report/xemtruocbieumaubaocao.mrt",
+                "../report/xemtruocbieumaubaocao.mrt",
                 detailReport, //Data
                 parameter,
                 "Report",
@@ -280,7 +288,7 @@ function initEvent() {
                         window.location.protocol +
                         "//" +
                         window.location.host +
-                        "/public/upload/" +
+                        "/upload/" +
                         fileUrl;
                     $("#viewfile").attr("src", urlFile);
                 })
@@ -358,6 +366,8 @@ function initEvent() {
             arrBieumau.push({
                 id: $(element).data("id"),
                 sohieu: $(element).data("sohieu"),
+                tenloaisolieu: $(element).data("tenloaisolieu"),
+                namnhap: $(element).data("namnhap"),
                 tenbieumau: $(element).data("tenbieumau"),
             });
         }
@@ -481,11 +491,21 @@ function appendBieumau(data) {
             item.id +
             `" data-sohieu="` +
             item.sohieu +
+            `" data-tenloaisolieu="` +
+            item.tenloaisolieu +
+            `" data-namnhap="` +
+            item.namnhap +
             `" data-tenbieumau="` +
             item.tenbieumau +
             `" type="checkbox"/></td>
         <td>` +
             item.sohieu +
+            `</td>
+		<td>` +
+            item.tenloaisolieu +
+            `</td>
+		<td>` +
+            item.namnhap +
             `</td>
         <td>` +
             item.tenbieumau +

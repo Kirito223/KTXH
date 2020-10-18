@@ -30,7 +30,7 @@ class Quanlybaocao extends Controller
     # lay danh sachc cac bieu mau ap dung
     public function danhsachBaocaoApdung()
     {
-        $madonvi = Session::get('madonvi');
+     $madonvi = Session::get('madonvi');
         $donvicha = Session::get('donvicha');
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
         ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
@@ -50,7 +50,7 @@ class Quanlybaocao extends Controller
             ->get()->toArray();
         $data = array_merge($data, $datacha);
         return \response()->json($data);
-    }
+	}
 
     public function index()
     {
@@ -58,19 +58,18 @@ class Quanlybaocao extends Controller
         $donvicha = Session::get('donvicha');
         $data = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
             ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
+			
             ->where('loaibaocao', '=', 1)
             ->where('trangthai', '=', 1)
             ->where('tbl_bieumau.madonvi', '=', $madonvi)
+			
+            //->Where(function ($query) use ($madonvi, $donvicha) {
+            //    $query->Orwhere('tbl_bieumau.madonvi', '=', $madonvi)
+            //        ->Orwhere('tbl_bieumau.madonvi', '=', $donvicha);
+           // })
             ->select('tbl_bieumau.*', 'tbl_taikhoan.tentaikhoan')
             ->get()->toArray();
-        $datacha = tbl_bieumau::where('tbl_bieumau.isDelete', '=', 0)
-            ->join('tbl_taikhoan', 'tbl_taikhoan.id', 'tbl_bieumau.taikhoan')
-            ->where('loaibaocao', '=', 1)
-            ->where('trangthai', '=', 1)
-            ->where('tbl_bieumau.madonvi', '=', $donvicha)
-            ->select('tbl_bieumau.*', 'tbl_taikhoan.tentaikhoan')
-            ->get()->toArray();
-        $data = array_merge($data, $datacha);
+       
         return json_encode($data);
     }
 
