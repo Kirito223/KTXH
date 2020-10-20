@@ -15,7 +15,7 @@
 						<div id="treelist"></div>
 					</div>
 					<div class="col-md-4 col-xl-4">
-						<form>
+						<form id="form">
 							<div class="form-group">
 								<label for="">Mã chỉ tiêu</label>
 								<input type="text" name="" id="code" class="form-control">
@@ -36,9 +36,9 @@
 							<div class="toolbar">
 								<button id="btnSave" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>
 									Lưu</button>
-								<button id="btnUpdate" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Cập
+								<button id="btnUpdate" disabled class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Cập
 									nhật</button>
-								<button disabled type="reset" id="btnCancel" class="btn btn-sm btn-danger"><i
+								<button disabled id="btnCancel" class="btn btn-sm btn-danger"><i
 										class="far fa-window-close"></i>
 									Hủy</button>
 								<button id="btnDelete" class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i>

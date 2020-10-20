@@ -1,5 +1,14 @@
 $(document).ready(function () {
-    var btnUpdate, btnDelete, name, unit, parent, btnCancel, code, btnSave;
+    var arrChitieu = [];
+    var btnUpdate,
+        btnDelete,
+        name,
+        unit,
+        parent,
+        btnCancel,
+        code,
+        btnSave,
+        form;
     var idEdit = null;
     btnUpdate = document.getElementById("btnUpdate");
     btnDelete = document.getElementById("btnDelete");
@@ -9,6 +18,7 @@ $(document).ready(function () {
     btnCancel = document.getElementById("btnCancel");
     code = document.getElementById("code");
     btnSave = document.getElementById("btnSave");
+    form = document.getElementById("form");
 
     $("#treelist").dxTreeList({
         dataSource: {
@@ -54,7 +64,7 @@ $(document).ready(function () {
         //check box
         selection: {
             mode: "multiple",
-            recursive: true,
+            recursive: false,
         },
         //loc row
         filterRow: {
@@ -76,6 +86,25 @@ $(document).ready(function () {
                 caption: "Đơn vị tính",
                 validationRules: [{ type: "required" }],
             },
+            {
+                cellTemplate: function (element, info) {
+                    element.addClass("center");
+                    $("<div>")
+                        .dxButton({
+                            type: "default",
+                            text: "Sửa",
+                            template: function (e) {
+                                return $("<i class='fas fa-edit'>")
+                                    .text(" Sửa")
+                                    .css("color", "#ffffff");
+                            },
+                            onClick: function (e) {
+                                showEdit(info.data.id);
+                            },
+                        })
+                        .appendTo(element);
+                },
+            },
         ],
     });
 
@@ -87,17 +116,88 @@ $(document).ready(function () {
         add();
     };
 
-    btnCancel.onclick = function () {
+    btnCancel.onclick = function (e) {
+        e.preventDefault();
         idEdit = null;
+        btnSave.disabled = false;
+        btnUpdate.disabled = true;
+        btnCancel.disabled = true;
+        form.reset();
+    };
+
+    btnUpdate.onclick = function (e) {
+        update();
+    };
+    btnDelete.onclick = function (e) {
+        e.preventDefault();
+        del();
     };
 
     loaddonvitinh();
 
+    function showEdit(id) {
+        let index = arrChitieu.findIndex((x) => x.id == id);
+        idEdit = id;
+        name.value = arrChitieu[index].tenchitieu;
+        code.value = arrChitieu[index].machitieu;
+        unit.value = arrChitieu[index].donvitinh;
+        parent.value = arrChitieu[index].idcha;
+        btnCancel.disabled = false;
+        btnSave.disabled = true;
+        btnUpdate.disabled = false;
+    }
+
+    async function update() {
+        let evaluation = getData();
+        await axios
+            .post("UpdateChitieu/" + idEdit, evaluation)
+            .then(function (response) {
+                if (response.status == 200) {
+                    window.location.reload();
+                } else {
+                    Swal.fire({
+                        title: "Có lỗi!",
+                        text: "Đã có lối xảy ra! Vui lòng kiểm tra và thử lại",
+                        icon: "error",
+                        confirmButtonText: "OK",
+                    });
+                }
+            });
+    }
+    async function del() {
+        let arrDel = $("#treelist")
+            .dxTreeList("instance")
+            .getSelectedRowsData();
+        if (arrDel.length > 0) {
+            await axios
+                .post("DelChitieu", { data: JSON.stringify(arrDel) })
+                .then(function (response) {
+                    if (response.status == 200) {
+                        window.location.reload();
+                    } else {
+                        Swal.fire({
+                            title: "Có lỗi!",
+                            text:
+                                "Đã có lối xảy ra! Vui lòng kiểm tra và thử lại",
+                            icon: "error",
+                            confirmButtonText: "OK",
+                        });
+                    }
+                });
+        } else {
+            Swal.fire({
+                title: "Chưa chọn chỉ tiêu",
+                text: "Vui lòng chọn ít nhất 1 chỉ tiêu muốn xóa",
+                icon: "warning",
+                confirmButtonText: "OK",
+            });
+        }
+    }
     async function add() {
         let evaluation = getData();
         await axios.post("InsertChitieu", evaluation).then(function (response) {
             if (response.status == 200) {
-                //window.location.reload();
+                window.location.reload();
             } else {
                 Swal.fire({
                     title: "Có lỗi!",
@@ -121,7 +221,6 @@ $(document).ready(function () {
     function loaddonvitinh() {
         axios.get("getlistdonvitinh").then(function (response) {
             let data = response.data;
-
             let html = data.map(function (item) {
                 return (
                     '<option value="' +
@@ -142,6 +241,7 @@ $(document).ready(function () {
         await axios.get("getlistchitieu").then(function (response) {
             let html;
             response.data.forEach((item) => {
+                arrChitieu.push(item);
                 html +=
                     '<option value="' +
                     item.id +

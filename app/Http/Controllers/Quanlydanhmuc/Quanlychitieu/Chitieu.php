@@ -58,24 +58,38 @@ class Chitieu extends Controller
 		$success = $tbl_chitieu->save();
 		return json_encode($success, JSON_UNESCAPED_UNICODE);
 	}
-	public function UpdateChitieu(Request $rq)
+	public function UpdateChitieu(Request $rq, $id)
 	{
-		$tbl_chitieu = tbl_chitieu::find($rq->id);
-		$tbl_chitieu->machitieu = $rq->machitieu;
-		$tbl_chitieu->tenchitieu = $rq->tenchitieu;
-		$tbl_chitieu->idcha = $rq->idcha;
-		$tbl_chitieu->donvitinh = $rq->donvi;
-		$tbl_chitieu->parent_id = $rq->idcha;
-		$success = $tbl_chitieu->save();
-		return json_encode($success, JSON_UNESCAPED_UNICODE);
+		try {
+			$tbl_chitieu = tbl_chitieu::find($id);
+			$tbl_chitieu->machitieu = $rq->machitieu;
+			$tbl_chitieu->tenchitieu = $rq->tenchitieu;
+			$tbl_chitieu->donvitinh = $rq->donvi;
+			if ($rq->idcha != null) {
+				$tbl_chitieu->parent_id = $rq->idcha;
+				$tbl_chitieu->idcha = $rq->idcha;
+			}
+			$tbl_chitieu->madonvi = $this->sessionHelper->getDepartmentId();
+			$success = $tbl_chitieu->save();
+			return response()->json(['msg' => 'ok', 'data' => $success], 200);
+		} catch (\Exception $ex) {
+			print $ex;
+		}
 	}
 
 	public function DelChitieu(Request $rq)
 	{
-		$tbl_chitieu = tbl_chitieu::find($rq->id);
-		$tbl_chitieu->IsDelete = 1;
-		$success = $tbl_chitieu->save();
-		return json_encode($success, JSON_UNESCAPED_UNICODE);
+		try {
+			$arr = json_decode($rq->data);
+			foreach ($arr as $item) {
+				$tbl_chitieu = tbl_chitieu::find($item->id);
+				$tbl_chitieu->IsDelete = 1;
+				$tbl_chitieu->save();
+			}
+			return response()->json(['msg' => 'ok', 'data' => "ok"], 200);
+		} catch (\Exception $th) {
+			print($th);
+		}
 	}
 
 	public function DelChitieulistcheckbox(Request $rq)
