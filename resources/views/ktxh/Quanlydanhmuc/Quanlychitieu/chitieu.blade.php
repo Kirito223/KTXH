@@ -34,9 +34,10 @@
 							</div>
 
 							<div class="toolbar">
-								<button id="btnSave" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>
+								<button id="btnSave" class="btn btn-sm btn-primary"><i class="fas fa-save"></i>
 									Lưu</button>
-								<button id="btnUpdate" disabled class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Cập
+								<button id="btnUpdate" disabled class="btn btn-sm btn-primary"><i
+										class="fas fa-edit"></i> Cập
 									nhật</button>
 								<button disabled id="btnCancel" class="btn btn-sm btn-danger"><i
 										class="far fa-window-close"></i>
