@@ -1,5 +1,5 @@
 @extends('master')
-@section('title','chỉ tiêu')
+@section('title','Quản lý chỉ tiêu')
 @section('content')
 
 <div class="row">
@@ -10,141 +10,48 @@
 			</header>
 			<hr class="widget-separator">
 			<div class="widget-body">
-				<div id="treelist"></div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-<!-- thêm con -->
-<div id="chitieuthemcon" class="modal fade in" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">×</span>
-				</button>
-				<!-- <h4 class="modal-title">Thêm chỉ tiêu con</h4> -->
-			</div>
-			<form action="#" id="themcon">
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-sm-6">
+				<div class="row">
+					<div class="col-md-8 col-xl-8">
+						<div id="treelist"></div>
+					</div>
+					<div class="col-md-4 col-xl-4">
+						<form>
 							<div class="form-group">
-								<label for="category_name">Tên chỉ tiêu</label>
-								<input type="text" id="tenchitieu" class="form-control" placeholder="Tên chỉ tiêu">
+								<label for="">Mã chỉ tiêu</label>
+								<input type="text" name="" id="code" class="form-control">
 							</div>
-						</div>
-						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="category_name">Idcha</label>
-								<select class="form-control" id="idcha"></select>
+								<label for="">Tên chỉ tiêu</label>
+								<input type="text" name="" id="name" class="form-control">
 							</div>
-						</div>
-						<div class="col-sm-6">
 							<div class="form-group">
-								<label for="category_name">Đơn vị tính</label>
+								<label for="">Đơn vị tính</label>
+								<select id="unit" class="form-control"></select>
+							</div>
+							<div class="form-group">
+								<label for="">Chỉ tiêu cha:</label>
+								<select id="parent" class="form-control"></select>
+							</div>
 
-								<select class="form-control" id="donvi"></select>
+							<div class="toolbar">
+								<button id="btnSave" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>
+									Lưu</button>
+								<button id="btnUpdate" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i> Cập
+									nhật</button>
+								<button disabled type="reset" id="btnCancel" class="btn btn-sm btn-danger"><i
+										class="far fa-window-close"></i>
+									Hủy</button>
+								<button id="btnDelete" class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i>
+									Xóa</button>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-sm" id="luucon">Lưu</button>
-					<button type="button" class="btn btn-danger btn-sm" id="huycon" data-dismiss="modal">Hủy</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
-
-
-<!-- sửa dòng -->
-<div id="chitieusua" class="modal fade in" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">×</span>
-				</button>
-				<!-- <h4 class="modal-title">Thêm chỉ tiêu con</h4> -->
 			</div>
-			<form action="#" id="sua">
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="category_name">Tên chỉ tiêu</label>
-								<input type="text" id="tenchitieusua" class="form-control" placeholder="Tên chỉ tiêu">
-								<input type="text" id="idsua" class="form-control" style="display: none;">
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="category_name">Idcha</label>
-								<select class="form-control" id="idchasua"></select>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="category_name">Đơn vị tính</label>
-
-								<select class="form-control" id="donvisua"></select>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-sm" id="luusua">Lưu</button>
-					<button type="button" class="btn btn-danger btn-sm" id="huyconsua" data-dismiss="modal">Hủy</button>
-				</div>
-			</form>
 		</div>
 	</div>
 </div>
 
-
-<!-- thêm mới -->
-<div id="chitieuthem" class="modal fade in" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-						aria-hidden="true">×</span>
-				</button>
-				<!-- <h4 class="modal-title">Thêm chỉ tiêu con</h4> -->
-			</div>
-			<form action="#" id="themmoi">
-				<div class="modal-body">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="category_name">Tên chỉ tiêu</label>
-								<input type="text" id="tenchitieuthem" class="form-control" placeholder="Tên chỉ tiêu">
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<label for="category_name">Đơn vị tính</label>
-
-								<select class="form-control" id="donvithem"></select>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary btn-sm" id="luuthem">Lưu</button>
-					<button type="button" class="btn btn-danger btn-sm" id="huythem" data-dismiss="modal">Hủy</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
 
 <script type="text/javascript" src="{{asset('ktxh/Quanlydanhmuc/Quanlychitieu/chitieu.js')}}"></script>
 

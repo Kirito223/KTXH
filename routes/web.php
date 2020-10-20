@@ -67,16 +67,14 @@ Route::post('InsertChitieuCon','Quanlydanhmuc\Quanlychitieu\Chitieu@InsertChitie
 Route::post('UpdateChitieu','Quanlydanhmuc\Quanlychitieu\Chitieu@UpdateChitieu');
 Route::post('DelChitieu','Quanlydanhmuc\Quanlychitieu\Chitieu@DelChitieu');
 Route::post('DelChitieulistcheckbox','Quanlydanhmuc\Quanlychitieu\Chitieu@DelChitieulistcheckbox');
-	//thung rac chi tieu
-Route::get('listchitieutrash','Quanlydanhmuc\Quanlychitieu\Chitieu@viewchitieutrash');
+
+//thung rac chi tieu
+
+  Route::get('listchitieutrash','Quanlydanhmuc\Quanlychitieu\Chitieu@viewchitieutrash');
 Route::get('getlistchitieutrash','Quanlydanhmuc\Quanlychitieu\Chitieu@getchitieutrash');
 Route::post('RestoreChitieulistcheckbox','Quanlydanhmuc\Quanlychitieu\Chitieu@RestoreChitieulistcheckbox');
 Route::post('DelAllChitieulistcheckbox','Quanlydanhmuc\Quanlychitieu\Chitieu@DelAllChitieulistcheckbox');
-#Route::get('listchitieu', 'Chitieu@viewchitieu');
-#Route::get('getlistchitieu', 'Chitieu@getchitieu');
-#Route::post('InsertChitieu', 'Chitieu@InsertChitieu');
-#Route::post('UpdateChitieu', 'Chitieu@UpdateChitieu');
-#Route::post('DelChitieu', 'Chitieu@DelChitieu');
+
 
 Route::get('getSelectChitieu', 'Chitieu@getSlectChitieu');
 
