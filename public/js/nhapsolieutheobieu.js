@@ -1,4 +1,4 @@
-var TreeInput;
+var DataGrid;
 var gridtemplate;
 var gridlocaltion;
 var idChitieu = undefined;
@@ -6,16 +6,14 @@ var idBieunhap = 0;
 var templateedit;
 var arrValueInput = [];
 var arrGrid = [];
-
 var html = "";
+var arrImportExcel = [];
 
-window.onload = function () {
-    if ($("#nhapdulieutheobieu").length) {
-        initData();
-        initEvent();
-        loadDataEdit();
-    }
-};
+$(document).ready(() => {
+    initData();
+    initEvent();
+    loadDataEdit();
+});
 
 function loadDataEdit() {
     idBieunhap = localStorage.getItem("idBieunhap");
@@ -47,7 +45,6 @@ function loadDataEdit() {
                     .option("value", form.capnhap);
                 let detail = data.Detail;
                 showTable(detail);
-
                 document.getElementById(
                     "GridCheckImportExcel"
                 ).innerHTML = html;
@@ -59,6 +56,17 @@ function loadDataEdit() {
                 console.log(err);
             });
     }
+}
+
+function loadDataToArray(data) {
+    data.forEach((element) => {
+        arrValueInput.push({
+            id: element.id,
+            value: element.sanluong == null ? 0 : element.sanluong,
+            parent: element.idcha,
+            unit: element.donvi,
+        });
+    });
 }
 
 function initData() {
@@ -94,7 +102,9 @@ function initData() {
                 {
                     dataField: "tenbieumau",
                     caption: "Tên biểu mẫu",
+                    width: 200,
                 },
+                { dataField: "tenloaisolieu", caption: "Loại số liệu" },
                 { dataField: "tenky", caption: "Kỳ nhập" },
                 {
                     dataField: "namnhap",
@@ -198,6 +208,53 @@ function mapValue(data) {
     });
 }
 
+function setEventInput() {
+    let inputValue = document.getElementsByClassName("inputValue");
+
+    for (const input of inputValue) {
+        input.addEventListener("keyup", function (evt) {
+            if (evt.keyCode == 13) {
+                let index = arrGrid.findIndex(
+                    (x) => x.id == input.dataset.chitieu
+                );
+                if (arrImportExcel.length > 0) {
+                    let indexExcel = arrImportExcel.findIndex(
+                        (y) => y.id == input.dataset.chitieu
+                    );
+                    arrImportExcel[indexExcel].sanluong = input.value;
+                }
+                arrGrid[index].value = input.value;
+                sumParent(arrGrid[index].parent, arrGrid[index].unit);
+
+                // Focus next input
+                if (arrGrid[index + 1] != undefined) {
+                    let idSelect = arrGrid[index + 1].id;
+                    let selectedInput = document.querySelector(
+                        `.inputValue[data-chitieu="${idSelect}"]`
+                    );
+                    selectedInput.focus();
+                }
+            }
+        });
+    }
+}
+
+function sumParent(parent, unit) {
+    if (parent != null || parent != undefined) {
+        let child = arrGrid.filter((item) => {
+            return item.parent == parent && item.unit == unit;
+        });
+        let sum = 0;
+        child.forEach((item) => {
+            sum += Number(item.value);
+        });
+
+        document.querySelector(
+            `.inputValue[data-chitieu ="${parent}"]`
+        ).value = sum;
+    }
+}
+
 function showTable(result) {
     for (const item in result) {
         if (result[item].hasOwnProperty("children")) {
@@ -234,6 +291,7 @@ function showTable(result) {
         }
     }
 }
+
 function initEvent() {
     // TODO sum with report selected
     $("#sum-with-report").on("click", () => {
@@ -270,6 +328,8 @@ function initEvent() {
                 })
                 .then((res) => {
                     let data = res.data;
+                    arrValueInput.length = 0;
+                    loadDataToArray(data);
                     gridtemplate.columnOption("tenbieumau", { visible: true });
                     gridtemplate.option("dataSource", data);
                 })
@@ -399,12 +459,13 @@ function initEvent() {
                     chitieu: idChitieu,
                 })
                 .then((res) => {
+                    let data = res.data;
                     data.forEach((item) => {
                         let index = arrGrid.findIndex((x) => x.id == item.id);
-                        arrGrid[index].value = item.sum;
+                        arrGrid[index].value = item.quantity;
                         document.querySelector(
                             `.inputValue[data-chitieu ="${item.id}"]`
-                        ).value = item.sum;
+                        ).value = item.quantity;
                     });
                     idChitieu = undefined;
                     $("#modelLocaltion").modal("toggle");
@@ -518,13 +579,15 @@ function initEvent() {
                         res.data.forEach((item) => {
                             arrGrid.push({
                                 id: item.id,
-                                value:
-                                    item.sanluong == null ||
-                                    item.sanluong == undefined
-                                        ? 0
-                                        : item.sanluong,
+                                value: item.sanluong,
                                 parent: item.idcha,
                                 unit: item.donvi,
+                            });
+                            arrImportExcel.push({
+                                id: item.id,
+                                sanluong: item.sanluong,
+                                sanluongkhkytruoc: item.sanluongkhkytruoc,
+                                sanluongkhkynay: item.sanluongkhkynay,
                             });
                             document.querySelector(
                                 `.inputValue[data-chitieu ="${item.id}"]`
@@ -555,7 +618,14 @@ function initEvent() {
 
     $("#btnImport").on("click", () => {
         let dataImport = [];
-        arrGrid.forEach((item) => {});
+        let input = document.getElementsByClassName("inputValue");
+        for (const ip of input) {
+            dataImport.push({
+                id: ip.dataset.chitieu,
+                sanluong: ip.value,
+            });
+        }
+
         let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
         let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
         let loaisolieu = $("#cbLoaisolieu")
@@ -578,15 +648,6 @@ function initEvent() {
             data.append("kynhap", kynhaplieu);
             data.append("namnhap", namnhaplieu);
             data.append("capnhap", capnhap);
-
-            let input = document.getElementsByClassName("inputValue");
-
-            for (const ip of input) {
-                dataImport.push({
-                    id: ip.dataset.chitieu,
-                    sanluong: ip.value,
-                });
-            }
             data.append("dataImport", JSON.stringify(dataImport));
             if (idBieunhap > 0) {
                 data.append("edit", idBieunhap);
@@ -603,7 +664,76 @@ function initEvent() {
                             "Bạn đã nhập dữ liệu thành công",
                             "success"
                         );
-                        // window.location = "viewListNhaplieu";
+                        window.location = "viewListNhaplieu";
+                    } else if (res.data["succes"] == 400) {
+                        Swal.fire(
+                            "Dữ liệu đã tồn tại không thể thêm số liệu tương tự",
+                            "Dữ liệu đã tồn tại",
+                            "error"
+                        );
+                    } else {
+                        Swal.fire(
+                            "Đã xảy ra lỗi không thể lưu dữ liệu",
+                            "Lỗi",
+                            "error"
+                        );
+                    }
+                })
+                .catch((response) => {
+                    console.log(response);
+                });
+        }
+    });
+
+    $("#btnImporttonghop").on("click", () => {
+        let dataImport = [];
+        arrImportExcel.forEach((item) => {
+            dataImport.push({
+                id: item.id,
+                sanluong: item.sanluong,
+                sanluongkhkytruoc: item.sanluongkhkytruoc,
+                sanluongkhkynay: item.sanluongkhkynay,
+            });
+        });
+        let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
+        let diaban = $("#cbTinh").dxSelectBox("instance").option("value");
+        let loaisolieu = $("#cbLoaisolieu")
+            .dxSelectBox("instance")
+            .option("value");
+        let kynhaplieu = $("#cbKynhaplieu")
+            .dxSelectBox("instance")
+            .option("value");
+        let namnhaplieu = $("#cbNamnhaplieu")
+            .dxSelectBox("instance")
+            .option("value");
+        let capnhap = $("#cbphamvi").dxSelectBox("instance").option("value");
+        if (checkselect()) {
+            let data = new FormData();
+            data.append("mabieumau", bieumau);
+            data.append("donvi", window.madonvi);
+            data.append("taikhoan", window.idnguoidung);
+            data.append("diaban", diaban);
+            data.append("loaisolieu", loaisolieu);
+            data.append("kynhap", kynhaplieu);
+            data.append("namnhap", namnhaplieu);
+            data.append("capnhap", capnhap);
+            data.append("dataImport", JSON.stringify(dataImport));
+            if (idBieunhap > 0) {
+                data.append("edit", idBieunhap);
+            }
+            let settings = {
+                headers: { "content-type": "multipart/form-data" },
+            };
+            axios
+                .post("importDataBieumauNhapLieutonghop", data, settings)
+                .then((res) => {
+                    if (res.data["succes"] == 200) {
+                        Swal.fire(
+                            "Nhập dữ liệu thành công",
+                            "Bạn đã nhập dữ liệu thành công",
+                            "success"
+                        );
+                        window.location = "viewListNhaplieu";
                     } else if (res.data["succes"] == 400) {
                         Swal.fire(
                             "Dữ liệu đã tồn tại không thể thêm số liệu tương tự",
@@ -625,47 +755,27 @@ function initEvent() {
     });
 }
 
-function setEventInput() {
-    let inputValue = document.getElementsByClassName("inputValue");
-
-    for (const input of inputValue) {
-        input.addEventListener("keyup", function (evt) {
-            if (evt.keyCode == 13) {
-                let index = arrGrid.findIndex(
-                    (x) => x.id == input.dataset.chitieu
-                );
-                arrGrid[index].value = input.value;
-                sumParent(arrGrid[index].parent, arrGrid[index].unit);
-
-                // Focus next input
-                if (arrGrid[index + 1] != undefined) {
-                    let idSelect = arrGrid[index + 1].id;
-                    let selectedInput = document.querySelector(
-                        `.inputValue[data-chitieu="${idSelect}"]`
-                    );
-                    selectedInput.focus();
-                }
+// hiển thị dữ liệu
+function ShowData(data) {
+    DataGrid.forEachNode(function (node) {
+        let index = data.findIndex((x) => x.id == node.data.id);
+        if (index != -1) {
+            let indexvalue = arrValueInput.findIndex(
+                (z) => z.id == node.data.id
+            );
+            if (indexvalue == -1) {
+                arrValueInput.push({
+                    id: node.data.id,
+                    value: data[index].quantity,
+                    parent: node.data.idcha,
+                });
             }
-        });
-    }
+            node.data.sanluong = data[index].quantity;
+        }
+    });
+
+    DataGrid.refresh();
 }
-
-function sumParent(parent, unit) {
-    if (parent != null || parent != undefined) {
-        let child = arrGrid.filter((item) => {
-            return item.parent == parent && item.unit == unit;
-        });
-        let sum = 0;
-        child.forEach((item) => {
-            sum += Number(item.value);
-        });
-
-        document.querySelector(
-            `.inputValue[data-chitieu ="${parent}"]`
-        ).value = sum;
-    }
-}
-
 function checkselect() {
     let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
 
