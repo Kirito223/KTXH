@@ -13,28 +13,6 @@ $(document).ready(() => {
     $.contextMenu({
         // define which elements trigger this menu
         selector: ".inputValue",
-        // define the elements of the menu
-        // items: {
-        //     lastupdate: {
-        //         name: "Số liệu cập nhật lần trước",
-        //         callback: function (key, opt) {
-        //             console.log("key", key);
-        //             console.log("opt", opt);
-        //         },
-        //     },
-        //     plus: {
-        //         name: "Cộng dồn",
-        //         callback: function (key, opt) {
-        //             alert("Bar!");
-        //         },
-        //     },
-        //     plusLocation: {
-        //         name: "Cộng dồn theo địa bàn",
-        //         callback: function (key, opt) {
-        //             alert("Bar!");
-        //         },
-        //     },
-        // },
         build: function ($triggerElement, e) {
             return {
                 items: {
@@ -248,7 +226,7 @@ function loadDataEdit() {
                     "GridCheckImportExcel"
                 ).innerHTML = html;
                 $("#tableChitieu").treetable({ expandable: false });
-                mapValue(res.data.flat);
+                mapValue(res.data);
                 setEventInput();
             })
             .catch((err) => {
@@ -376,12 +354,12 @@ function initData() {
                 axios
                     .get("getChitieuNhaplieu/" + idTemplate)
                     .then((res) => {
-                        showTable(res.data.data);
+                        showTable(res.data);
                         document.getElementById(
                             "GridCheckImportExcel"
                         ).innerHTML = html;
                         $("#tableChitieu").treetable({ expandable: false });
-                        mapValue(res.data.flat);
+                        mapValue(res.data);
                         setEventInput();
                     })
                     .catch((err) => {
@@ -394,15 +372,15 @@ function initData() {
 
 function mapValue(data) {
     arrGrid.length = 0;
-    arrGrid = data.map((item) => {
+    arrGrid = data.data.map((item) => {
         return {
-            id: item.chitieu,
+            id: item.id,
             value:
                 item.sanluong == null || item.sanluong == undefined
                     ? 0
                     : item.sanluong,
             parent: item.idcha,
-            unit: item.tendonvi,
+            unit: item.donvi,
         };
     });
 }
@@ -455,40 +433,19 @@ function sumParent(parent, unit) {
 }
 
 function showTable(result) {
-    for (const item in result) {
-        if (result[item].hasOwnProperty("children")) {
-            let element = result[item];
-            let dataParent =
-                element.idcha == null
-                    ? ""
-                    : ` data-tt-parent-id=${element.idcha}`;
-            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
-            <td>${element.tenchitieu}</td>
-            <td>${element.tendonvi}</td>
-            <td><input value="${
-                element.sanluong != null ? element.sanluong : ""
-            }" class="inputValue form-control" type="number" data-chitieu="${
-                element.chitieu
-            }" /></td>
-            </tr>`;
-            showTable(result[item].children);
-        } else {
-            let element = result[item];
-            let dataParent =
-                element.idcha == null
-                    ? ""
-                    : ` data-tt-parent-id=${element.idcha}`;
-            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
-                    <td>${element.tenchitieu}</td>
-                    <td>${element.tendonvi}</td>
-                    <td><input value="${
-                        element.sanluong != null ? element.sanluong : ""
-                    }" class="inputValue form-control" type="number" data-chitieu="${
-                element.chitieu
-            }" /></td>
-                    </tr>`;
-        }
-    }
+    result.data.forEach((element) => {
+        let dataParent =
+            element.idcha == null ? "" : ` data-tt-parent-id=${element.idcha}`;
+        html += `<tr data-tt-id="${element.id}" ${dataParent}>
+    <td>${element.ten}</td>
+    <td>${element.donvi}</td>
+    <td><input value="${
+        element.sanluong != null ? element.sanluong : ""
+    }" class="inputValue form-control" type="number" data-chitieu="${
+            element.id
+        }" /></td>
+    </tr>`;
+    });
 }
 
 function initEvent() {
@@ -972,8 +929,6 @@ function ShowData(data) {
             node.data.sanluong = data[index].quantity;
         }
     });
-
-    DataGrid.refresh();
 }
 function checkselect() {
     let bieumau = $("#cbBieumau").dxSelectBox("instance").option("value");
