@@ -22,6 +22,8 @@ class Chitieu extends Controller
     {
         $madonvi = Session::get('madonvi');
 
+
+
         $data = tbl_chitieu::select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_donvitinh.tendonvi', 'tbl_chitieu.idcha')
             ->where('tbl_chitieu.isDelete', 0)
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
@@ -34,7 +36,7 @@ class Chitieu extends Controller
         $this->data_tree($data, null);
         return response()->json($this->tree);
     }
-	
+
 
     private $tree = array();
 

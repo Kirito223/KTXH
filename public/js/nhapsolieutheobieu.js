@@ -10,6 +10,205 @@ var html = "";
 var arrImportExcel = [];
 
 $(document).ready(() => {
+    $.contextMenu({
+        // define which elements trigger this menu
+        selector: ".inputValue",
+        // define the elements of the menu
+        // items: {
+        //     lastupdate: {
+        //         name: "Số liệu cập nhật lần trước",
+        //         callback: function (key, opt) {
+        //             console.log("key", key);
+        //             console.log("opt", opt);
+        //         },
+        //     },
+        //     plus: {
+        //         name: "Cộng dồn",
+        //         callback: function (key, opt) {
+        //             alert("Bar!");
+        //         },
+        //     },
+        //     plusLocation: {
+        //         name: "Cộng dồn theo địa bàn",
+        //         callback: function (key, opt) {
+        //             alert("Bar!");
+        //         },
+        //     },
+        // },
+        build: function ($triggerElement, e) {
+            return {
+                items: {
+                    lastupdate: {
+                        name: "Số liệu cập nhật lần trước",
+                        callback: function () {
+                            console.log(e.target.dataset.chitieu);
+                            if (e.rowIndex == -1) {
+                                Swal.fire(
+                                    "Chưa chọn biểu mẫu",
+                                    "Vui lòng chọn biểu mẫu nhập liệu",
+                                    "warning"
+                                );
+                            } else {
+                                idChitieu = e.target.dataset.chitieu;
+
+                                let namnhap = $("#cbNamnhaplieu")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let bieumau = $("#cbBieumau")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let diaban = $("#cbTinh")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                axios
+                                    .post("ListTempalatewithIdBieumau", {
+                                        bieumau: bieumau,
+                                        namnhap: namnhap,
+                                        donvi: window.madonvi,
+                                        diaban: diaban,
+                                    })
+                                    .then((res) => {
+                                        let data = res.data;
+                                        gridtemplate.columnOption(
+                                            "tenbieumau",
+                                            { visible: true }
+                                        );
+                                        gridtemplate.option("dataSource", data);
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    });
+                                $("#modelReportSelect").modal("show");
+                            }
+                        },
+                    },
+                    plus: {
+                        name: "Cộng dồn theo các kỳ",
+                        callback: function (key, opt) {
+                            console.log(e.target.dataset.chitieu);
+                            if (e.rowIndex == -1) {
+                                Swal.fire(
+                                    "Chưa chọn biểu mẫu",
+                                    "Vui lòng chọn biểu mẫu nhập liệu",
+                                    "warning"
+                                );
+                            } else {
+                                idChitieu = e.target.dataset.chitieu;
+
+                                let namnhap = $("#cbNamnhaplieu")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let bieumau = $("#cbBieumau")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let diaban = $("#cbTinh")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                axios
+                                    .post("ListTempalatewithIdBieumau", {
+                                        bieumau: bieumau,
+                                        namnhap: namnhap,
+                                        donvi: window.madonvi,
+                                        diaban: diaban,
+                                    })
+                                    .then((res) => {
+                                        let data = res.data;
+                                        gridtemplate.columnOption(
+                                            "tenbieumau",
+                                            { visible: false }
+                                        );
+                                        gridtemplate.option("dataSource", data);
+                                    })
+                                    .catch((err) => {
+                                        console.log(err);
+                                    });
+                                $("#modelReportSelect").modal("show");
+                            }
+                        },
+                    },
+                    plusLocation: {
+                        name: "Cộng dồn theo địa bàn",
+                        callback: function (key, opt) {
+                            if (e.rowIndex == -1) {
+                                Swal.fire(
+                                    "Chưa chọn biểu mẫu",
+                                    "Vui lòng chọn biểu mẫu nhập liệu",
+                                    "warning"
+                                );
+                            } else {
+                                idChitieu = e.target.dataset.chitieu;
+                                let namnhap = $("#cbNamnhaplieu")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let bieumau = $("#cbBieumau")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let diaban = $("#cbTinh")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                let kynhap = $("#cbKynhaplieu")
+                                    .dxSelectBox("instance")
+                                    .option("value");
+                                if (namnhap == null) {
+                                    Swal.fire(
+                                        "Chưa chọn năm nhập liệu",
+                                        "Xin vui lòng chọn năm nhập liệU",
+                                        "warning"
+                                    );
+                                } else if (bieumau == null) {
+                                    Swal.fire(
+                                        "Chưa chọn biểu mẫu",
+                                        "Xin vui lòng chọn biểu mẫu",
+                                        "warning"
+                                    );
+                                } else if (diaban == null) {
+                                    Swal.fire(
+                                        "Chưa chọn địa bàn",
+                                        "Xin vui lòng chọn địa bàn",
+                                        "warning"
+                                    );
+                                } else if (kynhap == null) {
+                                    Swal.fire(
+                                        "Chưa chọn kỳ nhập",
+                                        "Xin vui lòng chọn kỳ nhập",
+                                        "warning"
+                                    );
+                                } else {
+                                    axios
+                                        .post("ListDataofLocation", {
+                                            donvi: diaban,
+                                            bieumau: bieumau,
+                                        })
+                                        .then((res) => {
+                                            gridlocaltion.option(
+                                                "dataSource",
+                                                res.data
+                                            );
+                                            $("#modelLocaltion").modal("show");
+                                        })
+                                        .catch((err) => {
+                                            console.log(err);
+                                        });
+                                }
+                            }
+                        },
+                    },
+                    goto: {
+                        name: "Chuyển chỉ tiêu",
+                        callback: function (key, opt) {
+                            console.log(e.target.dataset.chitieu);
+                        },
+                    },
+                    formula: {
+                        name: "Tính theo công thức",
+                        callback: function (key, opt) {
+                            console.log(e.target.dataset.chitieu);
+                        },
+                    },
+                },
+            };
+        },
+    });
     initData();
     initEvent();
     loadDataEdit();

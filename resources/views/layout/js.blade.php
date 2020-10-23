@@ -24,8 +24,9 @@
     <!-- DevExtreme library -->
     <script type="text/javascript" src="dx/js/dx.all.js"></script>
 
-
- 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
 
 
 <script type="text/javascript" src="dx/js/knockout-latest.js"></script>
