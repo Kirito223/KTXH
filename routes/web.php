@@ -385,3 +385,8 @@ Route::get('danhsachBieumau/{id}', 'danhsachbieumauController@danhsachBieumau');
 Route::post('danhsachBieumau/store', 'danhsachbieumauController@store');
 Route::post('danhsachBieumau/edit', 'danhsachbieumauController@edit');
 Route::post('danhsachBieumau/del', 'danhsachbieumauController@delete');
+
+// Export Excel Production Value
+
+Route::get('/exportproductionvalue/view', 'Report\ProductionPlanReportController@viewExportProductionValue');
+Route::post('/exportproductionvalue/export', 'Report\ProductionPlanReportController@exportExcelProductionValue');

@@ -1,5 +1,5 @@
 @extends('master')
-@section('title','Báo cáo kế hoạch sản xuất')
+@section('title','Xuất kế hoạch sản xuất')
 @section('content')
 
 <div class="container-fluid" id="productionplanreport">
@@ -14,32 +14,41 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
                             <label>Địa bàn</label>
-                            <div id="cbDiaban"></div>
+                            <select style="width: 100%" id="location">
+                                <option value="">-------</option>
+                                <option value="1">Huyện</option>
+                                <option value="2">Xã</option>
+                            </select>
                         </div>
                         <div class="col-md-2 col-sm-12">
                             <label id="titleDiaban"></label>
-                            <div id="cbHuyen"></div>
+                            <select style="width: 100%" id="nameLocation"></select>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <label>Từ năm</label>
+                            <select id="startYear" style="width: 100%"></select>
+                        </div>
+                        <div class="col-md-2 col-sm-12">
+                            <label>Đến năm</label>
+                            <select id="endYear" style="width: 100%"></select>
                         </div>
                         <div class="col-md-2 col-sm-12">
                             <label>Loại số liệu</label>
-                            <div id="cbSoLieu"></div>
+                            <select style="width: 100%" id="typeOfFigures"></select>
                         </div>
+
                         <div class="col-md-2 col-sm-12">
-                            <label>Năm</label>
-                            <div id="cbNam" style="width: 100%"></div>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
                             <label>Biểu mẫu</label>
-                            <div id="cbBieumau" style="width: 100%"></div>
+                            <select id="teamplate" style="width: 100%"></select>
                         </div>
 
                         <div class="col-md-4 col-sm-12">
                             <button class="btn btn-success btn-sm btn-search" id="btnView"><i
                                     class="fas fa-eye fa-sm fa-fw"></i>
                                 Xem báo cáo</button>
-                            <button class="btn btn-success btn-sm btn-search" id="btnSearch"><i
+                            {{-- <button class="btn btn-success btn-sm btn-search" id="btnSearch"><i
                                     class="fas fa-download fa-sm fa-fw"></i>
-                                Xuất báo cáo</button>
+                                Xuất báo cáo</button> --}}
                         </div>
                     </div>
                 </div>
@@ -49,7 +58,11 @@
 
                 <hr class="widget-separator">
                 <div class="widget-body">
-                    <div id="report"></div>
+                    <div id="report">
+                        <iframe id="viewExcel"
+                            src='https://view.officeapps.live.com/op/embed.aspx?src=http://www.learningaboutelectronics.com/Articles/Example.xlsx'
+                            width='100%' height='565px' frameborder='0'> </iframe>
+                    </div>
                 </div>
             </div>
 
@@ -188,7 +201,7 @@
         </div>
     </div>
 </div>
-<script type="module" src="js/productionplanreport.js"></script>
+<script type="module" src="js/productionvalue.js"></script>
 
 <style>
     .homeproduct {

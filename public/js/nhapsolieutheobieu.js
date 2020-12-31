@@ -372,17 +372,32 @@ function initData() {
 
 function mapValue(data) {
     arrGrid.length = 0;
-    arrGrid = data.data.map((item) => {
-        return {
-            id: item.id,
-            value:
-                item.sanluong == null || item.sanluong == undefined
-                    ? 0
-                    : item.sanluong,
-            parent: item.idcha,
-            unit: item.donvi,
-        };
-    });
+
+    if (data.data != undefined) {
+        arrGrid = data.data.map((item) => {
+            return {
+                id: item.id,
+                value:
+                    item.sanluong == null || item.sanluong == undefined
+                        ? 0
+                        : item.sanluong,
+                parent: item.idcha,
+                unit: item.donvi,
+            };
+        });
+    } else {
+        arrGrid = data.Detail.map((item) => {
+            return {
+                id: item.chitieu,
+                value:
+                    item.sanluong == null || item.sanluong == undefined
+                        ? 0
+                        : item.sanluong,
+                parent: item.idcha,
+                unit: item.tendonvi,
+            };
+        });
+    }
 }
 
 function setEventInput() {
@@ -433,19 +448,39 @@ function sumParent(parent, unit) {
 }
 
 function showTable(result) {
-    result.data.forEach((element) => {
-        let dataParent =
-            element.idcha == null ? "" : ` data-tt-parent-id=${element.idcha}`;
-        html += `<tr data-tt-id="${element.id}" ${dataParent}>
+    if (result.data != null) {
+        result.data.forEach((element) => {
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.id}" ${dataParent}>
     <td>${element.ten}</td>
-    <td>${element.donvi}</td>
+    <td>${element.donvi != null ? element.donvi : ""}</td>
     <td><input value="${
         element.sanluong != null ? element.sanluong : ""
     }" class="inputValue form-control" type="number" data-chitieu="${
-            element.id
-        }" /></td>
+                element.id
+            }" /></td>
     </tr>`;
-    });
+        });
+    } else {
+        result.forEach((element) => {
+            let dataParent =
+                element.idcha == null
+                    ? ""
+                    : ` data-tt-parent-id=${element.idcha}`;
+            html += `<tr data-tt-id="${element.chitieu}" ${dataParent}>
+        <td>${element.ten}</td>
+        <td>${element.tendonvi != null ? element.tendonvi : ""}</td>
+        <td><input value="${
+            element.sanluong != null ? element.sanluong : ""
+        }" class="inputValue form-control" type="number" data-chitieu="${
+                element.chitieu
+            }" /></td>
+        </tr>`;
+        });
+    }
 }
 
 function initEvent() {

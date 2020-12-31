@@ -69,7 +69,7 @@
                             <button class="btn btn-info" id="btnImportFromExcel"><i class="fa fa-upload"
                                     aria-hidden="true"></i> Nhập từ Excel</button>
                             <a href="http://ctktxh.lihanet.com/upload/bieumaunhaplieu.xlsx" class="btn btn-primary"><i
-                                    class="fa fa-download" aria-hidden="true"></i>File nhập liệu</a>
+                                    class="far fa-file-word" aria-hidden="true"></i> File nhập liệu</a>
                         </div>
 
                         <div class="col-md-12" style="margin: 5px 0px 5px 0px; text-align: right;">
@@ -82,7 +82,7 @@
                             <span style="color: blue">Click chuột phải vào từng chỉ tiêu để cập nhật số liệu theo hệ
                                 thống</span>
                             {{-- <div id="GridCheckImportExcel"></div> --}}
-                            <div>
+                            <div style="overflow: scroll; height: 300px;">
                                 <table class="table" id="tableChitieu">
                                     <thead>
                                         <tr>
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="col-md-12" style="text-align: center; margin-top: 10px;">
-                            <button class="btn btn-info" id="btnImport"><i class="fas fa-save"></i> Nhập dữ
+                            <button class="btn btn-info" id="btnImport"><i class="fas fa-save"></i> Lưu dữ
                                 liệu</button>
                             <button class="btn btn-info" id="btnImporttonghop"><i class="fas fa-save"></i> Nhập dữ
                                 liệu tổng hợp</button>
@@ -207,4 +207,10 @@
 </div>
 
 <script type="module" src="js/nhapsolieutheobieu.js"></script>
+<style>
+    .inputValue {
+        height: 26px;
+        border-radius: 3px;
+    }
+</style>
 @endsection

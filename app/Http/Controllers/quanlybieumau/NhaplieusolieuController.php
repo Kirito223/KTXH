@@ -299,8 +299,8 @@ class NhaplieusolieuController extends Controller
 
     public function indexNhaplieuBieumau()
     {
-        $madonvi = Session::get('madonvi');
-        $donvicha = Session::get('donvicha');
+        $madonvi = 1; //Session::get('madonvi');
+        $donvicha = 1; // Session::get('donvicha');
 
         $data = tbl_solieutheobieu::where('tbl_solieutheobieu.isDelete', 0)
             ->where('tbl_solieutheobieu.loaibaocao', 0)
@@ -336,9 +336,8 @@ class NhaplieusolieuController extends Controller
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
             ->select('tbl_chitieu.id as chitieu', 'tbl_chitieu.tenchitieu as tenchitieu', 'tbl_chitieu.idcha', 'tbl_chitietsolieutheobieu.id as idSolieu', 'tbl_chitietsolieutheobieu.sanluong', 'tbl_donvitinh.tendonvi as tendonvi')
             ->where('tbl_chitietsolieutheobieu.isDelete', 0)->get();
-        $detail = $this->buildTree($Detail);
 
-        return response()->json(['Form' => $Form, 'Detail' => $detail, 'flat' => $Detail]);
+        return response()->json(['Form' => $Form, 'Detail' => $Detail]);
     }
 
 
@@ -533,7 +532,7 @@ class NhaplieusolieuController extends Controller
                 // Doc du lieu tu file excel
                 $solieutheobieu = new tbl_solieutheobieu();
                 $solieutheobieu->bieumau = $request->mabieumau;
-                $solieutheobieu->donvinhap = $request->donvi;
+                $solieutheobieu->donvinhap = 1; //$request->donvi;
                 $solieutheobieu->taikhoan = $request->taikhoan;
                 $solieutheobieu->diaban = $request->diaban;
                 $solieutheobieu->capnhap = $request->capnhap;
@@ -554,7 +553,7 @@ class NhaplieusolieuController extends Controller
                             $chitiet->sanluong = 0;
                         }
                         //   $chitiet->created_at = $request->namnhap . "-" . $now->month . "-" . $now->day;
-                        $chitiet->madonvi = $request->donvi;
+                        $chitiet->madonvi = 1; //$request->donvi;
                         $chitiet->save();
                     }
 
@@ -567,7 +566,7 @@ class NhaplieusolieuController extends Controller
             // Doc du lieu tu file excel
             $solieutheobieu = tbl_solieutheobieu::find($request->edit);
             $solieutheobieu->bieumau = $request->mabieumau;
-            $solieutheobieu->donvinhap = $request->donvi;
+            $solieutheobieu->donvinhap = 1;
             $solieutheobieu->taikhoan = $request->taikhoan;
             $solieutheobieu->diaban = $request->diaban;
             $solieutheobieu->capnhap = $request->capnhap;
@@ -592,7 +591,7 @@ class NhaplieusolieuController extends Controller
                     } else {
                         $chitiet->sanluong = 0;
                     }
-                    $chitiet->madonvi = $request->donvi;
+                    $chitiet->madonvi = 1;
                     $chitiet->save();
                 }
                 return response()->json(['succes' => 200]);
