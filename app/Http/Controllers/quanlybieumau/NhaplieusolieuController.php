@@ -160,6 +160,7 @@ class NhaplieusolieuController extends Controller
         return $chitiet;
     }
 
+    // Lấy thông tin biểu mẫu đã chọn
     public function showDeltalBieumauTH($id)
     {
         $chitiet = tbl_chitietbieumau::where('bieumau', '=', $id)
