@@ -1,19 +1,20 @@
 import Ultil, { initBieumau } from "../js/Ultil.js";
+
+import { process } from "../js/viewProductPlanReport.js";
 var cbBieuMau;
 var danhsachBieumau;
 var idBieumau = undefined;
 var cbLoaibieumau;
 var cbLoaisolieu;
-var diaban=1;
-var loaimau=1;
+var diaban = 1;
+var loaimau = 1;
 $(document).ready(() => {
     if ($("#productionplanreport").length) {
         loadData();
         initEvent();
-		if(localStorage.idnguoidung!=68)
-		{
-			$("#selectbox").hide();
-		}
+        if (localStorage.idnguoidung != 68) {
+            $("#selectbox").hide();
+        }
     }
 });
 
@@ -34,12 +35,18 @@ function loadData() {
         // dataSource: "listDonvihanhchinParent",
         displayExpr: "tendonvi",
         valueExpr: "id",
-		itemTemplate: function (data) {
-            return "<div class='custom-item' title='" + data.tendonvi + "'>" + data.tendonvi + "</div>";
-        }
+        itemTemplate: function (data) {
+            return (
+                "<div class='custom-item' title='" +
+                data.tendonvi +
+                "'>" +
+                data.tendonvi +
+                "</div>"
+            );
+        },
     });
-	$("#cbSoLieu").dxSelectBox({
-         dataSource: "getloaisolieu",
+    $("#cbSoLieu").dxSelectBox({
+        dataSource: "getloaisolieu",
         displayExpr: "tenloaisolieu",
         valueExpr: "id",
     });
@@ -47,29 +54,33 @@ function loadData() {
         dataSource: "danhsachbieumau",
         displayExpr: "tenbieumau",
         valueExpr: "id",
-		itemTemplate: function (data) 
-		{
-			
-            return "<div class='custom-item' title='" + data.tenbieumau + "'>" + data.tenbieumau + "</div>";
-        }
+        itemTemplate: function (data) {
+            return (
+                "<div class='custom-item' title='" +
+                data.tenbieumau +
+                "'>" +
+                data.tenbieumau +
+                "</div>"
+            );
+        },
     });
 
     cbBieuMau = $("#cbBieumau").dxSelectBox("instance");
- 
+
     $("#cbNam").dxDateBox({
         value: new Date(),
     });
     $("#cbDiaban").dxSelectBox({
         dataSource: [
-			{ id: 3, name: "Tỉnh" },
+            { id: 3, name: "Tỉnh" },
             { id: 1, name: "Huyện" },
             { id: 2, name: "Xã" },
         ],
         displayExpr: "name",
         valueExpr: "id",
         onValueChanged: (e) => {
-			diaban=e.value;
-			changevalue();
+            diaban = e.value;
+            changevalue();
             if (e.value == 1) {
                 axios
                     .get("danhsachHuyen")
@@ -81,8 +92,7 @@ function loadData() {
                     .catch((err) => {
                         console.error(err);
                     });
-            } else if(e.value == 2)
-			{
+            } else if (e.value == 2) {
                 axios
                     .get("danhsachXa")
                     .then((res) => {
@@ -93,9 +103,7 @@ function loadData() {
                     .catch((err) => {
                         console.error(err);
                     });
-            }
-			else 
-			{
+            } else {
                 axios
                     .get("danhsachTinh")
                     .then((res) => {
@@ -112,25 +120,34 @@ function loadData() {
 
     Ultil.ShowReport("../report/ReportCTKT.mrt", "report", false);
 }
-function changevalue()
-{
-	
-	axios
-		.get("danhsachbieumau")
-		.then((res) => {
-		let result=res.data;
-		let myresult=[];
-		result.forEach((item) => {
-			if((diaban==1 && item.id!=238&&item.id!=237&&item.id!=241)||(diaban==3&&item.id!=233)||(diaban==2 && item.id!=238&&item.id!=237&&item.id!=241&&item.id!=233))
-				myresult.push(item);
-		});
-		$("#cbBieumau")
-			.dxSelectBox("instance")
-			.option("dataSource", myresult);
-	})
-		.catch((err) => {
-		console.error(err);
-	});
+function changevalue() {
+    axios
+        .get("danhsachbieumau")
+        .then((res) => {
+            let result = res.data;
+            let myresult = [];
+            result.forEach((item) => {
+                if (
+                    (diaban == 1 &&
+                        item.id != 238 &&
+                        item.id != 237 &&
+                        item.id != 241) ||
+                    (diaban == 3 && item.id != 233) ||
+                    (diaban == 2 &&
+                        item.id != 238 &&
+                        item.id != 237 &&
+                        item.id != 241 &&
+                        item.id != 233)
+                )
+                    myresult.push(item);
+            });
+            $("#cbBieumau")
+                .dxSelectBox("instance")
+                .option("dataSource", myresult);
+        })
+        .catch((err) => {
+            console.error(err);
+        });
     cbBieuMau = $("#cbBieumau").dxSelectBox("instance");
 }
 function initEvent() {
@@ -168,8 +185,8 @@ function initEvent() {
                         if (res.data["code"] == 200) {
                             loadBieumau();
                             loadDanhsachBieumau();
-							$('#modalThembieumau').modal('toggle');
-							$('#modalBieumau').modal('toggle');
+                            $("#modalThembieumau").modal("toggle");
+                            $("#modalBieumau").modal("toggle");
                         } else {
                             Swal.fire(
                                 "Đã có lõi xảy ra vui lòng kiểm tra lại",
@@ -190,7 +207,7 @@ function initEvent() {
                     if (res.data["code"] == 200) {
                         loadBieumau();
                         loadDanhsachBieumau();
-						$('#modalBieumau').modal('toggle');
+                        $("#modalBieumau").modal("toggle");
                     } else {
                         Swal.fire(
                             "Đã có lõi xảy ra vui lòng kiểm tra lại",
@@ -205,7 +222,7 @@ function initEvent() {
         }
     });
     $("#btnAddbieumau").on("click", (e) => {
-		restInputBieumau();
+        restInputBieumau();
         $("#modalBieumau").modal("show");
     });
 
@@ -213,190 +230,190 @@ function initEvent() {
         loadBieumau();
         $("#modelDanhsachBieumau").modal("show");
     });
-	
-	$("#btnGiaiDoan").on("click", () => {
-        let location = $("#cbHuyen")
-                            .dxSelectBox("instance")
-                            .option("value");
-                        let nam = $("#cbNam").dxDateBox("instance").option("value");
-                        let province = $("#cbHuyen")
-                            .dxSelectBox("instance")
-                            .option("text");
-						let loaisolieu = $("#cbSoLieu")
-                            .dxSelectBox("instance")
-                            .option("text");
-                        Swal.fire({
-                            title:
-                                "Đang tải dữ liệu vui lòng chờ trong giây lát",
-                            text: "Đang tải dữ liệu vui lòng chờ",
-                            icon: "info",
-                            showConfirmButton: false,
-                        });
-                        let diaban = $("#cbDiaban")
-                            .dxSelectBox("instance")
-                            .option("value");
-                        axios
-                            .post("reportofdubao", {
-                                location: location,
-                                year: nam.getFullYear(),
-                                bieumau: cbBieuMau.option("value"),
-							   mau: cbBieuMau.option("value"),
-								loaisolieu: $("#cbSoLieu")
-											.dxSelectBox("instance")
-											.option("value"),
-                                namelocation: $("#cbHuyen")
-                                    .dxSelectBox("instance")
-                                    .option("text"),
-                                diaban: diaban,
-                            })
-                            .then((res) => {
-                                Swal.close();
-                                let para = new Map();
-                               /* para.set("date", nam.getDate());
-                                para.set("month", nam.getMonth() + 1);
-                                para.set("year", nam.getFullYear());
-                                para.set("location", province);*/
-                                Ultil.ShowReportData(
-                                    `../report/coso_giatrisanxuat_chenhlech.mrt`,
-                                    res.data,
-                                    para,
-                                    "report",
-                                    true,
-                                    false
-                                );
-							
-							
-                            })
-                            .catch((err) => {
-                                Swal.close();
-                                console.log(err);
-                            });
-    });	
 
+    $("#btnGiaiDoan").on("click", async () => {
+        let location = $("#cbHuyen").dxSelectBox("instance").option("value");
+        let nam = $("#cbNam").dxDateBox("instance").option("value");
+        let province = $("#cbHuyen").dxSelectBox("instance").option("text");
+        let loaisolieu = $("#cbSoLieu").dxSelectBox("instance").option("text");
+
+        let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
+
+        let report = await process(
+            location,
+            nam.getFullYear(),
+            cbBieuMau.option("value"),
+            cbBieuMau.option("value"),
+            $("#cbSoLieu").dxSelectBox("instance").option("value"),
+            $("#cbHuyen").dxSelectBox("instance").option("text"),
+            diaban
+        );
+        let para = new Map();
+        /* para.set("date", nam.getDate());
+                        para.set("month", nam.getMonth() + 1);
+                        para.set("year", nam.getFullYear());
+                        para.set("location", province);*/
+        Ultil.ShowReportData(
+            `../report/coso_giatrisanxuat_chenhlech.mrt`,
+            report,
+            para,
+            "report",
+            true,
+            false
+        );
+    });
 
     $("#btnThembieumau").on("click", function (e) {
         loadDanhsachBieumau();
         restInputBieumau();
-		 $("#modalThembieumau").modal("show");
+        $("#modalThembieumau").modal("show");
     });
-    
-	
-	
-	var list = [{
-								"id":"1",
-								"ids":"btnGiaTri",
-								"Name": "Xuất báo cáo tổng hợp KTXH",
-							}, {
-								"id":"2",
-								"ids":"baocaogiaidoan",
-								"Name": "Báo cáo giai đoạn",
-							}];
-						$("#selectbox").dxDropDownButton({
-							text: "Xuất báo cáo tổng hợp KTXH",
-							icon: "export",
-							stylingMode: "contained",
-							type: "success",
-							items:list,
-							elementAttr: {  
-							   class : 'btn btn-primary'  
-							},
-							itemTemplate: function (data) {  
-								if(data.id == 1){
-								return "<div class='custom-item'id='" + data.ids + "' title='" + data.Name + "'>" + data.Name + "</div>";  
-								}else if(data.id == 2){
-								return "<div class='custom-item' id='" + data.ids + "' title='" + data.Name + "'>" + data.Name + "</div>";  
-								}									
-							},
-							onItemClick: function(e) {
-								if(e.itemData.id == 1){
 
-        let location = $("#cbHuyen").dxSelectBox("instance").option("value");
-        let nam = $("#cbNam").dxDateBox("instance").option("value");
-        let province = $("#cbHuyen").dxSelectBox("instance").option("text");
-		let loaisolieu = $("#cbSoLieu").dxSelectBox("instance").option("text");
-        
-        Swal.fire({
-            title: "Đang tải báo cáo vui lòng chờ trong giây lát",
-            text: "Đang tải báo cáo vui lòng chờ",
-            icon: "info",
-            showConfirmButton: false,
-        });
-
-        let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
-		let maubaocao='Mau.xlsx';
-		if(diaban==1)maubaocao='Mau_huyen.xlsx';
-		if(diaban==3)maubaocao='Mau_tinh.xlsx';
-        axios
-            .post("reportofsanxuat", {
-                location: location,
-                year: nam.getFullYear(),
-				mau: maubaocao,
-				loaimau:1,
-                bieumau: cbBieuMau.option("value"),
-                loaisolieu: $("#cbSoLieu")
+    var list = [
+        {
+            id: "1",
+            ids: "btnGiaTri",
+            Name: "Xuất báo cáo tổng hợp KTXH",
+        },
+        {
+            id: "2",
+            ids: "baocaogiaidoan",
+            Name: "Báo cáo giai đoạn",
+        },
+    ];
+    $("#selectbox").dxDropDownButton({
+        text: "Xuất báo cáo tổng hợp KTXH",
+        icon: "export",
+        stylingMode: "contained",
+        type: "success",
+        items: list,
+        elementAttr: {
+            class: "btn btn-primary",
+        },
+        itemTemplate: function (data) {
+            if (data.id == 1) {
+                return (
+                    "<div class='custom-item'id='" +
+                    data.ids +
+                    "' title='" +
+                    data.Name +
+                    "'>" +
+                    data.Name +
+                    "</div>"
+                );
+            } else if (data.id == 2) {
+                return (
+                    "<div class='custom-item' id='" +
+                    data.ids +
+                    "' title='" +
+                    data.Name +
+                    "'>" +
+                    data.Name +
+                    "</div>"
+                );
+            }
+        },
+        onItemClick: function (e) {
+            if (e.itemData.id == 1) {
+                let location = $("#cbHuyen")
                     .dxSelectBox("instance")
-                    .option("value"),
-                namelocation: $("#cbHuyen")
+                    .option("value");
+                let nam = $("#cbNam").dxDateBox("instance").option("value");
+                let province = $("#cbHuyen")
                     .dxSelectBox("instance")
-                    .option("text"),
-                diaban: diaban,
-            })
-            .then((res) => {
-                Swal.close();
-                window.location = "/export/"+maubaocao;
-            })
-            .catch((err) => {
-                Swal.close();
-                console.log(err);
-            });
-
-								}else if(e.itemData.id == 2){
-	
-        let location = $("#cbHuyen").dxSelectBox("instance").option("value");
-        let nam = $("#cbNam").dxDateBox("instance").option("value");
-        let province = $("#cbHuyen").dxSelectBox("instance").option("text");
-		let loaisolieu = $("#cbSoLieu").dxSelectBox("instance").option("text");
-        
-        Swal.fire({
-            title: "Đang tải báo cáo vui lòng chờ trong giây lát",
-            text: "Đang tải báo cáo vui lòng chờ",
-            icon: "info",
-            showConfirmButton: false,
-        });
-
-        let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
-		
-		let maubaocao='giaidoan_huyen.xlsx';
-		if(diaban==1)maubaocao='giaidoan_huyen.xlsx';
-		if(diaban==3)maubaocao='giaidoan_tinh.xlsx';
-        axios
-            .post("reportofsanxuat", {
-                location: location,
-                year: nam.getFullYear(),
-				mau: maubaocao,
-			    loaimau:2,
-                bieumau: cbBieuMau.option("value"),
-                loaisolieu: $("#cbSoLieu")
+                    .option("text");
+                let loaisolieu = $("#cbSoLieu")
                     .dxSelectBox("instance")
-                    .option("value"),
-                namelocation: $("#cbHuyen")
+                    .option("text");
+
+                Swal.fire({
+                    title: "Đang tải báo cáo vui lòng chờ trong giây lát",
+                    text: "Đang tải báo cáo vui lòng chờ",
+                    icon: "info",
+                    showConfirmButton: false,
+                });
+
+                let diaban = $("#cbDiaban")
                     .dxSelectBox("instance")
-                    .option("text"),
-                diaban: diaban,
-            })
-            .then((res) => {
-                Swal.close();
-                window.location = "/export/"+maubaocao;
-            })
-            .catch((err) => {
-                Swal.close();
-                console.log(err);
-            });
+                    .option("value");
+                let maubaocao = "Mau.xlsx";
+                if (diaban == 1) maubaocao = "Mau_huyen.xlsx";
+                if (diaban == 3) maubaocao = "Mau_tinh.xlsx";
+                axios
+                    .post("reportofsanxuat", {
+                        location: location,
+                        year: nam.getFullYear(),
+                        mau: maubaocao,
+                        loaimau: 1,
+                        bieumau: cbBieuMau.option("value"),
+                        loaisolieu: $("#cbSoLieu")
+                            .dxSelectBox("instance")
+                            .option("value"),
+                        namelocation: $("#cbHuyen")
+                            .dxSelectBox("instance")
+                            .option("text"),
+                        diaban: diaban,
+                    })
+                    .then((res) => {
+                        Swal.close();
+                        window.location = "/export/" + maubaocao;
+                    })
+                    .catch((err) => {
+                        Swal.close();
+                        console.log(err);
+                    });
+            } else if (e.itemData.id == 2) {
+                let location = $("#cbHuyen")
+                    .dxSelectBox("instance")
+                    .option("value");
+                let nam = $("#cbNam").dxDateBox("instance").option("value");
+                let province = $("#cbHuyen")
+                    .dxSelectBox("instance")
+                    .option("text");
+                let loaisolieu = $("#cbSoLieu")
+                    .dxSelectBox("instance")
+                    .option("text");
 
-								}	
-							},
-						});
+                Swal.fire({
+                    title: "Đang tải báo cáo vui lòng chờ trong giây lát",
+                    text: "Đang tải báo cáo vui lòng chờ",
+                    icon: "info",
+                    showConfirmButton: false,
+                });
 
+                let diaban = $("#cbDiaban")
+                    .dxSelectBox("instance")
+                    .option("value");
+
+                let maubaocao = "giaidoan_huyen.xlsx";
+                if (diaban == 1) maubaocao = "giaidoan_huyen.xlsx";
+                if (diaban == 3) maubaocao = "giaidoan_tinh.xlsx";
+                axios
+                    .post("reportofsanxuat", {
+                        location: location,
+                        year: nam.getFullYear(),
+                        mau: maubaocao,
+                        loaimau: 2,
+                        bieumau: cbBieuMau.option("value"),
+                        loaisolieu: $("#cbSoLieu")
+                            .dxSelectBox("instance")
+                            .option("value"),
+                        namelocation: $("#cbHuyen")
+                            .dxSelectBox("instance")
+                            .option("text"),
+                        diaban: diaban,
+                    })
+                    .then((res) => {
+                        Swal.close();
+                        window.location = "/export/" + maubaocao;
+                    })
+                    .catch((err) => {
+                        Swal.close();
+                        console.log(err);
+                    });
+            }
+        },
+    });
 }
 
 function restInputBieumau() {
@@ -411,8 +428,7 @@ async function loadBieumau() {
         .get("danhsachBieumau/1")
         .then((res) => {
             let data = res.data;
-		
-			 
+
             danhsachBieumau = data.map((item) => {
                 return {
                     Name: item.name,
@@ -421,11 +437,13 @@ async function loadBieumau() {
                         let location = $("#cbHuyen")
                             .dxSelectBox("instance")
                             .option("value");
-                        let nam =$("#cbNam").dxDateBox("instance").option("value");
+                        let nam = $("#cbNam")
+                            .dxDateBox("instance")
+                            .option("value");
                         let province = $("#cbHuyen")
                             .dxSelectBox("instance")
                             .option("text");
-						let loaisolieu = $("#cbSoLieu")
+                        let loaisolieu = $("#cbSoLieu")
                             .dxSelectBox("instance")
                             .option("text");
                         Swal.fire({
@@ -439,22 +457,26 @@ async function loadBieumau() {
                             .dxSelectBox("instance")
                             .option("value");
                         axios
-                            .post("reportofProductionPlanreport", {
-                                location: location,
-                                year: nam.getFullYear(),
-                                bieumau: cbBieuMau.option("value"),
-								loaisolieu: $("#cbSoLieu")
-											.dxSelectBox("instance")
-											.option("value"),
-                                namelocation: $("#cbHuyen")
-                                    .dxSelectBox("instance")
-                                    .option("text"),
-                                diaban: diaban,
-                            }, {timeout: 90000000})
+                            .post(
+                                "reportofProductionPlanreport",
+                                {
+                                    location: location,
+                                    year: nam.getFullYear(),
+                                    bieumau: cbBieuMau.option("value"),
+                                    loaisolieu: $("#cbSoLieu")
+                                        .dxSelectBox("instance")
+                                        .option("value"),
+                                    namelocation: $("#cbHuyen")
+                                        .dxSelectBox("instance")
+                                        .option("text"),
+                                    diaban: diaban,
+                                },
+                                { timeout: 90000000 }
+                            )
                             .then((res) => {
                                 Swal.close();
                                 let para = new Map();
-                               /* para.set("date", nam.getDate());
+                                /* para.set("date", nam.getDate());
                                 para.set("month", nam.getMonth() + 1);
                                 para.set("year", nam.getFullYear());
                                 para.set("location", province);*/
@@ -466,8 +488,8 @@ async function loadBieumau() {
                                     true,
                                     false
                                 );
-							
-							$("#modelDanhsachBieumau").modal("toggle");
+
+                                $("#modelDanhsachBieumau").modal("toggle");
                             })
                             .catch((err) => {
                                 Swal.close();
@@ -604,9 +626,3 @@ async function loadDanhsachBieumau() {
             console.log(err);
         });
 }
-
-
-
-
-						
-
