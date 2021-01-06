@@ -238,29 +238,54 @@ function initEvent() {
         let loaisolieu = $("#cbSoLieu").dxSelectBox("instance").option("text");
 
         let diaban = $("#cbDiaban").dxSelectBox("instance").option("value");
-
-        let report = await process(
-            location,
-            nam.getFullYear(),
-            cbBieuMau.option("value"),
-            cbBieuMau.option("value"),
-            $("#cbSoLieu").dxSelectBox("instance").option("value"),
-            $("#cbHuyen").dxSelectBox("instance").option("text"),
-            diaban
-        );
-        let para = new Map();
-        /* para.set("date", nam.getDate());
-                        para.set("month", nam.getMonth() + 1);
-                        para.set("year", nam.getFullYear());
-                        para.set("location", province);*/
-        Ultil.ShowReportData(
-            `../report/coso_giatrisanxuat_chenhlech.mrt`,
-            report,
-            para,
-            "report",
-            true,
-            false
-        );
+        Swal.fire({
+            title: "Đang tải dữ liệu vui lòng chờ trong giây lát",
+            text: "Đang tải dữ liệu vui lòng chờ",
+            icon: "info",
+            showConfirmButton: false,
+        });
+        axios
+            .post("getDataDubao", {
+                location: location,
+                year: nam.getFullYear(),
+                bieumau: cbBieuMau.option("value"),
+                mau: cbBieuMau.option("value"),
+                loaisolieu: $("#cbSoLieu")
+                    .dxSelectBox("instance")
+                    .option("value"),
+                namelocation: $("#cbHuyen")
+                    .dxSelectBox("instance")
+                    .option("text"),
+                diaban: diaban,
+            })
+            .then(async (res) => {
+                let report = await process(
+                    location,
+                    nam.getFullYear(),
+                    cbBieuMau.option("value"),
+                    cbBieuMau.option("value"),
+                    $("#cbSoLieu").dxSelectBox("instance").option("value"),
+                    $("#cbHuyen").dxSelectBox("instance").option("text"),
+                    diaban,
+                    res.data
+                );
+                let para = new Map();
+                /* para.set("date", nam.getDate());
+                                para.set("month", nam.getMonth() + 1);
+                                para.set("year", nam.getFullYear());
+                                para.set("location", province);*/
+                Ultil.ShowReportData(
+                    `../report/coso_giatrisanxuat_chenhlech.mrt`,
+                    report,
+                    para,
+                    "report",
+                    true,
+                    false
+                );
+            })
+            .catch((err) => {
+                Swal.close();
+            });
     });
 
     $("#btnThembieumau").on("click", function (e) {

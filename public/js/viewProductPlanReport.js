@@ -11,32 +11,8 @@ export async function process(
     mau,
     loaisolieu,
     namelocation,
-    diaban
+    diaban, data
 ) {
-    Swal.fire({
-        title: "Đang tải dữ liệu vui lòng chờ trong giây lát",
-        text: "Đang tải dữ liệu vui lòng chờ",
-        icon: "info",
-        showConfirmButton: false,
-    });
-    let data = await axios
-        .post("getDataDubao", {
-            location: location,
-            year: year,
-            bieumau: bieumau,
-            mau: mau,
-            loaisolieu: loaisolieu,
-            namelocation: namelocation,
-            diaban: diaban,
-        })
-        .then((res) => {
-            return res.data;
-        })
-        .catch((err) => {
-            Swal.close();
-        });
-
-    const t0 = performance.now();
     let tree = data.tree;
     listLocation = data.listxahuyen;
     tblChitietbieumau = data.tblChitietbieumau;
@@ -48,7 +24,7 @@ export async function process(
     let mid = Math.round(lowBound + (upBound - lowBound) / 3);
 
     let endMidTwo = mid + mid;
-    let endTreeThree = endMidTwo + mid;
+    let endTreeThree = endMidTwo + mid-1;
     let arr = await Promise.all([
         splitAarray(tree, 0, mid),
         splitAarray(tree, mid, endMidTwo),
@@ -95,7 +71,7 @@ export async function process(
             results[1].tong_tyle6 +
             results[2].tong_tyle6,
         bieumau: mau,
-        tenloaisolieu: data.tenloaisolieu,
+        solieu: data.tenloaisolieu,
     };
     let dulieu = {
         nutcha: data.datacha,
@@ -107,11 +83,10 @@ export async function process(
         chitiet4: rs,
         thongtin: thongtin,
     };
-    const t1 = performance.now();
-    console.log(`Call to doSomething took ${Math.round(t1 - t0)} ms.`);
     Swal.close();
     return dulieu;
 }
+
 
 function splitAarray(tree, endMid, endTree) {
     let result = [];
@@ -133,6 +108,9 @@ function synthetic(tree, year, bieumau, loaisolieu) {
     let tong_tyle5 = 0;
     let tong_tyle6 = 0;
     tree.forEach((item) => {
+        if (item.id == 2194) {
+            debugger;
+        }
         let itemResult = {};
         itemResult.id = item.id;
         itemResult.chitieu = item.ten;

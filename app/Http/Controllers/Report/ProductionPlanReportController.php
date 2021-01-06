@@ -1216,10 +1216,7 @@ class ProductionPlanReportController extends Controller
     }
     public function getDataDubao(Request $request)
     {
-        $madonvi = Session::get('madonvi');
-        $donvicha = Session::get('donvicha');
-        $tblChitieu = tbl_chitieu::where('tbl_chitieu.isDelete', 0)->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
-            ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha',  'tbl_donvitinh.tendonvi')->get();
+
         $tblChitietbieumau = tbl_chitietbieumau::where('tbl_chitietbieumau.isDelete', 0)
             ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
             ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
@@ -1228,6 +1225,8 @@ class ProductionPlanReportController extends Controller
         $tblsolieutheobieu = tbl_solieutheobieu::where('isDelete', 0)
             ->get();
         $tbl_chitietsolieutheobieu = tbl_chitietsolieutheobieu::where('isDelete', 0)->get();
+        $madonvi = Session::get('madonvi');
+        $donvicha = Session::get('donvicha');
         if ($donvicha == null) $donvicha = $madonvi;
         $currentYear = $request->year;
         $periviousYear = $currentYear - 1;
@@ -1236,57 +1235,46 @@ class ProductionPlanReportController extends Controller
         $Form = $request->bieumau;
         $mau = $request->mau;
         $FormController = new NhaplieusolieuController();
-
+        $listChitieu = $FormController->showDeltalChiTieu($Form);
         $tenloaisolieu = tbl_loaisolieu::where('id', $loaisolieu)->first();
         $Ultil = new ChitieuUltils();
-
         $TreeChitieu = $Ultil->getTreeChitieunew($Form);
         if ($mau != null) {
-            // Lấy chi tiết biểu mẫu
-
-            $listChitieu = $this->getDetailTemplate($mau, $tblChitietbieumau);
-
-            // Tạo cây chỉ tiêu từ danh sách chỉ tiêu
-            $TreeChitieu = $this->getTreeChitieu($listChitieu, $tblChitieu); //$Ultil->getTreeChitieu($listChitieu);
+            $listChitieu = $FormController->showDeltalBieumauTH($mau);
+            $TreeChitieu = $Ultil->getTreeChitieu($listChitieu);
         }
-
         $listXaofHuyen = null;
-
         if ($request->diaban == 1) {
             $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
-                ->where('isDelete', 0)
                 ->get();
         } else {
             // Tong hop bao cao theo xa
             $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
-                ->where('isDelete', 0)
                 ->get();
         }
-        $data = null;
-        $datacha = null;
-
-        if ($mau == null) {
-            $datacha = tbl_chitieu::where('tbl_chitieu.id', '=', $Form)
-                ->where('tbl_chitieu.IsDelete', 0)
-                ->where('madonvi', $donvicha)
-                //->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
-                ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
-                //->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
-                ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi', DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as strid'))
-                ->orderBy('tbl_chitieu.thutu', 'desc')
-                ->orderBy('tbl_chitieu.id')
-                ->groupBy('id', 'tbl_chitieu.tenchitieu', 'idcha', 'tbl_donvitinh.tendonvi', 'strid')
-                ->get();
-
-            $data = tbl_chitieu::with('childrenAll')->where('tbl_chitieu.IsDelete', 0)
-                ->whereNotNull('tbl_chitieu.idcha')
-                ->join('tbl_chitietbieumau', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
-                ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
-                ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
-                ->orderBy('tbl_chitieu.thutu', 'desc')
-                ->orderBy('tbl_chitieu.id')
-                ->get();
-        }
+        $datacha = tbl_chitieu::where('tbl_chitieu.id', '=', $Form)
+            ->where('tbl_chitieu.IsDelete', 0)
+            ->where('madonvi', $donvicha)
+            //->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            //->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi', DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as strid'))
+            ->orderBy('tbl_chitieu.thutu', 'desc')
+            ->orderBy('tbl_chitieu.id')
+            ->groupBy('id', 'tbl_chitieu.tenchitieu', 'idcha', 'tbl_donvitinh.tendonvi', 'strid')
+            ->get();
+        //dd($datacha);
+        //return 200;
+        $data = tbl_chitieu::with('childrenAll')->where('tbl_chitieu.IsDelete', 0)
+            ->whereNotNull('tbl_chitieu.idcha')
+            ->join('tbl_chitietbieumau', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->orderBy('tbl_chitieu.thutu', 'desc')
+            ->orderBy('tbl_chitieu.id')
+            ->get();
+        //dd($TreeChitieu);
+        //return 200;
 
         if ($mau != null) {
             $Form = $mau;
@@ -1314,69 +1302,5 @@ class ProductionPlanReportController extends Controller
 
         return response()->json(['madonvi' => $madonvi, 'donvicha' => $donvicha, 'tree' => $TreeChitieu, 'listxahuyen' => $listXaofHuyen, 'data' => $data, 'datacha' => $datacha, 'tblChitietbieumau' => $tblChitietbieumau, 'tblsolieutheobieu' => $tblsolieutheobieu, 'tbl_chitietsolieutheobieu' => $tbl_chitietsolieutheobieu, 'tenloaisolieu' => $tenloaisolieu]);
     }
-    public function getDetailTemplate($id, $tblChitietbieumau)
-    {
-        $result = array();
-        foreach ($tblChitietbieumau as $item) {
-            if ($item->bieumau == $id) {
-                array_push($result, $item);
-            }
-        }
-
-        return $result;
-    }
-
-    public function getTreeChitieu($arrChitieu, $tblchitieu)
-    {
-        $result = array();
-        foreach ($arrChitieu as $item) {
-            $ParentId = $item->idcha;
-            $obj = new stdClass();
-            $obj->id = $item->id; // Id of chi tieu
-            $obj->ten = $item->tenchitieu;
-            $obj->donvi = $item->tendonvi;
-            $obj->idcha = $ParentId;
-            array_push($result, $obj);
-            $idFind = $ParentId;
-            if ($ParentId != null) {
-                // Find Parent node of this child node
-                while ($idFind != null) {
-                    $valueExist = $this->checkvalueExist($result, $idFind);
-                    if ($valueExist == false) {
-                        $chitieuf = $this->getInfochitieu($idFind, $tblchitieu);
-                        $obj = new stdClass();
-                        $obj->id = $chitieuf->id; // Id cua chi tieu;
-                        $obj->ten = $chitieuf->tenchitieu;
-                        $obj->donvi = $chitieuf->tendonvi;
-                        $obj->idcha = $chitieuf->idcha;
-                        array_push($result, $obj);
-                        $idFind = $chitieuf->idcha;
-                    } else {
-                        $idFind = null;
-                    }
-                }
-            }
-        }
-        return $result;
-    }
-    public function checkvalueExist($arr, $id)
-    {
-        foreach ($arr as $value) {
-            if ($value->id == $id) {
-                return true;
-            }
-        }
-        return false;
-    }
-    private function getInfochitieu($id, $tblchitieu)
-    {
-        $result = null;
-        foreach ($tblchitieu as $item) {
-            if ($item->id == $id) {
-                $result = $item;
-                break;
-            }
-        }
-        return $result;
-    }
+    
 }
