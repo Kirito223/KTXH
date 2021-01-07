@@ -489,7 +489,7 @@ async function loadBieumau() {
                                     location: location,
                                     year: nam.getFullYear(),
                                     bieumau: cbBieuMau.option("value"),
-                                    loaisolieu:loaisolieu,
+                                    loaisolieu: loaisolieu,
                                     namelocation: $("#cbHuyen")
                                         .dxSelectBox("instance")
                                         .option("text"),
@@ -512,20 +512,22 @@ async function loadBieumau() {
                                     diaban,
                                     cbBieuMau.option("text"),
                                     res.data
-                                );
-                                let para = new Map();
+                                ).then((value) => {
 
-                                Ultil.ShowReportData(
-                                    `../report/${item.filename}`,
-                                    res.data,
-                                    para,
-                                    "report",
-                                    true,
-                                    false
-                                );
+                                    console.log("viewReport", value);
+                                    let para = new Map();
+                                    Ultil.ShowReportData(
+                                        `../report/${item.filename}`,
+                                        value,
+                                        para,
+                                        "report",
+                                        true,
+                                        false
+                                    );
 
-                                Swal.close();
-                                $("#modelDanhsachBieumau").modal("toggle");
+                                    Swal.close();
+                                    $("#modelDanhsachBieumau").modal("toggle");
+                                });
                             })
                             .catch((err) => {
                                 Swal.close();

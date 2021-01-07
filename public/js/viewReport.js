@@ -218,7 +218,7 @@ function DataOfyearTH(year, chitieu, bieumau, loaisolieu) {
         }
     });
 
-    return total;
+    return Math.round(total);
 }
 
 function maxtotalDeltailBieumau(chitieu, listBieumau, year) {
@@ -233,7 +233,7 @@ function maxtotalDeltailBieumau(chitieu, listBieumau, year) {
         });
     });
 
-    return total;
+    return Math.round(total);
 }
 
 function findBieumau(idXa, bieumau, year, loaisolieu) {
