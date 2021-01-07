@@ -320,6 +320,69 @@ class ProductionPlanReportController extends Controller
         return response()->json($dulieu);
     }
 
+    public function getDataViewReport(Request $request)
+    {
+
+
+        $tblChitietbieumau = tbl_chitietbieumau::where('tbl_chitietbieumau.isDelete', 0)
+            ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select('tbl_chitietbieumau.id', 'tbl_chitietbieumau.bieumau', 'tbl_chitietbieumau.chitieu', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->get();
+        $tblsolieutheobieu = tbl_solieutheobieu::where('isDelete', 0)
+            ->get();
+        $tbl_chitietsolieutheobieu = tbl_chitietsolieutheobieu::where('isDelete', 0)->get();
+        $madonvi = Session::get('madonvi');
+        $donvicha = Session::get('donvicha');
+        //$madonvi = 94;
+        //$donvicha = 94;
+        if ($donvicha == null) $donvicha = $madonvi;
+        $currentYear = $request->year;
+        $periviousYear = $currentYear - 1;
+        // $otherYear = $periviousYear - 1;
+        $loaisolieu = $request->loaisolieu;
+        $tenloaisolieu = tbl_loaisolieu::where('id', $loaisolieu)->first();
+        $Form = $request->bieumau;
+        $FormController = new NhaplieusolieuController();
+        $listChitieu = $FormController->showDeltalBieumauTH($Form);
+        $Ultil = new ChitieuUltils();
+        $TreeChitieu = $Ultil->getTreeChitieu($listChitieu);
+        $dulieu = new stdClass();
+        $thongtin = new stdClass();
+        $Result = array();
+        $listXaofHuyen = null;
+        if ($request->diaban == 1) {
+            $listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $request->location)
+                ->get();
+        } else {
+            // Tong hop bao cao theo xa
+            $listXaofHuyen = tbl_donvihanhchinh::where('id', $request->location)
+                ->get();
+        }
+        $datacha = tbl_chitietbieumau::where('bieumau', '=', $Form)
+            ->where('tbl_chitieu.idcha', null)
+            ->join('tbl_chitieu', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            //->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->select(DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as id'), 'tbl_chitieu.tenchitieu', DB::raw('CAST(tbl_chitieu.idcha AS varchar(10)) as idcha'), 'tbl_donvitinh.tendonvi', DB::raw('CAST(tbl_chitieu.id AS varchar(10)) as strid'))
+            ->orderBy('tbl_chitieu.thutu', 'desc')
+            ->orderBy('tbl_chitieu.id')
+            ->groupBy('id', 'tbl_chitieu.tenchitieu', 'idcha', 'tbl_donvitinh.tendonvi', 'strid')
+            ->get();
+
+        $data = tbl_chitieu::with('childrenAll')->where('tbl_chitieu.IsDelete', 0)
+            ->where('tbl_chitietbieumau.bieumau', '=', $Form)
+            ->whereNotNull('tbl_chitieu.idcha')
+            ->join('tbl_chitietbieumau', 'tbl_chitieu.id', 'tbl_chitietbieumau.chitieu')
+            ->join('tbl_donvitinh', 'tbl_donvitinh.id', 'tbl_chitieu.donvitinh')
+            ->select('tbl_chitieu.id', 'tbl_chitieu.tenchitieu', 'tbl_chitieu.idcha', 'tbl_donvitinh.tendonvi')
+            ->orderBy('tbl_chitieu.thutu', 'desc')
+            ->orderBy('tbl_chitieu.id')
+            ->get();
+
+        return response()->json(['madonvi' => $madonvi, 'donvicha' => $donvicha, 'tree' => $TreeChitieu, 'listxahuyen' => $listXaofHuyen, 'data' => $data, 'datacha' => $datacha, 'tblChitietbieumau' => $tblChitietbieumau, 'tblsolieutheobieu' => $tblsolieutheobieu, 'tbl_chitietsolieutheobieu' => $tbl_chitietsolieutheobieu, 'tenloaisolieu' => $tenloaisolieu]);
+    }
+
     public function viewReport(Request $request)
     {
         ini_set('max_execution_time', 0);
@@ -1302,5 +1365,4 @@ class ProductionPlanReportController extends Controller
 
         return response()->json(['madonvi' => $madonvi, 'donvicha' => $donvicha, 'tree' => $TreeChitieu, 'listxahuyen' => $listXaofHuyen, 'data' => $data, 'datacha' => $datacha, 'tblChitietbieumau' => $tblChitietbieumau, 'tblsolieutheobieu' => $tblsolieutheobieu, 'tbl_chitietsolieutheobieu' => $tbl_chitietsolieutheobieu, 'tenloaisolieu' => $tenloaisolieu]);
     }
-    
 }

@@ -1,6 +1,7 @@
 import Ultil, { initBieumau } from "../js/Ultil.js";
 
 import { process } from "../js/viewProductPlanReport.js";
+import { processReport } from "../js/viewReport.js";
 var cbBieuMau;
 var danhsachBieumau;
 var idBieumau = undefined;
@@ -483,14 +484,12 @@ async function loadBieumau() {
                             .option("value");
                         axios
                             .post(
-                                "reportofProductionPlanreport",
+                                "getDataViewReport",
                                 {
                                     location: location,
                                     year: nam.getFullYear(),
                                     bieumau: cbBieuMau.option("value"),
-                                    loaisolieu: $("#cbSoLieu")
-                                        .dxSelectBox("instance")
-                                        .option("value"),
+                                    loaisolieu:loaisolieu,
                                     namelocation: $("#cbHuyen")
                                         .dxSelectBox("instance")
                                         .option("text"),
@@ -499,12 +498,23 @@ async function loadBieumau() {
                                 { timeout: 90000000 }
                             )
                             .then((res) => {
-                                Swal.close();
+                                processReport(
+                                    location,
+                                    nam.getFullYear(),
+                                    cbBieuMau.option("value"),
+                                    cbBieuMau.option("value"),
+                                    $("#cbSoLieu")
+                                        .dxSelectBox("instance")
+                                        .option("value"),
+                                    $("#cbHuyen")
+                                        .dxSelectBox("instance")
+                                        .option("text"),
+                                    diaban,
+                                    cbBieuMau.option("text"),
+                                    res.data
+                                );
                                 let para = new Map();
-                                /* para.set("date", nam.getDate());
-                                para.set("month", nam.getMonth() + 1);
-                                para.set("year", nam.getFullYear());
-                                para.set("location", province);*/
+
                                 Ultil.ShowReportData(
                                     `../report/${item.filename}`,
                                     res.data,
@@ -514,6 +524,7 @@ async function loadBieumau() {
                                     false
                                 );
 
+                                Swal.close();
                                 $("#modelDanhsachBieumau").modal("toggle");
                             })
                             .catch((err) => {

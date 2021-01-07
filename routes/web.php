@@ -391,3 +391,4 @@ Route::post('danhsachBieumau/del', 'danhsachbieumauController@delete');
 Route::get('/exportproductionvalue/view', 'Report\ProductionPlanReportController@viewExportProductionValue');
 Route::post('/exportproductionvalue/export', 'Report\ProductionPlanReportController@exportExcelProductionValue');
 Route::post('getDataDubao', 'Report\ProductionPlanReportController@getDataDubao');
+Route::post('getDataViewReport', 'Report\ProductionPlanReportController@getDataViewReport');
