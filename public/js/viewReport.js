@@ -198,9 +198,9 @@ function ghichuDataOfyear(year, xa, chitieu, bieumau, loaisolieu) {
             x.namnhap == year &&
             x.loaisolieu == loaisolieu
     );
-    listBieumau.forEach((item) => {
+    listBieumau.forEach((itemBM) => {
         let listGhichu = tbl_chitietsolieutheobieu.filter(
-            (x) => x.mabieusolieu == item.id && item.chitieu == chitieu
+            (x) => x.mabieusolieu == itemBM.bieumau && x.chitieu == chitieu
         );
         listGhichu.forEach((gc) => {
             ghichu += gc.ghichu;

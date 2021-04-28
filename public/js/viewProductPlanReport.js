@@ -11,7 +11,8 @@ export async function process(
     mau,
     loaisolieu,
     namelocation,
-    diaban, data
+    diaban,
+    data
 ) {
     let tree = data.tree;
     listLocation = data.listxahuyen;
@@ -24,7 +25,7 @@ export async function process(
     let mid = Math.round(lowBound + (upBound - lowBound) / 3);
 
     let endMidTwo = mid + mid;
-    let endTreeThree = endMidTwo + mid-1;
+    let endTreeThree = endMidTwo + mid - 1;
     let arr = await Promise.all([
         splitAarray(tree, 0, mid),
         splitAarray(tree, mid, endMidTwo),
@@ -86,7 +87,6 @@ export async function process(
     Swal.close();
     return dulieu;
 }
-
 
 function splitAarray(tree, endMid, endTree) {
     let result = [];
@@ -419,6 +419,7 @@ function SumdataXaTH(year, xa, chitieu, bieumau, loaisolieu) {
 }
 function ghichuDataOfyear(year, xa, chitieu, bieumau, loaisolieu) {
     let ghichu = "";
+
     let listBieumau = tblsolieutheobieu.filter(
         (x) =>
             x.donvinhap == xa &&
@@ -426,9 +427,10 @@ function ghichuDataOfyear(year, xa, chitieu, bieumau, loaisolieu) {
             x.namnhap == year &&
             x.loaisolieu == loaisolieu
     );
-    listBieumau.forEach((item) => {
+
+    listBieumau.forEach((itemBM) => {
         let listGhichu = tbl_chitietsolieutheobieu.filter(
-            (x) => x.mabieusolieu == item.id && item.chitieu == chitieu
+            (x) => x.mabieusolieu == itemBM.bieumau && x.chitieu == chitieu
         );
         listGhichu.forEach((gc) => {
             ghichu += gc.ghichu;

@@ -33,6 +33,7 @@ Route::post('updateAdminPassword', 'adminUserControllers@updateAdminPassword');
 Route::post('deladminUser', 'adminUserControllers@deladminUser');
 Route::post('resetAdminPassword', 'adminUserControllers@resetAdminPassword');
 
+
 //  kết thúc
 
 
@@ -64,17 +65,19 @@ Route::get('listchitieu', 'Quanlydanhmuc\Quanlychitieu\Chitieu@viewchitieu')->mi
 Route::get('getlistchitieu', 'Quanlydanhmuc\Quanlychitieu\Chitieu@getchitieu');
 Route::post('InsertChitieu', 'Quanlydanhmuc\Quanlychitieu\Chitieu@InsertChitieu');
 Route::post('InsertChitieuCon', 'Quanlydanhmuc\Quanlychitieu\Chitieu@InsertChitieuCon');
-Route::post('UpdateChitieu/{id}', 'Quanlydanhmuc\Quanlychitieu\Chitieu@UpdateChitieu');
+Route::post('UpdateChitieu', 'Quanlydanhmuc\Quanlychitieu\Chitieu@UpdateChitieu');
 Route::post('DelChitieu', 'Quanlydanhmuc\Quanlychitieu\Chitieu@DelChitieu');
 Route::post('DelChitieulistcheckbox', 'Quanlydanhmuc\Quanlychitieu\Chitieu@DelChitieulistcheckbox');
-
 //thung rac chi tieu
-
 Route::get('listchitieutrash', 'Quanlydanhmuc\Quanlychitieu\Chitieu@viewchitieutrash');
 Route::get('getlistchitieutrash', 'Quanlydanhmuc\Quanlychitieu\Chitieu@getchitieutrash');
 Route::post('RestoreChitieulistcheckbox', 'Quanlydanhmuc\Quanlychitieu\Chitieu@RestoreChitieulistcheckbox');
 Route::post('DelAllChitieulistcheckbox', 'Quanlydanhmuc\Quanlychitieu\Chitieu@DelAllChitieulistcheckbox');
-
+#Route::get('listchitieu', 'Chitieu@viewchitieu');
+#Route::get('getlistchitieu', 'Chitieu@getchitieu');
+#Route::post('InsertChitieu', 'Chitieu@InsertChitieu');
+#Route::post('UpdateChitieu', 'Chitieu@UpdateChitieu');
+#Route::post('DelChitieu', 'Chitieu@DelChitieu');
 
 Route::get('getSelectChitieu', 'Chitieu@getSlectChitieu');
 
@@ -164,6 +167,7 @@ Route::get('Download/{file}', 'DownloadController@DownloadFile');
 Route::get('danhsachDIaban/{tinh}', 'baocao\DanhsachBaocaoController@danhSachdonvihanhchinh');
 Route::get('danhsachkybaocao', 'tbl_kybaocaoController@kyBaocao');
 Route::get('danhsachdonvihanhchinh', 'tbl_donvihanhchinhController@danhsachdonvihanhchinh');
+Route::get('danhsachdonvihanhchinhnew', 'tbl_donvihanhchinhController@danhsachdonvihanhchinhnew');
 Route::get('danhsachPhongban', 'tbl_phongbanController@DanhsachPhongban');
 Route::get('getTemplateReport/{idTemplate}', 'quanlybieumau\NhaplieubaocaoController@getTemplate');
 Route::get('listDistrictWithProvince/{id}', 'tbl_quanhuyenController@listDistrictWithProvince');
@@ -198,8 +202,6 @@ Route::get('viewListNhaplieu', 'quanlybieumau\NhaplieusolieuController@viewListN
 Route::get('indexNhaplieuBieumau', 'quanlybieumau\NhaplieusolieuController@indexNhaplieuBieumau')->middleware('auth:taikhoan');
 Route::get('showEditBieumau/{id}', 'quanlybieumau\NhaplieusolieuController@showEditBieumau')->middleware('auth:taikhoan');
 Route::post('DelBieumau', 'quanlybieumau\NhaplieusolieuController@DelBieumau');
-
-
 Route::get('viewNhaplieuBieumau', 'quanlybieumau\NhaplieusolieuController@viewNhaplieu')->middleware('auth:taikhoan');
 Route::get('danhsachNhaplieuBieumau', 'quanlybieumau\NhaplieusolieuController@danhsachBieumauNhapLieu')->middleware('auth:taikhoan');
 Route::post('downloadFileBieumauNhapLieu', 'quanlybieumau\NhaplieusolieuController@DowloadExcel');
@@ -207,6 +209,7 @@ Route::post('importFileBieumauNhapLieu', 'quanlybieumau\NhaplieusolieuController
 Route::post('importDataBieumauNhapLieu', 'quanlybieumau\NhaplieusolieuController@importData');
 Route::post('importDataBieumauNhapLieutonghop', 'quanlybieumau\NhaplieusolieuController@importDatatonghop');
 Route::post('ListTempalatewithIdBieumau', 'quanlybieumau\NhaplieusolieuController@ListTempalatewithIdBieumau');
+Route::post('ListallBieumau', 'quanlybieumau\NhaplieusolieuController@ListallBieumau');
 Route::post('accumulateDataBieumau', 'quanlybieumau\NhaplieusolieuController@accumulateDataBieumau');
 Route::post('ListDataofLocation', 'quanlybieumau\NhaplieusolieuController@ListDataofLocation');
 Route::post('SumDataofLocation', 'quanlybieumau\NhaplieusolieuController@SumDataofLocation');
@@ -329,6 +332,9 @@ Route::get('listDonvihanhchinParent', 'tbl_donvihanhchinhController@listDonvihan
 
 Route::get('viewdubaoreport', 'Report\ProductionPlanReportController@viewdubaosolieu')->middleware('auth:taikhoan');
 Route::post('reportofdubao', 'Report\ProductionPlanReportController@viewReportdubao');
+//bo sung bao cao san xuat
+Route::get('viewsanxuatreport', 'Report\ProductionPlanReportController@viewsanxuat')->middleware('auth:taikhoan');
+Route::post('reportofsanxuat', 'Report\ProductionPlanReportController@viewReportsanxuat');
 
 Route::get('info', 'TestDataController@info');
 #code tu 20-05-2020
@@ -372,6 +378,7 @@ Route::get('downloadFileQD/{file}', 'quanlybieumau\NhaplieusolieuController@down
 Route::get('delFileQuyetdinh/{id}', 'quanlybieumau\NhaplieusolieuController@delFileQuyetdinh');
 
 #Phan bao cao san xuat cấp xã
+Route::get('danhsachTinh', 'Report\ProductionPlanReportController@danhsachTinh');
 Route::get('danhsachXa', 'Report\ProductionPlanReportController@danhsachXa');
 Route::get('danhsachHuyen', 'Report\ProductionPlanReportController@listDonvihanhchinParent');
 #Bao cao chi tieu kinh te tong hop huyen daksong
@@ -381,14 +388,9 @@ Route::post('tongbcDaksong', 'Report\SummaryIndicatorReportController@BaocaoDaks
 Route::get('chonbieumauSolieu/{id}', 'quanlybieumau\NhaplieubaocaoController@chonbieumausolieu');
 Route::get('getListBieumauNhaplieu/{bieumau}', 'quanlybieumau\NhaplieubaocaoController@getListBieumauNhaplieu');
 
-Route::get('danhsachBieumau/{id}', 'danhsachbieumauController@danhsachBieumau');
+Route::get('danhsachBieumau/{id}/{cap}', 'danhsachbieumauController@danhsachBieumau');
 Route::post('danhsachBieumau/store', 'danhsachbieumauController@store');
 Route::post('danhsachBieumau/edit', 'danhsachbieumauController@edit');
 Route::post('danhsachBieumau/del', 'danhsachbieumauController@delete');
-
-// Export Excel Production Value
-
-Route::get('/exportproductionvalue/view', 'Report\ProductionPlanReportController@viewExportProductionValue');
-Route::post('/exportproductionvalue/export', 'Report\ProductionPlanReportController@exportExcelProductionValue');
 Route::post('getDataDubao', 'Report\ProductionPlanReportController@getDataDubao');
 Route::post('getDataViewReport', 'Report\ProductionPlanReportController@getDataViewReport');
