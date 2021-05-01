@@ -336,7 +336,7 @@ Route::post('reportofdubao', 'Report\ProductionPlanReportController@viewReportdu
 Route::get('viewsanxuatreport', 'Report\ProductionPlanReportController@viewsanxuat')->middleware('auth:taikhoan');
 Route::post('reportofsanxuat', 'Report\ProductionPlanReportController@viewReportsanxuat');
 
-Route::get('info', 'TestDataController@info');
+
 #code tu 20-05-2020
 Route::get('/kehoachktxhxa', 'tbl_kehoachktxhxaController@index')->middleware('auth:taikhoan');
 Route::get('/kehoachktxhxa/{id}/details', 'tbl_kehoachktxhxaController@details')->middleware('auth:taikhoan');
@@ -394,3 +394,7 @@ Route::post('danhsachBieumau/edit', 'danhsachbieumauController@edit');
 Route::post('danhsachBieumau/del', 'danhsachbieumauController@delete');
 Route::post('getDataDubao', 'Report\ProductionPlanReportController@getDataDubao');
 Route::post('getDataViewReport', 'Report\ProductionPlanReportController@getDataViewReport');
+Route::post('loadDataReport', 'Report\ProductionPlanReportController@loadDataReport');
+
+
+Route::get('info', 'TestDataController@info');

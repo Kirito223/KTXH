@@ -14,14 +14,18 @@ class TestDataController extends Controller
 {
     public function info()
     {
-        
-      /* DB::table('tbl_solieutheobieu')->delete();
-       DB::table('tbl_chitietsolieutheobieu')->delete();
-       DB::table('tbl_bieumau')->delete();
-       DB::table('tbl_chitietbieumau')->delete();
-       DB::table('tbl_baocao')->delete();
-       DB::table('tbl_chitietbaocao')->delete();*/
-		$deltailTemplate = tbl_chitietbieumau::where('tbl_chitietbieumau.isDelete', '=', 0)->get();
-        return json_encode($deltailTemplate);
+        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . 'giaidoan_huyen.xlsx');
+        $sheet->setActiveSheetIndex(0);
+        $sheetSelect = $sheet->getActiveSheet();
+        $rowstart = 453;
+        $rowend = 484;
+        $arr = array();
+        for ($row = $rowstart; $row <= $rowend; $row++) {
+            $chitieu = $sheetSelect->getCellByColumnAndRow(2, $row)->getValue();
+            if (strlen($chitieu) > 0) {
+                array_push($arr, $chitieu);
+            }
+        }
+        return response()->json($arr);
     }
 }
