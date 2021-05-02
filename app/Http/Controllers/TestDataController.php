@@ -14,7 +14,7 @@ class TestDataController extends Controller
 {
     public function info()
     {
-        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . 'giaidoan_huyen.xlsx');
+        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . 'giaidoan_tinh.xlsx');
         $sheet->setActiveSheetIndex(0);
         $sheetSelect = $sheet->getActiveSheet();
         $rowstart = 453;

@@ -56,10 +56,7 @@ export default class xuatgiaidoan {
         let $TotalofTHnam2 = this.DataOfyearTH(year - 2, item, bieumau, 8);
 
         let $TotalofTHnam1 = this.DataOfyearTH(year - 1, item, bieumau, 8);
-        if ($TotalofTHnam1 > 0) {
-            debugger;
-        }
-
+        
         let $TotalofTHnam = this.DataOfyearTH(year, item, bieumau, 8);
 
         let $TotalofKHnam = this.DataOfyearTH(year, item, bieumau, 9);

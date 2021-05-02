@@ -509,8 +509,13 @@ function initEvent() {
                     .option("value");
 
                 let maubaocao = "giaidoan_huyen.xlsx";
-                if (diaban == 1) maubaocao = "giaidoan_huyen.xlsx";
-                if (diaban == 3) maubaocao = "giaidoan_tinh.xlsx";
+                if (diaban == 1) {
+                    maubaocao = "giaidoan_huyen.xlsx";
+                }
+
+                if (diaban == 3) {
+                    maubaocao = "giaidoan_tinh.xlsx";
+                }
 
                 axios
                     .get("danhsachBieumau/5/" + diaban)
@@ -1449,6 +1454,13 @@ function initEvent() {
                                 }
                             })
                             .then((baocao) => {
+                                if (diaban == 1) {
+                                    maubaocao = "giaidoan_huyen.xlsx";
+                                }
+
+                                if (diaban == 3) {
+                                    maubaocao = "giaidoan_tinh.xlsx";
+                                }
                                 axios
                                     .post("reportofsanxuat", {
                                         location: location,
