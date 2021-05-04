@@ -540,464 +540,952 @@ function initEvent() {
                                 diaban: diaban,
                             })
                             .then((res) => {
-                                // Bao cao giai doan huyen
-                                if (diaban == 1) {
-                                    let data = res.data;
-                                    // Tong Hop du lieu
-                                    let xuatbaocao = new xuatgiaidoan();
-                                    xuatbaocao.solieutheobieu =
-                                        data.solieutheobieu;
-                                    xuatbaocao.chitietsolieu =
-                                        data.chitietsolieutheobieu;
-                                    xuatbaocao.donvihanhchinh =
-                                        data.donvihanhchinh;
-                                    let donvicha = data.donvicha;
+                                // Bao cao giai doan cua huyen chupuh
+                                if (
+                                    res.data.donvicha == 20 ||
+                                    res.data.madonvi == 20
+                                ) {
+                                    if (diaban == 1) {
+                                        let data = res.data;
+                                        // Tong Hop du lieu
+                                        let xuatbaocao = new xuatgiaidoan();
+                                        xuatbaocao.solieutheobieu =
+                                            data.solieutheobieu;
+                                        xuatbaocao.chitietsolieu =
+                                            data.chitietsolieutheobieu;
+                                        xuatbaocao.donvihanhchinh =
+                                            data.donvihanhchinh;
+                                        let donvicha = data.donvicha;
 
-                                    let baocao = {
-                                        phan1: null,
-                                        phan2: null,
-                                        phan3: null,
-                                    };
+                                        let baocao = {
+                                            phan1: null,
+                                            phan2: null,
+                                            phan3: null,
+                                        };
 
-                                    // Danh sach chi tieu PHÒNG TÀI CHÍNH TỪ DÒNG
-                                    let bieumau = 223;
-                                    let chitieu = [
-                                        3029,
-                                        3077,
-                                        3030,
-                                        3031,
-                                        3032,
-                                        3033,
-                                        3069,
-                                        3070,
-                                        3034,
-                                        3071,
-                                        3074,
-                                        3075,
-                                        3076,
-                                        3072,
-                                        3035,
-                                        3073,
-                                        3159,
-                                        3160,
-                                        3161,
-                                    ];
-                                    let year = nam.getFullYear();
+                                        // Danh sach chi tieu PHÒNG TÀI CHÍNH TỪ DÒNG
+                                        let bieumau = 223;
+                                        let chitieu = [
+                                            3029,
+                                            3077,
+                                            3030,
+                                            3031,
+                                            3032,
+                                            3033,
+                                            3069,
+                                            3070,
+                                            3034,
+                                            3071,
+                                            3074,
+                                            3075,
+                                            3076,
+                                            3072,
+                                            3035,
+                                            3073,
+                                            3159,
+                                            3160,
+                                            3161,
+                                        ];
+                                        let year = nam.getFullYear();
 
-                                    let Phan1 = [];
-                                    let mid = Math.floor(
-                                        (chitieu.length - 1) / 2
-                                    );
-                                    let indexStart = 0;
-                                    let indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
+                                        let Phan1 = [];
+                                        let mid = Math.floor(
+                                            (chitieu.length - 1) / 2
                                         );
+                                        let indexStart = 0;
+                                        let indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan1[indexStart] = elementStart;
+                                            Phan1[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+                                        baocao.phan1 = Phan1;
+
+                                        //CHỈ TIÊU XÃ HỘI HUYỆN
+                                        bieumau = 237;
+                                        chitieu = [
+                                            1633,
+                                            1642,
+                                            2998,
+                                            2999,
+                                            3000,
+                                            3001,
+                                            3023,
+                                            3002,
+                                            3003,
+                                            3004,
+                                            3005,
+                                            3006,
+                                            3007,
+                                            3008,
+                                            3009,
+                                            3010,
+                                            3011,
+                                            3012,
+                                            3013,
+                                            3014,
+                                            3015,
+                                            3016,
+                                            3017,
+                                            3020,
+                                            3021,
+                                            3018,
+                                            3019,
+                                        ];
+
+                                        let Phan2 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
                                         );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        Phan1[indexStart] = elementStart;
-                                        Phan1[indexEnd] = elementEnd;
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        indexStart++;
-                                        indexEnd++;
+                                            Phan2[indexStart] = elementStart;
+                                            Phan2[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan2 = Phan2;
+
+                                        //NÔNG LÂM THỦY SẢN
+
+                                        bieumau = 277;
+                                        chitieu = [
+                                            2980,
+                                            2640,
+                                            2641,
+                                            2642,
+                                            2643,
+                                            2644,
+                                            2645,
+                                            2646,
+                                            2647,
+                                            2648,
+                                            2649,
+                                            2650,
+                                            2651,
+                                            2652,
+                                            2653,
+                                            2654,
+                                            2655,
+                                            2672,
+                                            2679,
+                                            2680,
+                                            2673,
+                                            2684,
+                                            2674,
+                                            2675,
+                                            2676,
+                                            2677,
+                                            2678,
+                                            2323,
+                                            2354,
+                                            2355,
+                                            2356,
+                                            2357,
+                                            2360,
+                                            2361,
+                                            2362,
+                                            2358,
+                                            2363,
+                                            2364,
+                                            2365,
+                                            2366,
+                                            2367,
+                                            2368,
+                                            2369,
+                                            2370,
+                                            2371,
+                                            2374,
+                                            2375,
+                                            2376,
+                                            2378,
+                                            2379,
+                                            2380,
+                                            2381,
+                                            2382,
+                                            2383,
+                                            2384,
+                                            2385,
+                                            2386,
+                                            2387,
+                                            2388,
+                                            2389,
+                                            2390,
+                                            2391,
+                                            2392,
+                                            2393,
+                                            2394,
+                                            2395,
+                                            2396,
+                                            2397,
+                                            2398,
+                                            2399,
+                                            2400,
+                                            2401,
+                                            2402,
+                                            2403,
+                                            2404,
+                                            2405,
+                                            2406,
+                                            2407,
+                                            2408,
+                                            2409,
+                                            2410,
+                                            2411,
+                                            2412,
+                                            2413,
+                                            2414,
+                                            2415,
+                                            2416,
+                                            2417,
+                                            2348,
+                                            2418,
+                                            2420,
+                                            2421,
+                                            2423,
+                                            2424,
+                                            2425,
+                                            2426,
+                                            2349,
+                                            2428,
+                                            2429,
+                                            2430,
+                                            2431,
+                                            2432,
+                                            2433,
+                                            2434,
+                                            2435,
+                                            2436,
+                                            2437,
+                                            2438,
+                                            2442,
+                                            2443,
+                                            2444,
+                                            2445,
+                                            2350,
+                                            2449,
+                                            2450,
+                                            2451,
+                                            2452,
+                                            2453,
+                                            2454,
+                                            2330,
+                                            2681,
+                                            2682,
+                                            2683,
+                                            2331,
+                                            2458,
+                                            2459,
+                                            2460,
+                                            2477,
+                                            2478,
+                                            2479,
+                                            2527,
+                                            2528,
+                                            2529,
+                                            1625,
+                                            2594,
+                                            1626,
+                                            2599,
+                                            1627,
+                                        ];
+
+                                        let Phan3 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan3[indexStart] = elementStart;
+                                            Phan3[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan3 = Phan3;
+
+                                        //PHÒNG KINH TẾ HẠ TẦNG
+                                        bieumau = 220;
+                                        chitieu = [
+                                            1704,
+                                            1707,
+                                            1708,
+                                            1705,
+                                            1709,
+                                            1710,
+                                            1713,
+                                            1714,
+                                            1711,
+                                            1715,
+                                            1716,
+                                            1706,
+                                            1717,
+                                            1718,
+                                            1721,
+                                            1722,
+                                            1719,
+                                            1720,
+                                            1731,
+                                            1562,
+                                            1566,
+                                            1567,
+                                            1606,
+                                            1607,
+                                            1608,
+                                            1609,
+                                            1610,
+                                            1612,
+                                            1616,
+                                            1617,
+                                            1618,
+                                            1619,
+                                            1620,
+                                            1621,
+                                            1622,
+                                            1623,
+                                            5129,
+                                        ];
+
+                                        let Phan4 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan4[indexStart] = elementStart;
+                                            Phan4[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan4 = Phan4;
+
+                                        //CHỈ TIÊU XÃ HỘI TỈNH
+                                        bieumau = 237;
+                                        chitieu = [
+                                            3164,
+                                            3165,
+                                            3166,
+                                            3167,
+                                            3168,
+                                            3169,
+                                            3170,
+                                            3171,
+                                            3172,
+                                            3173,
+                                            3174,
+                                            3175,
+                                            3176,
+                                            3177,
+                                            3178,
+                                            3179,
+                                            3180,
+                                            3181,
+                                            3182,
+                                            3183,
+                                            3184,
+                                            3185,
+                                            3186,
+                                            3187,
+                                            3188,
+                                            3190,
+                                            3191,
+                                            3192,
+                                            3193,
+                                            3194,
+                                            3195,
+                                            3196,
+                                        ];
+
+                                        let Phan5 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan5[indexStart] = elementStart;
+                                            Phan5[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan5 = Phan5;
+                                        return {
+                                            baocao: baocao,
+                                            donvicha: donvicha,
+                                            madonvi: madonvi,
+                                        };
                                     }
-                                    baocao.phan1 = Phan1;
+                                    // Bao cao giai doan tinh
+                                    if (diaban == 3) {
+                                        let data = res.data;
+                                        // Tong Hop du lieu
+                                        let xuatbaocao = new xuatgiaidoan();
+                                        xuatbaocao.solieutheobieu =
+                                            data.solieutheobieu;
+                                        xuatbaocao.chitietsolieu =
+                                            data.chitietsolieutheobieu;
+                                        xuatbaocao.donvihanhchinh =
+                                            data.donvihanhchinh;
+                                        let donvicha = data.donvicha;
 
-                                    //CHỈ TIÊU XÃ HỘI HUYỆN
-                                    bieumau = 237;
-                                    chitieu = [
-                                        1633,
-                                        1642,
-                                        2998,
-                                        2999,
-                                        3000,
-                                        3001,
-                                        3023,
-                                        3002,
-                                        3003,
-                                        3004,
-                                        3005,
-                                        3006,
-                                        3007,
-                                        3008,
-                                        3009,
-                                        3010,
-                                        3011,
-                                        3012,
-                                        3013,
-                                        3014,
-                                        3015,
-                                        3016,
-                                        3017,
-                                        3020,
-                                        3021,
-                                        3018,
-                                        3019,
-                                    ];
+                                        let baocao = {
+                                            phan1: null,
+                                            phan2: null,
+                                            phan3: null,
+                                        };
 
-                                    let Phan2 = [];
-                                    mid = Math.floor((chitieu.length - 1) / 2);
-                                    indexStart = 0;
-                                    indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
+                                        // Danh sach chi tieu PHÒNG TÀI CHÍNH TỪ DÒNG
+                                        let bieumau = 223;
+                                        let chitieu = [
+                                            3029,
+                                            3077,
+                                            3030,
+                                            3031,
+                                            3032,
+                                            3033,
+                                            3069,
+                                            3070,
+                                            3034,
+                                            3071,
+                                            3074,
+                                            3075,
+                                            3076,
+                                            3072,
+                                            3035,
+                                            3073,
+                                            3159,
+                                            3160,
+                                            3161,
+                                        ];
+                                        let year = nam.getFullYear();
+
+                                        let Phan1 = [];
+                                        let mid = Math.floor(
+                                            (chitieu.length - 1) / 2
                                         );
+                                        let indexStart = 0;
+                                        let indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan1[indexStart] = elementStart;
+                                            Phan1[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+                                        baocao.phan1 = Phan1;
+
+                                        //CHỈ TIÊU XÃ HỘI HUYỆN
+                                        bieumau = 237;
+                                        chitieu = [
+                                            1633,
+                                            1642,
+                                            2998,
+                                            2999,
+                                            3000,
+                                            3001,
+                                            3023,
+                                            3002,
+                                            3003,
+                                            3004,
+                                            3005,
+                                            3006,
+                                            3007,
+                                            3008,
+                                            3009,
+                                            3010,
+                                            3011,
+                                            3012,
+                                            3013,
+                                            3014,
+                                            3015,
+                                            3016,
+                                            3017,
+                                            3020,
+                                            3021,
+                                            3018,
+                                            3019,
+                                        ];
+
+                                        let Phan2 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
                                         );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        Phan2[indexStart] = elementStart;
-                                        Phan2[indexEnd] = elementEnd;
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
 
-                                        indexStart++;
-                                        indexEnd++;
+                                            Phan2[indexStart] = elementStart;
+                                            Phan2[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan2 = Phan2;
+
+                                        //NÔNG LÂM THỦY SẢN
+
+                                        bieumau = 277;
+                                        chitieu = [
+                                            2980,
+                                            2640,
+                                            2641,
+                                            2642,
+                                            2643,
+                                            2644,
+                                            2645,
+                                            2646,
+                                            2647,
+                                            2648,
+                                            2649,
+                                            2650,
+                                            2651,
+                                            2652,
+                                            2653,
+                                            2654,
+                                            2655,
+                                            2672,
+                                            2679,
+                                            2680,
+                                            2673,
+                                            2684,
+                                            2674,
+                                            2675,
+                                            2676,
+                                            2677,
+                                            2678,
+                                            2323,
+                                            2354,
+                                            2355,
+                                            2356,
+                                            2357,
+                                            2360,
+                                            2361,
+                                            2362,
+                                            2358,
+                                            2363,
+                                            2364,
+                                            2365,
+                                            2366,
+                                            2367,
+                                            2368,
+                                            2369,
+                                            2370,
+                                            2371,
+                                            2374,
+                                            2375,
+                                            2376,
+                                            2378,
+                                            2379,
+                                            2380,
+                                            2381,
+                                            2382,
+                                            2383,
+                                            2384,
+                                            2385,
+                                            2386,
+                                            2387,
+                                            2388,
+                                            2389,
+                                            2390,
+                                            2391,
+                                            2392,
+                                            2393,
+                                            2394,
+                                            2395,
+                                            2396,
+                                            2397,
+                                            2398,
+                                            2399,
+                                            2400,
+                                            2401,
+                                            2402,
+                                            2403,
+                                            2404,
+                                            2405,
+                                            2406,
+                                            2407,
+                                            2408,
+                                            2409,
+                                            2410,
+                                            2411,
+                                            2412,
+                                            2413,
+                                            2414,
+                                            2415,
+                                            2416,
+                                            2417,
+                                            2348,
+                                            2418,
+                                            2420,
+                                            2421,
+                                            2423,
+                                            2424,
+                                            2425,
+                                            2426,
+                                            2349,
+                                            2428,
+                                            2429,
+                                            2430,
+                                            2431,
+                                            2432,
+                                            2433,
+                                            2434,
+                                            2435,
+                                            2436,
+                                            2437,
+                                            2438,
+                                            2442,
+                                            2443,
+                                            2444,
+                                            2445,
+                                            2350,
+                                            2449,
+                                            2450,
+                                            2451,
+                                            2452,
+                                            2453,
+                                            2454,
+                                            2330,
+                                            2681,
+                                            2682,
+                                            2683,
+                                            2331,
+                                            2458,
+                                            2459,
+                                            2460,
+                                            2477,
+                                            2478,
+                                            2479,
+                                            2527,
+                                            2528,
+                                            2529,
+                                            1625,
+                                            2594,
+                                            1626,
+                                            2599,
+                                            1627,
+                                        ];
+
+                                        let Phan3 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan3[indexStart] = elementStart;
+                                            Phan3[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan3 = Phan3;
+
+                                        //PHÒNG KINH TẾ HẠ TẦNG
+                                        bieumau = 220;
+                                        chitieu = [
+                                            1704,
+                                            1707,
+                                            1708,
+                                            1705,
+                                            1709,
+                                            1710,
+                                            1713,
+                                            1714,
+                                            1711,
+                                            1715,
+                                            1716,
+                                            1706,
+                                            1717,
+                                            1718,
+                                            1721,
+                                            1722,
+                                            1719,
+                                            1720,
+                                            1731,
+                                            1562,
+                                            1566,
+                                            1567,
+                                            1606,
+                                            1607,
+                                            1608,
+                                            1609,
+                                            1610,
+                                            1612,
+                                            1616,
+                                            1617,
+                                            1618,
+                                            1619,
+                                            1620,
+                                            1621,
+                                            1622,
+                                            1623,
+                                            5129,
+                                        ];
+
+                                        let Phan4 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan4[indexStart] = elementStart;
+                                            Phan4[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan4 = Phan4;
+
+                                        //CHỈ TIÊU XÃ HỘI TỈNH
+                                        bieumau = 237;
+                                        chitieu = [
+                                            3164,
+                                            3165,
+                                            3166,
+                                            3167,
+                                            3168,
+                                            3169,
+                                            3170,
+                                            3171,
+                                            3172,
+                                            3173,
+                                            3174,
+                                            3175,
+                                            3176,
+                                            3177,
+                                            3178,
+                                            3179,
+                                            3180,
+                                            3181,
+                                            3182,
+                                            3183,
+                                            3184,
+                                            3185,
+                                            3186,
+                                            3187,
+                                            3188,
+                                            3190,
+                                            3191,
+                                            3192,
+                                            3193,
+                                            3194,
+                                            3195,
+                                            3196,
+                                        ];
+
+                                        let Phan5 = [];
+                                        mid = Math.floor(
+                                            (chitieu.length - 1) / 2
+                                        );
+                                        indexStart = 0;
+                                        indexEnd = mid;
+                                        while (
+                                            indexStart < mid &&
+                                            indexEnd < chitieu.length
+                                        ) {
+                                            let elementStart = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexStart],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            let elementEnd = xuatbaocao.total(
+                                                year,
+                                                chitieu[indexEnd],
+                                                bieumau,
+                                                donvicha
+                                            );
+
+                                            Phan5[indexStart] = elementStart;
+                                            Phan5[indexEnd] = elementEnd;
+
+                                            indexStart++;
+                                            indexEnd++;
+                                        }
+
+                                        baocao.phan5 = Phan5;
+                                        return {
+                                            baocao: baocao,
+                                            donvicha: donvicha,
+                                            madonvi: madonvi,
+                                        };
                                     }
-
-                                    baocao.phan2 = Phan2;
-
-                                    //NÔNG LÂM THỦY SẢN
-
-                                    bieumau = 277;
-                                    chitieu = [
-                                        2980,
-                                        2640,
-                                        2641,
-                                        2642,
-                                        2643,
-                                        2644,
-                                        2645,
-                                        2646,
-                                        2647,
-                                        2648,
-                                        2649,
-                                        2650,
-                                        2651,
-                                        2652,
-                                        2653,
-                                        2654,
-                                        2655,
-                                        2672,
-                                        2679,
-                                        2680,
-                                        2673,
-                                        2684,
-                                        2674,
-                                        2675,
-                                        2676,
-                                        2677,
-                                        2678,
-                                        2323,
-                                        2354,
-                                        2355,
-                                        2356,
-                                        2357,
-                                        2360,
-                                        2361,
-                                        2362,
-                                        2358,
-                                        2363,
-                                        2364,
-                                        2365,
-                                        2366,
-                                        2367,
-                                        2368,
-                                        2369,
-                                        2370,
-                                        2371,
-                                        2374,
-                                        2375,
-                                        2376,
-                                        2378,
-                                        2379,
-                                        2380,
-                                        2381,
-                                        2382,
-                                        2383,
-                                        2384,
-                                        2385,
-                                        2386,
-                                        2387,
-                                        2388,
-                                        2389,
-                                        2390,
-                                        2391,
-                                        2392,
-                                        2393,
-                                        2394,
-                                        2395,
-                                        2396,
-                                        2397,
-                                        2398,
-                                        2399,
-                                        2400,
-                                        2401,
-                                        2402,
-                                        2403,
-                                        2404,
-                                        2405,
-                                        2406,
-                                        2407,
-                                        2408,
-                                        2409,
-                                        2410,
-                                        2411,
-                                        2412,
-                                        2413,
-                                        2414,
-                                        2415,
-                                        2416,
-                                        2417,
-                                        2348,
-                                        2418,
-                                        2420,
-                                        2421,
-                                        2423,
-                                        2424,
-                                        2425,
-                                        2426,
-                                        2349,
-                                        2428,
-                                        2429,
-                                        2430,
-                                        2431,
-                                        2432,
-                                        2433,
-                                        2434,
-                                        2435,
-                                        2436,
-                                        2437,
-                                        2438,
-                                        2442,
-                                        2443,
-                                        2444,
-                                        2445,
-                                        2350,
-                                        2449,
-                                        2450,
-                                        2451,
-                                        2452,
-                                        2453,
-                                        2454,
-                                        2330,
-                                        2681,
-                                        2682,
-                                        2683,
-                                        2331,
-                                        2458,
-                                        2459,
-                                        2460,
-                                        2477,
-                                        2478,
-                                        2479,
-                                        2527,
-                                        2528,
-                                        2529,
-                                        1625,
-                                        2594,
-                                        1626,
-                                        2599,
-                                        1627,
-                                    ];
-
-                                    let Phan3 = [];
-                                    mid = Math.floor((chitieu.length - 1) / 2);
-                                    indexStart = 0;
-                                    indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        Phan3[indexStart] = elementStart;
-                                        Phan3[indexEnd] = elementEnd;
-
-                                        indexStart++;
-                                        indexEnd++;
-                                    }
-
-                                    baocao.phan3 = Phan3;
-
-                                    //PHÒNG KINH TẾ HẠ TẦNG
-                                    bieumau = 220;
-                                    chitieu = [
-                                        1704,
-                                        1707,
-                                        1708,
-                                        1705,
-                                        1709,
-                                        1710,
-                                        1713,
-                                        1714,
-                                        1711,
-                                        1715,
-                                        1716,
-                                        1706,
-                                        1717,
-                                        1718,
-                                        1721,
-                                        1722,
-                                        1719,
-                                        1720,
-                                        1731,
-                                        1562,
-                                        1566,
-                                        1567,
-                                        1606,
-                                        1607,
-                                        1608,
-                                        1609,
-                                        1610,
-                                        1612,
-                                        1616,
-                                        1617,
-                                        1618,
-                                        1619,
-                                        1620,
-                                        1621,
-                                        1622,
-                                        1623,
-                                        5129,
-                                    ];
-
-                                    let Phan4 = [];
-                                    mid = Math.floor((chitieu.length - 1) / 2);
-                                    indexStart = 0;
-                                    indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        Phan4[indexStart] = elementStart;
-                                        Phan4[indexEnd] = elementEnd;
-
-                                        indexStart++;
-                                        indexEnd++;
-                                    }
-
-                                    baocao.phan4 = Phan4;
-
-                                    //CHỈ TIÊU XÃ HỘI TỈNH
-                                    bieumau = 237;
-                                    chitieu = [
-                                        3164,
-                                        3165,
-                                        3166,
-                                        3167,
-                                        3168,
-                                        3169,
-                                        3170,
-                                        3171,
-                                        3172,
-                                        3173,
-                                        3174,
-                                        3175,
-                                        3176,
-                                        3177,
-                                        3178,
-                                        3179,
-                                        3180,
-                                        3181,
-                                        3182,
-                                        3183,
-                                        3184,
-                                        3185,
-                                        3186,
-                                        3187,
-                                        3188,
-                                        3190,
-                                        3191,
-                                        3192,
-                                        3193,
-                                        3194,
-                                        3195,
-                                        3196,
-                                    ];
-
-                                    let Phan5 = [];
-                                    mid = Math.floor((chitieu.length - 1) / 2);
-                                    indexStart = 0;
-                                    indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        Phan5[indexStart] = elementStart;
-                                        Phan5[indexEnd] = elementEnd;
-
-                                        indexStart++;
-                                        indexEnd++;
-                                    }
-
-                                    baocao.phan5 = Phan5;
-                                    return baocao;
                                 }
-                                // Bao cao giai doan tinh
-                                if (diaban == 3) {
+
+                                if (
+                                    res.data.donvicha == 60 ||
+                                    res.data.madonvi == 60
+                                ) {
                                     let data = res.data;
                                     // Tong Hop du lieu
                                     let xuatbaocao = new xuatgiaidoan();
@@ -1015,28 +1503,100 @@ function initEvent() {
                                         phan3: null,
                                     };
 
-                                    // Danh sach chi tieu PHÒNG TÀI CHÍNH TỪ DÒNG
-                                    let bieumau = 223;
+                                    // nong lam thuy san
+                                    let bieumau = 255;
                                     let chitieu = [
-                                        3029,
-                                        3077,
-                                        3030,
-                                        3031,
-                                        3032,
-                                        3033,
-                                        3069,
-                                        3070,
-                                        3034,
-                                        3071,
-                                        3074,
-                                        3075,
-                                        3076,
-                                        3072,
-                                        3035,
-                                        3073,
-                                        3159,
-                                        3160,
-                                        3161,
+                                        2194,
+                                        2195,
+                                        2196,
+                                        3252,
+                                        2197,
+                                        2198,
+                                        2200,
+                                        2201,
+                                        2202,
+                                        2203,
+                                        2204,
+                                        2205,
+                                        2206,
+                                        2207,
+                                        2208,
+                                        2850,
+                                        2199,
+                                        3253,
+                                        3254,
+                                        2851,
+                                        2852,
+                                        2853,
+                                        2854,
+                                        2855,
+                                        2856,
+                                        2857,
+                                        2858,
+                                        2859,
+                                        2945,
+                                        2716,
+                                        2717,
+                                        2718,
+                                        2719,
+                                        2720,
+                                        2721,
+                                        2722,
+                                        2723,
+                                        2724,
+                                        2725,
+                                        2726,
+                                        2727,
+                                        2728,
+                                        2864,
+                                        2865,
+                                        2694,
+                                        2806,
+                                        2807,
+                                        2808,
+                                        2809,
+                                        2810,
+                                        2811,
+                                        2812,
+                                        2813,
+                                        2695,
+                                        2814,
+                                        2816,
+                                        2815,
+                                        2817,
+                                        2818,
+                                        2820,
+                                        2824,
+                                        2825,
+                                        2827,
+                                        2828,
+                                        2829,
+                                        2830,
+                                        2821,
+                                        2831,
+                                        2832,
+                                        2833,
+                                        2834,
+                                        2835,
+                                        2836,
+                                        2837,
+                                        2838,
+                                        2839,
+                                        2842,
+                                        2822,
+                                        2840,
+                                        2841,
+                                        2866,
+                                        2843,
+                                        2844,
+                                        2823,
+                                        2845,
+                                        2846,
+                                        2847,
+                                        2790,
+                                        2791,
+                                        2792,
+                                        2793,
                                     ];
                                     let year = nam.getFullYear();
 
@@ -1072,36 +1632,39 @@ function initEvent() {
                                     }
                                     baocao.phan1 = Phan1;
 
-                                    //CHỈ TIÊU XÃ HỘI HUYỆN
-                                    bieumau = 237;
+                                    bieumau = 226;
                                     chitieu = [
-                                        1633,
-                                        1642,
-                                        2998,
-                                        2999,
-                                        3000,
-                                        3001,
-                                        3023,
-                                        3002,
-                                        3003,
-                                        3004,
-                                        3005,
-                                        3006,
-                                        3007,
-                                        3008,
-                                        3009,
-                                        3010,
-                                        3011,
-                                        3012,
-                                        3013,
-                                        3014,
-                                        3015,
-                                        3016,
-                                        3017,
-                                        3020,
-                                        3021,
-                                        3018,
-                                        3019,
+                                        2209,
+                                        2210,
+                                        2211,
+                                        2212,
+                                        2213,
+                                        2214,
+                                        2215,
+                                        2216,
+                                        2217,
+                                        2218,
+                                        2219,
+                                        2220,
+                                        2221,
+                                        2222,
+                                        2223,
+                                        2224,
+                                        2225,
+                                        2226,
+                                        2227,
+                                        2228,
+                                        2229,
+                                        2230,
+                                        2231,
+                                        2232,
+                                        2233,
+                                        2234,
+                                        2235,
+                                        2236,
+                                        2237,
+                                        2238,
+                                        2239,
                                     ];
 
                                     let Phan2 = [];
@@ -1135,150 +1698,8 @@ function initEvent() {
 
                                     baocao.phan2 = Phan2;
 
-                                    //NÔNG LÂM THỦY SẢN
-
-                                    bieumau = 277;
-                                    chitieu = [
-                                        2980,
-                                        2640,
-                                        2641,
-                                        2642,
-                                        2643,
-                                        2644,
-                                        2645,
-                                        2646,
-                                        2647,
-                                        2648,
-                                        2649,
-                                        2650,
-                                        2651,
-                                        2652,
-                                        2653,
-                                        2654,
-                                        2655,
-                                        2672,
-                                        2679,
-                                        2680,
-                                        2673,
-                                        2684,
-                                        2674,
-                                        2675,
-                                        2676,
-                                        2677,
-                                        2678,
-                                        2323,
-                                        2354,
-                                        2355,
-                                        2356,
-                                        2357,
-                                        2360,
-                                        2361,
-                                        2362,
-                                        2358,
-                                        2363,
-                                        2364,
-                                        2365,
-                                        2366,
-                                        2367,
-                                        2368,
-                                        2369,
-                                        2370,
-                                        2371,
-                                        2374,
-                                        2375,
-                                        2376,
-                                        2378,
-                                        2379,
-                                        2380,
-                                        2381,
-                                        2382,
-                                        2383,
-                                        2384,
-                                        2385,
-                                        2386,
-                                        2387,
-                                        2388,
-                                        2389,
-                                        2390,
-                                        2391,
-                                        2392,
-                                        2393,
-                                        2394,
-                                        2395,
-                                        2396,
-                                        2397,
-                                        2398,
-                                        2399,
-                                        2400,
-                                        2401,
-                                        2402,
-                                        2403,
-                                        2404,
-                                        2405,
-                                        2406,
-                                        2407,
-                                        2408,
-                                        2409,
-                                        2410,
-                                        2411,
-                                        2412,
-                                        2413,
-                                        2414,
-                                        2415,
-                                        2416,
-                                        2417,
-                                        2348,
-                                        2418,
-                                        2420,
-                                        2421,
-                                        2423,
-                                        2424,
-                                        2425,
-                                        2426,
-                                        2349,
-                                        2428,
-                                        2429,
-                                        2430,
-                                        2431,
-                                        2432,
-                                        2433,
-                                        2434,
-                                        2435,
-                                        2436,
-                                        2437,
-                                        2438,
-                                        2442,
-                                        2443,
-                                        2444,
-                                        2445,
-                                        2350,
-                                        2449,
-                                        2450,
-                                        2451,
-                                        2452,
-                                        2453,
-                                        2454,
-                                        2330,
-                                        2681,
-                                        2682,
-                                        2683,
-                                        2331,
-                                        2458,
-                                        2459,
-                                        2460,
-                                        2477,
-                                        2478,
-                                        2479,
-                                        2527,
-                                        2528,
-                                        2529,
-                                        1625,
-                                        2594,
-                                        1626,
-                                        2599,
-                                        1627,
-                                    ];
-
+                                    bieumau = 250;
+                                    chitieu = [3200, 2961, 3201, 3202];
                                     let Phan3 = [];
                                     mid = Math.floor((chitieu.length - 1) / 2);
                                     indexStart = 0;
@@ -1310,48 +1731,39 @@ function initEvent() {
 
                                     baocao.phan3 = Phan3;
 
-                                    //PHÒNG KINH TẾ HẠ TẦNG
-                                    bieumau = 220;
+                                    bieumau = 227;
                                     chitieu = [
-                                        1704,
-                                        1707,
-                                        1708,
-                                        1705,
-                                        1709,
-                                        1710,
-                                        1713,
-                                        1714,
-                                        1711,
-                                        1715,
-                                        1716,
-                                        1706,
-                                        1717,
-                                        1718,
-                                        1721,
-                                        1722,
-                                        1719,
-                                        1720,
-                                        1731,
-                                        1562,
-                                        1566,
-                                        1567,
-                                        1606,
-                                        1607,
-                                        1608,
-                                        1609,
-                                        1610,
-                                        1612,
-                                        1616,
-                                        1617,
-                                        1618,
-                                        1619,
-                                        1620,
-                                        1621,
-                                        1622,
-                                        1623,
-                                        5129,
+                                        2946,
+                                        2947,
+                                        2948,
+                                        2949,
+                                        2950,
+                                        2951,
+                                        2952,
+                                        2953,
+                                        2954,
+                                        2955,
+                                        2956,
+                                        2957,
+                                        2958,
+                                        2959,
+                                        2979,
+                                        2964,
+                                        2965,
+                                        2966,
+                                        2967,
+                                        2968,
+                                        2969,
+                                        2970,
+                                        2971,
+                                        2972,
+                                        2973,
+                                        2974,
+                                        2975,
+                                        2976,
+                                        2977,
+                                        2978,
                                     ];
-
                                     let Phan4 = [];
                                     mid = Math.floor((chitieu.length - 1) / 2);
                                     indexStart = 0;
@@ -1383,83 +1795,32 @@ function initEvent() {
 
                                     baocao.phan4 = Phan4;
 
-                                    //CHỈ TIÊU XÃ HỘI TỈNH
-                                    bieumau = 237;
-                                    chitieu = [
-                                        3164,
-                                        3165,
-                                        3166,
-                                        3167,
-                                        3168,
-                                        3169,
-                                        3170,
-                                        3171,
-                                        3172,
-                                        3173,
-                                        3174,
-                                        3175,
-                                        3176,
-                                        3177,
-                                        3178,
-                                        3179,
-                                        3180,
-                                        3181,
-                                        3182,
-                                        3183,
-                                        3184,
-                                        3185,
-                                        3186,
-                                        3187,
-                                        3188,
-                                        3190,
-                                        3191,
-                                        3192,
-                                        3193,
-                                        3194,
-                                        3195,
-                                        3196,
-                                    ];
-
-                                    let Phan5 = [];
-                                    mid = Math.floor((chitieu.length - 1) / 2);
-                                    indexStart = 0;
-                                    indexEnd = mid;
-                                    while (
-                                        indexStart < mid &&
-                                        indexEnd < chitieu.length
-                                    ) {
-                                        let elementStart = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexStart],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        let elementEnd = xuatbaocao.total(
-                                            year,
-                                            chitieu[indexEnd],
-                                            bieumau,
-                                            donvicha
-                                        );
-
-                                        Phan5[indexStart] = elementStart;
-                                        Phan5[indexEnd] = elementEnd;
-
-                                        indexStart++;
-                                        indexEnd++;
-                                    }
-
-                                    baocao.phan5 = Phan5;
-                                    return baocao;
+                                    return {
+                                        baocao: baocao,
+                                        donvicha: donvicha,
+                                        madonvi: madonvi,
+                                    };
                                 }
                             })
                             .then((baocao) => {
-                                if (diaban == 1) {
-                                    maubaocao = "giaidoan_huyen.xlsx";
-                                }
+                                console.log(baocao);
+                                if (
+                                    baocao.donvicha == 20 ||
+                                    baocao.madonvi == 20
+                                ) {
+                                    if (diaban == 1) {
+                                        maubaocao = "giaidoan_huyen.xlsx";
+                                    }
 
-                                if (diaban == 3) {
-                                    maubaocao = "giaidoan_tinh.xlsx";
+                                    if (diaban == 3) {
+                                        maubaocao = "giaidoan_tinh.xlsx";
+                                    }
+                                }
+                                if (
+                                    baocao.donvicha == 60 ||
+                                    Number(baocao.madonvi) == 60
+                                ) {
+                                    maubaocao = "giaidoan.dahuoai.xlsx";
                                 }
                                 axios
                                     .post("reportofsanxuat", {
@@ -1470,7 +1831,7 @@ function initEvent() {
                                         diaban: diaban,
                                         loaibaocao: 2,
                                         loaimau: 1,
-                                        data: JSON.stringify(baocao),
+                                        data: JSON.stringify(baocao.baocao),
                                     })
                                     .then((res) => {
                                         Swal.close();
