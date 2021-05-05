@@ -906,62 +906,15 @@ class ProductionPlanReportController extends Controller
 	}
 	public function viewbacai(Request $request)
 	{
-		set_time_limit(20000);
-		$madonvi = Session::get('madonvi');
-		$donvicha = Session::get('donvicha');
-		//$madonvi = 94;
-		//$donvicha = 94;
-		if ($donvicha == null) $donvicha = $madonvi;
-		if ($donvicha == 106) $donvicha = $madonvi;
+
 		$currentYear = $request->year;
 		$periviousYear = $currentYear - 1;
-		// $otherYear = $periviousYear - 1;
-		$loaisolieu = $request->loaisolieu;
-		$tenloaisolieu = tbl_loaisolieu::where('id', $loaisolieu)->first();
-		$Form = $request->bieumau;
 		$mau = $request->mau;
 		$loaimau = $request->loaimau;
-		$FormController = new NhaplieusolieuController();
-		$listChitieu = $FormController->showDeltalBieumauTH($Form);
-		$Ultil = new ChitieuUltils();
-		$TreeChitieu = $Ultil->getTreeChitieu($listChitieu);
-		$dulieu = new stdClass();
-		$thongtin = new stdClass();
-		$Result = array();
-		$listXaofHuyen = null;
-		$location = $request->location;
-		if ($location == 105) $location = $madonvi;
-		if ($request->diaban == 1 || $request->diaban == 3) {
-			$listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $location)
-				->get();
-		} else {
-			// Tong hop bao cao theo xa
-			$listXaofHuyen = tbl_donvihanhchinh::where('id', $location)
-				->get();
-		}
-
-
-
-
-		$tbbieumau = tbl_bieumau::where('id', $request->bieumau)->first();
-		$thongtin->diaban = $request->namelocation;
-		$thongtin->nam = $request->year;
-		$thongtin->bieumau = $tbbieumau->tenbieumau;
-		$dulieu->chitiet = $Result;
-		$dulieu->thongtin = $thongtin;
-
 		$sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . $mau);
 		$sheet->setActiveSheetIndex(0);
 		$sheetSelect = $sheet->getActiveSheet();
-		//$chitieu=$sheetSelect->getCellByColumnAndRow(2, 135)->getValue();
-		//$chitieu=trim(str_replace("'","","a. Trồng trọt"));
-		//$dschitieu=$this->getChitieuString($chitieu);
-		//$maid=$chitieu;
-		//$TotalofTHnam = $this->DataOfyearTH(2020, $listXaofHuyen, '4689', '271',8);
-		//$GiaSS2010 = $this->SumdataXaTH(2010, $donvicha, '2194', '255',33);
-		//dd($TotalofTHnam);
-		//return 200;
-		//tieu de
+
 
 		//if($loaimau==1)
 		{
@@ -969,145 +922,81 @@ class ProductionPlanReportController extends Controller
 			$sheetSelect->setCellValueByColumnAndRow(76, 1, $currentYear);
 		}
 
-
-
-		$Form = 273; //nong lam thuy san
+		$data = json_decode($request->data);
+		// $Form = 273; //nong lam thuy san
 		$rowstart = 47;
-		$rowend = 160;
-		for ($row = $rowstart; $row <= $rowend; $row++) {
-			$chitieu = $sheetSelect->getCellByColumnAndRow(2, $row)->getValue();
-			//$chitieu=trim(str_replace("'","",$chitieu));
-			//$dschitieu=$this->getChitieuString($chitieu);
-			//GIÁ TRỊ SẢN XUẤT
-			if (strlen($chitieu) > 0) {
-				$maid = $chitieu;
-				////fill sản lượng 2015-2020 - Thực hiện 8/ KH 9
-				$TotalofTHnam5 = $this->DataOfyearTH($currentYear - 5, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam4 = $this->DataOfyearTH($currentYear - 4, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam3 = $this->DataOfyearTH($currentYear - 3, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam2 = $this->DataOfyearTH($currentYear - 2, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam1 = $this->DataOfyearTH($currentYear - 1, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam = $this->DataOfyearTH($currentYear, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofKHnam = $this->DataOfyearTH($currentYear, $listXaofHuyen, $maid, $Form, 9);
-				// fill ke hoach 2021-2025
-				$TotalofKHnam1 = $this->DataOfyearTH($currentYear + 1, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam2 = $this->DataOfyearTH($currentYear + 2, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam3 = $this->DataOfyearTH($currentYear + 3, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam4 = $this->DataOfyearTH($currentYear + 4, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam5 = $this->DataOfyearTH($currentYear + 5, $listXaofHuyen, $maid, $Form, 9);
-				//fill gia so sanh
-				$GiaSS2010 = $this->SumdataXaTH($currentYear - 10, $donvicha, $maid, $Form, 33);
-				//fill chi so gia
-				$GiaTT1 = $this->SumdataXaTH($currentYear - 5, $donvicha, $maid, $Form, 34);
-				$GiaTT2 = $this->SumdataXaTH($currentYear - 4, $donvicha, $maid, $Form, 34);
-				$GiaTT3 = $this->SumdataXaTH($currentYear - 3, $donvicha, $maid, $Form, 34);
-				$GiaTT4 = $this->SumdataXaTH($currentYear - 2, $donvicha, $maid, $Form, 34);
-				$GiaTT5 = $this->SumdataXaTH($currentYear - 1, $donvicha, $maid, $Form, 34);
-				$GiaTT6 = $this->SumdataXaTH($currentYear, $donvicha, $maid, $Form, 34);
-				$GiaTT7 = $this->SumdataXaTH($currentYear + 1, $donvicha, $maid, $Form, 34);
-				$GiaTT8 = $this->SumdataXaTH($currentYear + 2, $donvicha, $maid, $Form, 34);
-				$GiaTT9 = $this->SumdataXaTH($currentYear + 3, $donvicha, $maid, $Form, 34);
-				$GiaTT10 = $this->SumdataXaTH($currentYear + 4, $donvicha, $maid, $Form, 34);
-				$GiaTT11 = $this->SumdataXaTH($currentYear + 5, $donvicha, $maid, $Form, 34);
-
-				$sheetSelect->setCellValueByColumnAndRow(17, $row, $TotalofTHnam5);
-				$sheetSelect->setCellValueByColumnAndRow(18, $row, $TotalofTHnam4);
-				$sheetSelect->setCellValueByColumnAndRow(19, $row, $TotalofTHnam3);
-				$sheetSelect->setCellValueByColumnAndRow(20, $row, $TotalofTHnam2);
-				$sheetSelect->setCellValueByColumnAndRow(21, $row, $TotalofTHnam1);
-				$sheetSelect->setCellValueByColumnAndRow(22, $row, $TotalofTHnam);
-				$sheetSelect->setCellValueByColumnAndRow(23, $row, $TotalofKHnam);
-				$sheetSelect->setCellValueByColumnAndRow(24, $row, $TotalofKHnam1);
-				$sheetSelect->setCellValueByColumnAndRow(25, $row, $TotalofKHnam2);
-				$sheetSelect->setCellValueByColumnAndRow(26, $row, $TotalofKHnam3);
-				$sheetSelect->setCellValueByColumnAndRow(27, $row, $TotalofKHnam4);
-				$sheetSelect->setCellValueByColumnAndRow(28, $row, $TotalofKHnam5);
-				//giá ss
-				$sheetSelect->setCellValueByColumnAndRow(29, $row, $GiaSS2010);
-				//giá tt
-				$sheetSelect->setCellValueByColumnAndRow(30, $row, $GiaTT1);
-				$sheetSelect->setCellValueByColumnAndRow(31, $row, $GiaTT2);
-				$sheetSelect->setCellValueByColumnAndRow(32, $row, $GiaTT3);
-				$sheetSelect->setCellValueByColumnAndRow(33, $row, $GiaTT4);
-				$sheetSelect->setCellValueByColumnAndRow(34, $row, $GiaTT5);
-				$sheetSelect->setCellValueByColumnAndRow(35, $row, $GiaTT6);
-				$sheetSelect->setCellValueByColumnAndRow(36, $row, $GiaTT6);
-				$sheetSelect->setCellValueByColumnAndRow(37, $row, $GiaTT7);
-				$sheetSelect->setCellValueByColumnAndRow(38, $row, $GiaTT8);
-				$sheetSelect->setCellValueByColumnAndRow(39, $row, $GiaTT9);
-				$sheetSelect->setCellValueByColumnAndRow(40, $row, $GiaTT10);
-				$sheetSelect->setCellValueByColumnAndRow(41, $row, $GiaTT11);
-			}
+		// $rowend = 160;
+		$phan1 = $data->phan1;
+		foreach ($phan1 as $value) {
+			$clolumsTH = $value->clolumsTH;
+			$sheetSelect->setCellValueByColumnAndRow(17, $rowstart, $clolumsTH[0]);
+			$sheetSelect->setCellValueByColumnAndRow(18, $rowstart, $clolumsTH[1]);
+			$sheetSelect->setCellValueByColumnAndRow(19, $rowstart, $clolumsTH[2]);
+			$sheetSelect->setCellValueByColumnAndRow(20, $rowstart, $clolumsTH[3]);
+			$sheetSelect->setCellValueByColumnAndRow(21, $rowstart, $clolumsTH[4]);
+			$sheetSelect->setCellValueByColumnAndRow(22, $rowstart, $clolumsTH[5]);
+			$sheetSelect->setCellValueByColumnAndRow(23, $rowstart, $clolumsTH[6]);
+			$columKH = $value->columnTKH;
+			$sheetSelect->setCellValueByColumnAndRow(24, $rowstart, $columKH[0]);
+			$sheetSelect->setCellValueByColumnAndRow(25, $rowstart, $columKH[1]);
+			$sheetSelect->setCellValueByColumnAndRow(26, $rowstart, $columKH[2]);
+			$sheetSelect->setCellValueByColumnAndRow(27, $rowstart, $columKH[3]);
+			$sheetSelect->setCellValueByColumnAndRow(28, $rowstart, $columKH[4]);
+			//giá ss
+			$sheetSelect->setCellValueByColumnAndRow(29, $rowstart, $value->giaSS2010);
+			//giá tt
+			$columnsGiaTT = $value->columnsGiaTT;
+			$sheetSelect->setCellValueByColumnAndRow(30, $rowstart, $columnsGiaTT[0]);
+			$sheetSelect->setCellValueByColumnAndRow(31, $rowstart, $columnsGiaTT[1]);
+			$sheetSelect->setCellValueByColumnAndRow(32, $rowstart, $columnsGiaTT[2]);
+			$sheetSelect->setCellValueByColumnAndRow(33, $rowstart, $columnsGiaTT[3]);
+			$sheetSelect->setCellValueByColumnAndRow(34, $rowstart, $columnsGiaTT[4]);
+			$sheetSelect->setCellValueByColumnAndRow(35, $rowstart, $columnsGiaTT[5]);
+			$sheetSelect->setCellValueByColumnAndRow(36, $rowstart, $columnsGiaTT[5]);
+			$sheetSelect->setCellValueByColumnAndRow(37, $rowstart, $columnsGiaTT[6]);
+			$sheetSelect->setCellValueByColumnAndRow(38, $rowstart, $columnsGiaTT[7]);
+			$sheetSelect->setCellValueByColumnAndRow(39, $rowstart, $columnsGiaTT[8]);
+			$sheetSelect->setCellValueByColumnAndRow(40, $rowstart, $columnsGiaTT[9]);
+			$sheetSelect->setCellValueByColumnAndRow(41, $rowstart, $columnsGiaTT[10]);
+			$rowstart++;
 		}
-		$Form = 262; //CÔNG NGHIỆP - TTCN
+		// $Form = 262; //CÔNG NGHIỆP - TTCN
 		$rowstart = 161;
-		$rowend = 230;
-		for ($row = $rowstart; $row <= $rowend; $row++) {
-			$chitieu = $sheetSelect->getCellByColumnAndRow(2, $row)->getValue();
-			//$chitieu=trim(str_replace("'","",$chitieu));
-			//$dschitieu=$this->getChitieuString($chitieu);
-			//GIÁ TRỊ SẢN XUẤT
-			if (strlen($chitieu) > 0) {
-				$maid = $chitieu;
-				////fill sản lượng 2015-2020 - Thực hiện 8/ KH 9
-				$TotalofTHnam5 = $this->DataOfyearTH($currentYear - 5, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam4 = $this->DataOfyearTH($currentYear - 4, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam3 = $this->DataOfyearTH($currentYear - 3, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam2 = $this->DataOfyearTH($currentYear - 2, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam1 = $this->DataOfyearTH($currentYear - 1, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofTHnam = $this->DataOfyearTH($currentYear, $listXaofHuyen, $maid, $Form, 8);
-				$TotalofKHnam = $this->DataOfyearTH($currentYear, $listXaofHuyen, $maid, $Form, 9);
-				// fill ke hoach 2021-2025
-				$TotalofKHnam1 = $this->DataOfyearTH($currentYear + 1, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam2 = $this->DataOfyearTH($currentYear + 2, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam3 = $this->DataOfyearTH($currentYear + 3, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam4 = $this->DataOfyearTH($currentYear + 4, $listXaofHuyen, $maid, $Form, 9);
-				$TotalofKHnam5 = $this->DataOfyearTH($currentYear + 5, $listXaofHuyen, $maid, $Form, 9);
-				//fill gia so sanh
-				$GiaSS2010 = $this->SumdataXaTH($currentYear - 10, $donvicha, $maid, $Form, 33);
-				//fill chi so gia
-				$GiaTT1 = $this->SumdataXaTH($currentYear - 5, $donvicha, $maid, $Form, 34);
-				$GiaTT2 = $this->SumdataXaTH($currentYear - 4, $donvicha, $maid, $Form, 34);
-				$GiaTT3 = $this->SumdataXaTH($currentYear - 3, $donvicha, $maid, $Form, 34);
-				$GiaTT4 = $this->SumdataXaTH($currentYear - 2, $donvicha, $maid, $Form, 34);
-				$GiaTT5 = $this->SumdataXaTH($currentYear - 1, $donvicha, $maid, $Form, 34);
-				$GiaTT6 = $this->SumdataXaTH($currentYear, $donvicha, $maid, $Form, 34);
-				$GiaTT7 = $this->SumdataXaTH($currentYear + 1, $donvicha, $maid, $Form, 34);
-				$GiaTT8 = $this->SumdataXaTH($currentYear + 2, $donvicha, $maid, $Form, 34);
-				$GiaTT9 = $this->SumdataXaTH($currentYear + 3, $donvicha, $maid, $Form, 34);
-				$GiaTT10 = $this->SumdataXaTH($currentYear + 4, $donvicha, $maid, $Form, 34);
-				$GiaTT11 = $this->SumdataXaTH($currentYear + 5, $donvicha, $maid, $Form, 34);
-
-				$sheetSelect->setCellValueByColumnAndRow(17, $row, $TotalofTHnam5);
-				$sheetSelect->setCellValueByColumnAndRow(18, $row, $TotalofTHnam4);
-				$sheetSelect->setCellValueByColumnAndRow(19, $row, $TotalofTHnam3);
-				$sheetSelect->setCellValueByColumnAndRow(20, $row, $TotalofTHnam2);
-				$sheetSelect->setCellValueByColumnAndRow(21, $row, $TotalofTHnam1);
-				$sheetSelect->setCellValueByColumnAndRow(22, $row, $TotalofTHnam);
-				$sheetSelect->setCellValueByColumnAndRow(23, $row, $TotalofKHnam);
-				$sheetSelect->setCellValueByColumnAndRow(24, $row, $TotalofKHnam1);
-				$sheetSelect->setCellValueByColumnAndRow(25, $row, $TotalofKHnam2);
-				$sheetSelect->setCellValueByColumnAndRow(26, $row, $TotalofKHnam3);
-				$sheetSelect->setCellValueByColumnAndRow(27, $row, $TotalofKHnam4);
-				$sheetSelect->setCellValueByColumnAndRow(28, $row, $TotalofKHnam5);
-				//giá ss
-				$sheetSelect->setCellValueByColumnAndRow(29, $row, $GiaSS2010);
-				//giá tt
-				$sheetSelect->setCellValueByColumnAndRow(30, $row, $GiaTT1);
-				$sheetSelect->setCellValueByColumnAndRow(31, $row, $GiaTT2);
-				$sheetSelect->setCellValueByColumnAndRow(32, $row, $GiaTT3);
-				$sheetSelect->setCellValueByColumnAndRow(33, $row, $GiaTT4);
-				$sheetSelect->setCellValueByColumnAndRow(34, $row, $GiaTT5);
-				$sheetSelect->setCellValueByColumnAndRow(35, $row, $GiaTT6);
-				$sheetSelect->setCellValueByColumnAndRow(36, $row, $GiaTT6);
-				$sheetSelect->setCellValueByColumnAndRow(37, $row, $GiaTT7);
-				$sheetSelect->setCellValueByColumnAndRow(38, $row, $GiaTT8);
-				$sheetSelect->setCellValueByColumnAndRow(39, $row, $GiaTT9);
-				$sheetSelect->setCellValueByColumnAndRow(40, $row, $GiaTT10);
-				$sheetSelect->setCellValueByColumnAndRow(41, $row, $GiaTT11);
-			}
+		// $rowend = 230;
+		$phan2 = $data->phan2;
+		foreach ($phan2 as $value) {
+			$clolumsTH = $value->clolumsTH;
+			$sheetSelect->setCellValueByColumnAndRow(17, $rowstart, $clolumsTH[0]);
+			$sheetSelect->setCellValueByColumnAndRow(18, $rowstart, $clolumsTH[1]);
+			$sheetSelect->setCellValueByColumnAndRow(19, $rowstart, $clolumsTH[2]);
+			$sheetSelect->setCellValueByColumnAndRow(20, $rowstart, $clolumsTH[3]);
+			$sheetSelect->setCellValueByColumnAndRow(21, $rowstart, $clolumsTH[4]);
+			$sheetSelect->setCellValueByColumnAndRow(22, $rowstart, $clolumsTH[5]);
+			$sheetSelect->setCellValueByColumnAndRow(23, $rowstart, $clolumsTH[6]);
+			$columKH = $value->columnTKH;
+			$sheetSelect->setCellValueByColumnAndRow(24, $rowstart, $columKH[0]);
+			$sheetSelect->setCellValueByColumnAndRow(25, $rowstart, $columKH[1]);
+			$sheetSelect->setCellValueByColumnAndRow(26, $rowstart, $columKH[2]);
+			$sheetSelect->setCellValueByColumnAndRow(27, $rowstart, $columKH[3]);
+			$sheetSelect->setCellValueByColumnAndRow(28, $rowstart, $columKH[4]);
+			//giá ss
+			$sheetSelect->setCellValueByColumnAndRow(29, $rowstart, $value->giaSS2010);
+			//giá tt
+			$columnsGiaTT = $value->columnsGiaTT;
+			$sheetSelect->setCellValueByColumnAndRow(30, $rowstart, $columnsGiaTT[0]);
+			$sheetSelect->setCellValueByColumnAndRow(31, $rowstart, $columnsGiaTT[1]);
+			$sheetSelect->setCellValueByColumnAndRow(32, $rowstart, $columnsGiaTT[2]);
+			$sheetSelect->setCellValueByColumnAndRow(33, $rowstart, $columnsGiaTT[3]);
+			$sheetSelect->setCellValueByColumnAndRow(34, $rowstart, $columnsGiaTT[4]);
+			$sheetSelect->setCellValueByColumnAndRow(35, $rowstart, $columnsGiaTT[5]);
+			$sheetSelect->setCellValueByColumnAndRow(36, $rowstart, $columnsGiaTT[5]);
+			$sheetSelect->setCellValueByColumnAndRow(37, $rowstart, $columnsGiaTT[6]);
+			$sheetSelect->setCellValueByColumnAndRow(38, $rowstart, $columnsGiaTT[7]);
+			$sheetSelect->setCellValueByColumnAndRow(39, $rowstart, $columnsGiaTT[8]);
+			$sheetSelect->setCellValueByColumnAndRow(40, $rowstart, $columnsGiaTT[9]);
+			$sheetSelect->setCellValueByColumnAndRow(41, $rowstart, $columnsGiaTT[10]);
+			$rowstart++;
 		}
-
 
 		$writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($sheet);
 		if (!file_exists(public_path('export'))) {
@@ -1129,7 +1018,7 @@ class ProductionPlanReportController extends Controller
 		if ($donvicha == null) $donvicha = $madonvi;
 		$currentYear = $request->year;
 		$periviousYear = $currentYear - 5;
-		$nextYear = $currentYear + 1;
+		$nextYear = $currentYear + 5;
 		$loaisolieu = $request->loaisolieu;
 		$danhSachBieumau = null;
 		if ($donvicha == 20 || $madonvi == 20) {
@@ -1137,6 +1026,9 @@ class ProductionPlanReportController extends Controller
 		}
 		if ($donvicha == 60 || $madonvi == 60) {
 			$danhSachBieumau = [255, 226, 250, 227];
+		}
+		if ($donvicha == 107 || $madonvi == 107) {
+			$danhSachBieumau = [273, 262];
 		}
 		$loaimau = $request->loaimau;
 		$listXaofHuyen = null;
@@ -1515,7 +1407,7 @@ class ProductionPlanReportController extends Controller
 		// $Form = 227; // DỊCH VỤ
 		$rowstart = 178;
 		// $rowend = 210;
-		$phan4 = $data->phan3;
+		$phan4 = $data->phan4;
 		foreach ($phan4 as $value) {
 			$clolumsTH = $value->clolumsTH;
 			$sheetSelect->setCellValueByColumnAndRow(17, $rowstart, $clolumsTH[0]);

@@ -14,11 +14,11 @@ class TestDataController extends Controller
 {
     public function info()
     {
-        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . 'giaidoan.dahuoai.xlsx');
+        $sheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(storage_path('app/Excel') . '/' . 'giaidoan_bacai.xlsx');
         $sheet->setActiveSheetIndex(0);
         $sheetSelect = $sheet->getActiveSheet();
-        $rowstart = 178;
-        $rowend = 210;
+        $rowstart = 161;
+        $rowend = 230;
         $arr = array();
         for ($row = $rowstart; $row <= $rowend; $row++) {
             $chitieu = $sheetSelect->getCellByColumnAndRow(2, $row)->getValue();

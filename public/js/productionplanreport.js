@@ -556,6 +556,7 @@ function initEvent() {
                                         xuatbaocao.donvihanhchinh =
                                             data.donvihanhchinh;
                                         let donvicha = data.donvicha;
+                                        let madonvi = data.madonvi;
 
                                         let baocao = {
                                             phan1: null,
@@ -1496,7 +1497,7 @@ function initEvent() {
                                     xuatbaocao.donvihanhchinh =
                                         data.donvihanhchinh;
                                     let donvicha = data.donvicha;
-
+                                    let madonvi = data.madonvi;
                                     let baocao = {
                                         phan1: null,
                                         phan2: null,
@@ -1801,6 +1802,277 @@ function initEvent() {
                                         madonvi: madonvi,
                                     };
                                 }
+
+                                if (
+                                    res.data.donvicha == 107 ||
+                                    res.data.madonvi == 107
+                                ) {
+                                    let data = res.data;
+                                    // Tong Hop du lieu
+                                    let xuatbaocao = new xuatgiaidoan();
+                                    xuatbaocao.solieutheobieu =
+                                        data.solieutheobieu;
+                                    xuatbaocao.chitietsolieu =
+                                        data.chitietsolieutheobieu;
+                                    xuatbaocao.donvihanhchinh =
+                                        data.donvihanhchinh;
+                                    let donvicha = data.donvicha;
+                                    let madonvi = data.madonvi;
+
+                                    if(donvicha == 106){
+                                        donvicha = madonvi;
+                                    }
+                                    let baocao = {
+                                        phan1: null,
+                                        phan2: null,
+                                    };
+
+                                    // Danh sach chi tieu PHÒNG TÀI CHÍNH TỪ DÒNG
+                                    let bieumau = 273;
+                                    let chitieu = [
+                                        4689,
+                                        4690,
+                                        4691,
+                                        4692,
+                                        4693,
+                                        4694,
+                                        4695,
+                                        4696,
+                                        4697,
+                                        4698,
+                                        4699,
+                                        4700,
+                                        4701,
+                                        5001,
+                                        4702,
+                                        4703,
+                                        4704,
+                                        4706,
+                                        4707,
+                                        4829,
+                                        4830,
+                                        4831,
+                                        4832,
+                                        4833,
+                                        4834,
+                                        4835,
+                                        4836,
+                                        4837,
+                                        4838,
+                                        4839,
+                                        4840,
+                                        4841,
+                                        4842,
+                                        4843,
+                                        4844,
+                                        4522,
+                                        4523,
+                                        4524,
+                                        4525,
+                                        4857,
+                                        4858,
+                                        4859,
+                                        4910,
+                                        4912,
+                                        4860,
+                                        4861,
+                                        4862,
+                                        4925,
+                                        4863,
+                                        4937,
+                                        5057,
+                                        4881,
+                                        4883,
+                                        4884,
+                                        4885,
+                                        4886,
+                                        4887,
+                                        4888,
+                                        4889,
+                                        4890,
+                                        4891,
+                                        4892,
+                                        4893,
+                                        4894,
+                                        5059,
+                                        5063,
+                                        5064,
+                                        5065,
+                                        5066,
+                                        5067,
+                                        5068,
+                                        5060,
+                                        5069,
+                                        5070,
+                                        5071,
+                                        5072,
+                                        5073,
+                                        5074,
+                                        5075,
+                                        5076,
+                                        5077,
+                                        5078,
+                                        5061,
+                                        5079,
+                                        5080,
+                                        5081,
+                                        5082,
+                                        5083,
+                                        5062,
+                                        5084,
+                                        5085,
+                                        5086,
+                                        4555,
+                                        4556,
+                                        4557,
+                                        4558,
+                                        5091,
+                                        5092,
+                                        5093,
+                                        5094,
+                                        5096,
+                                        5097,
+                                        5098,
+                                        5099,
+                                    ];
+                                    let year = nam.getFullYear();
+
+                                    let Phan1 = [];
+                                    let mid = Math.floor(
+                                        (chitieu.length - 1) / 2
+                                    );
+                                    let indexStart = 0;
+                                    let indexEnd = mid;
+                                    while (
+                                        indexStart < mid &&
+                                        indexEnd < chitieu.length
+                                    ) {
+                                        let elementStart = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexStart],
+                                            bieumau,
+                                            donvicha
+                                        );
+
+                                        let elementEnd = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexEnd],
+                                            bieumau,
+                                            donvicha
+                                        );
+
+                                        Phan1[indexStart] = elementStart;
+                                        Phan1[indexEnd] = elementEnd;
+
+                                        indexStart++;
+                                        indexEnd++;
+                                    }
+                                    baocao.phan1 = Phan1;
+
+                                    //CHỈ TIÊU XÃ HỘI HUYỆN
+                                    bieumau = 262;
+                                    chitieu = [
+                                        4896,
+                                        4897,
+                                        4898,
+                                        4900,
+                                        4901,
+                                        4903,
+                                        4904,
+                                        4906,
+                                        4907,
+                                        4909,
+                                        4911,
+                                        4913,
+                                        4914,
+                                        4915,
+                                        4916,
+                                        4917,
+                                        4918,
+                                        4919,
+                                        4920,
+                                        4921,
+                                        4923,
+                                        4926,
+                                        4927,
+                                        4928,
+                                        4929,
+                                        4930,
+                                        4931,
+                                        4932,
+                                        4933,
+                                        4934,
+                                        4935,
+                                        5054,
+                                        5055,
+                                        5022,
+                                        5023,
+                                        5024,
+                                        5025,
+                                        5026,
+                                        5027,
+                                        5028,
+                                        5029,
+                                        5030,
+                                        5031,
+                                        5032,
+                                        5033,
+                                        5035,
+                                        5036,
+                                        5037,
+                                        5038,
+                                        5039,
+                                        5040,
+                                        5041,
+                                        5042,
+                                        5043,
+                                        5044,
+                                        5045,
+                                        5046,
+                                        5047,
+                                        5048,
+                                        5049,
+                                        5050,
+                                        5051,
+                                        5034,
+                                    ];
+
+                                    let Phan2 = [];
+                                    mid = Math.floor((chitieu.length - 1) / 2);
+                                    indexStart = 0;
+                                    indexEnd = mid;
+                                    while (
+                                        indexStart < mid &&
+                                        indexEnd < chitieu.length
+                                    ) {
+                                        let elementStart = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexStart],
+                                            bieumau,
+                                            donvicha
+                                        );
+
+                                        let elementEnd = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexEnd],
+                                            bieumau,
+                                            donvicha
+                                        );
+
+                                        Phan2[indexStart] = elementStart;
+                                        Phan2[indexEnd] = elementEnd;
+
+                                        indexStart++;
+                                        indexEnd++;
+                                    }
+
+                                    baocao.phan2 = Phan2;
+                                    return {
+                                        baocao: baocao,
+                                        donvicha: donvicha,
+                                        madonvi: madonvi,
+                                    };
+                                }
                             })
                             .then((baocao) => {
                                 console.log(baocao);
@@ -1821,6 +2093,13 @@ function initEvent() {
                                     Number(baocao.madonvi) == 60
                                 ) {
                                     maubaocao = "giaidoan.dahuoai.xlsx";
+                                }
+
+                                if (
+                                    baocao.donvicha == 107 ||
+                                    Number(baocao.madonvi) == 107
+                                ) {
+                                    maubaocao = "giaidoan_bacai.xlsx";
                                 }
                                 axios
                                     .post("reportofsanxuat", {
