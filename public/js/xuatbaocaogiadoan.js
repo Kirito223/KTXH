@@ -56,19 +56,19 @@ export default class xuatgiaidoan {
         let $TotalofTHnam2 = this.DataOfyearTH(year - 2, item, bieumau, 8);
 
         let $TotalofTHnam1 = this.DataOfyearTH(year - 1, item, bieumau, 8);
-        
+
         let $TotalofTHnam = this.DataOfyearTH(year, item, bieumau, 8);
 
         let $TotalofKHnam = this.DataOfyearTH(year, item, bieumau, 9);
-        let columnTH = [
-            $TotalofTHnam5,
-            $TotalofTHnam4,
-            $TotalofTHnam3,
-            $TotalofTHnam2,
-            $TotalofTHnam1,
-            $TotalofTHnam,
-            $TotalofKHnam,
-        ];
+        let columnTH = {
+            TotalofTHnam5: $TotalofTHnam5,
+            TotalofTHnam4: $TotalofTHnam4,
+            TotalofTHnam3: $TotalofTHnam3,
+            TotalofTHnam2: $TotalofTHnam2,
+            TotalofTHnam1: $TotalofTHnam1,
+            TotalofTHnam: $TotalofTHnam,
+            TotalofKHnam: $TotalofKHnam,
+        };
         // Tong hop KH
         let $TotalofKHnam1 = this.DataOfyearTH(year + 1, item, bieumau, 9);
         let $TotalofKHnam2 = this.DataOfyearTH(year + 2, item, bieumau, 9);
@@ -76,13 +76,13 @@ export default class xuatgiaidoan {
         let $TotalofKHnam4 = this.DataOfyearTH(year + 4, item, bieumau, 9);
         let $TotalofKHnam5 = this.DataOfyearTH(year + 5, item, bieumau, 9);
 
-        let columsKH = [
-            $TotalofKHnam1,
-            $TotalofKHnam2,
-            $TotalofKHnam3,
-            $TotalofKHnam4,
-            $TotalofKHnam5,
-        ];
+        let columsKH = {
+            TotalofKHnam1: $TotalofKHnam1,
+            TotalofKHnam2: $TotalofKHnam2,
+            TotalofKHnam3: $TotalofKHnam3,
+            TotalofKHnam4: $TotalofKHnam4,
+            TotalofKHnam5: $TotalofKHnam5,
+        };
 
         // So sanh 2010
         let GiaSS2010 = this.SumdataXaTH(
@@ -117,20 +117,19 @@ export default class xuatgiaidoan {
 
         let $GiaTT11 = this.SumdataXaTH(year + 5, donvicha, item, bieumau, 34);
 
-        let columnsGiaTT = [
-            $GiaTT1,
-            $GiaTT2,
-            $GiaTT3,
-            $GiaTT4,
-            $GiaTT5,
-            $GiaTT6,
-            $GiaTT7,
-            $GiaTT8,
-            $GiaTT9,
-            $GiaTT10,
-            $GiaTT11,
-        ];
-
+        let columnsGiaTT = {
+            GiaTT1: $GiaTT1,
+            GiaTT2: $GiaTT2,
+            GiaTT3: $GiaTT3,
+            GiaTT4: $GiaTT4,
+            GiaTT5: $GiaTT5,
+            GiaTT6: $GiaTT6,
+            GiaTT7: $GiaTT7,
+            GiaTT8: $GiaTT8,
+            GiaTT9: $GiaTT9,
+            GiaTT10: $GiaTT10,
+            GiaTT11: $GiaTT11,
+        };
         return {
             chitieu: item,
             clolumsTH: columnTH,
