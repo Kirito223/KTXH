@@ -451,19 +451,22 @@ function initEvent() {
                     .dxSelectBox("instance")
                     .option("value");
                 let maubaocao = "Mau.xlsx";
-                //if(diaban==1)maubaocao='Mau_huyen.xlsx';
+
+                if (diaban == 1) maubaocao = "Mau_huyen.xlsx";
                 axios
                     .get("danhsachBieumau/4/" + diaban)
                     .then((ress) => {
                         let data = ress.data;
-                        maubaocao = data[0].filename;
+                        // Lay mau excel
+                        let mau = data.find((x) => x.mahuyen == location);
+                        maubaocao = mau.filename;
                         axios
-                            .post("reportofsanxuat", {
+                            .post("loadDataReport", {
                                 location: location,
                                 year: nam.getFullYear(),
                                 mau: maubaocao,
                                 loaimau: 1,
-                                loaibaocao: 1,
+
                                 bieumau: cbBieuMau.option("value"),
                                 loaisolieu: $("#cbSoLieu")
                                     .dxSelectBox("instance")
@@ -474,8 +477,72 @@ function initEvent() {
                                 diaban: diaban,
                             })
                             .then((res) => {
-                                // Swal.close();
-                                // window.location = "/export/"+res.data;
+                                let data = res.data;
+                                let baocao = [];
+                                let year = nam.getFullYear();
+                                let donvihanhchinh = data.donvihanhchinh;
+                                let donvicha = data.donvicha;
+                                data.danhsach.forEach((item) => {
+                                    let bieumau = item.bieumau;
+                                    let chitieu = item.chitieu;
+                                    let solieutheobieu = item.solieutheobieu;
+                                    let chitietsolieutheobieu = item.solieu;
+                                    let mid = Math.floor(
+                                        (chitieu.length - 1) / 2
+                                    );
+                                    let indexStart = 0;
+                                    let indexEnd = mid;
+                                    let xuatbaocao = new xuatgiaidoan();
+                                    xuatbaocao.solieutheobieu = solieutheobieu;
+                                    xuatbaocao.chitietsolieu = chitietsolieutheobieu;
+                                    xuatbaocao.donvihanhchinh = donvihanhchinh;
+
+                                    while (
+                                        indexStart < mid &&
+                                        indexEnd < chitieu.length
+                                    ) {
+                                        let elementStart = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexStart].chitieu,
+                                            bieumau,
+                                            donvicha
+                                        );
+                                        let elementEnd = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexEnd].chitieu,
+                                            bieumau,
+                                            donvicha
+                                        );
+                                        baocao.push(elementStart);
+                                        baocao.push(elementEnd);
+                                        indexStart++;
+                                        indexEnd++;
+                                    }
+                                });
+                                return {
+                                    baocao: baocao,
+                                    donvicha: donvicha,
+                                    madonvi: madonvi,
+                                    maubaocao: maubaocao,
+                                };
+                            })
+                            .then((baocao) => {
+                                console.log("baocao", baocao);
+                                axios
+                                    .post("reportofsanxuat", {
+                                        location: location,
+                                        year: nam.getFullYear(),
+                                        mau: maubaocao,
+                                        bieumau: cbBieuMau.option("value"),
+                                        diaban: diaban,
+                                        loaibaocao: 2,
+                                        loaimau: 1,
+                                        data: JSON.stringify(baocao.baocao),
+                                    })
+                                    .then((res) => {
+                                        Swal.close();
+                                        window.location = "/export/" + res.data;
+                                    });
                             })
                             .catch((err) => {
                                 Swal.close();
