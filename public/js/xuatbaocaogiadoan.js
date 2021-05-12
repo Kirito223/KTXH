@@ -11,7 +11,7 @@ export default class xuatgiaidoan {
                     x.bieumau == $bieumau &&
                     x.namnhap == $year &&
                     x.loaisolieu == $loaisolieu &&
-                    x.donvinhap == xa.id
+                    x.donvinhap == xa
             );
 
             sum += this.maxtotalDeltailBieumau($chitieu, listBieuMau, $year);
@@ -20,13 +20,15 @@ export default class xuatgiaidoan {
     }
     SumdataXaTH($year, $xa, $chitieu, $bieumau, $loaisolieu) {
         let sum = 0;
+
         let listBieuMau = this.solieutheobieu.filter(
             (x) =>
                 x.bieumau == $bieumau &&
                 x.namnhap == $year &&
                 x.loaisolieu == $loaisolieu &&
-                x.donvinhap == $xa.id
+                x.donvinhap == $xa
         );
+
         sum = this.maxtotalDeltailBieumau($chitieu, listBieuMau, $year);
         return sum;
     }

@@ -497,7 +497,7 @@ class ProductionPlanReportController extends Controller
 		$donvicha = Session::get('donvicha');
 		if ($donvicha == null) $donvicha = $madonvi;
 		$currentYear = $request->year;
-		$periviousYear = $currentYear - 5;
+		$periviousYear = $currentYear - 10;
 		$nextYear = $currentYear + 5;
 		$loaisolieu = $request->loaisolieu;
 		$danhSachBieumau = null;
@@ -510,25 +510,42 @@ class ProductionPlanReportController extends Controller
 		if ($donvicha == 107 || $madonvi == 107) {
 			$danhSachBieumau = [273, 262];
 		}
-		$listXaofHuyen = null;
+		$listXaofHuyen = array();
 		$location = $request->location;
 		if ($location == 105) $location = $madonvi;
 		$listDonVi = array();
+
 		if ($request->diaban == 1 || $request->diaban == 3) {
 			$listXaofHuyen = tbl_donvihanhchinh::where('madonvi', $location)
 				->get();
-			foreach ($listXaofHuyen as  $value) {
-				array_push($listDonVi, $value->id);
+			$mid = floor(count($listXaofHuyen) - 1) / 2;
+			$indexStart = 0;
+			$indexEnd = $mid;
+			while ($indexStart < $mid && $indexEnd < count($listXaofHuyen) - 1) {
+				$itemStart = $listXaofHuyen[$indexStart];
+				$itemEnd = $listXaofHuyen[$indexEnd];
+				array_push($listDonVi, $itemStart->id);
+				array_push($listDonVi, $itemEnd->id);
+				$indexStart++;
+				$indexEnd++;
 			}
 		} else {
 			// Tong hop bao cao theo xa
 			$listXaofHuyen = tbl_donvihanhchinh::where('id', $location)
 				->get();
-			foreach ($listXaofHuyen as $value) {
-				array_push($listDonVi, $value->id);
+			$mid = floor(count($listXaofHuyen) - 1) / 2;
+			$indexStart = 0;
+			$indexEnd = $mid;
+			while ($indexStart < $mid && $indexEnd < count($listXaofHuyen) - 1) {
+				$itemStart = $listXaofHuyen[$indexStart];
+				$itemEnd = $listXaofHuyen[$indexEnd];
+				array_push($listDonVi, $itemStart->id);
+				array_push($listDonVi, $itemEnd->id);
+				$indexStart++;
+				$indexEnd++;
 			}
 		}
-
+		array_push($listDonVi, $madonvi);
 		$data = array();
 		foreach ($danhSachBieumau as $bieumau) {
 			$item = new stdClass();
@@ -542,12 +559,24 @@ class ProductionPlanReportController extends Controller
 			$item->solieutheobieu = $tblsolieutheobieu;
 			$chitieu = tbl_chitietbieumau::where('bieumau', $bieumau)->where('isDelete', 0)->get();
 			$item->chitieu = $chitieu;
-			$chitiet = new Collection();
+			$chitiet = [];
 			foreach ($tblsolieutheobieu as $solieu) {
+
 				$tblchitietsolieutheobieu = tbl_chitietsolieutheobieu::where('isDelete', 0)
 					->where('mabieusolieu', $solieu->id)
 					->get();
-				$chitiet =	$chitiet->merge($tblchitietsolieutheobieu);
+
+				$mid = floor(count($tblchitietsolieutheobieu) - 1) / 2;
+				$indexStart = 0;
+				$indexEnd = $mid;
+
+				while ($indexStart < $mid && $indexEnd < count($tblchitietsolieutheobieu)) {
+
+					array_push($chitiet, $tblchitietsolieutheobieu[$indexStart]);
+					array_push($chitiet, $tblchitietsolieutheobieu[$indexEnd]);
+					$indexStart++;
+					$indexEnd++;
+				}
 			}
 			$item->solieu = $chitiet;
 			array_push($data, $item);
@@ -555,7 +584,7 @@ class ProductionPlanReportController extends Controller
 
 		return response()->json([
 			'danhsach' => $data,
-			'donvihanhchinh' => $listXaofHuyen, 'donvicha' => $donvicha, 'madonvi' => $madonvi
+			'donvihanhchinh' => $listDonVi, 'donvicha' => $donvicha, 'madonvi' => $madonvi
 		]);
 	}
 

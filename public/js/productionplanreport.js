@@ -494,7 +494,8 @@ function initEvent() {
                                     let indexEnd = mid;
                                     let xuatbaocao = new xuatgiaidoan();
                                     xuatbaocao.solieutheobieu = solieutheobieu;
-                                    xuatbaocao.chitietsolieu = chitietsolieutheobieu;
+                                    xuatbaocao.chitietsolieu =
+                                        chitietsolieutheobieu;
                                     xuatbaocao.donvihanhchinh = donvihanhchinh;
 
                                     while (
@@ -624,7 +625,8 @@ function initEvent() {
                                     let indexEnd = mid;
                                     let xuatbaocao = new xuatgiaidoan();
                                     xuatbaocao.solieutheobieu = solieutheobieu;
-                                    xuatbaocao.chitietsolieu = chitietsolieutheobieu;
+                                    xuatbaocao.chitietsolieu =
+                                        chitietsolieutheobieu;
                                     xuatbaocao.donvihanhchinh = donvihanhchinh;
 
                                     while (
@@ -711,30 +713,101 @@ function initEvent() {
                     .get("danhsachBieumau/6/" + diaban)
                     .then((ress) => {
                         let data = ress.data;
-                        maubaocao = data[0].filename;
-                        // axios
-                        //     .post("reportofsanxuat", {
-                        //         location: location,
-                        //         year: nam.getFullYear(),
-                        //         mau: maubaocao,
-                        //         loaimau: 1,
-                        //         bieumau: cbBieuMau.option("value"),
-                        //         loaisolieu: $("#cbSoLieu")
-                        //             .dxSelectBox("instance")
-                        //             .option("value"),
-                        //         namelocation: $("#cbHuyen")
-                        //             .dxSelectBox("instance")
-                        //             .option("text"),
-                        //         diaban: diaban,
-                        //     })
-                        //     .then((res) => {
-                        //         Swal.close();
-                        //         //window.location = "/export/" + res.data;
-                        //     })
-                        //     .catch((err) => {
-                        //         Swal.close();
-                        //         console.log(err);
-                        //     });
+                        // Lay mau excel
+                        let mau = data.find((x) => x.mahuyen == location);
+                        maubaocao = mau.filename;
+                        axios
+                            .post("loadDataReport", {
+                                location: location,
+                                year: nam.getFullYear(),
+                                mau: maubaocao,
+                                loaimau: 1,
+
+                                bieumau: cbBieuMau.option("value"),
+                                loaisolieu: $("#cbSoLieu")
+                                    .dxSelectBox("instance")
+                                    .option("value"),
+                                namelocation: $("#cbHuyen")
+                                    .dxSelectBox("instance")
+                                    .option("text"),
+                                diaban: diaban,
+                            })
+                            .then((res) => {
+                                let data = res.data;
+
+                                console.log(data);
+                                debugger;
+                                let baocao = [];
+                                let year = nam.getFullYear();
+                                let donvihanhchinh = data.donvihanhchinh;
+                                let donvicha = data.donvicha;
+                                data.danhsach.forEach((item) => {
+                                    let bieumau = item.bieumau;
+                                    let chitieu = item.chitieu;
+                                    let solieutheobieu = item.solieutheobieu;
+                                    let chitietsolieutheobieu = item.solieu;
+                                    let mid = Math.floor(
+                                        (chitieu.length - 1) / 2
+                                    );
+                                    let indexStart = 0;
+                                    let indexEnd = mid;
+                                    let xuatbaocao = new xuatgiaidoan();
+                                    xuatbaocao.solieutheobieu = solieutheobieu;
+                                    xuatbaocao.chitietsolieu =
+                                        chitietsolieutheobieu;
+                                    xuatbaocao.donvihanhchinh = donvihanhchinh;
+
+                                    while (
+                                        indexStart < mid &&
+                                        indexEnd < chitieu.length
+                                    ) {
+                                        let elementStart = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexStart].chitieu,
+                                            bieumau,
+                                            donvicha
+                                        );
+                                        let elementEnd = xuatbaocao.total(
+                                            year,
+                                            chitieu[indexEnd].chitieu,
+                                            bieumau,
+                                            donvicha
+                                        );
+                                        baocao.push(elementStart);
+                                        baocao.push(elementEnd);
+                                        indexStart++;
+                                        indexEnd++;
+                                    }
+                                });
+                                return {
+                                    baocao: baocao,
+                                    donvicha: donvicha,
+                                    madonvi: madonvi,
+                                    maubaocao: maubaocao,
+                                };
+                            })
+                            .then((baocao) => {
+                                console.log("baocao", baocao);
+                                axios
+                                    .post("reportofsanxuat", {
+                                        location: location,
+                                        year: nam.getFullYear(),
+                                        mau: maubaocao,
+                                        bieumau: cbBieuMau.option("value"),
+                                        diaban: diaban,
+                                        loaibaocao: 2,
+                                        loaimau: 1,
+                                        data: JSON.stringify(baocao.baocao),
+                                    })
+                                    .then((res) => {
+                                        Swal.close();
+                                        window.location = "/export/" + res.data;
+                                    });
+                            })
+                            .catch((err) => {
+                                Swal.close();
+                                console.log(err);
+                            });
                     })
                     .catch((err) => {
                         console.log(err);
@@ -834,8 +907,7 @@ async function loadBieumau() {
                             .dxSelectBox("instance")
                             .option("text");
                         Swal.fire({
-                            title:
-                                "Đang tải dữ liệu vui lòng chờ trong giây lát",
+                            title: "Đang tải dữ liệu vui lòng chờ trong giây lát",
                             text: "Đang tải dữ liệu vui lòng chờ",
                             icon: "info",
                             showConfirmButton: false,
@@ -968,9 +1040,8 @@ async function loadDanhsachBieumau() {
             });
 
             // Gan cac chuc nang
-            let btnDelBieumau = document.getElementsByClassName(
-                "btnDelBieumau"
-            );
+            let btnDelBieumau =
+                document.getElementsByClassName("btnDelBieumau");
             for (let index = 0; index < btnDelBieumau.length; index++) {
                 const btnDel = btnDelBieumau[index];
                 btnDel.onclick = function (e) {
@@ -996,9 +1067,8 @@ async function loadDanhsachBieumau() {
                 };
             }
 
-            let btnEditBieumau = document.getElementsByClassName(
-                "btnEditBieumau"
-            );
+            let btnEditBieumau =
+                document.getElementsByClassName("btnEditBieumau");
             // Nut sua bieu mau
             for (let index = 0; index < btnEditBieumau.length; index++) {
                 const btn = btnEditBieumau[index];
